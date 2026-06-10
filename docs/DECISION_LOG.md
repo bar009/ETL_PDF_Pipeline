@@ -2,6 +2,20 @@
 
 ## 2026-06-11
 
+### CI runs the documented check list on every pull request (Phase 6)
+
+Reason:
+- the structure is only real if it is enforced; `docs/CHECKS.md` existed but nothing ran it
+  automatically
+
+Consequence:
+- `.github/workflows/checks.yml` runs the Python checks (compileall, import boundaries,
+  unittest suite, ignore-rules guard) and the React checks (npm ci/build/test) on every PR
+  and on pushes to `main`
+- `README.md` documents the local setup path, branch hygiene (protect `main`, require the
+  `checks` workflow), and a six-line new-work checklist
+- the stale `pytest` instruction in `README.md` is gone — the suite is stdlib `unittest`
+
 ### Site roots resolve at call time, never at import or parser-build time (Phase 5)
 
 Reason:

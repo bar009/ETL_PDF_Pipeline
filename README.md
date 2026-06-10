@@ -43,20 +43,42 @@ npm.cmd run dev
 
 ## Run Checks
 
+The canonical check list lives in `docs/CHECKS.md`. Quick version, from the repo root:
+
+```powershell
+python -m compileall -q PDF_handle/prod PDF_handle/tests
+python PDF_handle/prod/check_import_boundaries.py
+python -m unittest discover -s PDF_handle/tests
+```
+
+The test suite uses stdlib `unittest` — no pytest required.
+
 Frontend checks:
 
 ```powershell
 cd sites/work/react-v2-prototype
 npm.cmd run build
-npm.cmd run verify:ui
+npm.cmd test
 ```
 
-Python checks:
+CI (`.github/workflows/checks.yml`) runs the same commands on every pull request.
 
-```powershell
-python -m pytest PDF_handle/tests
-python PDF_handle/prod/check_import_boundaries.py
-```
+## Branch Hygiene
+
+- `main` is the clean source of truth; work lands through pull requests
+- protect `main` on GitHub: require the `checks` workflow to pass before merging,
+  and disallow force pushes
+- one phase or one path family per branch, small enough to review from `git diff --stat`
+
+## New Work Checklist
+
+1. Read `docs/STRUCTURE_ROADMAP.md` and confirm the change fits the active phase.
+2. Find the code home first: `PDF_handle/prod/README.md` ("Where New Code Goes") for ETL,
+   `src/lib/` adapters for the React pilot.
+3. No new logic in compatibility wrappers, `TOOLS/`, or repo-root scripts.
+4. Keep generated data out of git; committed data only under `data/`.
+5. Run the checks above before pushing.
+6. Record lasting path/ownership decisions in `docs/DECISION_LOG.md`.
 
 ## Data Rule
 
