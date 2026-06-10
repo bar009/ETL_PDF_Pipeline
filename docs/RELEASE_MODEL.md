@@ -42,6 +42,10 @@ Snapshot directories are named `<release-id>-<label>-<YYYY-MM-DD>[-qualifier]`, 
 CLI should reuse the same scheme.
 
 ## Publish Procedure (current tooling)
+(`buildPublishedSnapshotName` in `PDF_handle/TOOLS/lib/site_roots.js`); the Python publish
+CLI uses the same scheme.
+
+## Publish Procedure
 
 1. run the gate on the work root:
    `python PDF_handle/prod/cli/validate_runtime.py --site-root <work-root> --require-complete --strict`
@@ -51,6 +55,9 @@ CLI should reuse the same scheme.
    `prod/external/js_lane.py`), or a plain copy into
    `sites/published/<release-id>-live-<date>/`
 4. run the gate **again on the snapshot** and store the report inside it
+3. snapshot live to published:
+   `python PDF_handle/prod/cli/publish_snapshot.py --source-site-root <live-root> --published-root <published-root> --release-id <release-id>`
+4. the publish CLI runs the gate **again on the snapshot** and stores the report inside it
 5. mark the merged staged operations `published` (see
    `PDF_handle/docs/REVIEW_WORKFLOW.md`)
 
@@ -72,3 +79,12 @@ snapshot.
 - a dedicated `prod/cli/publish_snapshot.py` that performs steps 3-4 in Python (today the
   JS lane owns snapshot creation); when it lands it must emit a `run_manifest.json` and
   refuse to publish without a passing gate report
+## Python Publish CLI
+
+`prod/cli/publish_snapshot.py` performs steps 3-4 in Python. It is offline/local-first:
+
+- it refuses to publish unless the source root passes `validate_runtime.py --require-complete --strict`
+- it copies the source site root to the published snapshot directory
+- it writes `release_gate_report.json` inside the snapshot
+- it writes `run_manifest.json` inside the snapshot
+- it refuses to overwrite an existing snapshot directory
