@@ -133,19 +133,30 @@ Each one delegates to a canonical prod module:
 | `PDF_handle/TOOLS/runners/run_postmerge_05_07.py` | `prod/cli/postmerge.py`                |
 | `PDF_handle/TOOLS/runners/run_new_material_e2e.py`| `prod/cli/e2e.py`                      |
 | `PDF_handle/stage5_utils.py`                      | re-export shell over `prod/schema` and `prod/steps` |
+| `PDF_handle/pipeline_utils.py`                    | re-export shell over `prod/core` (`io`, `text`, `books`, `site_data`, `paths`) |
+| `PDF_handle/workspace_paths.py`                   | re-export shell over `prod/core/site_roots` and `prod/core/paths` |
 
 Use wrappers only when an existing script or operator flow still points at them.
 Wrapper thinness is enforced by `PDF_handle/tests/test_wrapper_thinness.py`:
-a wrapper may set up `sys.path`, import its canonical prod module, and call `main()` —
-nothing else.
+an entrypoint wrapper may set up `sys.path`, import its canonical prod module, and call
+`main()`; a re-export shell may set up `sys.path` and re-export prod names — nothing else.
+
+Re-export shell notes:
+
+- `pipeline_utils.DEFAULT_SITE_ROOT` no longer exists — it resolved the live site root at
+  import time and crashed every importer in a checkout without one. Resolve site roots at
+  call time via `prod/core/site_roots.py`.
+- the historical `atomic_write_text` / `atomic_write_json` / `safe_json_write` names map to
+  the prod writers, which are always atomic.
 
 Still outside prod, intentionally for now:
 
-- `PDF_handle/pipeline_utils.py` — historical helper kept for non-prod lanes; prod does not import it
-- `PDF_handle/workspace_paths.py` — historical path config helper; prod resolves site roots via
-  `prod/core/site_roots.py` instead
 - `PDF_handle/main.py` — marker/OCR environment shim used by extraction
 - JS tools under `PDF_handle/TOOLS/` — invoked only through `prod/external/js_lane.py`
+- Python scripts under `PDF_handle/TOOLS/` — operational lanes from the old workspace; some
+  carry pre-existing migration drift (for example `TOOLS/validation/*` importing `common`
+  from its old location instead of `TOOLS/lib/common.py`) and fail fast until a real site
+  root is configured
 
 ## Import Guardrail
 

@@ -2,6 +2,25 @@
 
 ## 2026-06-11
 
+### Legacy helpers collapse into re-export shells over prod (Phase 4)
+
+Reason:
+- `workspace_paths.py` was a byte-for-byte duplicate of `prod/core/site_roots.py`
+  (including a second copy of the site-roots config defaults), and `pipeline_utils.py`
+  duplicated the prod `io`/`text`/`books`/`site_data` helpers
+- `pipeline_utils` resolved the live site root at import time, so every TOOLS script that
+  imported it crashed on import in this repo
+
+Consequence:
+- both files are now pure re-export shells over `PDF_handle.prod` — one implementation,
+  three historical import names (`stage5_utils` was already a shell)
+- `pipeline_utils.DEFAULT_SITE_ROOT` is removed; site roots resolve at call time
+- the historical atomic-write names map to the prod writers, which are always atomic
+- `tests/test_wrapper_thinness.py` now pins all three shells: prod-only imports, no logic,
+  and importable in a checkout without site data
+- known pre-existing drift left in place: some `TOOLS/validation/*` scripts import `common`
+  from its pre-migration location instead of `TOOLS/lib/common.py`
+
 ### The React adapter enforces its declared missing-field policy (Phase 3)
 
 Reason:
