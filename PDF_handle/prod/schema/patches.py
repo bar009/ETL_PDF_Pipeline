@@ -200,6 +200,9 @@ def build_degree_patch_operation(
         "work_id": work_id,
         "section_id": section_id,
         "marker_id": marker_id,
+        # New staged operations are suggestions until a human review moves
+        # them forward (see prod/schema/review_states.py).
+        "review_state": "suggested",
         "changes": {
             "full_summary_block": full_summary_block if section_summary_he.strip() else "",
             "practical_elements": practical_elements_he,

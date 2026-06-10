@@ -7,15 +7,11 @@ from pathlib import Path
 from PDF_handle.prod.core.paths import REPO_ROOT, SITE_ROOTS_CONFIG_PATH
 
 
-DEFAULT_SITE_ROOTS_CONFIG: dict[str, str] = {
-    "live_site_root": "sites/live/v0.4-current",
-    "legacy_live_site_root": "0.3",
-    "work_site_root": "sites/work/v0.4",
-    "legacy_work_site_root": "0.3-copy",
-    "sandbox_sites_root": "sandbox_sites",
-    "published_sites_root": "published_sites",
-    "legacy_sites_archive_root": "archive/legacy_sites",
-}
+# Intentionally empty: a clean checkout has no site roots, and the old-workspace
+# paths (0.3, sites/live/v0.4-current, published_sites, ...) must never be
+# searched implicitly. Configure sites/site_roots.json (template:
+# sites/site_roots.example.json) or pass an explicit --site-root.
+DEFAULT_SITE_ROOTS_CONFIG: dict[str, str] = {}
 
 
 def load_site_roots_config() -> dict[str, str]:
@@ -42,7 +38,13 @@ def resolve_workspace_path(value: str | Path) -> Path:
 
 def _configured_path(key: str) -> Path:
     config = load_site_roots_config()
-    return resolve_workspace_path(config[key])
+    value = config.get(key)
+    if not value:
+        raise FileNotFoundError(
+            f"Site root '{key}' is not configured. Create {SITE_ROOTS_CONFIG_PATH} "
+            "(template: sites/site_roots.example.json) or pass an explicit --site-root."
+        )
+    return resolve_workspace_path(value)
 
 
 def _looks_like_site_root(path: Path) -> bool:

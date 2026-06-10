@@ -1,0 +1,7 @@
+{
+  "live_site_root": "sites/live/current",
+  "work_site_root": "sites/work/current",
+  "sandbox_sites_root": "sites/sandbox",
+  "published_sites_root": "sites/published",
+  "legacy_sites_archive_root": "archive/legacy_sites"
+}

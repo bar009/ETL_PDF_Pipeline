@@ -10,6 +10,7 @@ states stay distinct (see `docs/STRUCTURE_ROADMAP.md`, Phase 2, and `docs/REPO_L
 |---------|------------|------------|
 | `runtime_site_root/` | **runtime** | a minimal valid site root: `data/content.schema.json` plus a valid `level1.json`. This is the shape `--site-root` must point at. |
 | `staging_minimal/` | **staging** | a minimal Step 5 review artifact (`level1.patch.json` with one staged operation). Review material — never site runtime. |
+| `invalid/` | **invalid** | deliberately broken degree files; each must fail the validation gate for its own named reason (see `invalid/README.md`). |
 
 Contract tests live in `PDF_handle/tests/test_data_state_contracts.py`. They pin that:
 

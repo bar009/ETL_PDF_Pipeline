@@ -19,6 +19,8 @@ jobs:
         run: python PDF_handle/prod/check_import_boundaries.py
       - name: Unit, contract, and smoke tests
         run: python -m unittest discover -s PDF_handle/tests -v
+      - name: ETL fixture smoke (offline, no providers)
+        run: python PDF_handle/prod/cli/smoke_fixture.py
       - name: Ignore rules guard
         run: git check-ignore .env data/raw/input.pdf data/generated/out.json outputs/result.json
 

@@ -1,5 +1,141 @@
 # Workspace Decision Log
 
+## 2026-06-11 (systemic plan)
+
+### The frontend adapter contract names this repo and runs in npm test (WS10)
+
+Reason:
+- the adapter contract constants and the no-json-mutation Playwright spec still named
+  `sites/work/v2.0/*` files (with byte hashes) from the old workspace, so the read-only
+  boundary was unenforceable here and absent from CI
+
+Consequence:
+- the contract is re-baselined to v2: the runtime surface is `public/data/*.json`
+- `src/lib/readOnlyBoundary.test.js` enforces the boundary inside `npm test`/CI: no
+  committed runtime JSON, no reserved surfaces, no write methods or filesystem access in
+  the adapter layer
+- the stale Playwright no-json-mutation spec is deleted (replaced by the vitest version)
+
+### Staged content crosses to runtime only through explicit review states (WS9)
+
+Reason:
+- nothing structural separated "the AI suggested it" from "it entered the canon"; the
+  approval selectors in Step 6 are opt-in flags, not a state model
+
+Consequence:
+- `prod/schema/review_states.py` defines suggested → reviewed → approved → published with
+  rejected as terminal; illegal transitions raise
+- new staged operations are stamped `suggested` by `build_degree_patch_operation`
+- `assert_operations_approved` is the staging→runtime door: only `approved` merges; legacy
+  operations without the field need `allow_unreviewed_legacy=True` and produce warnings
+- the offline smoke enforces the door; the staging fixture is committed as `approved`
+- the workflow contract lives in `PDF_handle/docs/REVIEW_WORKFLOW.md`
+
+### Every run leaves one canonical run_manifest.json (WS8)
+
+Reason:
+- run evidence was prints plus tool-specific report shapes; debugging had no single file to
+  start from, and provider cost/usage was not captured uniformly
+
+Consequence:
+- `prod/core/run_manifest.py` builds the canonical shape: run_id, tool, timing, inputs,
+  config, steps (with per-step counts), aggregate counts, warnings, errors, outputs, and
+  provider_usage (fed by WS7 ProviderResult)
+- the shape contract is committed at `data/schemas/run_manifest.schema.json`
+- `smoke_fixture.py` is the first adopter — its report *is* a run manifest; new pipeline
+  tools should build their run evidence through `RunManifest`
+- `tests/test_run_manifest.py` keeps the builder, the schema file, and the first adopter in
+  agreement without requiring the jsonschema package
+
+### Provider calls return a uniform, non-throwing ProviderResult (WS7)
+
+Reason:
+- provider calls returned ad-hoc dicts and raised unclassified RuntimeErrors, locking
+  consumers to Gemini-specific message strings and making failures untestable offline
+
+Consequence:
+- `prod/providers/result.py` defines the contract: provider/model/transport, text/payload,
+  usage_metadata, duration_seconds, classified error_kind, optional raw_evidence_path
+- `run_text` / `run_json` are the preferred provider entry points; the legacy `generate_*`
+  shims delegate to them and re-raise the original exception types so existing retry/skip
+  logic is untouched
+- `MalformedProviderPayloadError` now subclasses `ProviderError` with a preset error kind
+- `tests/test_provider_result.py` covers success, every failure class, and the legacy shim
+  behavior with a mocked transport — no network or SDK needed
+
+### The stage→apply path has a dedicated idempotency harness (WS6)
+
+Reason:
+- merge idempotency was guarded only at the patch layer; the fixture-driven end state
+  (same input twice → same answer) had no named invariants
+
+Consequence:
+- `tests/test_idempotency_harness.py` pins, separately: normalization idempotency,
+  determinism across independent runs, no duplicate marked blocks on re-apply, stable
+  slugs/entry count, and byte-stable merge output
+- a regression in any one invariant fails with a message naming exactly what broke
+
+### The data contract is proven by failure too (WS5)
+
+Reason:
+- contract tests that only show good data passing cannot catch a gate that silently accepts
+  bad data; the WS5 fixtures showed the gate accepted entries with no title or slug because
+  normalization invents defaults for both
+
+Consequence:
+- `data/fixtures/invalid/` holds deliberately broken degree files (duplicate slug, missing
+  relation target, illegal status, missing required fields); staging-as-runtime is covered
+  by the staging fixture itself
+- the gate's raw source-integrity check now also rejects entries missing a slug or title
+- `tests/test_invalid_fixture_contracts.py` requires every invalid fixture to fail the gate
+  with an error naming its specific rule, and fails if a fixture exists without coverage
+
+### validate_runtime.py is the single publishability gate (WS4)
+
+Reason:
+- validation logic existed but was scattered across steps; nothing answered "is this site
+  root publishable?" in one command
+- normalization silently repairs duplicate slugs and illegal status/type values, so a gate
+  that only validates normalized data passes corrupted source files
+
+Consequence:
+- `PDF_handle/prod/cli/validate_runtime.py --site-root <path>` runs: site-root contract,
+  raw source integrity (duplicates/illegal enums before normalization can repair them),
+  schema + contract validation per degree file, cross-degree reference checks, and minimal
+  provenance (book/chapter must carry source_notes or work_id)
+- `--require-complete` errors on missing standard degree files; `--strict` fails on warnings
+- `tests/test_validate_runtime_gate.py` proves the gate passes the runtime fixture and fails
+  each bad-data class
+
+### There are no built-in site roots (WS3)
+
+Reason:
+- both `prod/core/site_roots.py` and `TOOLS/lib/site_roots.js` carried baked-in defaults
+  naming old-workspace paths (`0.3`, `sites/live/v0.4-current`, `published_sites`, ...) that
+  a clean checkout would silently search for
+
+Consequence:
+- `DEFAULT_SITE_ROOTS_CONFIG` is empty in both lanes; site roots come only from an explicit
+  `--site-root` or `sites/site_roots.json`
+- an unconfigured lookup fails fast with a message pointing at the committed template
+  `sites/site_roots.example.json`; `sites/README.md` documents the model
+- `tests/test_site_roots_config.py` pins the contract, including that the JS lane carries no
+  legacy defaults
+
+### The offline fixture smoke is the canonical "is the ETL path alive" check (WS2)
+
+Reason:
+- `--help` smoke checks prove entrypoints parse, but not that staging→apply→runtime works;
+  the systemic plan requires a real minimal ETL path with no PDFs and no providers
+
+Consequence:
+- `PDF_handle/prod/cli/smoke_fixture.py` runs the real merge layer over the committed
+  fixtures: site-root contract, pre-validation, patch apply, idempotent re-apply,
+  provenance marker, post-validation, atomic write round-trip
+- it runs in the unittest suite (`test_smoke_fixture.py`) and as a dedicated CI step after
+  the unit tests
+- `docs/CHECKS.md` lists it as part of the canonical check list
+
 ## 2026-06-11
 
 ### CI runs the documented check list on every pull request (Phase 6)

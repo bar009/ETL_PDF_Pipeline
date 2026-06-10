@@ -16,19 +16,16 @@ import {
 } from './fixtures/adapterContractFixtures.js';
 
 test('adapter contract defines source names without reading runtime JSON', () => {
-  expect(ADAPTER_CONTRACT_VERSION).toBe('react-v2-read-only-adapter-contract-v1');
+  expect(ADAPTER_CONTRACT_VERSION).toBe('react-v2-read-only-adapter-contract-v2');
   expect(READ_ONLY_SOURCE_FILES).toEqual([
-    'sites/work/v2.0/data/degrees.json',
-    'sites/work/v2.0/data/level1.json',
-    'sites/work/v2.0/data/level2.json',
-    'sites/work/v2.0/data/level3.json',
-    'sites/work/v2.0/data/library.json',
-    'sites/work/v2.0/data/content.schema.json',
-    'sites/work/v2.0/data/content.overrides.json',
-    'sites/work/v2.0/data/content.localizations.he.json'
+    'public/data/degrees.json',
+    'public/data/level1.json',
+    'public/data/level2.json',
+    'public/data/level3.json',
+    'public/data/library.json'
   ]);
-  expect(RESERVED_SOURCE_FILES).toContain('sites/work/v2.0/data/encyclopedia.json');
-  expect(RESERVED_SOURCE_FILES).toContain('sites/work/v2.0/data/homepage_projection.json');
+  expect(RESERVED_SOURCE_FILES).toContain('public/data/encyclopedia.json');
+  expect(RESERVED_SOURCE_FILES).toContain('public/data/homepage_projection.json');
 });
 
 test('adapter contract defines required view-model fields', () => {

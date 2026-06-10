@@ -6,9 +6,16 @@ import urllib.parse
 import urllib.request
 from typing import Any
 
+from PDF_handle.prod.providers.result import (
+    ProviderError,
+    ProviderResult,
+    classify_error_kind,
+    timed,
+)
 
-class MalformedProviderPayloadError(RuntimeError):
-    pass
+
+class MalformedProviderPayloadError(ProviderError):
+    error_kind = "malformed_payload"
 
 
 def get_gemini_client(api_key: str | None) -> tuple[Any, Any]:
@@ -179,6 +186,51 @@ def generate_content(
     }
 
 
+def run_text(
+    *,
+    system_prompt: str,
+    user_prompt: str,
+    model: str,
+    temperature: float,
+    max_output_tokens: int,
+    api_key: str | None,
+    thinking_budget: int | None = None,
+) -> ProviderResult:
+    """Text-mode call returning the uniform, non-throwing ProviderResult."""
+    with timed() as timer:
+        try:
+            raw = generate_content(
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                model=model,
+                temperature=temperature,
+                max_output_tokens=max_output_tokens,
+                api_key=api_key,
+                thinking_budget=thinking_budget,
+            )
+            text = str(raw.get("response_text") or "").strip()
+            if not text:
+                raise RuntimeError("Gemini returned an empty response.")
+        except Exception as exc:
+            timer.__exit__(None, None, None)
+            return ProviderResult(
+                provider="gemini",
+                model=model,
+                duration_seconds=timer.elapsed,
+                error_kind=classify_error_kind(exc),
+                error_message=str(exc),
+                exception=exc,
+            )
+    return ProviderResult(
+        provider="gemini",
+        model=model,
+        transport=raw.get("transport"),
+        text=text,
+        usage_metadata=raw.get("usage_metadata"),
+        duration_seconds=timer.elapsed,
+    )
+
+
 def generate_text_content(
     *,
     system_prompt: str,
@@ -189,7 +241,7 @@ def generate_text_content(
     api_key: str | None,
     thinking_budget: int | None = None,
 ) -> dict[str, Any]:
-    result = generate_content(
+    result = run_text(
         system_prompt=system_prompt,
         user_prompt=user_prompt,
         model=model,
@@ -197,14 +249,13 @@ def generate_text_content(
         max_output_tokens=max_output_tokens,
         api_key=api_key,
         thinking_budget=thinking_budget,
-    )
-    response_text = result.get("response_text")
-    if not response_text:
-        raise RuntimeError("Gemini returned an empty response.")
+    ).raise_for_error()
     return {
-        "response_text": str(response_text).strip(),
-        "usage_metadata": result.get("usage_metadata"),
-        "transport": result.get("transport"),
+        "response_text": result.text,
+        "usage_metadata": result.usage_metadata,
+        "transport": result.transport,
+        "model": result.model,
+        "duration_seconds": result.duration_seconds,
     }
 
 
@@ -231,6 +282,61 @@ def extract_json_payload(text: str) -> dict[str, Any]:
     return payload
 
 
+def run_json(
+    *,
+    system_prompt: str,
+    user_prompt: str,
+    model: str,
+    temperature: float,
+    max_output_tokens: int,
+    api_key: str | None,
+    thinking_budget: int | None = None,
+    response_mime_type: str | None = None,
+    response_schema: Any | None = None,
+) -> ProviderResult:
+    """JSON-mode call returning the uniform, non-throwing ProviderResult."""
+    with timed() as timer:
+        try:
+            raw = generate_content(
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                model=model,
+                temperature=temperature,
+                max_output_tokens=max_output_tokens,
+                api_key=api_key,
+                thinking_budget=thinking_budget,
+                response_mime_type=response_mime_type,
+                response_schema=response_schema,
+            )
+            parsed_payload = raw.get("parsed")
+            if isinstance(parsed_payload, dict):
+                payload = parsed_payload
+            else:
+                response_text = raw.get("response_text")
+                if not response_text:
+                    raise MalformedProviderPayloadError("Gemini returned an empty JSON response.")
+                payload = extract_json_payload(response_text)
+        except Exception as exc:
+            timer.__exit__(None, None, None)
+            return ProviderResult(
+                provider="gemini",
+                model=model,
+                duration_seconds=timer.elapsed,
+                error_kind=classify_error_kind(exc),
+                error_message=str(exc),
+                exception=exc,
+            )
+    return ProviderResult(
+        provider="gemini",
+        model=model,
+        transport=raw.get("transport"),
+        text=raw.get("response_text"),
+        payload=payload,
+        usage_metadata=raw.get("usage_metadata"),
+        duration_seconds=timer.elapsed,
+    )
+
+
 def generate_json_content(
     *,
     system_prompt: str,
@@ -243,7 +349,7 @@ def generate_json_content(
     response_mime_type: str | None = None,
     response_schema: Any | None = None,
 ) -> dict[str, Any]:
-    result = generate_content(
+    result = run_json(
         system_prompt=system_prompt,
         user_prompt=user_prompt,
         model=model,
@@ -253,18 +359,11 @@ def generate_json_content(
         thinking_budget=thinking_budget,
         response_mime_type=response_mime_type,
         response_schema=response_schema,
-    )
-    parsed_payload = result.get("parsed")
-    if isinstance(parsed_payload, dict):
-        payload = parsed_payload
-    else:
-        response_text = result.get("response_text")
-        if not response_text:
-            raise MalformedProviderPayloadError("Gemini returned an empty JSON response.")
-        payload = extract_json_payload(response_text)
-
+    ).raise_for_error()
     return {
-        "payload": payload,
-        "usage_metadata": result.get("usage_metadata"),
-        "transport": result.get("transport"),
+        "payload": result.payload,
+        "usage_metadata": result.usage_metadata,
+        "transport": result.transport,
+        "model": result.model,
+        "duration_seconds": result.duration_seconds,
     }

@@ -45,8 +45,8 @@ When working on mapping or site mutations, also read:
 - Steps that touch a site root must receive an explicit `--site-root`, or resolve one through
   `sites/site_roots.json` (read by `prod/core/site_roots.py`).
 - Do not hardcode new references to legacy roots.
-- Re-baselining the legacy defaults inside `prod/core/site_roots.py` is planned Phase 2 work
-  (`../docs/STRUCTURE_ROADMAP.md`).
+- There are no built-in site roots: an unconfigured lookup fails fast and points at
+  `sites/site_roots.example.json` (`tests/test_site_roots_config.py` pins this).
 
 ## Engineering Rules
 

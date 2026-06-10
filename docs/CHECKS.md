@@ -10,7 +10,20 @@ and the workflow in sync.
 python -m compileall -q PDF_handle/prod PDF_handle/tests
 python PDF_handle/prod/check_import_boundaries.py
 python -m unittest discover -s PDF_handle/tests
+python PDF_handle/prod/cli/smoke_fixture.py
 ```
+
+`validate_runtime.py` is the single validation gate for site data — run it before treating
+any site root as publishable:
+
+```powershell
+python PDF_handle/prod/cli/validate_runtime.py --site-root <path> --require-complete --strict
+```
+
+`smoke_fixture.py` is the offline ETL smoke: it copies the runtime fixture to a temp site
+root, applies the staged fixture patch through the real merge layer, checks idempotency and
+provenance, validates the merged result, and round-trips it through the atomic writer. No
+PDFs, no providers, no network.
 
 The unittest suite includes:
 
