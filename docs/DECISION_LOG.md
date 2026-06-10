@@ -2,6 +2,22 @@
 
 ## 2026-06-11 (systemic plan)
 
+### Provider calls return a uniform, non-throwing ProviderResult (WS7)
+
+Reason:
+- provider calls returned ad-hoc dicts and raised unclassified RuntimeErrors, locking
+  consumers to Gemini-specific message strings and making failures untestable offline
+
+Consequence:
+- `prod/providers/result.py` defines the contract: provider/model/transport, text/payload,
+  usage_metadata, duration_seconds, classified error_kind, optional raw_evidence_path
+- `run_text` / `run_json` are the preferred provider entry points; the legacy `generate_*`
+  shims delegate to them and re-raise the original exception types so existing retry/skip
+  logic is untouched
+- `MalformedProviderPayloadError` now subclasses `ProviderError` with a preset error kind
+- `tests/test_provider_result.py` covers success, every failure class, and the legacy shim
+  behavior with a mocked transport — no network or SDK needed
+
 ### The stage→apply path has a dedicated idempotency harness (WS6)
 
 Reason:
