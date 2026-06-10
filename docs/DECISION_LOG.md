@@ -2,6 +2,23 @@
 
 ## 2026-06-11 (systemic plan)
 
+### validate_runtime.py is the single publishability gate (WS4)
+
+Reason:
+- validation logic existed but was scattered across steps; nothing answered "is this site
+  root publishable?" in one command
+- normalization silently repairs duplicate slugs and illegal status/type values, so a gate
+  that only validates normalized data passes corrupted source files
+
+Consequence:
+- `PDF_handle/prod/cli/validate_runtime.py --site-root <path>` runs: site-root contract,
+  raw source integrity (duplicates/illegal enums before normalization can repair them),
+  schema + contract validation per degree file, cross-degree reference checks, and minimal
+  provenance (book/chapter must carry source_notes or work_id)
+- `--require-complete` errors on missing standard degree files; `--strict` fails on warnings
+- `tests/test_validate_runtime_gate.py` proves the gate passes the runtime fixture and fails
+  each bad-data class
+
 ### There are no built-in site roots (WS3)
 
 Reason:
