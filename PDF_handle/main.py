@@ -106,8 +106,6 @@ except Exception as exc:  # pragma: no cover - exercised only in fallback envs
     save_output = None
     settings = None
 
-from pypdf import PdfReader
-
 # טעינת המודלים (זה דורש GPU אם יש לך, אחרת ירוץ על ה-CPU)
 converter = None
 
@@ -133,6 +131,8 @@ def get_converter():
     return converter
 
 def extract_pdf_with_pypdf(pdf_path, output_root):
+    from pypdf import PdfReader
+    
     book_name = os.path.basename(pdf_path).replace(".pdf", "")
     output_folder = os.path.join(output_root, book_name)
     os.makedirs(output_folder, exist_ok=True)
