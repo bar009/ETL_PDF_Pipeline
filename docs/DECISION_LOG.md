@@ -2,6 +2,20 @@
 
 ## 2026-06-11 (systemic plan)
 
+### The frontend adapter contract names this repo and runs in npm test (WS10)
+
+Reason:
+- the adapter contract constants and the no-json-mutation Playwright spec still named
+  `sites/work/v2.0/*` files (with byte hashes) from the old workspace, so the read-only
+  boundary was unenforceable here and absent from CI
+
+Consequence:
+- the contract is re-baselined to v2: the runtime surface is `public/data/*.json`
+- `src/lib/readOnlyBoundary.test.js` enforces the boundary inside `npm test`/CI: no
+  committed runtime JSON, no reserved surfaces, no write methods or filesystem access in
+  the adapter layer
+- the stale Playwright no-json-mutation spec is deleted (replaced by the vitest version)
+
 ### Staged content crosses to runtime only through explicit review states (WS9)
 
 Reason:

@@ -1,19 +1,20 @@
-export const ADAPTER_CONTRACT_VERSION = 'react-v2-read-only-adapter-contract-v1';
+export const ADAPTER_CONTRACT_VERSION = 'react-v2-read-only-adapter-contract-v2';
 
+// The runtime surface the adapter reads, relative to the prototype root.
+// Runtime JSON is supplied at deploy/dev time and never committed
+// (see public/data/README.md); the contract shape is pinned by the repo-level
+// schema at data/schemas/content.schema.json.
 export const READ_ONLY_SOURCE_FILES = Object.freeze([
-  'sites/work/v2.0/data/degrees.json',
-  'sites/work/v2.0/data/level1.json',
-  'sites/work/v2.0/data/level2.json',
-  'sites/work/v2.0/data/level3.json',
-  'sites/work/v2.0/data/library.json',
-  'sites/work/v2.0/data/content.schema.json',
-  'sites/work/v2.0/data/content.overrides.json',
-  'sites/work/v2.0/data/content.localizations.he.json'
+  'public/data/degrees.json',
+  'public/data/level1.json',
+  'public/data/level2.json',
+  'public/data/level3.json',
+  'public/data/library.json'
 ]);
 
 export const RESERVED_SOURCE_FILES = Object.freeze([
-  'sites/work/v2.0/data/encyclopedia.json',
-  'sites/work/v2.0/data/homepage_projection.json'
+  'public/data/encyclopedia.json',
+  'public/data/homepage_projection.json'
 ]);
 
 export const VIEW_MODEL_SHAPES = Object.freeze({
