@@ -75,17 +75,23 @@ function buildEntry(raw, categoryLookup, degreeId) {
     raw.candidate_lesson
   ].filter(Boolean);
   const body = bodyParts.join('\n\n');
-  const source = raw.work_title
+  const sourceRaw = raw.work_title
     || raw.source_path
     || raw.source_heading
     || raw.source_notes
     || '';
+  // source_notes is an array in the runtime contract; flatten to display text.
+  const source = Array.isArray(sourceRaw)
+    ? sourceRaw.filter(Boolean).join(' · ')
+    : sourceRaw;
   const relatedRaw = Array.isArray(raw.related_topics) && raw.related_topics.length > 0
     ? raw.related_topics
     : Array.isArray(raw.knowledge_links)
       ? raw.knowledge_links.map(link => link.title || link.slug || link.target_slug).filter(Boolean)
       : [];
-  const status = STATUS_LABELS[raw.status] ?? raw.status ?? '';
+  // status is display-fallback-only per MISSING_FIELD_POLICY: missing status
+  // renders as the pipeline default (draft), never as an empty badge.
+  const status = STATUS_LABELS[raw.status] ?? raw.status ?? STATUS_LABELS.draft;
 
   return {
     slug: raw.slug,
@@ -127,7 +133,11 @@ export async function loadContent() {
 
     (degreeFile?.entries ?? []).forEach(raw => {
       if (!raw?.slug || !raw?.title) return;
-      entries.push(buildEntry(raw, categoryLookup, id));
+      const entry = buildEntry(raw, categoryLookup, id);
+      // slug/title/degree/source are hard-fail fields (MISSING_FIELD_POLICY):
+      // an entry with no source provenance is dropped, not rendered blank.
+      if (!entry.source) return;
+      entries.push(entry);
     });
   });
 
