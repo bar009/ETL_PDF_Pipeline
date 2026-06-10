@@ -2,6 +2,20 @@
 
 ## 2026-06-11
 
+### The React adapter enforces its declared missing-field policy (Phase 3)
+
+Reason:
+- `adapterContract.js` declared `source` a hard-fail field and `status` display-fallback-only,
+  but `contentAdapter.js` rendered blanks for both and passed array `source_notes` through as
+  a non-string — the contract was documentation, not behavior
+
+Consequence:
+- `loadContent()` now drops entries with no source provenance, flattens array `source_notes`
+  to display text, and falls back to the pipeline-default draft status label
+- `collectRelationFindings()` implements the report-only relation policy
+- `src/lib/adapterBoundary.test.js` pins missing fields, unknown routes, locale direction,
+  and relation references, so `npm test` proves the boundary instead of trusting it
+
 ### Data states get committed fixtures and contract tests (Phase 2)
 
 Reason:

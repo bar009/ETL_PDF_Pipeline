@@ -116,6 +116,31 @@ export function validateViewModelShape(kind, value) {
   return errors;
 }
 
+// Relation references are report-only per ADAPTER_ERROR_POLICY: a related
+// item that resolves to no entry must surface as a finding, never break a page.
+export function collectRelationFindings({ entries }) {
+  const knownTargets = new Set();
+  for (const entry of entries) {
+    knownTargets.add(entry.slug);
+    knownTargets.add(entry.title);
+  }
+
+  const findings = [];
+  for (const entry of entries) {
+    for (const target of entry.related ?? []) {
+      if (!knownTargets.has(target)) {
+        findings.push({
+          policy: 'reportOnly',
+          kind: 'missing related target',
+          entry: entry.slug,
+          target
+        });
+      }
+    }
+  }
+  return findings;
+}
+
 export function validateAdapterFixture({ degrees, entries }) {
   const errors = [];
   const routeKeys = new Set();

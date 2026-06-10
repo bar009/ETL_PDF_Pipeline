@@ -13,3 +13,9 @@ Expected runtime filenames:
 - `level3.json`
 - `library.json`
 
+The degree files must satisfy the committed contract at `data/schemas/content.schema.json`
+(repo root). A minimal valid example lives at
+`data/fixtures/runtime_site_root/data/level1.json`. The adapter boundary —
+including how missing fields, unknown routes, locale direction, and relation
+references are handled — is pinned by `src/lib/adapterBoundary.test.js` (`npm test`).
+
