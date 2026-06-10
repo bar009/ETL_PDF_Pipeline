@@ -185,9 +185,10 @@ This production surface is intentionally separate from runtime data:
   (resolved by `prod/core/site_roots.py`)
 - committed data is limited to `data/fixtures/`, `data/samples/`, and `data/schemas/`
 
-Known re-baselining gap (Phase 2 work, see `docs/STRUCTURE_ROADMAP.md`):
+Site-roots model (re-baselined, see `sites/README.md`):
 
-- the fallback defaults in `prod/core/site_roots.py` still name legacy site roots from the old
-  workspace (`sites/live/v0.4-current`, `0.3`, `published_sites`, ...) that do not exist in this
-  repo; runs against a real site root must pass `--site-root` or provide `sites/site_roots.json`
-  until those defaults are re-baselined
+- there are **no built-in site roots** — `prod/core/site_roots.py` and
+  `PDF_handle/TOOLS/lib/site_roots.js` both resolve only an explicit `--site-root` or
+  `sites/site_roots.json` (template: `sites/site_roots.example.json`)
+- an unconfigured lookup fails fast with a message that points at the template;
+  `PDF_handle/tests/test_site_roots_config.py` pins this contract

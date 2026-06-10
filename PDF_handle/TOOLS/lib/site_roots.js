@@ -6,15 +6,10 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..", "..", "..");
 const SITE_ROOTS_CONFIG_PATH = path.join(ROOT, "sites", "site_roots.json");
 
-const DEFAULT_SITE_ROOTS_CONFIG = {
-  live_site_root: "sites/live/v0.4-current",
-  legacy_live_site_root: "0.3",
-  work_site_root: "sites/work/v0.4",
-  legacy_work_site_root: "0.3-copy",
-  sandbox_sites_root: "sandbox_sites",
-  published_sites_root: "published_sites",
-  legacy_sites_archive_root: "archive/legacy_sites",
-};
+// Intentionally empty: a clean checkout has no site roots, and the old-workspace
+// paths must never be searched implicitly. Configure sites/site_roots.json
+// (template: sites/site_roots.example.json).
+const DEFAULT_SITE_ROOTS_CONFIG = {};
 
 function loadSiteRootsConfig() {
   if (!fs.existsSync(SITE_ROOTS_CONFIG_PATH)) {
@@ -40,7 +35,14 @@ function resolveWorkspacePath(targetPath) {
 
 function getConfiguredPath(key) {
   const config = loadSiteRootsConfig();
-  return resolveWorkspacePath(config[key]);
+  const value = config[key];
+  if (!value) {
+    throw new Error(
+      `Site root '${key}' is not configured. Create ${SITE_ROOTS_CONFIG_PATH} `
+      + "(template: sites/site_roots.example.json)."
+    );
+  }
+  return resolveWorkspacePath(value);
 }
 
 function looksLikeSiteRoot(siteRoot) {

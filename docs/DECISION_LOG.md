@@ -2,6 +2,21 @@
 
 ## 2026-06-11 (systemic plan)
 
+### There are no built-in site roots (WS3)
+
+Reason:
+- both `prod/core/site_roots.py` and `TOOLS/lib/site_roots.js` carried baked-in defaults
+  naming old-workspace paths (`0.3`, `sites/live/v0.4-current`, `published_sites`, ...) that
+  a clean checkout would silently search for
+
+Consequence:
+- `DEFAULT_SITE_ROOTS_CONFIG` is empty in both lanes; site roots come only from an explicit
+  `--site-root` or `sites/site_roots.json`
+- an unconfigured lookup fails fast with a message pointing at the committed template
+  `sites/site_roots.example.json`; `sites/README.md` documents the model
+- `tests/test_site_roots_config.py` pins the contract, including that the JS lane carries no
+  legacy defaults
+
 ### The offline fixture smoke is the canonical "is the ETL path alive" check (WS2)
 
 Reason:
