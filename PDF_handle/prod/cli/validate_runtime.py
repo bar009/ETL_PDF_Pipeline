@@ -62,10 +62,14 @@ def _check_raw_source_integrity(degree_id: str, raw: dict[str, Any]) -> list[str
             continue
         label = str(entry.get("slug") or f"entries[{index}]").strip()
         slug = str(entry.get("slug") or "").strip()
-        if slug:
+        if not slug:
+            errors.append(f"{degree_id}:{label} is missing a slug in the source file")
+        else:
             if slug in seen:
                 errors.append(f"{degree_id}: slug is duplicated in source file: {slug}")
             seen.add(slug)
+        if not str(entry.get("title") or "").strip():
+            errors.append(f"{degree_id}:{label} is missing a title in the source file")
         status = entry.get("status")
         if status is not None and status not in VALID_STATUS:
             errors.append(

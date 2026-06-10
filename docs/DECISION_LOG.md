@@ -2,6 +2,21 @@
 
 ## 2026-06-11 (systemic plan)
 
+### The data contract is proven by failure too (WS5)
+
+Reason:
+- contract tests that only show good data passing cannot catch a gate that silently accepts
+  bad data; the WS5 fixtures showed the gate accepted entries with no title or slug because
+  normalization invents defaults for both
+
+Consequence:
+- `data/fixtures/invalid/` holds deliberately broken degree files (duplicate slug, missing
+  relation target, illegal status, missing required fields); staging-as-runtime is covered
+  by the staging fixture itself
+- the gate's raw source-integrity check now also rejects entries missing a slug or title
+- `tests/test_invalid_fixture_contracts.py` requires every invalid fixture to fail the gate
+  with an error naming its specific rule, and fails if a fixture exists without coverage
+
 ### validate_runtime.py is the single publishability gate (WS4)
 
 Reason:

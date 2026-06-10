@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "degree": "level1",
+    "title": "Level 1 runtime fixture",
+    "updated_at": "2026-06-11T00:00:00Z"
+  },
+  "categories": {
+    "foundations": {
+      "title": "יסודות",
+      "symbol": "△"
+    }
+  },
+  "entries": [
+    {
+      "title": "שער הדרגה הראשונה",
+      "slug": "fixture-degree-gate",
+      "type": "hub",
+      "degree": "level1",
+      "applies_to_degrees": [
+        "level1"
+      ],
+      "category": "foundations",
+      "parent_topic": null,
+      "aliases": [
+        "שער הכניסה"
+      ],
+      "keywords": [
+        "שער",
+        "התמצאות"
+      ],
+      "related_topics": [],
+      "short_summary": "נקודת כניסה מינימלית עבור בדיקות חוזה.",
+      "full_summary": "ערך שער מינימלי. קיים רק כדי שבדיקות חוזה יוכלו לוודא שמבנה הנתונים של דרגה תקין.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [],
+      "tradition_scope": "universal",
+      "status": "totally-not-a-status"
+    },
+    {
+      "title": "נושא לדוגמה",
+      "slug": "fixture-sample-topic",
+      "type": "topic",
+      "degree": "level1",
+      "applies_to_degrees": [
+        "level1"
+      ],
+      "category": "foundations",
+      "parent_topic": "fixture-degree-gate",
+      "aliases": [],
+      "keywords": [
+        "דוגמה"
+      ],
+      "related_topics": {
+        "prior": [
+          "fixture-degree-gate"
+        ],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "נושא מינימלי המקושר לערך השער.",
+      "full_summary": "ערך נושא מינימלי. בדיקות החוזה מאמתות שהקישור אל ערך השער נשמר תקין.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [],
+      "tradition_scope": "variant",
+      "status": "draft"
+    }
+  ]
+}
