@@ -2,6 +2,22 @@
 
 ## 2026-06-11
 
+### Data states get committed fixtures and contract tests (Phase 2)
+
+Reason:
+- the roadmap requires that a newcomer can tell source, staging, canonical, runtime, and
+  evidence apart, and that a staged artifact is never treated as site runtime
+
+Consequence:
+- `data/schemas/content.schema.json` is the committed contract home for runtime degree data
+- `data/fixtures/runtime_site_root/` is the smallest valid runtime site root;
+  `data/fixtures/staging_minimal/` is the smallest staged review artifact
+- `PDF_handle/tests/test_data_state_contracts.py` fails if a staging dir satisfies the
+  site-root contract, if the fixture schema copy drifts from the contract home, or if the
+  staged fixture stops applying cleanly to the runtime fixture
+- the legacy fallback defaults in `prod/core/site_roots.py` still name old-workspace roots;
+  re-pointing them stays deferred until a real site root exists in this repo
+
 ### The active control surface is `docs/`, not the old repo's `management/`
 
 Reason:

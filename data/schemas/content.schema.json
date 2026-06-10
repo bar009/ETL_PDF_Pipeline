@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/content.schema.json",
+  "title": "Freemasonry Knowledge Content Schema",
+  "type": "object",
+  "required": ["meta", "categories", "entries"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["degree", "title"],
+      "properties": {
+        "degree": { "type": "string" },
+        "title": { "type": "string" },
+        "updated_at": { "type": ["string", "null"], "format": "date" }
+      },
+      "additionalProperties": true
+    },
+    "categories": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["title", "symbol"],
+        "properties": {
+          "title": { "type": "string" },
+          "symbol": { "type": "string" },
+          "description": { "type": "string" },
+          "parent_category": { "type": ["string", "null"] }
+        },
+        "additionalProperties": true
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "title",
+        "slug",
+        "type",
+        "degree",
+        "applies_to_degrees",
+        "category",
+        "parent_topic",
+        "aliases",
+        "keywords",
+        "related_topics",
+        "short_summary",
+        "full_summary",
+        "practical_elements",
+        "symbolic_meaning",
+        "candidate_lesson",
+        "tradition_notes",
+        "caution_notes",
+        "source_notes",
+        "tradition_scope",
+        "status"
+      ],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["topic", "concept", "category", "glossary", "hub", "symbol", "ceremony", "connector", "book", "chapter"]
+        },
+        "knowledge_type": {
+          "type": ["string", "null"],
+          "enum": ["ritual", "symbol", "lodge_structure", "moral_philosophy", "historical_research", null]
+        },
+        "degree": { "type": "string", "minLength": 1 },
+        "applies_to_degrees": { "type": "array", "items": { "type": "string" } },
+        "content_scope": {
+          "type": ["string", "null"],
+          "enum": ["degree_specific", "cross_degree", "symbolic", "historical", null]
+        },
+        "category": { "type": "string", "minLength": 1 },
+        "parent_topic": { "type": ["string", "null"] },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "related_topics": {
+          "oneOf": [
+            { "type": "array", "items": { "type": "string" } },
+            {
+              "type": "object",
+              "properties": {
+                "prior":     { "type": "array", "items": { "type": "string" } },
+                "companion": { "type": "array", "items": { "type": "string" } },
+                "deeper":    { "type": "array", "items": { "type": "string" } }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "short_summary": { "type": "string" },
+        "reading_layers": {
+          "type": "object",
+          "required": ["basic", "symbolic", "advanced"],
+          "properties": {
+            "basic": { "type": "string" },
+            "symbolic": { "type": "string" },
+            "advanced": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "reading_layers_meta": {
+          "type": "object",
+          "properties": {
+            "show_imported_research": { "type": "boolean" }
+          },
+          "additionalProperties": true
+        },
+        "full_summary": { "type": "string" },
+        "practical_elements": { "type": "array", "items": { "type": "string" } },
+        "symbolic_meaning": { "type": "string" },
+        "candidate_lesson": { "type": "string" },
+        "tradition_notes": { "type": "array", "items": { "type": "string" } },
+        "caution_notes": { "type": "array", "items": { "type": "string" } },
+        "source_notes": { "type": "array", "items": { "type": "string" } },
+        "tradition_scope": {
+          "type": "string",
+          "enum": ["universal", "common", "variant", "interpretive"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "reviewed", "published"]
+        },
+        "language": {
+          "type": ["string", "null"],
+          "enum": ["he", "en", null]
+        },
+        "work_id": { "type": ["string", "null"] },
+        "work_title": { "type": "string" },
+        "source_kind": { "type": ["string", "null"] },
+        "source_path": { "type": ["string", "null"] },
+        "source_anchor": { "type": ["string", "null"] },
+        "source_heading": { "type": ["string", "null"] },
+        "source_order": { "type": ["number", "null"] },
+        "parallel_entry": { "type": ["string", "null"] },
+        "translation_mode": { "type": ["string", "null"] },
+        "visibility_level": {
+          "type": "string",
+          "enum": ["internal", "restricted", "editorial"]
+        },
+        "sensitivity_level": {
+          "type": "string",
+          "enum": ["standard", "guarded", "sensitive"]
+        },
+        "knowledge_links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["slug", "degree"],
+            "properties": {
+              "slug": { "type": "string", "minLength": 1 },
+              "degree": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "chapter_toc": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
