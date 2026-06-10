@@ -1,0 +1,32 @@
+{
+  "created_at": "2026-06-11T00:00:00Z",
+  "degree": "level1",
+  "operations": [
+    {
+      "slug": "fixture-sample-topic",
+      "degree": "level1",
+      "work_id": "fixture-work",
+      "section_id": "section-001",
+      "marker_id": "PDF_STAGE5:fixture-work:section-001",
+      "changes": {
+        "full_summary_block": "### העשרה מתוך Fixture Work\nקטע מקור: Fixture Section\n\nתוכן העשרה מינימלי עבור בדיקות חוזה של שכבת ההצבה.",
+        "practical_elements": [
+          "דוגמה לפריט מעשי"
+        ],
+        "symbolic_meaning": "",
+        "candidate_lesson": "",
+        "tradition_notes": [],
+        "caution_notes": [],
+        "source_notes": [
+          "Fixture Work | Fixture Section | data/fixtures/staging_minimal/level1.patch.json | section 1"
+        ],
+        "knowledge_links": [
+          {
+            "slug": "fixture-work-chapter-1",
+            "degree": "library"
+          }
+        ]
+      }
+    }
+  ]
+}
