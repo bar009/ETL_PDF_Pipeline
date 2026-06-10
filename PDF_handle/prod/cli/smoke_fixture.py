@@ -33,7 +33,8 @@ for candidate in (REPO_ROOT, PDF_HANDLE_ROOT):
     if str(candidate) not in sys.path:
         sys.path.insert(0, str(candidate))
 
-from PDF_handle.prod.core.io import read_json, utc_timestamp, write_json
+from PDF_handle.prod.core.io import read_json, write_json
+from PDF_handle.prod.core.run_manifest import RunManifest
 from PDF_handle.prod.core.site_roots import _looks_like_site_root
 from PDF_handle.prod.schema.data import (
     custom_validate_degree_data,
@@ -47,18 +48,19 @@ STAGING_FIXTURE = REPO_ROOT / "data" / "fixtures" / "staging_minimal"
 
 
 def run_smoke() -> dict[str, Any]:
-    report: dict[str, Any] = {
-        "tool": "smoke_fixture",
-        "started_at": utc_timestamp(),
-        "steps": [],
-        "errors": [],
-    }
+    # The smoke emits the canonical run-manifest shape
+    # (data/schemas/run_manifest.schema.json) so debugging starts from one file.
+    manifest = RunManifest(
+        tool="smoke_fixture",
+        inputs={
+            "runtime_fixture": str(RUNTIME_FIXTURE),
+            "staging_fixture": str(STAGING_FIXTURE),
+        },
+        config={"offline": True, "providers": "none"},
+    )
 
     def step(name: str, ok: bool, detail: str = "") -> bool:
-        report["steps"].append({"name": name, "ok": ok, "detail": detail})
-        if not ok:
-            report["errors"].append(f"{name}: {detail}")
-        return ok
+        return manifest.add_step(name, ok=ok, detail=detail if not ok else "")
 
     with tempfile.TemporaryDirectory(prefix="smoke_fixture_") as tmp:
         site_root = Path(tmp) / "site_root"
@@ -69,18 +71,18 @@ def run_smoke() -> dict[str, Any]:
             _looks_like_site_root(site_root),
             f"{site_root} must contain data/content.schema.json",
         ):
-            return _finish(report)
+            return manifest.to_dict()
 
         raw = read_json(site_root / "data" / "level1.json")
         degree_data = normalize_degree_data(raw, "level1")
         pre = custom_validate_degree_data(degree_data)
         if not step("pre_state_valid", pre["ok"], "; ".join(pre["errors"])):
-            return _finish(report)
+            return manifest.to_dict()
 
         patch_payload = read_json(STAGING_FIXTURE / "level1.patch.json")
         operations = patch_payload.get("operations", [])
         if not step("staged_operations_present", bool(operations), "staging fixture has no operations"):
-            return _finish(report)
+            return manifest.to_dict()
 
         merged = apply_degree_patches(degree_data, operations)
         first_pass = json.dumps(serialize_degree_data(merged), ensure_ascii=False, sort_keys=True)
@@ -110,13 +112,7 @@ def run_smoke() -> dict[str, Any]:
             "merged runtime file failed validation after atomic write",
         )
 
-    return _finish(report)
-
-
-def _finish(report: dict[str, Any]) -> dict[str, Any]:
-    report["finished_at"] = utc_timestamp()
-    report["ok"] = not report["errors"]
-    return report
+    return manifest.to_dict()
 
 
 def main() -> None:

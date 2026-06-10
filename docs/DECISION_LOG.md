@@ -2,6 +2,22 @@
 
 ## 2026-06-11 (systemic plan)
 
+### Every run leaves one canonical run_manifest.json (WS8)
+
+Reason:
+- run evidence was prints plus tool-specific report shapes; debugging had no single file to
+  start from, and provider cost/usage was not captured uniformly
+
+Consequence:
+- `prod/core/run_manifest.py` builds the canonical shape: run_id, tool, timing, inputs,
+  config, steps (with per-step counts), aggregate counts, warnings, errors, outputs, and
+  provider_usage (fed by WS7 ProviderResult)
+- the shape contract is committed at `data/schemas/run_manifest.schema.json`
+- `smoke_fixture.py` is the first adopter — its report *is* a run manifest; new pipeline
+  tools should build their run evidence through `RunManifest`
+- `tests/test_run_manifest.py` keeps the builder, the schema file, and the first adopter in
+  agreement without requiring the jsonschema package
+
 ### Provider calls return a uniform, non-throwing ProviderResult (WS7)
 
 Reason:

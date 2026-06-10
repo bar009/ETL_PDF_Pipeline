@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Run Manifest",
+  "description": "The one small file every pipeline run leaves behind. Built by PDF_handle/prod/core/run_manifest.py.",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "run_id",
+    "tool",
+    "started_at",
+    "finished_at",
+    "duration_seconds",
+    "inputs",
+    "config",
+    "steps",
+    "counts",
+    "warnings",
+    "errors",
+    "outputs",
+    "provider_usage",
+    "ok"
+  ],
+  "properties": {
+    "manifest_version": { "const": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "tool": { "type": "string", "minLength": 1 },
+    "started_at": { "type": "string" },
+    "finished_at": { "type": "string" },
+    "duration_seconds": { "type": "number", "minimum": 0 },
+    "inputs": { "type": "object" },
+    "config": { "type": "object" },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "ok"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "ok": { "type": "boolean" },
+          "detail": { "type": "string" },
+          "counts": { "type": "object", "additionalProperties": { "type": "integer" } }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": ["steps", "steps_failed", "warnings", "errors", "outputs", "provider_calls"],
+      "additionalProperties": { "type": "integer" }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "errors": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } },
+    "provider_usage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "provider": { "type": ["string", "null"] },
+          "model": { "type": ["string", "null"] },
+          "transport": { "type": ["string", "null"] },
+          "usage_metadata": { "type": ["string", "null"] },
+          "duration_seconds": { "type": ["number", "null"] },
+          "error_kind": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "ok": { "type": "boolean" }
+  }
+}
