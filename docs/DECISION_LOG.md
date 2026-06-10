@@ -2,6 +2,24 @@
 
 ## 2026-06-11
 
+### Site roots resolve at call time, never at import or parser-build time (Phase 5)
+
+Reason:
+- the new `--help` smoke check exposed that `e2e.py`, 12 other prod CLIs, and the
+  `stage`/`apply`/`qa` steps resolved site roots eagerly — as argparse defaults or
+  module constants — so they crashed on a clean checkout even for `--help` or when an
+  explicit `--site-root` was passed
+- `guarded_merge_shadow.py` imported a prod module before its `sys.path` bootstrap
+
+Consequence:
+- site-root argparse defaults are `None` and resolve after parsing
+- `PDF_handle/tests/test_cli_smoke.py` runs `--help` against every prod CLI and step
+  wrapper, so the regression cannot return
+- five one-shot scripts pinned to past runs (`degree_root_preview`, `degree_root_write`,
+  `e1_new_sources_apply_review`, `e2_apply_review_rules`, `e2_new_sources_apply_review`)
+  are excluded by name and flagged as retirement candidates
+- `docs/CHECKS.md` is the canonical local check list; CI must run the same commands
+
 ### Legacy helpers collapse into re-export shells over prod (Phase 4)
 
 Reason:

@@ -6,13 +6,13 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from PDF_handle.prod.companion_contract import companion_candidate_degree, companion_candidate_slug, materialize_companion_payload
 REPO_ROOT = Path(__file__).resolve().parents[3]
 PDF_HANDLE_ROOT = REPO_ROOT / "PDF_handle"
 for candidate in (REPO_ROOT, PDF_HANDLE_ROOT):
     if str(candidate) not in sys.path:
         sys.path.insert(0, str(candidate))
 
+from PDF_handle.prod.companion_contract import companion_candidate_degree, companion_candidate_slug, materialize_companion_payload
 from PDF_handle.prod.core.io import ensure_dir, read_json, utc_timestamp, write_json
 from PDF_handle.prod.core.site_data import build_site_data_paths
 from PDF_handle.prod.core.site_roots import get_work_site_root
@@ -40,7 +40,7 @@ def build_parser() -> argparse.ArgumentParser:
             "and the current override layer. The simulation writes reports only and never mutates site data."
         )
     )
-    parser.add_argument("--site-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--site-root", type=Path, default=None)
     parser.add_argument(
         "--staging-dir",
         type=Path,
@@ -284,6 +284,8 @@ def summarize_decisions(decisions: list[dict[str, Any]]) -> dict[str, Any]:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     site_root = args.site_root.resolve()
     site_paths = build_site_data_paths(site_root)
     report_dir = ensure_dir(

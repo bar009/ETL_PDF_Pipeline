@@ -30,7 +30,7 @@ def build_parser() -> argparse.ArgumentParser:
             "backup and before/after artifact capture."
         )
     )
-    parser.add_argument("--site-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--site-root", type=Path, default=None)
     parser.add_argument("--preview-bundle", type=Path, required=True)
     parser.add_argument(
         "--expected-live-sha256",
@@ -122,6 +122,8 @@ def diff_summary(before: dict[str, Any], after: dict[str, Any]) -> dict[str, Any
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     site_root = args.site_root.resolve()
     if not site_root_is_sandbox_like(site_root):
         raise SystemExit("Preview override apply is sandbox/work only. Refusing to target a non-sandbox root.")

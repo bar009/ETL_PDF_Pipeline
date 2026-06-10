@@ -42,7 +42,6 @@ from PDF_handle.prod.schema import (
 
 BASE_DIR = PDF_HANDLE_ROOT
 DEFAULT_REPORT_ROOT = BASE_DIR / "qa_reports"
-DEFAULT_SITE_ROOT = get_live_site_root()
 DEFAULT_SITE_PORT = 4177
 MARKER_RE = re.compile(rf"<!--\s*({re.escape(APPEND_MARKER_PREFIX)}:[^>\s]+)\s*-->")
 ALLOWED_ACCESS_MODES = {"open", "password", "shared"}
@@ -76,7 +75,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Step 7: QA live site data and browser flows for a selected site root."
     )
-    parser.add_argument("--site-root", type=Path, default=DEFAULT_SITE_ROOT)
+    parser.add_argument("--site-root", type=Path, default=None,)
     parser.add_argument("--report-dir", type=Path, default=None)
     parser.add_argument("--mode", choices=["full", "data", "browser"], default="full")
     parser.add_argument("--base-url", default=None, help="Optional base URL. If omitted, Step 7 starts a local server.")
@@ -1251,6 +1250,8 @@ def sync_latest_report(report_dir: Path, latest_dir: Path) -> None:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if args.site_root is None:
+        args.site_root = get_live_site_root()
     site_paths = build_site_data_paths(args.site_root.resolve())
     site_report_root = ensure_dir((DEFAULT_REPORT_ROOT / site_paths["site_root"].name).resolve())
     report_dir = ensure_dir(

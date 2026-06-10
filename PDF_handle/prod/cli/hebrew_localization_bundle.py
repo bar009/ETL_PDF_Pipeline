@@ -58,7 +58,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     template = subparsers.add_parser("template", help="Generate a Hebrew localization review template.")
-    template.add_argument("--site-root", type=Path, default=get_work_site_root())
+    template.add_argument("--site-root", type=Path, default=None)
     template.add_argument("--report-root", type=Path, default=PDF_HANDLE_ROOT / "runs" / "post_canonical_localization")
     template.add_argument("--report-dir", type=Path, default=None)
     template.add_argument("--degree", action="append", default=[])
@@ -68,7 +68,7 @@ def build_parser() -> argparse.ArgumentParser:
         "autodraft",
         help="Generate Hebrew localization drafts into review artifacts only.",
     )
-    autodraft.add_argument("--site-root", type=Path, default=get_work_site_root())
+    autodraft.add_argument("--site-root", type=Path, default=None)
     autodraft.add_argument("--report-root", type=Path, default=PDF_HANDLE_ROOT / "runs" / "post_canonical_localization")
     autodraft.add_argument("--report-dir", type=Path, default=None)
     autodraft.add_argument("--bundle", type=Path, default=None)
@@ -593,6 +593,8 @@ def command_compile(args: argparse.Namespace) -> None:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     if args.command == "template":
         command_template(args)
         return

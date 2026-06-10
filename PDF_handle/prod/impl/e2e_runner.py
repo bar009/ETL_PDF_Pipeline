@@ -66,8 +66,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--pipeline-runs-root", type=Path, default=DEFAULT_PIPELINE_RUNS_ROOT)
     parser.add_argument("--qa-reports-root", type=Path, default=DEFAULT_QA_REPORTS_ROOT)
     parser.add_argument("--report-dir", type=Path, default=None, help="Optional explicit run report directory.")
-    parser.add_argument("--work-site-root", type=Path, default=get_work_site_root())
-    parser.add_argument("--live-site-root", type=Path, default=get_live_site_root())
+    # Site roots resolve after parsing, not as argparse defaults: resolving here
+    # raises in a checkout without configured site roots and breaks even --help.
+    parser.add_argument(
+        "--work-site-root", type=Path, default=None,
+        help="Defaults to the configured work site root.",
+    )
+    parser.add_argument(
+        "--live-site-root", type=Path, default=None,
+        help="Defaults to the configured live site root.",
+    )
     parser.add_argument("--provider-01-04", choices=["gemini", "dry-run"], default="gemini")
     parser.add_argument("--provider-05-07", choices=["gemini", "heuristic"], default="heuristic")
     parser.add_argument("--model", default="gemini-2.5-flash")
@@ -822,6 +830,10 @@ def main() -> None:
     if definition_defaults:
         parser.set_defaults(**definition_defaults)
     args = parser.parse_args(argv)
+    if args.work_site_root is None:
+        args.work_site_root = get_work_site_root()
+    if args.live_site_root is None:
+        args.live_site_root = get_live_site_root()
     if not args.source_book_name.strip():
         parser.error("--source-book-name is required unless provided by --run-definition")
     if (args.publish_work_snapshot or args.finalize_live_release) and not args.promote_live:
