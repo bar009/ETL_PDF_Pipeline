@@ -52,13 +52,7 @@ from PDF_handle.prod.steps.apply_support import (
 )
 
 BASE_DIR = PDF_HANDLE_ROOT
-DEFAULT_SITE_ROOT = get_live_site_root()
 DEFAULT_STAGING_DIR = BASE_DIR / "staged_injection"
-DEFAULT_SCHEMA_PATH = build_site_data_paths(DEFAULT_SITE_ROOT)["schema"]
-DEFAULT_LIBRARY_PATH = build_site_data_paths(DEFAULT_SITE_ROOT)["library"]
-DEFAULT_LEVEL1_PATH = build_site_data_paths(DEFAULT_SITE_ROOT)["level1"]
-DEFAULT_LEVEL2_PATH = build_site_data_paths(DEFAULT_SITE_ROOT)["level2"]
-DEFAULT_LEVEL3_PATH = build_site_data_paths(DEFAULT_SITE_ROOT)["level3"]
 SANDBOX_ROOT_MARKERS = ("\\sites\\work\\", "\\sandbox_sites\\", "/sites/work/", "/sandbox_sites/")
 
 # Recorded in the backup report when a live file did not exist before apply. Rollback
@@ -80,7 +74,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--site-root",
         type=Path,
-        default=DEFAULT_SITE_ROOT,
+        default=None,
         help="Target site root. Defaults to the configured live root. Individual degree-path flags override it.",
     )
     parser.add_argument("--schema", type=Path, default=None)
@@ -734,6 +728,8 @@ def write_rollback_plan_md(
 
 def main() -> None:
     args = build_parser().parse_args()
+    if args.site_root is None:
+        args.site_root = get_live_site_root()
     site_paths = build_site_data_paths(args.site_root.resolve())
     schema_path = args.schema.resolve() if args.schema else site_paths["schema"]
     overrides_path = args.overrides.resolve() if args.overrides else site_paths["overrides"]

@@ -62,7 +62,7 @@ def build_parser() -> argparse.ArgumentParser:
             "and canonical language carry-over risk."
         )
     )
-    parser.add_argument("--site-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--site-root", type=Path, default=None)
     parser.add_argument("--compare-to-root", type=Path, default=None)
     parser.add_argument(
         "--report-root",
@@ -243,6 +243,8 @@ def compute_readiness_status(summary: dict[str, Any]) -> tuple[str, list[str]]:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     site_root = args.site_root.resolve()
     report_dir = ensure_dir(
         args.report_dir.resolve()

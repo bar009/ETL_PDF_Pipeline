@@ -44,7 +44,7 @@ def build_parser() -> argparse.ArgumentParser:
             "unless --allow-dirty-seed is passed explicitly."
         )
     )
-    parser.add_argument("--shell-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--shell-root", type=Path, default=None)
     parser.add_argument("--governance-root", type=Path, default=None)
     parser.add_argument("--seed-root", type=Path, required=True)
     parser.add_argument("--compare-to-root", type=Path, default=None)
@@ -148,6 +148,8 @@ def target_root_is_empty(target_root: Path) -> bool:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "shell_root", None) is None:
+        args.shell_root = get_work_site_root()
     shell_root = args.shell_root.resolve()
     governance_root = args.governance_root.resolve() if args.governance_root else shell_root
     seed_root = args.seed_root.resolve()

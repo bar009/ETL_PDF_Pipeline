@@ -2,6 +2,87 @@
 
 ## 2026-06-11
 
+### CI runs the documented check list on every pull request (Phase 6)
+
+Reason:
+- the structure is only real if it is enforced; `docs/CHECKS.md` existed but nothing ran it
+  automatically
+
+Consequence:
+- `.github/workflows/checks.yml` runs the Python checks (compileall, import boundaries,
+  unittest suite, ignore-rules guard) and the React checks (npm ci/build/test) on every PR
+  and on pushes to `main`
+- `README.md` documents the local setup path, branch hygiene (protect `main`, require the
+  `checks` workflow), and a six-line new-work checklist
+- the stale `pytest` instruction in `README.md` is gone — the suite is stdlib `unittest`
+
+### Site roots resolve at call time, never at import or parser-build time (Phase 5)
+
+Reason:
+- the new `--help` smoke check exposed that `e2e.py`, 12 other prod CLIs, and the
+  `stage`/`apply`/`qa` steps resolved site roots eagerly — as argparse defaults or
+  module constants — so they crashed on a clean checkout even for `--help` or when an
+  explicit `--site-root` was passed
+- `guarded_merge_shadow.py` imported a prod module before its `sys.path` bootstrap
+
+Consequence:
+- site-root argparse defaults are `None` and resolve after parsing
+- `PDF_handle/tests/test_cli_smoke.py` runs `--help` against every prod CLI and step
+  wrapper, so the regression cannot return
+- five one-shot scripts pinned to past runs (`degree_root_preview`, `degree_root_write`,
+  `e1_new_sources_apply_review`, `e2_apply_review_rules`, `e2_new_sources_apply_review`)
+  are excluded by name and flagged as retirement candidates
+- `docs/CHECKS.md` is the canonical local check list; CI must run the same commands
+
+### Legacy helpers collapse into re-export shells over prod (Phase 4)
+
+Reason:
+- `workspace_paths.py` was a byte-for-byte duplicate of `prod/core/site_roots.py`
+  (including a second copy of the site-roots config defaults), and `pipeline_utils.py`
+  duplicated the prod `io`/`text`/`books`/`site_data` helpers
+- `pipeline_utils` resolved the live site root at import time, so every TOOLS script that
+  imported it crashed on import in this repo
+
+Consequence:
+- both files are now pure re-export shells over `PDF_handle.prod` — one implementation,
+  three historical import names (`stage5_utils` was already a shell)
+- `pipeline_utils.DEFAULT_SITE_ROOT` is removed; site roots resolve at call time
+- the historical atomic-write names map to the prod writers, which are always atomic
+- `tests/test_wrapper_thinness.py` now pins all three shells: prod-only imports, no logic,
+  and importable in a checkout without site data
+- known pre-existing drift left in place: some `TOOLS/validation/*` scripts import `common`
+  from its pre-migration location instead of `TOOLS/lib/common.py`
+
+### The React adapter enforces its declared missing-field policy (Phase 3)
+
+Reason:
+- `adapterContract.js` declared `source` a hard-fail field and `status` display-fallback-only,
+  but `contentAdapter.js` rendered blanks for both and passed array `source_notes` through as
+  a non-string — the contract was documentation, not behavior
+
+Consequence:
+- `loadContent()` now drops entries with no source provenance, flattens array `source_notes`
+  to display text, and falls back to the pipeline-default draft status label
+- `collectRelationFindings()` implements the report-only relation policy
+- `src/lib/adapterBoundary.test.js` pins missing fields, unknown routes, locale direction,
+  and relation references, so `npm test` proves the boundary instead of trusting it
+
+### Data states get committed fixtures and contract tests (Phase 2)
+
+Reason:
+- the roadmap requires that a newcomer can tell source, staging, canonical, runtime, and
+  evidence apart, and that a staged artifact is never treated as site runtime
+
+Consequence:
+- `data/schemas/content.schema.json` is the committed contract home for runtime degree data
+- `data/fixtures/runtime_site_root/` is the smallest valid runtime site root;
+  `data/fixtures/staging_minimal/` is the smallest staged review artifact
+- `PDF_handle/tests/test_data_state_contracts.py` fails if a staging dir satisfies the
+  site-root contract, if the fixture schema copy drifts from the contract home, or if the
+  staged fixture stops applying cleanly to the runtime fixture
+- the legacy fallback defaults in `prod/core/site_roots.py` still name old-workspace roots;
+  re-pointing them stays deferred until a real site root exists in this repo
+
 ### The active control surface is `docs/`, not the old repo's `management/`
 
 Reason:

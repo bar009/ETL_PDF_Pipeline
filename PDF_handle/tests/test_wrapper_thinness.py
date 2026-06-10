@@ -41,7 +41,14 @@ ENTRYPOINT_WRAPPERS = (
     PDF_HANDLE / "TOOLS" / "runners" / "run_new_material_e2e.py",
 )
 
-REEXPORT_SHELL = PDF_HANDLE / "stage5_utils.py"
+REEXPORT_SHELLS = (
+    PDF_HANDLE / "stage5_utils.py",
+    PDF_HANDLE / "pipeline_utils.py",
+    PDF_HANDLE / "workspace_paths.py",
+)
+
+# A re-export shell may bootstrap sys.path (sys, pathlib) before importing prod.
+SHELL_ALLOWED_MODULES = {"__future__", "sys", "pathlib"}
 
 
 def _parse(path: Path) -> ast.Module:
@@ -88,31 +95,48 @@ class TestEntrypointWrappersStayThin(unittest.TestCase):
             )
 
 
-class TestStage5UtilsIsPureReexport(unittest.TestCase):
-    def test_imports_only_from_prod(self) -> None:
-        tree = _parse(REEXPORT_SHELL)
-        bad: list[str] = []
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                bad.extend(alias.name for alias in node.names)
-            elif isinstance(node, ast.ImportFrom):
-                module = node.module or ""
-                if module != "__future__" and not module.startswith("PDF_handle.prod"):
-                    bad.append(module)
-        self.assertEqual(
-            bad,
-            [],
-            f"stage5_utils.py must only re-export from PDF_handle.prod; found: {bad}",
-        )
+class TestReexportShellsStayPure(unittest.TestCase):
+    def test_shells_import_only_prod_and_bootstrap_modules(self) -> None:
+        for path in REEXPORT_SHELLS:
+            tree = _parse(path)
+            bad: list[str] = []
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Import):
+                    bad.extend(
+                        alias.name
+                        for alias in node.names
+                        if alias.name not in SHELL_ALLOWED_MODULES
+                    )
+                elif isinstance(node, ast.ImportFrom):
+                    module = node.module or ""
+                    if module not in SHELL_ALLOWED_MODULES and not module.startswith(
+                        "PDF_handle.prod"
+                    ):
+                        bad.append(module)
+            self.assertEqual(
+                bad,
+                [],
+                f"{path.name} must only re-export from PDF_handle.prod; found: {bad}",
+            )
 
-    def test_defines_no_logic(self) -> None:
-        tree = _parse(REEXPORT_SHELL)
-        offenders = [
-            f"stage5_utils.py:{node.lineno} defines {type(node).__name__}"
-            for node in ast.walk(tree)
-            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))
-        ]
-        self.assertEqual(offenders, [], "\n".join(offenders))
+    def test_shells_define_no_logic(self) -> None:
+        for path in REEXPORT_SHELLS:
+            tree = _parse(path)
+            offenders = [
+                f"{path.name}:{node.lineno} defines {type(node).__name__}"
+                for node in ast.walk(tree)
+                if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))
+            ]
+            self.assertEqual(offenders, [], "\n".join(offenders))
+
+    def test_shells_import_successfully(self) -> None:
+        # pipeline_utils used to crash at import time in a checkout without a
+        # live site root; the shells must stay importable everywhere.
+        import importlib
+
+        for name in ("stage5_utils", "pipeline_utils", "workspace_paths"):
+            module = importlib.import_module(name)
+            self.assertIsNotNone(module)
 
 
 if __name__ == "__main__":
