@@ -1,5 +1,42 @@
 # Workspace Decision Log
 
+## 2026-06-11
+
+### Phase 0 of `docs/STRUCTURE_ROADMAP.md` is verified complete
+
+Reason:
+- `git check-ignore` confirms `.env`, raw data, generated data, and outputs are ignored
+- `python PDF_handle/prod/check_import_boundaries.py` passes
+- `python -m compileall -q PDF_handle/prod PDF_handle/tests` passes
+- `python -m unittest discover -s PDF_handle/tests` passes
+
+Consequence:
+- Phase 1 (clarify code homes) is now the active phase, starting in `PDF_handle/prod/`
+
+### `PDF_handle/prod/README.md` is the canonical code-homes note
+
+Reason:
+- the migrated copy still pointed at `management/*.md` files that deliberately stayed in the
+  old repo, so the clean repo had no working code-homes documentation
+
+Consequence:
+- the "Where New Code Goes" table in `PDF_handle/prod/README.md` is where contributors look
+  to place a new step, CLI command, helper, provider, schema, test, or prompt
+- the wrapper-to-prod map lives in the same file, replacing the archived
+  `management/WRAPPER_CLASSIFICATION_V1.md` family
+
+### Wrapper thinness and prod import boundaries are enforced by tests
+
+Reason:
+- the roadmap requires boundary tests before any broad folder move, and the import check was
+  only a standalone script that nothing forced anyone to run
+
+Consequence:
+- `PDF_handle/tests/test_import_boundaries.py` runs the import-boundary policy inside the
+  unittest suite
+- `PDF_handle/tests/test_wrapper_thinness.py` fails if a compatibility wrapper grows its own
+  functions/classes or stops delegating to `PDF_handle.prod`
+
 ## 2026-04-14
 
 ### `prod/` is the canonical Python ETL execution surface

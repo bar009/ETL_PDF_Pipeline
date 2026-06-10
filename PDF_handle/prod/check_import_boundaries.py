@@ -8,7 +8,8 @@ Policy summary:
 - ``from X import Y`` is checked both as ``X`` and as ``X.Y`` so parent-package
   imports cannot smuggle a banned child module past the guard
 
-The human-readable policy note lives in ``management/IMPORT_POLICY_V1.md``.
+The human-readable policy note lives in ``PDF_handle/prod/README.md``
+(section "Import Guardrail").
 """
 
 from __future__ import annotations
