@@ -81,3 +81,12 @@ Initial clean-start application:
 - React prototype source is included
 - large copied `public/data/*.json` files were removed
 - `public/data/README.md` documents the expected runtime filenames
+
+## Roadmap For The Next Pass
+
+The structural execution plan now lives in:
+
+- `docs/STRUCTURE_ROADMAP.md`
+
+Use that document to decide the next refactor order before moving folders or changing ownership
+again.

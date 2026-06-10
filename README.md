@@ -67,4 +67,5 @@ Read:
 
 - `docs/RULES.md`
 - `docs/DATA_CONTRACT.md`
+- `docs/STRUCTURE_ROADMAP.md`
 - `MIGRATION_MANIFEST.md`
