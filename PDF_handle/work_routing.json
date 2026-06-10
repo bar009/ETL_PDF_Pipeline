@@ -1,0 +1,81 @@
+{
+  "library_category": {
+    "id": "etl_imports",
+    "title": "ייבואי PDF",
+    "symbol": "🧱",
+    "description": "ספרים ופרקים שיובאו ישירות מ-PDF בתהליך ETL staged."
+  },
+  "works": [
+    {
+      "source_book_name": "1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition",
+      "work_id": "blue-lodge-ritual-reference-guide-2021",
+      "staging_dir": "blue-lodge",
+      "work_title": "Blue Lodge Ritual Reference Guide",
+      "primary_degree": "multi",
+      "source_kind": "ritual-reference",
+      "language": "en",
+      "applies_to_degrees": ["library", "level1", "level2"],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "variant",
+      "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "commentary_on_the_second_Degree",
+      "work_id": "commentary-on-the-second-degree",
+      "staging_dir": "commentary",
+      "work_title": "Commentary on the Second Degree",
+      "primary_degree": "level2",
+      "source_kind": "degree-commentary",
+      "source_genre": "enrichment_source",
+      "language": "en",
+      "applies_to_degrees": ["library", "level2"],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "interpretive",
+      "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "Deeper meaning of FC Degree",
+      "work_id": "deeper-meaning-of-fc-degree",
+      "staging_dir": "fc",
+      "work_title": "The Deeper Meaning of the FC Degree",
+      "primary_degree": "level2",
+      "source_kind": "interpretive-lecture",
+      "language": "en",
+      "applies_to_degrees": ["library", "level2"],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "interpretive",
+      "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "Duncan's Masonic Ritual and Monitor of Freemasonry complete 1866 3rd ed",
+      "work_id": "duncans-ritual-monitor-1866",
+      "staging_dir": "duncan",
+      "work_title": "Duncan's Masonic Ritual and Monitor of Freemasonry",
+      "primary_degree": "multi",
+      "source_kind": "ritual-monitor",
+      "language": "en",
+      "applies_to_degrees": ["library", "level1", "level2"],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "variant",
+      "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "libraryoffreemas02goul",
+      "work_id": "library-of-freemasonry-volume-2",
+      "staging_dir": "library-v2",
+      "work_title": "Library of Freemasonry, Volume 2",
+      "primary_degree": "multi",
+      "source_kind": "reference-compendium",
+      "language": "en",
+      "applies_to_degrees": ["library", "level1", "level2"],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "interpretive",
+      "library_category": "etl_imports"
+    }
+  ]
+}

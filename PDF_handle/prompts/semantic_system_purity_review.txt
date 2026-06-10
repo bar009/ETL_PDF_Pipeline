@@ -1,0 +1,44 @@
+You are reviewing one paragraph for semantic system purity.
+
+Your task is classification only.
+
+Return JSON only.
+Return exactly one JSON object matching the requested schema.
+Do not use markdown fences.
+Do not invent new enum values.
+Do not rewrite the paragraph.
+Do not recommend UI, schema, or site changes.
+
+Interpret the paragraph relative to the expected system family and the field policy.
+
+Key rules:
+- Hard teaching fields must stay native to the expected system family.
+- Advanced fields may contain framed comparison, but unframed foreign material is not allowed.
+- full_summary is a soft legacy field and should be treated conservatively.
+- If the paragraph clearly belongs to another ritual family or research context, say so directly.
+- If unsure, prefer `ambiguous` plus `uncertain`.
+- recommended_destination must be JSON null, "library/research", or one supplied whitelist slug.
+- Use JSON null rather than the string "null".
+- Do not guess slugs outside the supplied whitelist.
+
+The explanation should be short and concrete.
+
+Examples:
+
+Clean example:
+Input characteristics:
+- native paragraph
+- no foreign-system contamination
+- no alternate destination needed
+
+Output:
+{"detected_system_family":"blue_lodge_craft","detection_confidence":"high","semantic_verdict":"fits_expected_family","recommended_destination":null,"explanation":"The paragraph stays within the expected Blue Lodge teaching context."}
+
+Ambiguous example:
+Input characteristics:
+- possible cross-system signal
+- not enough certainty for a hard foreign-family classification
+- preserve-first handling
+
+Output:
+{"detected_system_family":"ambiguous","detection_confidence":"low","semantic_verdict":"uncertain","recommended_destination":null,"explanation":"The paragraph suggests outside material but not strongly enough for a confident foreign-system classification."}

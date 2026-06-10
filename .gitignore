@@ -1,0 +1,94 @@
+# Local settings and editors
+.vscode/
+.idea/
+.claude/
+.playwright-cli/
+.worktrees/
+.obsidian/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# OS noise
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp
+
+# Generated output and archives
+output/
+outputs/
+exports/
+test-results/
+published_sites/
+sandbox_sites/
+*.zip
+
+# Data policy
+data/raw/
+data/extracted/
+data/chunks/
+data/staging/
+data/generated/
+data/canonical/
+data/site/
+data/**/*.jsonl
+data/**/*.sqlite
+data/**/*.db
+!data/samples/
+!data/samples/**
+!data/schemas/
+!data/schemas/**
+!data/fixtures/
+!data/fixtures/**
+*.pdf
+*.db
+*.sqlite
+
+# Generated ETL artifacts
+PDF_handle/PDF_files/
+PDF_handle/extracted_books/
+PDF_handle/chunked_books/
+PDF_handle/transformed_books/
+PDF_handle/consolidated_books/
+PDF_handle/merge_backups/
+PDF_handle/pipeline_runs/
+PDF_handle/runs/
+PDF_handle/staged_injection/
+PDF_handle/staged_runs/
+PDF_handle/qa_reports/
+PDF_handle/validation_staging/
+PDF_handle/validation_staging2/
+
+# Historical copies and legacy roots
+0.1/
+0.2/
+0.3/
+0.3-copy/
+1.0/
+archive/
