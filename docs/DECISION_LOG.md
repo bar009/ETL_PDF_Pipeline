@@ -1,5 +1,21 @@
 # Workspace Decision Log
 
+## 2026-06-11 (systemic plan)
+
+### The offline fixture smoke is the canonical "is the ETL path alive" check (WS2)
+
+Reason:
+- `--help` smoke checks prove entrypoints parse, but not that staging→apply→runtime works;
+  the systemic plan requires a real minimal ETL path with no PDFs and no providers
+
+Consequence:
+- `PDF_handle/prod/cli/smoke_fixture.py` runs the real merge layer over the committed
+  fixtures: site-root contract, pre-validation, patch apply, idempotent re-apply,
+  provenance marker, post-validation, atomic write round-trip
+- it runs in the unittest suite (`test_smoke_fixture.py`) and as a dedicated CI step after
+  the unit tests
+- `docs/CHECKS.md` lists it as part of the canonical check list
+
 ## 2026-06-11
 
 ### CI runs the documented check list on every pull request (Phase 6)
