@@ -2,6 +2,24 @@
 
 ## 2026-06-11
 
+### The active control surface is `docs/`, not the old repo's `management/`
+
+Reason:
+- `AGENTS.md`, `PDF_handle/AGENTS.md`, `docs/REPO_LAYOUT.md`, and other migrated guidance
+  still pointed at `management/*` files and old-workspace paths (`0.3`, `paperclip-master/`)
+  that deliberately stayed in the old repo, including a claim that canonical pipeline logic
+  lives in the root `step_01..07.py` scripts
+
+Consequence:
+- `docs/STRUCTURE_ROADMAP.md` is the active plan; `docs/DECISION_LOG.md` records lasting
+  decisions; `management/` is not recreated
+- both AGENTS files and `docs/REPO_LAYOUT.md` are re-baselined to describe this repo
+- `PDF_handle/WORKFLOW.md` carries a status note marking its step commands as compatibility
+  wrappers and its `0.3` site-root references as historical
+- known remaining stale pointers: `.agents/skills/knowledge-mode-page-design` and
+  `.agents/skills/hebrew-rtl-site-redesign` still reference `management/ui_research_*`
+  notes that only exist in the old repo
+
 ### Phase 0 of `docs/STRUCTURE_ROADMAP.md` is verified complete
 
 Reason:

@@ -1,7 +1,9 @@
 # Codex Guidance Hardening
 
 Note:
-- `management/` owns the active operational control state.
+- The old workspace's `management/` control surface was not migrated to this repo.
+  The active plan lives in `docs/STRUCTURE_ROADMAP.md`; lasting decisions live in
+  `docs/DECISION_LOG.md`.
 - This file remains the enduring guidance-quality reference and hardening policy doc.
 
 Checklist and backlog for turning the current guidance layer into an official-grade Codex setup.

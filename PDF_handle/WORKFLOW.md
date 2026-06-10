@@ -1,5 +1,12 @@
 # PDF Knowledge Pipeline
 
+> Status note (2026-06-11): the step commands below still work, but they run through
+> compatibility wrappers. The canonical implementation and preferred CLI live in
+> `PDF_handle/prod/` — see `PDF_handle/prod/README.md` for code homes and the wrapper map.
+> References to the `0.3` site root are historical: this repo contains no live site root,
+> so pass `--site-root` explicitly. The output directories named below are generated
+> evidence and gitignored.
+
 This folder now contains a repeatable seven-step pipeline. Each step writes its own output directory so you can rerun one stage without redoing everything else.
 
 ## Directory Layout
