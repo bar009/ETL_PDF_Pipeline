@@ -17,6 +17,7 @@ EXPECTED_STEPS = [
     "site_root_contract",
     "pre_state_valid",
     "staged_operations_present",
+    "operations_approved",
     "apply_is_idempotent",
     "provenance_marker_present",
     "merged_state_valid",

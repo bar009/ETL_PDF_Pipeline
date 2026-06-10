@@ -2,6 +2,21 @@
 
 ## 2026-06-11 (systemic plan)
 
+### Staged content crosses to runtime only through explicit review states (WS9)
+
+Reason:
+- nothing structural separated "the AI suggested it" from "it entered the canon"; the
+  approval selectors in Step 6 are opt-in flags, not a state model
+
+Consequence:
+- `prod/schema/review_states.py` defines suggested → reviewed → approved → published with
+  rejected as terminal; illegal transitions raise
+- new staged operations are stamped `suggested` by `build_degree_patch_operation`
+- `assert_operations_approved` is the staging→runtime door: only `approved` merges; legacy
+  operations without the field need `allow_unreviewed_legacy=True` and produce warnings
+- the offline smoke enforces the door; the staging fixture is committed as `approved`
+- the workflow contract lives in `PDF_handle/docs/REVIEW_WORKFLOW.md`
+
 ### Every run leaves one canonical run_manifest.json (WS8)
 
 Reason:

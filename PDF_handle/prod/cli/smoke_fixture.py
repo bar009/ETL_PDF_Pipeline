@@ -42,6 +42,7 @@ from PDF_handle.prod.schema.data import (
     serialize_degree_data,
 )
 from PDF_handle.prod.schema.patches import apply_degree_patches
+from PDF_handle.prod.schema.review_states import ReviewBoundaryError, assert_operations_approved
 
 RUNTIME_FIXTURE = REPO_ROOT / "data" / "fixtures" / "runtime_site_root"
 STAGING_FIXTURE = REPO_ROOT / "data" / "fixtures" / "staging_minimal"
@@ -82,6 +83,13 @@ def run_smoke() -> dict[str, Any]:
         patch_payload = read_json(STAGING_FIXTURE / "level1.patch.json")
         operations = patch_payload.get("operations", [])
         if not step("staged_operations_present", bool(operations), "staging fixture has no operations"):
+            return manifest.to_dict()
+
+        try:
+            assert_operations_approved(operations)
+            step("operations_approved", True)
+        except ReviewBoundaryError as exc:
+            step("operations_approved", False, str(exc))
             return manifest.to_dict()
 
         merged = apply_degree_patches(degree_data, operations)

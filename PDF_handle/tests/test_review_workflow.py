@@ -1,0 +1,114 @@
+"""The review workflow boundary (WS9): suggestion never equals canon."""
+
+from __future__ import annotations
+
+import json
+import sys
+import unittest
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+for _p in (str(REPO_ROOT), str(REPO_ROOT / "PDF_handle")):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+from PDF_handle.prod.schema.patches import build_degree_patch_operation
+from PDF_handle.prod.schema.review_states import (
+    ALLOWED_TRANSITIONS,
+    REVIEW_STATES,
+    ReviewBoundaryError,
+    assert_operations_approved,
+    transition,
+    validate_transition,
+)
+
+STAGING_PATCH = REPO_ROOT / "data" / "fixtures" / "staging_minimal" / "level1.patch.json"
+
+
+def _operation(state: str | None) -> dict:
+    op = {"slug": "some-entry", "marker_id": "PDF_STAGE5:w:s"}
+    if state is not None:
+        op["review_state"] = state
+    return op
+
+
+class TestTransitionMatrix(unittest.TestCase):
+    def test_the_happy_path(self) -> None:
+        op = _operation("suggested")
+        for target in ("reviewed", "approved", "published"):
+            transition(op, target)
+        self.assertEqual(op["review_state"], "published")
+
+    def test_every_forbidden_transition_raises(self) -> None:
+        for current in REVIEW_STATES:
+            for target in REVIEW_STATES:
+                if target in ALLOWED_TRANSITIONS[current]:
+                    continue
+                with self.subTest(current=current, target=target):
+                    with self.assertRaises(ReviewBoundaryError):
+                        validate_transition(current, target)
+
+    def test_terminal_states_have_no_exits(self) -> None:
+        self.assertEqual(ALLOWED_TRANSITIONS["published"], frozenset())
+        self.assertEqual(ALLOWED_TRANSITIONS["rejected"], frozenset())
+
+    def test_unknown_states_are_rejected(self) -> None:
+        with self.assertRaises(ReviewBoundaryError):
+            validate_transition("suggested", "shipped")
+        with self.assertRaises(ReviewBoundaryError):
+            validate_transition("draft", "approved")
+
+
+class TestStagingToRuntimeDoor(unittest.TestCase):
+    def test_approved_operations_pass(self) -> None:
+        self.assertEqual(assert_operations_approved([_operation("approved")]), [])
+
+    def test_every_non_approved_state_is_blocked(self) -> None:
+        for state in ("suggested", "reviewed", "rejected", "published", "nonsense"):
+            with self.subTest(state=state):
+                with self.assertRaises(ReviewBoundaryError):
+                    assert_operations_approved([_operation(state)])
+
+    def test_legacy_operations_need_the_explicit_flag(self) -> None:
+        legacy = _operation(None)
+        with self.assertRaises(ReviewBoundaryError):
+            assert_operations_approved([legacy])
+        warnings = assert_operations_approved([legacy], allow_unreviewed_legacy=True)
+        self.assertEqual(len(warnings), 1)
+        self.assertIn("legacy", warnings[0])
+
+    def test_one_blocked_operation_blocks_the_batch(self) -> None:
+        batch = [_operation("approved"), _operation("suggested")]
+        with self.assertRaises(ReviewBoundaryError):
+            assert_operations_approved(batch)
+
+
+class TestStateStamping(unittest.TestCase):
+    def test_new_staged_operations_are_suggestions(self) -> None:
+        op = build_degree_patch_operation(
+            target_slug="t",
+            target_degree="level1",
+            work_id="w",
+            work_title="W",
+            section_id="s",
+            section_title="S",
+            chapter_slug="c",
+            chapter_degree="library",
+            source_notes=["note"],
+            section_summary_he="תוכן",
+            practical_elements_he=[],
+            symbolic_meaning_he="",
+            candidate_lesson_he="",
+            tradition_notes_he=[],
+            caution_notes_he=[],
+        )
+        self.assertEqual(op["review_state"], "suggested")
+
+    def test_the_committed_staging_fixture_is_approved(self) -> None:
+        payload = json.loads(STAGING_PATCH.read_text(encoding="utf-8"))
+        for op in payload["operations"]:
+            self.assertEqual(op["review_state"], "approved")
+
+
+if __name__ == "__main__":
+    unittest.main()

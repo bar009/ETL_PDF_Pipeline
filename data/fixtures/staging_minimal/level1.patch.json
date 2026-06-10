@@ -8,6 +8,7 @@
       "work_id": "fixture-work",
       "section_id": "section-001",
       "marker_id": "PDF_STAGE5:fixture-work:section-001",
+      "review_state": "approved",
       "changes": {
         "full_summary_block": "### העשרה מתוך Fixture Work\nקטע מקור: Fixture Section\n\nתוכן העשרה מינימלי עבור בדיקות חוזה של שכבת ההצבה.",
         "practical_elements": [
