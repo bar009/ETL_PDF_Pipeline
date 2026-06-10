@@ -44,7 +44,7 @@ def build_parser() -> argparse.ArgumentParser:
             "It checks paths, site data, staged discovery quality, and operational resume signals."
         )
     )
-    parser.add_argument("--site-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--site-root", type=Path, default=None)
     parser.add_argument("--run-root", type=Path, default=None)
     parser.add_argument("--pdf-dir", type=Path, default=PDF_HANDLE_ROOT / "PDF_files")
     parser.add_argument("--routing-config", type=Path, default=PDF_HANDLE_ROOT / "work_routing.json")
@@ -532,6 +532,8 @@ def render_markdown(report: dict[str, Any]) -> str:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     output_dir = ensure_dir(
         args.report_dir.resolve()
         if args.report_dir

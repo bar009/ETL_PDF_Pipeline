@@ -36,7 +36,7 @@ def build_parser() -> argparse.ArgumentParser:
             "override violations without mutating the live override file."
         )
     )
-    parser.add_argument("--site-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--site-root", type=Path, default=None)
     parser.add_argument(
         "--report-root",
         type=Path,
@@ -180,6 +180,8 @@ def summarize_bundle(bundle: dict[str, Any]) -> dict[str, Any]:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     site_root = args.site_root.resolve()
     site_paths = build_site_data_paths(site_root)
     report_dir = ensure_dir(

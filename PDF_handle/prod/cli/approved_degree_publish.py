@@ -49,7 +49,7 @@ def build_parser() -> argparse.ArgumentParser:
         )
     )
     parser.add_argument("--approved-input", type=Path, required=True)
-    parser.add_argument("--site-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--site-root", type=Path, default=None)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--mode", choices=["sanity", "preview", "apply"], default="sanity")
     parser.add_argument("--allow-non-empty-degree-files", action="store_true")
@@ -442,6 +442,8 @@ def render_summary(report: dict[str, Any]) -> str:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     site_root = args.site_root.resolve()
     output_dir = ensure_dir(args.output_dir.resolve())
     site_paths = build_site_data_paths(site_root)

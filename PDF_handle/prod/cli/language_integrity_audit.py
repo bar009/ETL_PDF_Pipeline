@@ -27,7 +27,7 @@ def build_parser() -> argparse.ArgumentParser:
             "and optional staged Step 5 artifacts."
         )
     )
-    parser.add_argument("--site-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--site-root", type=Path, default=None)
     parser.add_argument("--staging-dir", type=Path, default=None, help="Optional staged Step 5 artifact directory.")
     parser.add_argument(
         "--report-root",
@@ -69,6 +69,8 @@ def load_companion_candidates(staging_dir: Path | None) -> list[dict[str, Any]]:
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     site_root = args.site_root.resolve()
     site_paths = build_site_data_paths(site_root)
     report_dir = ensure_dir(
