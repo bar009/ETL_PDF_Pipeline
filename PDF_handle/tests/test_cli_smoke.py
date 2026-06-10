@@ -6,9 +6,10 @@ proof: it fails when an entrypoint breaks at import time or resolves site
 roots/run evidence eagerly (both have happened — see the decision log for
 2026-06-11).
 
-Scripts in ``ONE_SHOT_SCRIPTS`` are pinned to past operational runs, take no
-arguments, and execute their job on any invocation; they are excluded here and
-flagged for retirement instead.
+Scripts in ``ONE_SHOT_SCRIPTS`` would be pinned to past operational runs and
+excluded here. The original five were retired in WS11
+(see ``PDF_handle/docs/WRAPPER_RETIREMENT.md``); the list stays so a future
+one-shot has a documented, test-enforced home.
 """
 
 from __future__ import annotations
@@ -22,13 +23,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 PDF_HANDLE = REPO_ROOT / "PDF_handle"
 PROD_CLI = PDF_HANDLE / "prod" / "cli"
 
-ONE_SHOT_SCRIPTS = {
-    "degree_root_preview.py",
-    "degree_root_write.py",
-    "e1_new_sources_apply_review.py",
-    "e2_apply_review_rules.py",
-    "e2_new_sources_apply_review.py",
-}
+ONE_SHOT_SCRIPTS: set[str] = set()
 
 WRAPPER_ENTRYPOINTS = (
     PDF_HANDLE / "step_01_extract_pdfs.py",

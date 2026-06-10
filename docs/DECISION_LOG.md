@@ -2,6 +2,20 @@
 
 ## 2026-06-11 (systemic plan)
 
+### The five run-pinned one-shot CLIs are deleted (WS11)
+
+Reason:
+- `degree_root_preview/write` and the `e1/e2_*_apply_review` scripts were pinned to
+  old-workspace data (`sites/work/v0.5`, `runs/v21r1-...`), crashed on any invocation in
+  this repo, and their one-time jobs were already executed in the old workspace
+
+Consequence:
+- fewer entrypoints; no working operator flow is affected
+- `PDF_handle/docs/WRAPPER_RETIREMENT.md` is the canonical keep/deprecated/deleted map with
+  a named reason per retained wrapper
+- the smoke test's one-shot exclusion list is empty and test-enforced, so a new one-shot
+  script must be deliberately registered
+
 ### The frontend adapter contract names this repo and runs in npm test (WS10)
 
 Reason:
