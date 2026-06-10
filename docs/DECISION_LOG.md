@@ -2,6 +2,18 @@
 
 ## 2026-06-11 (systemic plan)
 
+### The stage→apply path has a dedicated idempotency harness (WS6)
+
+Reason:
+- merge idempotency was guarded only at the patch layer; the fixture-driven end state
+  (same input twice → same answer) had no named invariants
+
+Consequence:
+- `tests/test_idempotency_harness.py` pins, separately: normalization idempotency,
+  determinism across independent runs, no duplicate marked blocks on re-apply, stable
+  slugs/entry count, and byte-stable merge output
+- a regression in any one invariant fails with a message naming exactly what broke
+
 ### The data contract is proven by failure too (WS5)
 
 Reason:
