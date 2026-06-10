@@ -2,6 +2,19 @@
 
 ## 2026-06-11 (systemic plan)
 
+### A release is a frozen snapshot with a passing gate report inside it (WS12)
+
+Reason:
+- "publish" had tooling (M6/M11 JS lanes) but no definition: what counts as a release,
+  where it lives, and how to roll back were undocumented
+
+Consequence:
+- `docs/RELEASE_MODEL.md` defines the flow (staging to work to live to published snapshot),
+  the release contract (site root + passing strict gate report + run manifest inside the
+  snapshot), the naming scheme, and the re-point-don't-edit rollback procedure
+- a Python `publish_snapshot.py` CLI is the named open item; until then the JS lane owns
+  snapshot creation through `prod/external/js_lane.py`
+
 ### The five run-pinned one-shot CLIs are deleted (WS11)
 
 Reason:
