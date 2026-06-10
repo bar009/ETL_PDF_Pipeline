@@ -2,6 +2,20 @@
 
 ## 2026-06-11 (systemic plan)
 
+### Release publishing is owned by a Python gate-first CLI
+
+Reason:
+- WS12 defined a release as a frozen snapshot with a passing gate report and run manifest,
+  but snapshot creation still depended on older JS-lane or manual-copy procedures
+
+Consequence:
+- `PDF_handle/prod/cli/publish_snapshot.py` is the canonical Python publisher: it runs
+  `validate_runtime.py --require-complete --strict` before copying, refuses to overwrite an
+  existing snapshot, writes `release_gate_report.json`, and writes `run_manifest.json`
+  inside the snapshot
+- `PDF_handle/tests/test_publish_snapshot.py` proves successful publish, failed-gate
+  refusal, and immutable snapshot behavior without private data or providers
+
 ### A release is a frozen snapshot with a passing gate report inside it (WS12)
 
 Reason:

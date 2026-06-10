@@ -13,11 +13,18 @@ python -m unittest discover -s PDF_handle/tests
 python PDF_handle/prod/cli/smoke_fixture.py
 ```
 
-`validate_runtime.py` is the single validation gate for site data — run it before treating
+`validate_runtime.py` is the single validation gate for site data - run it before treating
 any site root as publishable:
 
 ```powershell
 python PDF_handle/prod/cli/validate_runtime.py --site-root <path> --require-complete --strict
+```
+
+`publish_snapshot.py` is the release publisher. It runs the strict gate before copying and
+writes `release_gate_report.json` plus `run_manifest.json` inside the published snapshot:
+
+```powershell
+python PDF_handle/prod/cli/publish_snapshot.py --source-site-root <live-root> --published-root <published-root> --release-id <release-id>
 ```
 
 `smoke_fixture.py` is the offline ETL smoke: it copies the runtime fixture to a temp site

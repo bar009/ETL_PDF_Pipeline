@@ -38,19 +38,18 @@ If the gate report is missing or failing, the directory is a copy, not a release
 
 Snapshot directories are named `<release-id>-<label>-<YYYY-MM-DD>[-qualifier]`, e.g.
 `2.0-live-2026-06-11`. The JS lane already implements this
-(`buildPublishedSnapshotName` in `PDF_handle/TOOLS/lib/site_roots.js`); a Python publish
-CLI should reuse the same scheme.
+(`buildPublishedSnapshotName` in `PDF_handle/TOOLS/lib/site_roots.js`); the Python publish
+CLI uses the same scheme.
 
-## Publish Procedure (current tooling)
+## Publish Procedure
 
 1. run the gate on the work root:
    `python PDF_handle/prod/cli/validate_runtime.py --site-root <work-root> --require-complete --strict`
 2. promote work to live through the existing flow (`prod/cli/e2e.py --promote-live
    --review-approved`, or a reviewed manual copy)
-3. snapshot live to published via the JS lane (M6/M11 tools through
-   `prod/external/js_lane.py`), or a plain copy into
-   `sites/published/<release-id>-live-<date>/`
-4. run the gate **again on the snapshot** and store the report inside it
+3. snapshot live to published:
+   `python PDF_handle/prod/cli/publish_snapshot.py --source-site-root <live-root> --published-root <published-root> --release-id <release-id>`
+4. the publish CLI runs the gate **again on the snapshot** and stores the report inside it
 5. mark the merged staged operations `published` (see
    `PDF_handle/docs/REVIEW_WORKFLOW.md`)
 
@@ -67,8 +66,12 @@ Snapshots are immutable; rollback is re-pointing, not editing:
 Never edit a published snapshot in place - fix forward in the work root and publish a new
 snapshot.
 
-## Still Open
+## Python Publish CLI
 
-- a dedicated `prod/cli/publish_snapshot.py` that performs steps 3-4 in Python (today the
-  JS lane owns snapshot creation); when it lands it must emit a `run_manifest.json` and
-  refuse to publish without a passing gate report
+`prod/cli/publish_snapshot.py` performs steps 3-4 in Python. It is offline/local-first:
+
+- it refuses to publish unless the source root passes `validate_runtime.py --require-complete --strict`
+- it copies the source site root to the published snapshot directory
+- it writes `release_gate_report.json` inside the snapshot
+- it writes `run_manifest.json` inside the snapshot
+- it refuses to overwrite an existing snapshot directory
