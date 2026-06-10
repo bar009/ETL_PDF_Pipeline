@@ -101,7 +101,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--site-root",
         type=Path,
-        default=get_work_site_root(),
+        default=None,
         help="Root of the site directory containing data/encyclopedia.json.",
     )
     parser.add_argument(
@@ -444,6 +444,8 @@ def apply_proposals(
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
 
     review_path: Path = args.review_file.resolve()
     if not review_path.exists():

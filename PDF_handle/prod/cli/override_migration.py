@@ -33,7 +33,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--current-site-root",
         type=Path,
-        default=get_work_site_root(),
+        default=None,
         help="Current curated site root that still contains manual edits.",
     )
     parser.add_argument(
@@ -94,6 +94,8 @@ def build_diff_report(current_datasets: dict[str, dict[str, Any]], base_datasets
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     current_site_root = args.current_site_root.resolve()
     base_site_root = args.base_site_root.resolve()
     run_dir = ensure_dir(args.run_root.resolve() / utc_timestamp().replace(":", "-"))

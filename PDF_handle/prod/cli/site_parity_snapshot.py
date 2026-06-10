@@ -23,7 +23,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Capture a site-data parity snapshot and optionally compare it to a previous snapshot."
     )
-    parser.add_argument("--site-root", type=Path, default=get_work_site_root())
+    parser.add_argument("--site-root", type=Path, default=None)
     parser.add_argument(
         "--report-root",
         type=Path,
@@ -139,6 +139,8 @@ def compare_snapshots(current: dict[str, Any], baseline: dict[str, Any]) -> dict
 
 def main() -> None:
     args = build_parser().parse_args()
+    if getattr(args, "site_root", None) is None:
+        args.site_root = get_work_site_root()
     report_dir = ensure_dir(
         args.report_dir.resolve()
         if args.report_dir
