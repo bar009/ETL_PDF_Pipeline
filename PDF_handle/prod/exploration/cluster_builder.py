@@ -373,7 +373,11 @@ def build_clusters(staging_dir: Path, *, max_nodes: int = 25, max_edges: int = 6
             semantic_terms: set[str] = set()
             semantic_terms.update(_tokens(candidate_title))
             semantic_terms.update(_phrases(candidate_title))
-            for kw in payload.get("keywords", [])[:20] if isinstance(payload.get("keywords"), list) else []:
+            seed_payload = candidate.get("draft_seed") if isinstance(candidate.get("draft_seed"), dict) else {}
+            if not seed_payload:
+                seed_payload = candidate.get("draft_entry_payload") if isinstance(candidate.get("draft_entry_payload"), dict) else {}
+            candidate_keywords = seed_payload.get("keywords", []) if isinstance(seed_payload.get("keywords"), list) else []
+            for kw in candidate_keywords[:20]:
                 semantic_terms.update(_tokens(str(kw)))
                 semantic_terms.update(_phrases(str(kw)))
             for term in sorted(semantic_terms):
