@@ -75,6 +75,12 @@ python PDF_handle/prod/cli/language_integrity_audit.py `
 - No new canonical candidate contains Hebrew script in protected fields.
 - A source may only create candidates for degrees explicitly listed in `work_routing.json`.
 - Publish happens only after review/approval, never directly from heuristic or raw Gemini output.
+- Step 6 enforces this structurally: selected operations and companion candidates pass
+  through `approve_operator_selection` and the `assert_operations_approved` door; staged
+  items without `review_state` are blocked unless `--allow-unreviewed-legacy` is passed.
+  Staging dirs created before 2026-06-11 (e.g. `basic-education-pilot*`) carry companions
+  without `review_state` — regenerate them with a fresh Step 5 run rather than using the
+  legacy flag.
 
 ## Current Pilot Finding
 

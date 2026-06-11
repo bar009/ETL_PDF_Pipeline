@@ -64,6 +64,70 @@ def transition(operation: dict[str, Any], target: str) -> dict[str, Any]:
     return operation
 
 
+def _operation_label(operation: dict[str, Any]) -> str:
+    return str(
+        operation.get("slug")
+        or operation.get("candidate_slug")
+        or operation.get("marker_id")
+        or "<unlabeled>"
+    )
+
+
+def approve_operator_selection(
+    items: list[dict[str, Any]],
+    *,
+    allow_unreviewed_legacy: bool = False,
+) -> list[str]:
+    """Record an operator's explicit selection as review + approval.
+
+    Step 6's approval selectors (``--approve-level1 ...``, ``--approve-companions``)
+    are the human decision; this function turns that decision into explicit
+    state transitions so the door can be enforced:
+
+    - ``suggested``  -> ``reviewed`` -> ``approved``
+    - ``reviewed``   -> ``approved``
+    - ``approved``   -> unchanged
+    - missing state  -> stamped ``approved`` only under ``allow_unreviewed_legacy``
+      (returns a warning); blocked otherwise
+    - ``rejected`` / ``published`` / unknown -> ReviewBoundaryError
+
+    Afterwards every item passes ``assert_operations_approved``.
+    """
+    warnings: list[str] = []
+    blocked: list[str] = []
+
+    for item in items:
+        label = _operation_label(item)
+        state = item.get(REVIEW_STATE_FIELD)
+
+        if state == MERGEABLE_REVIEW_STATE:
+            continue
+        if state is None:
+            if allow_unreviewed_legacy:
+                item[REVIEW_STATE_FIELD] = MERGEABLE_REVIEW_STATE
+                warnings.append(f"{label}: legacy item without review_state approved explicitly")
+                continue
+            blocked.append(f"{label}: missing review_state (legacy data needs allow_unreviewed_legacy)")
+            continue
+        if state == "suggested":
+            transition(item, "reviewed")
+            transition(item, "approved")
+            continue
+        if state == "reviewed":
+            transition(item, "approved")
+            continue
+        if not is_valid_state(state):
+            blocked.append(f"{label}: unknown review_state {state!r}")
+            continue
+        blocked.append(f"{label}: review_state is {state!r} and cannot be approved by selection")
+
+    if blocked:
+        raise ReviewBoundaryError(
+            "Operator selection cannot approve these items:\n- " + "\n- ".join(blocked)
+        )
+    return warnings
+
+
 def assert_operations_approved(
     operations: list[dict[str, Any]],
     *,
@@ -78,7 +142,7 @@ def assert_operations_approved(
     blocked: list[str] = []
 
     for operation in operations:
-        label = str(operation.get("slug") or operation.get("marker_id") or "<unlabeled>")
+        label = _operation_label(operation)
         state = operation.get(REVIEW_STATE_FIELD)
 
         if state == MERGEABLE_REVIEW_STATE:

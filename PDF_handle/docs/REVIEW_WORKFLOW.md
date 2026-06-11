@@ -35,5 +35,12 @@ suggested -> reviewed -> approved -> published
 - `PDF_handle/tests/test_review_workflow.py` pins the transition matrix and the door
 - the offline smoke (`prod/cli/smoke_fixture.py`) refuses to merge the staging fixture
   unless it is `approved`
-- the legacy approval-selector flow in Step 6 (`--approve-level1 ...`) continues to work;
-  it predates these states and is the explicit-legacy path
+- **Step 6 enforces the door**: the approval selectors (`--approve-level1 ...`,
+  `--approve-companions`) are recorded as explicit transitions
+  (`suggested → reviewed → approved`) via `approve_operator_selection`, and
+  `assert_operations_approved` runs before any merge — for degree operations *and*
+  companion candidates
+- companion candidates are stamped `suggested` at creation (Step 5), same as patch
+  operations
+- staged items written before `review_state` existed are blocked unless Step 6 is run
+  with the explicit `--allow-unreviewed-legacy` flag, which logs a warning per item
