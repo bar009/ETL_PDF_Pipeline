@@ -11,6 +11,8 @@ Decisions that block items link to `DECISION_LOG.md`.
 
 ## Next
 
+- [ ] Recover 4 rejected Commentary sections (Prayer, Password origins, Obligation dress, Investiture) from library into level2 entries during quality review (2026-06-12)
+
 - [ ] Duncan's Ritual source prep — reuse `prod/cli/duncan_section_map_apply.py`, then manual cleanup; giant book, own work item (2026-06-11)
 - [ ] Library of Freemasonry Vol 2 source prep — chapter-by-chapter restructure; giant book, own work item (2026-06-11)
 - [ ] Fragmentary-title false positive: long headings with colons (e.g. "The Letter G and the Five-Pointed Star") get skipped as fragmentary_topic; loosen the detector (2026-06-11)
