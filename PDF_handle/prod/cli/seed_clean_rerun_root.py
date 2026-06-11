@@ -42,6 +42,7 @@ ENGLISH_DEGREE_TITLES = {
     "level3": "Degree 3 - Master Mason",
 }
 HEBREW_RE = re.compile(r"[\u0590-\u05FF]")
+ENCODING_ARTIFACT_RE = re.compile(r"[\u00C2\u00C3\u00D7\u00E2\u00F0\uFFFD]")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -109,6 +110,14 @@ def contains_hebrew_text(value: Any) -> bool:
     return bool(HEBREW_RE.search(str(value or "")))
 
 
+def contains_encoding_artifact(value: Any) -> bool:
+    if isinstance(value, dict):
+        return any(contains_encoding_artifact(item) for item in value.values())
+    if isinstance(value, list):
+        return any(contains_encoding_artifact(item) for item in value)
+    return bool(ENCODING_ARTIFACT_RE.search(str(value or "")))
+
+
 def humanize_id(value: str) -> str:
     words = re.sub(r"[_-]+", " ", str(value or "")).strip()
     return words.title() if words else "Uncategorized"
@@ -116,10 +125,12 @@ def humanize_id(value: str) -> str:
 
 def english_category_payload(category_id: str, category: dict[str, Any]) -> dict[str, Any]:
     payload = dict(category)
-    if contains_hebrew_text(payload.get("title")):
+    if contains_hebrew_text(payload.get("title")) or contains_encoding_artifact(payload.get("title")):
         payload["title"] = humanize_id(category_id)
-    if contains_hebrew_text(payload.get("description")):
+    if contains_hebrew_text(payload.get("description")) or contains_encoding_artifact(payload.get("description")):
         payload["description"] = ""
+    if contains_encoding_artifact(payload.get("symbol")):
+        payload["symbol"] = "*"
     payload["id"] = str(category_id)
     return payload
 

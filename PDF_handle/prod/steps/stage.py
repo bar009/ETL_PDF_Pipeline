@@ -765,6 +765,19 @@ def build_companion_candidate(
     }
 
 
+def should_stage_companion_candidate(
+    discovery: dict[str, Any],
+    *,
+    apply_allowed_degrees: list[str],
+) -> bool:
+    if discovery.get("decision") not in {"new_canonical_topic", "later_degree_candidate"}:
+        return False
+    candidate_degree = normalize_nullable_string(discovery.get("candidate_degree"))
+    if not candidate_degree or candidate_degree == "library":
+        return False
+    return candidate_degree in set(apply_allowed_degrees)
+
+
 def main() -> None:
     args = build_parser().parse_args()
     if args.site_root is None:
@@ -1485,7 +1498,7 @@ def main() -> None:
                     else:
                         level3_operations.append(operation)
 
-                if discovery["decision"] in {"new_canonical_topic", "later_degree_candidate"}:
+                if should_stage_companion_candidate(discovery, apply_allowed_degrees=apply_allowed_degrees):
                     companion_candidates.append(
                         build_companion_candidate(
                             route=route,

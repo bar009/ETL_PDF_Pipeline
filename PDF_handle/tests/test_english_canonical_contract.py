@@ -19,6 +19,7 @@ from PDF_handle.prod.companion_contract import (  # noqa: E402
     materialize_companion_payload,
 )
 from PDF_handle.prod.core.io import read_json, write_json  # noqa: E402
+from PDF_handle.prod.steps.stage import should_stage_companion_candidate  # noqa: E402
 from PDF_handle.prod.steps.stage_mapping import coerce_mapping_payload  # noqa: E402
 from PDF_handle.prod.steps.stage_support import (  # noqa: E402
     ExtractedSection,
@@ -138,7 +139,7 @@ class EnglishCanonicalContractTest(unittest.TestCase):
                     "working_tools": {
                         "id": "working_tools",
                         "title": "כלי עבודה",
-                        "symbol": "*",
+                        "symbol": "\u00e2\u0161\u2013\u00ef\u00b8\u008f",
                         "description": "תיאור עברי",
                         "parent_category": None,
                     }
@@ -149,7 +150,27 @@ class EnglishCanonicalContractTest(unittest.TestCase):
 
         self.assertEqual(payload["meta"]["title"], "Degree 1 - Entered Apprentice")
         self.assertEqual(payload["categories"]["working_tools"]["title"], "Working Tools")
+        self.assertEqual(payload["categories"]["working_tools"]["symbol"], "*")
         self.assertEqual(payload["categories"]["working_tools"]["description"], "")
+
+    def test_out_of_route_later_degree_is_discovery_only_not_companion_candidate(self) -> None:
+        discovery = {
+            "decision": "later_degree_candidate",
+            "candidate_degree": "level3",
+        }
+
+        self.assertFalse(
+            should_stage_companion_candidate(
+                discovery,
+                apply_allowed_degrees=["library", "level2"],
+            )
+        )
+        self.assertTrue(
+            should_stage_companion_candidate(
+                discovery,
+                apply_allowed_degrees=["library", "level2", "level3"],
+            )
+        )
 
     def test_degrees_manifest_can_be_relabelled_to_english(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
