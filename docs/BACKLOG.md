@@ -21,6 +21,8 @@ Decisions that block items link to `DECISION_LOG.md`.
 
 ## Later / Icebox
 
+- [ ] Royal Arch / appendant degrees lane — Duncan's Mark Master through Royal Arch chapters live in the library; decide whether they become a level4+/appendant knowledge lane (2026-06-12)
+
 - [ ] Hebrew lane: `parallel_entry` translation pairs; start from `prod/cli/hebrew_localization_bundle.py` — wait until the English canon is 50+ entries the operator is happy with (2026-06-11)
 - [ ] Frontend v2 (React/Next prototypes) consuming published snapshots through the adapter contract (2026-06-11)
 - [ ] Commentary on the Second Degree: "Nth Pause / Commentary" parser to recover conceptual content from procedural anchors (deferred from pilot) (2026-06-11)
