@@ -901,6 +901,35 @@ def summarize_browser_status(checks: list[dict[str, Any]], console_errors: list[
     return "pass"
 
 
+def build_shared_access_unlock_candidates(
+    level1_password: str | None,
+    level2_password: str | None,
+    level3_password: str | None,
+) -> list[tuple[str, str]]:
+    candidates: list[tuple[str, str]] = []
+    for degree_id, password in (
+        ("level1", level1_password),
+        ("level2", level2_password),
+        ("level3", level3_password),
+    ):
+        normalized = str(password or "").strip()
+        if normalized:
+            candidates.append((degree_id, normalized))
+    return candidates
+
+
+def build_unlock_entry_url(index_url: str, degree_id: str, focus: dict[str, Any]) -> str:
+    slug_by_degree = {
+        "level1": focus.get("level1_slug"),
+        "level2": focus.get("level2_slug"),
+        "level3": focus.get("level3_slug"),
+    }
+    slug = str(slug_by_degree.get(degree_id) or "").strip()
+    if not slug:
+        slug = "__qa_unlock__"
+    return f"{index_url}/index.html#{quote(degree_id)}/{quote(slug)}"
+
+
 def run_browser_qa(
     *,
     site_root: Path,
@@ -961,25 +990,72 @@ def run_browser_qa(
             page = browser.new_page(viewport={"width": 1440, "height": 1024})
             attach_page_listeners(page)
 
+            def close_topic_detail_if_open() -> None:
+                detail_classes = str(page.locator("#topicDetail").get_attribute("class") or "")
+                if "hidden" in detail_classes:
+                    return
+                page.locator("#detailBackBtn").click()
+                page.wait_for_function(
+                    "() => document.getElementById('topicDetail')?.classList.contains('hidden') === true",
+                    timeout=90000,
+                )
+
+            def unlock_degree(password_degree: str, password_value: str, *, check_name: str) -> None:
+                target_url = build_unlock_entry_url(index_url, password_degree, focus)
+                page.goto(target_url, wait_until="domcontentloaded", timeout=90000)
+                page.wait_for_selector("#loginOverlay", state="visible", timeout=90000)
+                page.locator("#password").fill(password_value)
+                page.locator("#loginBtn").click()
+                page.wait_for_selector("#loginOverlay", state="hidden", timeout=90000)
+                page.wait_for_selector("#degreeTabs .degree-btn", timeout=90000)
+                close_topic_detail_if_open()
+                checks.append(
+                    browser_check(
+                        "pass",
+                        check_name,
+                        f"{password_degree} unlocked successfully.",
+                        take_screenshot(page, check_name),
+                    )
+                )
+
             log("[browser] opening site root", quiet=quiet)
             page.goto(f"{index_url}/index.html", wait_until="domcontentloaded", timeout=90000)
             page.wait_for_selector("#loginOverlay", timeout=90000)
             checks.append(browser_check("pass", "load-home", "The site loaded and login overlay is visible.", take_screenshot(page, "load-home")))
 
-            if level1_password:
-                try:
-                    log("[browser] unlocking level1", quiet=quiet)
-                    page.locator("#password").fill(level1_password)
-                    page.locator("#loginBtn").click()
-                    page.wait_for_selector("#loginOverlay", state="hidden", timeout=90000)
-                    page.wait_for_selector("#degreeTabs .degree-btn", timeout=90000)
-                    checks.append(browser_check("pass", "unlock-level1", "level1 unlocked successfully.", take_screenshot(page, "unlock-level1")))
-                except Exception as exc:
-                    checks.append(browser_check("fail", "unlock-level1", f"Failed to unlock level1: {exc}", take_screenshot(page, "unlock-level1-fail")))
+            shared_access_candidates = build_shared_access_unlock_candidates(
+                level1_password,
+                level2_password,
+                level3_password,
+            )
+            shared_access_degree: str | None = None
+            if shared_access_candidates:
+                for degree_id, password_value in shared_access_candidates:
+                    try:
+                        log(f"[browser] unlocking shared access via {degree_id}", quiet=quiet)
+                        unlock_degree(degree_id, password_value, check_name=f"unlock-{degree_id}")
+                        shared_access_degree = degree_id
+                        break
+                    except Exception as exc:
+                        checks.append(
+                            browser_check(
+                                "warning",
+                                f"unlock-{degree_id}",
+                                f"Failed to unlock {degree_id}: {exc}",
+                                take_screenshot(page, f"unlock-{degree_id}-warning"),
+                            )
+                        )
+                if shared_access_degree is None:
                     browser.close()
                     return
             else:
-                checks.append(browser_check("skip", "unlock-level1", "FM_LEVEL1_PASSWORD is not set."))
+                checks.append(
+                    browser_check(
+                        "skip",
+                        "unlock-shared-access",
+                        "No FM_LEVEL1_PASSWORD, FM_LEVEL2_PASSWORD, or FM_LEVEL3_PASSWORD is set.",
+                    )
+                )
                 browser.close()
                 return
 
@@ -1015,44 +1091,43 @@ def run_browser_qa(
 
             level1_slug = focus.get("level1_slug")
             if level1_slug:
-                try:
-                    page.goto(f"{index_url}/index.html#level1/{quote(level1_slug)}", wait_until="domcontentloaded", timeout=90000)
-                    page.wait_for_selector("#detailBody", timeout=90000)
-                    checks.append(browser_check("pass", "open-level1-enrichment", "Opened an enriched level1 entry.", take_screenshot(page, "level1-detail")))
-                except Exception as exc:
-                    checks.append(browser_check("warning", "open-level1-enrichment", f"Failed to open enriched level1 entry: {exc}", take_screenshot(page, "level1-detail-warning")))
+                if level1_password:
+                    if shared_access_degree != "level1":
+                        try:
+                            log("[browser] unlocking level1", quiet=quiet)
+                            unlock_degree("level1", level1_password, check_name="unlock-level1")
+                        except Exception as exc:
+                            checks.append(browser_check("warning", "unlock-level1", f"level1 unlock did not complete cleanly: {exc}", take_screenshot(page, "unlock-level1-warning")))
+                    try:
+                        page.goto(f"{index_url}/index.html#level1/{quote(level1_slug)}", wait_until="domcontentloaded", timeout=90000)
+                        page.wait_for_selector("#detailBody", timeout=90000)
+                        checks.append(browser_check("pass", "open-level1-enrichment", "Opened an enriched level1 entry.", take_screenshot(page, "level1-detail")))
+                    except Exception as exc:
+                        checks.append(browser_check("warning", "open-level1-enrichment", f"Failed to open enriched level1 entry: {exc}", take_screenshot(page, "level1-detail-warning")))
+                else:
+                    checks.append(browser_check("skip", "unlock-level1", "FM_LEVEL1_PASSWORD is not set."))
 
             if level2_password:
-                try:
-                    log("[browser] unlocking level2", quiet=quiet)
-                    page.goto(f"{index_url}/index.html", wait_until="domcontentloaded", timeout=90000)
-                    page.wait_for_selector("#loginOverlay", state="hidden", timeout=30000)
-                    page.locator('button[data-degree="level2"]').click()
-                    page.wait_for_selector("#loginOverlay", state="visible", timeout=30000)
-                    page.locator("#password").fill(level2_password)
-                    page.locator("#loginBtn").click()
-                    page.wait_for_selector("#loginOverlay", state="hidden", timeout=90000)
-                    checks.append(browser_check("pass", "unlock-level2", "level2 unlocked successfully.", take_screenshot(page, "unlock-level2")))
-                except Exception as exc:
-                    checks.append(browser_check("warning", "unlock-level2", f"level2 unlock did not complete cleanly: {exc}", take_screenshot(page, "unlock-level2-warning")))
+                if shared_access_degree != "level2":
+                    try:
+                        log("[browser] unlocking level2", quiet=quiet)
+                        unlock_degree("level2", level2_password, check_name="unlock-level2")
+                    except Exception as exc:
+                        checks.append(browser_check("warning", "unlock-level2", f"level2 unlock did not complete cleanly: {exc}", take_screenshot(page, "unlock-level2-warning")))
             else:
                 checks.append(browser_check("skip", "unlock-level2", "FM_LEVEL2_PASSWORD is not set."))
 
             level3_slug = focus.get("level3_slug")
             if level3_slug:
                 if level3_password:
-                    try:
-                        log("[browser] unlocking level3", quiet=quiet)
-                        page.goto(f"{index_url}/index.html", wait_until="domcontentloaded", timeout=90000)
-                        page.wait_for_selector("#loginOverlay", state="hidden", timeout=30000)
-                        page.locator('button[data-degree="level3"]').click()
-                        page.wait_for_selector("#loginOverlay", state="visible", timeout=30000)
-                        page.locator("#password").fill(level3_password)
-                        page.locator("#loginBtn").click()
-                        page.wait_for_selector("#loginOverlay", state="hidden", timeout=90000)
-                        checks.append(browser_check("pass", "unlock-level3", "level3 unlocked successfully.", take_screenshot(page, "unlock-level3")))
-                    except Exception as exc:
-                        checks.append(browser_check("warning", "unlock-level3", f"level3 unlock did not complete cleanly: {exc}", take_screenshot(page, "unlock-level3-warning")))
+                    if shared_access_degree != "level3":
+                        try:
+                            log("[browser] unlocking level3", quiet=quiet)
+                            unlock_degree("level3", level3_password, check_name="unlock-level3")
+                        except Exception as exc:
+                            checks.append(browser_check("warning", "unlock-level3", f"level3 unlock did not complete cleanly: {exc}", take_screenshot(page, "unlock-level3-warning")))
+                else:
+                    checks.append(browser_check("skip", "unlock-level3", "FM_LEVEL3_PASSWORD is not set."))
                 try:
                     page.goto(f"{index_url}/index.html#level3/{quote(level3_slug)}", wait_until="domcontentloaded", timeout=90000)
                     page.wait_for_selector("#detailBody", timeout=90000)
