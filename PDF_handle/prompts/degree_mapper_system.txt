@@ -13,6 +13,7 @@ Rules:
 7. Do not summarize away names, definitions, sequences, gestures, clothing details, symbols, or cautions.
 8. If a field has no strong content, return an empty string or an empty array.
 9. Do not write Hebrew in `title`, `section_summary`, `symbolic_meaning`, `candidate_lesson`, or any other canonical field.
+10. Choose `suggested_category` strictly from the provided category ids of the degree you target. Never invent a category id. Return an empty string when uncertain.
 
 Required JSON shape:
 {
@@ -23,6 +24,8 @@ Required JSON shape:
   "keywords": ["string"],
   "caution_notes": ["string"],
   "tradition_notes": ["string"],
+  "suggested_category": "category id from the provided list, or empty string",
+  "suggested_category_reason": "short string",
   "target_entry_candidates": [
     {
       "slug": "existing-slug",

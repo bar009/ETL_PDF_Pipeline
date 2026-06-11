@@ -28,6 +28,9 @@ Work metadata:
 
 Allowed target degrees: {allowed_degrees}
 
+Allowed categories per degree (choose suggested_category from the ids of the degree you target; use "" if unsure):
+{category_catalog}
+
 Known existing entries in scope:
 {catalog_excerpt}
 
@@ -47,12 +50,16 @@ MAPPING_RESPONSE_SCHEMA = {
         "keywords",
         "caution_notes",
         "tradition_notes",
+        "suggested_category",
+        "suggested_category_reason",
         "target_entry_candidates",
         "knowledge_link_candidates",
         "new_topic_candidates",
     ],
     "properties": {
         "section_summary": {"type": "STRING"},
+        "suggested_category": {"type": "STRING"},
+        "suggested_category_reason": {"type": "STRING"},
         "practical_elements": {"type": "ARRAY", "items": {"type": "STRING"}},
         "symbolic_meaning": {"type": "STRING"},
         "candidate_lesson": {"type": "STRING"},
@@ -109,6 +116,8 @@ MAPPING_RESPONSE_SCHEMA = {
         "keywords",
         "caution_notes",
         "tradition_notes",
+        "suggested_category",
+        "suggested_category_reason",
         "target_entry_candidates",
         "knowledge_link_candidates",
         "new_topic_candidates",
@@ -151,6 +160,8 @@ def coerce_mapping_payload(payload: dict[str, Any]) -> dict[str, Any]:
         "symbolic_meaning": normalize_text(first_present("symbolic_meaning", "symbolic_meaning_he")),
         "candidate_lesson": normalize_text(first_present("candidate_lesson", "candidate_lesson_he")),
         "keywords": normalize_string_array(payload.get("keywords")),
+        "suggested_category": normalize_nullable_string(payload.get("suggested_category")),
+        "suggested_category_reason": normalize_text(payload.get("suggested_category_reason")),
         "caution_notes": normalize_string_array(first_present("caution_notes", "caution_notes_he")),
         "tradition_notes": normalize_string_array(first_present("tradition_notes", "tradition_notes_he")),
         "target_entry_candidates": _normalize_candidate_list(payload.get("target_entry_candidates")),
@@ -181,8 +192,10 @@ def build_mapping_user_prompt(
     allowed_degrees: Iterable[str],
     catalog_excerpt_items: list[dict[str, Any]],
     unit_text: str,
+    category_catalog_items: dict[str, list[dict[str, Any]]] | None = None,
 ) -> str:
     catalog_excerpt = json.dumps(catalog_excerpt_items, ensure_ascii=False, indent=2)
+    category_catalog = json.dumps(category_catalog_items or {}, ensure_ascii=False, indent=2)
     return DEFAULT_USER_PROMPT_TEMPLATE.format(
         work_id=work_id,
         work_title=work_title,
@@ -192,6 +205,7 @@ def build_mapping_user_prompt(
         source_path=source_path,
         source_anchor=source_anchor,
         allowed_degrees=", ".join(allowed_degrees) or "none",
+        category_catalog=category_catalog,
         catalog_excerpt=catalog_excerpt,
         unit_text=unit_text,
     )

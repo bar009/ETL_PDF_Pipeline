@@ -349,6 +349,26 @@ def has_rich_page_body(text: str, *, min_tokens: int = 80) -> bool:
     return len(title_word_tokens(content_text_without_publication_metadata(text))) >= min_tokens
 
 
+def is_sparse_publication_metadata_body(text: str, *, max_residual_tokens: int = 40) -> bool:
+    """A section body that is mostly author/date/lodge/citation lines with
+    almost no prose left after stripping them is a title page, not a topic —
+    regardless of how clean its heading looks."""
+    lines = [clean_heading_text(line) for line in normalize_newlines(text).splitlines()]
+    lines = [line for line in lines if line]
+    if not lines:
+        return False
+    metadata_lines = [line for line in lines if is_publication_metadata_title(line)]
+    if not metadata_lines:
+        return False
+    if len(metadata_lines) / len(lines) < 0.5:
+        return False
+    raw_tokens = title_word_tokens(text)
+    residual_tokens = title_word_tokens(content_text_without_publication_metadata(text))
+    if len(residual_tokens) >= max_residual_tokens:
+        return False
+    return len(raw_tokens) > len(residual_tokens)
+
+
 def title_word_tokens(text: str) -> list[str]:
     return re.findall(r"[A-Za-z0-9']+", normalize_text(text))
 
@@ -764,6 +784,9 @@ def classify_section_kind(section: ExtractedSection, *, normalized_title: str, f
     ):
         unit_kind = "front_matter"
         next_flags.append("SOURCE_WORK_TITLE")
+    elif is_sparse_publication_metadata_body(section.text):
+        unit_kind = "front_matter"
+        next_flags.append("TITLE_PAGE_AUTHOR_METADATA")
     elif "PAGE_LEVEL_TITLE" in next_flags and has_rich_page_body(section.text):
         unit_kind = "topic"
         next_flags.append("PAGE_RICH_CONTENT_FALLBACK")
@@ -1031,6 +1054,8 @@ def heuristic_extract_mapping(
         "symbolic_meaning": "",
         "candidate_lesson": "",
         "keywords": keywords[:12],
+        "suggested_category": None,
+        "suggested_category_reason": "",
         "caution_notes": [],
         "tradition_notes": [],
         "target_entry_candidates": [
@@ -1066,6 +1091,25 @@ def mapping_list(item: dict[str, Any], canonical_key: str, legacy_key: str) -> l
     return normalize_string_array(values)
 
 
+def pick_majority_string(values: Iterable[str | None]) -> str | None:
+    counts: dict[str, int] = {}
+    order: list[str] = []
+    for value in values:
+        cleaned = str(value or "").strip()
+        if not cleaned:
+            continue
+        if cleaned not in counts:
+            order.append(cleaned)
+        counts[cleaned] = counts.get(cleaned, 0) + 1
+    if not counts:
+        return None
+    best = max(counts.values())
+    for value in order:
+        if counts[value] == best:
+            return value
+    return None
+
+
 def combine_mapping_results(results: list[dict[str, Any]]) -> dict[str, Any]:
     combined = {
         "section_summary": join_nonempty_strings(mapping_text(item, "section_summary", "section_summary_he") for item in results),
@@ -1075,6 +1119,11 @@ def combine_mapping_results(results: list[dict[str, Any]]) -> dict[str, Any]:
         "symbolic_meaning": join_nonempty_strings(mapping_text(item, "symbolic_meaning", "symbolic_meaning_he") for item in results),
         "candidate_lesson": join_nonempty_strings(mapping_text(item, "candidate_lesson", "candidate_lesson_he") for item in results),
         "keywords": unique_strings(value for item in results for value in item.get("keywords", [])),
+        "suggested_category": pick_majority_string(item.get("suggested_category") for item in results),
+        "suggested_category_reason": next(
+            (normalize_text(item.get("suggested_category_reason")) for item in results if normalize_text(item.get("suggested_category_reason"))),
+            "",
+        ),
         "caution_notes": unique_strings(
             value for item in results for value in mapping_list(item, "caution_notes", "caution_notes_he")
         ),

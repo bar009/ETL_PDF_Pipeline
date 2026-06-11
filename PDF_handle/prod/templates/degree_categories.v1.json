@@ -1,0 +1,197 @@
+{
+  "level1": {
+    "gate": {
+      "id": "gate",
+      "title": "Gate",
+      "symbol": "🔑",
+      "description": "Entry point and orientation for the Entered Apprentice degree.",
+      "parent_category": null
+    },
+    "preparation": {
+      "id": "preparation",
+      "title": "Preparation",
+      "symbol": "🜂",
+      "description": "Preparation of the candidate before initiation.",
+      "parent_category": null
+    },
+    "ritual_flow": {
+      "id": "ritual_flow",
+      "title": "Ritual Flow",
+      "symbol": "🚪",
+      "description": "The course of the initiation ceremony.",
+      "parent_category": null
+    },
+    "lodge_structure": {
+      "id": "lodge_structure",
+      "title": "Lodge Structure",
+      "symbol": "🏛",
+      "description": "Officers, layout, and organization of the lodge.",
+      "parent_category": null
+    },
+    "degree_board": {
+      "id": "degree_board",
+      "title": "Degree Board",
+      "symbol": "☉",
+      "description": "The tracing board and visual teaching aids of the first degree.",
+      "parent_category": null
+    },
+    "tools_and_signs": {
+      "id": "tools_and_signs",
+      "title": "Tools And Signs",
+      "symbol": "🛠",
+      "description": "Working tools, signs, and tokens of the Entered Apprentice.",
+      "parent_category": null
+    },
+    "obligation_and_law": {
+      "id": "obligation_and_law",
+      "title": "Obligation And Law",
+      "symbol": "📜",
+      "description": "The obligation, duties, and regulations of the degree.",
+      "parent_category": null
+    },
+    "inner_work": {
+      "id": "inner_work",
+      "title": "Inner Work",
+      "symbol": "🕯",
+      "description": "Moral and personal development themes of the first degree.",
+      "parent_category": null
+    },
+    "glossary_and_review": {
+      "id": "glossary_and_review",
+      "title": "Glossary And Review",
+      "symbol": "📘",
+      "description": "Terms, summaries, and review material.",
+      "parent_category": null
+    }
+  },
+  "level2": {
+    "gate": {
+      "id": "gate",
+      "title": "Gate",
+      "symbol": "🔑",
+      "description": "Entry point and orientation for the Fellow Craft degree.",
+      "parent_category": null
+    },
+    "ritual_flow": {
+      "id": "ritual_flow",
+      "title": "Ritual Flow",
+      "symbol": "🚪",
+      "description": "The course of the passing ceremony.",
+      "parent_category": null
+    },
+    "middle_chamber": {
+      "id": "middle_chamber",
+      "title": "Middle Chamber",
+      "symbol": "🌀",
+      "description": "The winding stairs and the middle chamber lecture.",
+      "parent_category": null
+    },
+    "liberal_arts": {
+      "id": "liberal_arts",
+      "title": "Liberal Arts",
+      "symbol": "🎓",
+      "description": "The seven liberal arts and sciences.",
+      "parent_category": null
+    },
+    "working_tools": {
+      "id": "working_tools",
+      "title": "Working Tools",
+      "symbol": "🛠",
+      "description": "The plumb, level, and square of the Fellow Craft.",
+      "parent_category": null
+    },
+    "pillars_and_architecture": {
+      "id": "pillars_and_architecture",
+      "title": "Pillars And Architecture",
+      "symbol": "🏛",
+      "description": "The two pillars, orders of architecture, and the builder craft.",
+      "parent_category": null
+    },
+    "wages_and_emblems": {
+      "id": "wages_and_emblems",
+      "title": "Wages And Emblems",
+      "symbol": "🌾",
+      "description": "Corn, wine, and oil; the letter G; jewels and emblems of the degree.",
+      "parent_category": null
+    },
+    "philosophy": {
+      "id": "philosophy",
+      "title": "Philosophy",
+      "symbol": "🕯",
+      "description": "Knowledge, education, symbolism studies, and self-improvement.",
+      "parent_category": null
+    },
+    "glossary_and_review": {
+      "id": "glossary_and_review",
+      "title": "Glossary And Review",
+      "symbol": "📘",
+      "description": "Terms, summaries, and review material.",
+      "parent_category": null
+    }
+  },
+  "level3": {
+    "gate": {
+      "id": "gate",
+      "title": "Gate",
+      "symbol": "🔑",
+      "description": "Entry point and orientation for the Master Mason degree.",
+      "parent_category": null
+    },
+    "ritual_flow": {
+      "id": "ritual_flow",
+      "title": "Ritual Flow",
+      "symbol": "🚪",
+      "description": "The course of the raising ceremony.",
+      "parent_category": null
+    },
+    "hiramic_legend": {
+      "id": "hiramic_legend",
+      "title": "Hiramic Legend",
+      "symbol": "🏺",
+      "description": "The narrative and drama of Hiram Abiff.",
+      "parent_category": null
+    },
+    "allegory_and_interpretation": {
+      "id": "allegory_and_interpretation",
+      "title": "Allegory And Interpretation",
+      "symbol": "🗝",
+      "description": "Readings of the legend — fidelity, death and rebirth, immortality.",
+      "parent_category": null
+    },
+    "symbolism": {
+      "id": "symbolism",
+      "title": "Symbolism",
+      "symbol": "🌿",
+      "description": "Sprig of acacia, emblems of mortality, the lost word.",
+      "parent_category": null
+    },
+    "working_tools": {
+      "id": "working_tools",
+      "title": "Working Tools",
+      "symbol": "🛠",
+      "description": "The trowel and the working tools of the Master Mason.",
+      "parent_category": null
+    },
+    "obligation_and_law": {
+      "id": "obligation_and_law",
+      "title": "Obligation And Law",
+      "symbol": "📜",
+      "description": "The Master Mason obligation, duties, and landmarks.",
+      "parent_category": null
+    },
+    "inner_work": {
+      "id": "inner_work",
+      "title": "Inner Work",
+      "symbol": "🕯",
+      "description": "Mortality contemplation, ethical maturity, and leadership.",
+      "parent_category": null
+    },
+    "glossary_and_review": {
+      "id": "glossary_and_review",
+      "title": "Glossary And Review",
+      "symbol": "📘",
+      "description": "Terms, summaries, and review material.",
+      "parent_category": null
+    }
+  }
+}

@@ -106,12 +106,15 @@ Preconditions:
   created for degrees in `applies_to_degrees`.
 
 ```powershell
-# 0) Fresh sandbox root (rename the old root away first; never reuse a hybrid root)
+# 0) Fresh sandbox root (rename the old root away first; never reuse a hybrid root).
+#    --categories-template installs the versioned 9-category taxonomy per degree.
 python PDF_handle/prod/cli/seed_clean_rerun_root.py `
   --shell-root  "<seed shell root>" --governance-root "<seed shell root>" `
   --seed-root   "<seed shell root>" `
   --target-root "<sandbox root>" `
-  --seed-mode categories-only --canonical-language en --allow-dirty-seed --strict
+  --seed-mode categories-only --canonical-language en `
+  --categories-template "PDF_handle\prod\templates\degree_categories.v1.json" `
+  --allow-dirty-seed --strict
 
 # 1) Gate the empty root
 python PDF_handle/prod/cli/validate_runtime.py --site-root "<sandbox root>" --require-complete --strict
@@ -132,7 +135,11 @@ python PDF_handle/prod/steps/apply.py `
   --site-root "<sandbox root>" --staging-dir "PDF_handle\staged_runs\<book>-e2e" `
   --merge-library --approve-companions all --apply-live
 
-# 5) Gates on the merged root
+# 5) Structure: one hub per category, orphan topics adopted under their hub.
+#    Dry-run first (no --apply) to inspect the plan; idempotent on re-run.
+python PDF_handle/prod/cli/build_degree_structure.py --site-root "<sandbox root>" --apply
+
+# 6) Gates on the merged root
 python PDF_handle/prod/cli/validate_runtime.py --site-root "<sandbox root>" --require-complete --strict
 python PDF_handle/prod/cli/language_integrity_audit.py --site-root "<sandbox root>" `
   --staging-dir "PDF_handle\staged_runs\<book>-e2e" --strict
