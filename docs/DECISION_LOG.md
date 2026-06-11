@@ -1,5 +1,30 @@
 # Workspace Decision Log
 
+## 2026-06-11 (trustworthy full run)
+
+### The full pipeline path is proven end to end, manual and orchestrated
+
+Reason:
+- after the dry-run trap fix, the remaining question was whether one clean
+  command sequence — and then one command — can be trusted to take a source
+  from PDF-derived markdown to a validated, publishable site root
+
+Consequence:
+- the manual runbook ran green twice on a fresh root: Color-Symbolism (8
+  level2 entries) and Allegories of Hiram Abiff (11 level3 entries), with
+  Gemini-written summaries, wired knowledge_links, and both gates passing —
+  documented in `PDF_handle/docs/ENGLISH_DEGREE_CONTENT_PILOT.md`
+- the orchestrator (`prod/cli/postmerge.py`) reproduced the manual result in
+  one command after fixing a NameError in the exploration cluster builder
+  that crashed every orchestrated run between Step 5 and Step 6
+- `validate_runtime` gained a `work_library_coverage` check: a degree entry
+  carrying a work_id with no matching library entry fails the gate (this was
+  the hybrid-sandbox state the gate previously passed)
+- the pilot root was published as a frozen snapshot
+  (`english-pilot-sandbox-2026-06-11`) through `publish_snapshot.py`, whose
+  RELEASE_MODEL guarantees were verified live: gate-first publish, gate report
+  and run manifest inside the snapshot, overwrite refused
+
 ## 2026-06-11 (dry-run trap)
 
 ### Step 6 fails loudly instead of previewing a broken merge silently
