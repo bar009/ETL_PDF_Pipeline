@@ -6,21 +6,14 @@ Decisions that block items link to `DECISION_LOG.md`.
 
 ## Now
 
-- [ ] Sparse-metadata noise filter in Step 5 — title-page/author sections must not become candidates (2026-06-11)
-- [ ] Degree categories template (`prod/templates/degree_categories.v1.json`) + seeder `--categories-template` (2026-06-11)
-- [ ] Provider-driven category assignment at stage time (`suggested_category` from the mapping call) (2026-06-11)
-- [ ] Structure builder CLI: hub per category, orphan topics adopt `parent_topic` (2026-06-11)
-- [ ] Source prep for the full run — semantic-heading consolidated markdown per source (2026-06-11)
+- [ ] Blue Lodge Ritual Reference Guide source prep + run — expect heavy procedural filtering (2026-06-11)
+- [ ] Content quality review of 122 entries in the browser before further growth (2026-06-11)
 
 ## Next
 
-- [ ] level1 via Basic Masonic Education Course — *selective* approval only; the source mixes Master Mason content (2026-06-11)
-- [ ] Content quality review of draft entries in the browser before any draft→published promotion (2026-06-11)
-- [ ] Re-run Color-Symbolism + Allegories of Hiram Abiff on the new taxonomy (fresh seeded root) (2026-06-11)
 - [ ] Duncan's Ritual source prep — reuse `prod/cli/duncan_section_map_apply.py`, then manual cleanup; giant book, own work item (2026-06-11)
 - [ ] Library of Freemasonry Vol 2 source prep — chapter-by-chapter restructure; giant book, own work item (2026-06-11)
-- [ ] Blue Lodge Ritual Reference Guide source prep — expect heavy procedural filtering (2026-06-11)
-- [ ] Deeper meaning of FC Degree source prep — copy consolidated from old run `v21r1-e1-new-sources-2026-04-24`, restructure (2026-06-11)
+- [ ] Fragmentary-title false positive: long headings with colons (e.g. "The Letter G and the Five-Pointed Star") get skipped as fragmentary_topic; loosen the detector (2026-06-11)
 
 ## Later / Icebox
 
@@ -37,9 +30,15 @@ Decisions that block items link to `DECISION_LOG.md`.
 
 ## User-side (only the operator can do)
 
-- [ ] Remove the quotes around `GEMINI_API_KEY` in `.env` — providers read the value verbatim and Google rejects a quoted key as `API_KEY_INVALID` (2026-06-11)
+- [x] ~~Remove the quotes around `GEMINI_API_KEY` in `.env`~~ — done by operator (2026-06-11)
 
 ## Done (recent)
+
+- [x] Basic Masonic Education Course merged as multi (level1+level3) with selective companion approval via JSON approval file; routing fixed in work_routing.json (2026-06-11)
+- [x] Pilot root at 122 entries across 4 sources; 0 orphans; gates 19/19 strict + language audit clean (2026-06-11)
+- [x] Sparse-metadata noise filter, taxonomy template, provider category assignment, structure builder CLI — all landed and proven on the pilot root (2026-06-11)
+- [x] Deeper Meaning of FC Degree merged (level2, 4 enrichment ops + 3 companions) (2026-06-11)
+- [x] GEMINI_API_KEY quotes removed from `.env` by operator (2026-06-11)
 
 - [x] Review door enforced in Step 6 for operations and companions (2026-06-11, PR #16/#18)
 - [x] Step 6 dry-run trap closed: early library-link guard, `mode=` in done line, non-zero exit on failed validation (2026-06-11, PR #22)
