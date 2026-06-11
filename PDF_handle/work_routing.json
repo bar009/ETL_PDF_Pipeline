@@ -28,7 +28,7 @@
       "primary_degree": "multi",
       "source_kind": "ritual-reference",
       "language": "en",
-      "applies_to_degrees": ["library", "level1", "level2"],
+      "applies_to_degrees": ["library", "level1", "level2", "level3"],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "variant",

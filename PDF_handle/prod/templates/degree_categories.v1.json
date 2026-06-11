@@ -62,6 +62,13 @@
       "symbol": "📘",
       "description": "Terms, summaries, and review material.",
       "parent_category": null
+    },
+    "lodge_procedure": {
+      "id": "lodge_procedure",
+      "title": "Lodge Procedure and Officers",
+      "symbol": "📋",
+      "description": "Ceremonial procedure, officer duties, installations, charges, and the operational order of the lodge.",
+      "parent_category": null
     }
   },
   "level2": {
@@ -127,6 +134,13 @@
       "symbol": "📘",
       "description": "Terms, summaries, and review material.",
       "parent_category": null
+    },
+    "lodge_procedure": {
+      "id": "lodge_procedure",
+      "title": "Lodge Procedure and Officers",
+      "symbol": "📋",
+      "description": "Ceremonial procedure, officer duties, installations, charges, and the operational order of the lodge.",
+      "parent_category": null
     }
   },
   "level3": {
@@ -191,6 +205,13 @@
       "title": "Glossary And Review",
       "symbol": "📘",
       "description": "Terms, summaries, and review material.",
+      "parent_category": null
+    },
+    "lodge_procedure": {
+      "id": "lodge_procedure",
+      "title": "Lodge Procedure and Officers",
+      "symbol": "📋",
+      "description": "Ceremonial procedure, officer duties, installations, charges, and the operational order of the lodge.",
       "parent_category": null
     }
   }
