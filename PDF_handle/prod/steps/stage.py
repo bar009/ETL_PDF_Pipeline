@@ -746,6 +746,9 @@ def build_companion_candidate(
         "section_id": section_id,
         "section_title": section_title,
         "candidate_slug": candidate_slug,
+        # Companion candidates are suggestions until an operator approves them
+        # (see prod/schema/review_states.py).
+        "review_state": "suggested",
         "suggested_title": suggested_title,
         "suggested_degree": degree,
         "suggested_category": draft_seed["category"],

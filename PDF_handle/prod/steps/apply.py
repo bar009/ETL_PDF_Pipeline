@@ -45,6 +45,10 @@ from PDF_handle.prod.schema import (
 from PDF_handle.prod.schema.data import infer_language_contract_fields, normalize_nullable_string
 from PDF_handle.prod.schema.language_integrity import PROTECTED_TEXT_FIELDS, text_script_flags
 from PDF_handle.prod.schema.patches import unique_links, unique_strings
+from PDF_handle.prod.schema.review_states import (
+    approve_operator_selection,
+    assert_operations_approved,
+)
 from PDF_handle.prod.steps.apply_support import (
     companion_matches_selector,
     load_approval_selector,
@@ -105,6 +109,14 @@ def build_parser() -> argparse.ArgumentParser:
         "--allow-multi-work",
         action="store_true",
         help="Allow Step 6 to operate on a staging dir that contains more than one work.",
+    )
+    parser.add_argument(
+        "--allow-unreviewed-legacy",
+        action="store_true",
+        help=(
+            "Admit staged operations/companions written before review_state existed. "
+            "Without this flag, items missing review_state are blocked at the merge door."
+        ),
     )
     parser.add_argument(
         "--override-review-decisions",
@@ -864,6 +876,16 @@ def main() -> None:
     selected_level2_ops = [op for op in level2_patch.get("operations", []) if operation_matches_selector(op, level2_mode, level2_selector)]
     selected_level3_ops = [op for op in level3_patch.get("operations", []) if operation_matches_selector(op, level3_mode, level3_selector)]
 
+    # Operator selection is the explicit review+approval decision; record it as
+    # state transitions and enforce the staging→runtime door before any merge.
+    for selected in (selected_level1_ops, selected_level2_ops, selected_level3_ops):
+        if selected:
+            for warning in approve_operator_selection(
+                selected, allow_unreviewed_legacy=args.allow_unreviewed_legacy
+            ):
+                log(f"[review] {warning}", quiet=args.quiet)
+            assert_operations_approved(selected)
+
     if selected_level1_ops:
         log(f"[merge] applying {len(selected_level1_ops)} level1 operation(s)", quiet=args.quiet)
         merged_level1 = apply_degree_patches(merged_level1, selected_level1_ops)
@@ -882,6 +904,11 @@ def main() -> None:
     ]
     companion_report: dict[str, Any] = {"selected": len(selected_companions), "added": [], "skipped": []}
     if selected_companions:
+        for warning in approve_operator_selection(
+            selected_companions, allow_unreviewed_legacy=args.allow_unreviewed_legacy
+        ):
+            log(f"[review] {warning}", quiet=args.quiet)
+        assert_operations_approved(selected_companions)
         log(f"[merge] applying {len(selected_companions)} companion candidate(s)", quiet=args.quiet)
         merged_datasets, companion_report = merge_companion_candidates(
             {

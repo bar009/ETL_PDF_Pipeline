@@ -1,5 +1,22 @@
 # Workspace Decision Log
 
+## 2026-06-11 (pilot continuation)
+
+### Step 6 enforces the review door for operations and companions
+
+Reason:
+- the English pilot plan relies on "review-first publish", but the WS9 door was enforced
+  only in the offline smoke: Step 6 merged selector-filtered operations directly, and
+  companion candidates carried no `review_state` at all
+
+Consequence:
+- companion candidates are stamped `suggested` at creation, like patch operations
+- Step 6 records operator selection as explicit transitions
+  (`approve_operator_selection`: suggested → reviewed → approved) and runs
+  `assert_operations_approved` before merging degree operations and companions
+- staged items without `review_state` are blocked unless `--allow-unreviewed-legacy` is
+  passed; pre-2026-06-11 staging dirs should be regenerated instead
+
 ## 2026-06-11 (systemic plan)
 
 ### Release publishing is owned by a Python gate-first CLI
