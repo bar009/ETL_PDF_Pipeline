@@ -29,11 +29,20 @@ RUNNING_HEADER_RE = re.compile(
 )
 TABLE_OF_CONTENTS_RE = re.compile(r"\b(?:table of contents|contents)\b", re.IGNORECASE)
 APPARATUS_TITLE_RE = re.compile(
-    r"^(?:footnotes?|endnotes?|index|bibliography|references|appendix|introduction|extracts?\s+from|masonic\s+calendar|pronunciation\s+guide|suggested\s+fellow\s+craft\s+roll)\.?$",
+    r"^(?:notes?|footnotes?|endnotes?|index|bibliography|references|appendix|introduction|extracts?\s+from|masonic\s+calendar|pronunciation\s+guide|suggested\s+fellow\s+craft\s+roll)\.?$",
     re.IGNORECASE,
 )
 FRONT_MATTER_HINT_RE = re.compile(
     r"\b(?:copyright|all rights reserved|published by|printed by|isbn|library of congress|edition)\b",
+    re.IGNORECASE,
+)
+PUBLICATION_METADATA_LINE_RE = re.compile(
+    r"\b(?:transactions\s+of\b|lodge\s+of\s+research\b|all\s+rights\s+reserved\b|"
+    r"presented\s+(?:to|august|on)\b|official\s+views\s+of\s+the\s+grand\s+lodge\b)\b",
+    re.IGNORECASE,
+)
+SOURCE_CITATION_LINE_RE = re.compile(
+    r"^[A-Z][^,\n]{4,120},\s+by\s+[^,\n]{2,80}(?:,\s+.*presented.*)?$",
     re.IGNORECASE,
 )
 TITLE_PAGE_FRAGMENT_RE = re.compile(
@@ -308,6 +317,38 @@ def is_page_header_fragment_title(text: str) -> bool:
     return False
 
 
+def is_publication_metadata_title(text: str) -> bool:
+    normalized = clean_heading_text(text)
+    lowered = normalized.lower().strip("., ")
+    if not normalized:
+        return True
+    if is_page_level_title(normalized):
+        return True
+    if PUBLICATION_METADATA_LINE_RE.search(normalized):
+        return True
+    if SOURCE_CITATION_LINE_RE.fullmatch(normalized):
+        return True
+    if lowered in {"by", "on"}:
+        return True
+    return False
+
+
+def content_text_without_publication_metadata(text: str) -> str:
+    useful_lines: list[str] = []
+    for line in normalize_newlines(text).splitlines():
+        cleaned = clean_heading_text(line)
+        if not cleaned:
+            continue
+        if is_publication_metadata_title(cleaned):
+            continue
+        useful_lines.append(cleaned)
+    return "\n".join(useful_lines)
+
+
+def has_rich_page_body(text: str, *, min_tokens: int = 80) -> bool:
+    return len(title_word_tokens(content_text_without_publication_metadata(text))) >= min_tokens
+
+
 def title_word_tokens(text: str) -> list[str]:
     return re.findall(r"[A-Za-z0-9']+", normalize_text(text))
 
@@ -521,6 +562,9 @@ def pick_normalized_section_title(section: ExtractedSection) -> tuple[str, list[
         if is_page_header_fragment_title(candidate):
             flags.append("PAGE_HEADER_FRAGMENT")
             continue
+        if is_publication_metadata_title(candidate):
+            flags.append("PUBLICATION_METADATA_TITLE")
+            continue
         if lowered in {"preface", "full text", "untitled section"}:
             continue
         if TABLE_OF_CONTENTS_RE.search(candidate):
@@ -720,6 +764,9 @@ def classify_section_kind(section: ExtractedSection, *, normalized_title: str, f
     ):
         unit_kind = "front_matter"
         next_flags.append("SOURCE_WORK_TITLE")
+    elif "PAGE_LEVEL_TITLE" in next_flags and has_rich_page_body(section.text):
+        unit_kind = "topic"
+        next_flags.append("PAGE_RICH_CONTENT_FALLBACK")
     elif is_page_level_title(normalized_title):
         unit_kind = "page_fragment"
         next_flags.append("PAGE_LEVEL_FRAGMENT")
@@ -1366,6 +1413,17 @@ def build_discovery_record(
     available_degrees = set(allowed_degrees)
     apply_allowed = set(apply_allowed_degrees)
     baseline_degree = discovery_baseline_degree(route_primary_degree)
+    record_normalized_title = section.normalized_title or section.title
+    if (
+        new_topic_candidates
+        and (
+            "PAGE_RICH_CONTENT_FALLBACK" in reason_codes
+            or is_page_level_title(record_normalized_title)
+            or is_publication_metadata_title(record_normalized_title)
+        )
+    ):
+        record_normalized_title = new_topic_candidates[0]["title"]
+        reason_codes.append("PROVIDER_TOPIC_TITLE")
 
     decision = "reject_or_noise"
     candidate_degree = "unknown"
@@ -1415,7 +1473,7 @@ def build_discovery_record(
         # through the normal ranking logic below).
         if not promotion_blocked and candidate_degree == (baseline_degree or "level1"):
             _blocking_title_signal = infer_later_degree_from_title(
-                section.normalized_title or section.title,
+                record_normalized_title,
                 available_degrees=available_degrees,
             )
             if _blocking_title_signal and _blocking_title_signal != candidate_degree:
@@ -1458,11 +1516,11 @@ def build_discovery_record(
         reason_codes.append("NO_MATCH_FOUND")
 
     title_degree_signal = infer_later_degree_from_title(
-        section.normalized_title or section.title,
+        record_normalized_title,
         available_degrees=available_degrees,
     )
     out_of_route_title_signal = infer_later_degree_from_title(
-        section.normalized_title or section.title,
+        record_normalized_title,
         available_degrees={"level1", "level2", "level3"},
     )
     if (
@@ -1522,7 +1580,7 @@ def build_discovery_record(
         and decision != "existing_match"
     ):
         encyclopedia_lane = infer_encyclopedia_lane_from_title(
-            section.normalized_title or section.title
+            record_normalized_title
         )
         if encyclopedia_lane:
             decision = "encyclopedia_candidate"
@@ -1540,7 +1598,7 @@ def build_discovery_record(
     return {
         "section_id": section.section_id,
         "source_title": section.title,
-        "normalized_title": section.normalized_title or section.title,
+        "normalized_title": record_normalized_title,
         "unit_kind": section.unit_kind,
         "is_noise_candidate": section.is_noise_candidate,
         "decision": decision,
