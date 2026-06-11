@@ -14,7 +14,11 @@
       "primary_degree": "multi",
       "source_kind": "education-course",
       "language": "en",
-      "applies_to_degrees": ["library", "level1", "level3"],
+      "applies_to_degrees": [
+        "library",
+        "level1",
+        "level3"
+      ],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "standard",
       "default_tradition_scope": "instructional",
@@ -28,7 +32,12 @@
       "primary_degree": "multi",
       "source_kind": "ritual-reference",
       "language": "en",
-      "applies_to_degrees": ["library", "level1", "level2", "level3"],
+      "applies_to_degrees": [
+        "library",
+        "level1",
+        "level2",
+        "level3"
+      ],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "variant",
@@ -43,7 +52,10 @@
       "source_kind": "degree-commentary",
       "source_genre": "enrichment_source",
       "language": "en",
-      "applies_to_degrees": ["library", "level2"],
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "interpretive",
@@ -57,7 +69,10 @@
       "primary_degree": "level2",
       "source_kind": "interpretive-lecture",
       "language": "en",
-      "applies_to_degrees": ["library", "level2"],
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "interpretive",
@@ -71,7 +86,10 @@
       "primary_degree": "level2",
       "source_kind": "symbolism-study",
       "language": "en",
-      "applies_to_degrees": ["library", "level2"],
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "standard",
       "default_tradition_scope": "interpretive",
@@ -85,7 +103,10 @@
       "primary_degree": "level3",
       "source_kind": "third-degree-symbolism",
       "language": "en",
-      "applies_to_degrees": ["library", "level3"],
+      "applies_to_degrees": [
+        "library",
+        "level3"
+      ],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "interpretive",
@@ -99,7 +120,12 @@
       "primary_degree": "multi",
       "source_kind": "ritual-monitor",
       "language": "en",
-      "applies_to_degrees": ["library", "level1", "level2"],
+      "applies_to_degrees": [
+        "library",
+        "level1",
+        "level2",
+        "level3"
+      ],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "variant",
@@ -113,7 +139,12 @@
       "primary_degree": "multi",
       "source_kind": "reference-compendium",
       "language": "en",
-      "applies_to_degrees": ["library", "level1", "level2"],
+      "applies_to_degrees": [
+        "library",
+        "level1",
+        "level2",
+        "level3"
+      ],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "interpretive",
