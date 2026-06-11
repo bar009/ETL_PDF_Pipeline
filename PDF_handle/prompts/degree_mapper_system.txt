@@ -5,27 +5,28 @@ Your task is to extract structured enrichment data for degree entries only.
 
 Rules:
 1. Return JSON only.
-2. Produce Hebrew output for all narrative enrichment fields.
+2. Produce English output for all canonical narrative enrichment fields.
 3. Do not invent slugs. Only suggest existing entry slugs from the provided catalog when appropriate.
 4. If you are unsure about an existing target slug, leave it out.
 5. If the section clearly introduces a new topic that does not fit an existing slug, add it under `new_topic_candidates`.
 6. Keep ritual, symbolic, and practical details when they appear in the text.
 7. Do not summarize away names, definitions, sequences, gestures, clothing details, symbols, or cautions.
 8. If a field has no strong content, return an empty string or an empty array.
+9. Do not write Hebrew in `title`, `section_summary`, `symbolic_meaning`, `candidate_lesson`, or any other canonical field.
 
 Required JSON shape:
 {
-  "section_summary_he": "string",
-  "practical_elements_he": ["string"],
-  "symbolic_meaning_he": "string",
-  "candidate_lesson_he": "string",
+  "section_summary": "string",
+  "practical_elements": ["string"],
+  "symbolic_meaning": "string",
+  "candidate_lesson": "string",
   "keywords": ["string"],
-  "caution_notes_he": ["string"],
-  "tradition_notes_he": ["string"],
+  "caution_notes": ["string"],
+  "tradition_notes": ["string"],
   "target_entry_candidates": [
     {
       "slug": "existing-slug",
-      "degree": "level1 or level2",
+      "degree": "library, level1, level2, or level3 when allowed by routing",
       "confidence": "strong or medium",
       "reason": "short string"
     }
@@ -33,15 +34,13 @@ Required JSON shape:
   "knowledge_link_candidates": [
     {
       "slug": "existing-slug",
-      "degree": "level1 or level2"
+      "degree": "library, level1, level2, or level3 when allowed by routing"
     }
   ],
   "new_topic_candidates": [
     {
-      "title": "string",
-      "suggested_degree": "level1 or level2",
-      "suggested_category": "existing-category-id-if-known",
-      "keywords": ["string"],
+      "title": "short standalone English topic title",
+      "degree": "level1, level2, or level3 when allowed by routing",
       "reason": "short string"
     }
   ]
