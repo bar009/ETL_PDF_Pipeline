@@ -16,6 +16,9 @@ Checks, in order:
 4. minimal provenance — ``book``/``chapter`` entries must carry ``source_notes``
    or a ``work_id`` (error); published non-structural entries without
    ``source_notes`` are reported as warnings
+5. work/library coverage — a degree entry that carries a ``work_id`` requires at
+   least one library entry for the same work; a degree lane must never cite a
+   work the library lane does not hold
 
 Exit code 0 = publishable. ``--require-complete`` errors when a standard degree
 file is missing; ``--strict`` turns warnings into failures.
@@ -104,6 +107,39 @@ def _check_provenance(degree_id: str, dataset: dict[str, Any]) -> tuple[list[str
     return errors, warnings
 
 
+def _check_work_library_coverage(datasets: dict[str, dict[str, Any]]) -> tuple[list[str], list[str]]:
+    # Sources are structural: a degree entry citing a work must be backed by
+    # the library lane. A merge that lands degree content without its library
+    # chapters (e.g. Step 6 without --merge-library) must not pass the gate.
+    errors: list[str] = []
+    warnings: list[str] = []
+    library = datasets.get("library")
+    library_work_ids: set[str] = set()
+    if library is not None:
+        for entry in library["entries"]:
+            work_id = str(entry.get("work_id") or "").strip()
+            if work_id:
+                library_work_ids.add(work_id)
+    for degree_id, dataset in datasets.items():
+        if degree_id == "library":
+            continue
+        for entry in dataset["entries"]:
+            work_id = str(entry.get("work_id") or "").strip()
+            if not work_id:
+                continue
+            if library is None:
+                warnings.append(
+                    f"{degree_id}:{entry['slug']} carries work_id {work_id!r} "
+                    "but library.json is not present to verify coverage"
+                )
+            elif work_id not in library_work_ids:
+                errors.append(
+                    f"{degree_id}:{entry['slug']} carries work_id {work_id!r} "
+                    "but the library lane has no entry for that work"
+                )
+    return errors, warnings
+
+
 def validate_runtime_site_root(
     site_root: Path,
     *,
@@ -173,6 +209,8 @@ def validate_runtime_site_root(
     if datasets:
         refs = validate_degree_references(datasets)
         record("cross_degree_references", list(refs["errors"]), list(refs["warnings"]))
+        coverage_errors, coverage_warnings = _check_work_library_coverage(datasets)
+        record("work_library_coverage", coverage_errors, coverage_warnings)
     else:
         record("cross_degree_references", ["no degree files could be loaded"], [])
 

@@ -108,5 +108,68 @@ class TestGateFailsBadData(GateCase):
         self.assertTrue(any("published without source_notes" in warning for warning in report["warnings"]))
 
 
+class TestWorkLibraryCoverage(GateCase):
+    """A degree lane must never cite a work the library lane does not hold.
+
+    This is the hybrid-sandbox gap from the 2026-06-11 pilot: level2 carried
+    work_id=color-symbolism while library.json was empty, and the gate passed.
+    """
+
+    def _library_payload(self, entries: list[dict]) -> dict:
+        return {
+            "meta": {
+                "degree": "library",
+                "title": "Library fixture",
+                "updated_at": "2026-06-11T00:00:00Z",
+            },
+            "categories": {"sources": {"title": "Sources", "symbol": "*"}},
+            "entries": entries,
+        }
+
+    def _root_with_work_id(self, library_entries: list[dict] | None) -> Path:
+        def mutate(payload):
+            payload["entries"][1]["work_id"] = "ghost-work"
+            payload["entries"][1]["source_notes"] = ["Ghost Work | section 1"]
+
+        site_root = self._tampered_root(mutate)
+        if library_entries is not None:
+            library_path = site_root / "data" / "library.json"
+            library_path.write_text(
+                json.dumps(self._library_payload(library_entries), ensure_ascii=False),
+                encoding="utf-8",
+            )
+        return site_root
+
+    def test_work_id_without_library_entry_fails(self) -> None:
+        site_root = self._root_with_work_id(library_entries=[])
+        self.assert_gate_fails(site_root, "library lane has no entry for that work")
+
+    def test_work_id_with_library_chapter_passes(self) -> None:
+        chapter = {
+            "title": "Ghost Work, Chapter 1",
+            "slug": "ghost-work-chapter-1",
+            "type": "chapter",
+            "degree": "library",
+            "applies_to_degrees": ["library"],
+            "category": "sources",
+            "parent_topic": None,
+            "related_topics": [],
+            "short_summary": "Fixture chapter.",
+            "source_notes": ["Ghost Work | chapter 1"],
+            "work_id": "ghost-work",
+            "status": "draft",
+        }
+        report = validate_runtime_site_root(self._root_with_work_id(library_entries=[chapter]))
+        self.assertEqual(report["errors"], [])
+        self.assertTrue(report["ok"])
+
+    def test_work_id_without_library_file_warns(self) -> None:
+        report = validate_runtime_site_root(self._root_with_work_id(library_entries=None))
+        self.assertEqual(report["errors"], [])
+        self.assertTrue(
+            any("library.json is not present to verify coverage" in w for w in report["warnings"])
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
