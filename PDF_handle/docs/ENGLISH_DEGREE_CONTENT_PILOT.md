@@ -148,3 +148,38 @@ Step 6 traps this runbook closes (enforced in code since the same date):
   `--merge-library` is part of the same merge
 - without `--apply-live` nothing is written to the site root; the run logs
   `mode=preview-only` and a failed validation exits non-zero
+
+## Second Source Confirmed: Allegories of Hiram Abiff (level3)
+
+The same runbook ran green on the level3 source on the same day, on top of the
+Color-Symbolism root. Two source-specific notes:
+
+- the raw consolidated markdown carried whole pages translated into Hebrew and
+  Arabic by the transform step, plus duplicated English passages — the
+  restructured semantic markdown keeps English only, or the language gate fails
+- all 11 content sections were classified `later_degree_candidate` → `level3`,
+  matching the routing row (`applies_to_degrees: [library, level3]`); the
+  References section was rejected as noise
+
+Final pilot root state: `level2` 8 entries, `level3` 11 entries, `library` 24
+entries, `validate_runtime --require-complete --strict` green (19 checks
+including `work_library_coverage`), language audit green. The root was then
+published as a frozen snapshot via `publish_snapshot.py`
+(`english-pilot-sandbox-2026-06-11`), which wrote `release_gate_report.json`
+and `run_manifest.json` inside the snapshot and refuses to overwrite it.
+
+## One-Command Orchestrator Path
+
+`prod/cli/postmerge.py` runs Steps 5→6→7 (including QA with a browser smoke)
+in one command and produces the same result as the manual runbook:
+
+```powershell
+python PDF_handle/prod/cli/postmerge.py `
+  --site-root "<sandbox root>" --work-id <work-id> `
+  --provider gemini --include-companions
+```
+
+The orchestrated Step 6 always passes `--merge-library --apply-live` and the
+approval flags derived from the staged counts. Use the orchestrator for
+sandbox/work roots; live publishes stay manual so the review door is a human
+decision.
