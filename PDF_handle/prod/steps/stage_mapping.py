@@ -7,7 +7,7 @@ from PDF_handle.prod.providers import MalformedProviderPayloadError, generate_js
 from PDF_handle.prod.schema import normalize_nullable_string, normalize_string_array, normalize_text
 
 
-DEFAULT_USER_PROMPT_TEMPLATE = """Map the following source unit into structured Hebrew enrichment JSON.
+DEFAULT_USER_PROMPT_TEMPLATE = """Map the following source unit into structured English canonical enrichment JSON.
 
 Return JSON only.
 Return a single JSON object that matches the requested schema exactly.
@@ -15,6 +15,7 @@ Do not wrap the output in markdown fences.
 Do not omit keys.
 Use an empty string for missing text fields.
 Use [] for missing list fields.
+Write every canonical text field in English.
 
 Work metadata:
 - work_id: {work_id}
@@ -39,25 +40,25 @@ Source unit:
 MAPPING_RESPONSE_SCHEMA = {
     "type": "OBJECT",
     "property_ordering": [
-        "section_summary_he",
-        "practical_elements_he",
-        "symbolic_meaning_he",
-        "candidate_lesson_he",
+        "section_summary",
+        "practical_elements",
+        "symbolic_meaning",
+        "candidate_lesson",
         "keywords",
-        "caution_notes_he",
-        "tradition_notes_he",
+        "caution_notes",
+        "tradition_notes",
         "target_entry_candidates",
         "knowledge_link_candidates",
         "new_topic_candidates",
     ],
     "properties": {
-        "section_summary_he": {"type": "STRING"},
-        "practical_elements_he": {"type": "ARRAY", "items": {"type": "STRING"}},
-        "symbolic_meaning_he": {"type": "STRING"},
-        "candidate_lesson_he": {"type": "STRING"},
+        "section_summary": {"type": "STRING"},
+        "practical_elements": {"type": "ARRAY", "items": {"type": "STRING"}},
+        "symbolic_meaning": {"type": "STRING"},
+        "candidate_lesson": {"type": "STRING"},
         "keywords": {"type": "ARRAY", "items": {"type": "STRING"}},
-        "caution_notes_he": {"type": "ARRAY", "items": {"type": "STRING"}},
-        "tradition_notes_he": {"type": "ARRAY", "items": {"type": "STRING"}},
+        "caution_notes": {"type": "ARRAY", "items": {"type": "STRING"}},
+        "tradition_notes": {"type": "ARRAY", "items": {"type": "STRING"}},
         "target_entry_candidates": {
             "type": "ARRAY",
             "items": {
@@ -101,13 +102,13 @@ MAPPING_RESPONSE_SCHEMA = {
         },
     },
     "required": [
-        "section_summary_he",
-        "practical_elements_he",
-        "symbolic_meaning_he",
-        "candidate_lesson_he",
+        "section_summary",
+        "practical_elements",
+        "symbolic_meaning",
+        "candidate_lesson",
         "keywords",
-        "caution_notes_he",
-        "tradition_notes_he",
+        "caution_notes",
+        "tradition_notes",
         "target_entry_candidates",
         "knowledge_link_candidates",
         "new_topic_candidates",
@@ -139,14 +140,19 @@ def coerce_mapping_payload(payload: dict[str, Any]) -> dict[str, Any]:
             f"Gemini response parsed into {type(payload).__name__}, expected a JSON object."
         )
 
+    def first_present(canonical_key: str, legacy_key: str) -> Any:
+        if canonical_key in payload:
+            return payload.get(canonical_key)
+        return payload.get(legacy_key)
+
     return {
-        "section_summary_he": normalize_text(payload.get("section_summary_he")),
-        "practical_elements_he": normalize_string_array(payload.get("practical_elements_he")),
-        "symbolic_meaning_he": normalize_text(payload.get("symbolic_meaning_he")),
-        "candidate_lesson_he": normalize_text(payload.get("candidate_lesson_he")),
+        "section_summary": normalize_text(first_present("section_summary", "section_summary_he")),
+        "practical_elements": normalize_string_array(first_present("practical_elements", "practical_elements_he")),
+        "symbolic_meaning": normalize_text(first_present("symbolic_meaning", "symbolic_meaning_he")),
+        "candidate_lesson": normalize_text(first_present("candidate_lesson", "candidate_lesson_he")),
         "keywords": normalize_string_array(payload.get("keywords")),
-        "caution_notes_he": normalize_string_array(payload.get("caution_notes_he")),
-        "tradition_notes_he": normalize_string_array(payload.get("tradition_notes_he")),
+        "caution_notes": normalize_string_array(first_present("caution_notes", "caution_notes_he")),
+        "tradition_notes": normalize_string_array(first_present("tradition_notes", "tradition_notes_he")),
         "target_entry_candidates": _normalize_candidate_list(payload.get("target_entry_candidates")),
         "knowledge_link_candidates": _normalize_candidate_list(payload.get("knowledge_link_candidates")),
         "new_topic_candidates": [

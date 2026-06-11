@@ -95,12 +95,12 @@ class TestStateStamping(unittest.TestCase):
             chapter_slug="c",
             chapter_degree="library",
             source_notes=["note"],
-            section_summary_he="תוכן",
-            practical_elements_he=[],
-            symbolic_meaning_he="",
-            candidate_lesson_he="",
-            tradition_notes_he=[],
-            caution_notes_he=[],
+            section_summary="Content",
+            practical_elements=[],
+            symbolic_meaning="",
+            candidate_lesson="",
+            tradition_notes=[],
+            caution_notes=[],
         )
         self.assertEqual(op["review_state"], "suggested")
 

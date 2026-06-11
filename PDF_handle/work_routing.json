@@ -1,11 +1,25 @@
 {
   "library_category": {
     "id": "etl_imports",
-    "title": "ייבואי PDF",
+    "title": "PDF Imports",
     "symbol": "🧱",
-    "description": "ספרים ופרקים שיובאו ישירות מ-PDF בתהליך ETL staged."
+    "description": "Books and chapters imported directly from PDF through the staged ETL process."
   },
   "works": [
+    {
+      "source_book_name": "Basic Masonic Education Course",
+      "work_id": "basic-masonic-education-course",
+      "staging_dir": "basic-education",
+      "work_title": "Basic Masonic Education Course",
+      "primary_degree": "level1",
+      "source_kind": "education-course",
+      "language": "en",
+      "applies_to_degrees": ["library", "level1"],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "standard",
+      "default_tradition_scope": "instructional",
+      "library_category": "etl_imports"
+    },
     {
       "source_book_name": "1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition",
       "work_id": "blue-lodge-ritual-reference-guide-2021",
@@ -44,6 +58,34 @@
       "source_kind": "interpretive-lecture",
       "language": "en",
       "applies_to_degrees": ["library", "level2"],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "interpretive",
+      "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "Color-Symbolism",
+      "work_id": "color-symbolism",
+      "staging_dir": "color-symbolism",
+      "work_title": "Color Symbolism",
+      "primary_degree": "level2",
+      "source_kind": "symbolism-study",
+      "language": "en",
+      "applies_to_degrees": ["library", "level2"],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "standard",
+      "default_tradition_scope": "interpretive",
+      "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "Allegories_of_Hiram_Abiff",
+      "work_id": "allegories-of-hiram-abiff",
+      "staging_dir": "hiram-abiff",
+      "work_title": "Allegories of Hiram Abiff",
+      "primary_degree": "level3",
+      "source_kind": "third-degree-symbolism",
+      "language": "en",
+      "applies_to_degrees": ["library", "level3"],
       "default_visibility_level": "internal",
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "interpretive",

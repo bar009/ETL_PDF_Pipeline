@@ -979,13 +979,13 @@ def heuristic_extract_mapping(
         ]
     )
     return {
-        "section_summary_he": "",
-        "practical_elements_he": [],
-        "symbolic_meaning_he": "",
-        "candidate_lesson_he": "",
+        "section_summary": "",
+        "practical_elements": [],
+        "symbolic_meaning": "",
+        "candidate_lesson": "",
         "keywords": keywords[:12],
-        "caution_notes_he": [],
-        "tradition_notes_he": [],
+        "caution_notes": [],
+        "tradition_notes": [],
         "target_entry_candidates": [
             {
                 "slug": match["slug"],
@@ -1008,15 +1008,32 @@ def join_nonempty_strings(values: Iterable[str]) -> str:
     return "\n\n".join(normalized)
 
 
+def mapping_text(item: dict[str, Any], canonical_key: str, legacy_key: str) -> str:
+    return normalize_text(item.get(canonical_key)) or normalize_text(item.get(legacy_key))
+
+
+def mapping_list(item: dict[str, Any], canonical_key: str, legacy_key: str) -> list[str]:
+    values = item.get(canonical_key)
+    if values is None:
+        values = item.get(legacy_key)
+    return normalize_string_array(values)
+
+
 def combine_mapping_results(results: list[dict[str, Any]]) -> dict[str, Any]:
     combined = {
-        "section_summary_he": join_nonempty_strings(item.get("section_summary_he", "") for item in results),
-        "practical_elements_he": unique_strings(value for item in results for value in item.get("practical_elements_he", [])),
-        "symbolic_meaning_he": join_nonempty_strings(item.get("symbolic_meaning_he", "") for item in results),
-        "candidate_lesson_he": join_nonempty_strings(item.get("candidate_lesson_he", "") for item in results),
+        "section_summary": join_nonempty_strings(mapping_text(item, "section_summary", "section_summary_he") for item in results),
+        "practical_elements": unique_strings(
+            value for item in results for value in mapping_list(item, "practical_elements", "practical_elements_he")
+        ),
+        "symbolic_meaning": join_nonempty_strings(mapping_text(item, "symbolic_meaning", "symbolic_meaning_he") for item in results),
+        "candidate_lesson": join_nonempty_strings(mapping_text(item, "candidate_lesson", "candidate_lesson_he") for item in results),
         "keywords": unique_strings(value for item in results for value in item.get("keywords", [])),
-        "caution_notes_he": unique_strings(value for item in results for value in item.get("caution_notes_he", [])),
-        "tradition_notes_he": unique_strings(value for item in results for value in item.get("tradition_notes_he", [])),
+        "caution_notes": unique_strings(
+            value for item in results for value in mapping_list(item, "caution_notes", "caution_notes_he")
+        ),
+        "tradition_notes": unique_strings(
+            value for item in results for value in mapping_list(item, "tradition_notes", "tradition_notes_he")
+        ),
         "target_entry_candidates": [],
         "knowledge_link_candidates": [],
         "new_topic_candidates": [],
@@ -1185,6 +1202,9 @@ LATER_DEGREE_TITLE_SIGNALS = {
     "grand hailing sign five points of fellowship": "level3",
     "hiram abiff legend murder burial and discovery": "level3",
     "hour glass": "level3",
+    "masonic glossary master mason": "level3",
+    "master mason": "level3",
+    "master mason degree": "level3",
     "master mason opening obligation overview": "level3",
     "mm monitor emblems three steps beehive anchor ark": "level3",
     "monument and weeping virgin historical account": "level3",
@@ -1197,6 +1217,9 @@ LATER_DEGREE_TITLE_SIGNALS = {
     "the beehive": "level3",
     "the forty seventh": "level3",
     "the hour glass": "level3",
+    "the lion of the tribe of judah": "level3",
+    "the master mason": "level3",
+    "the master mason degree": "level3",
     "the scythe": "level3",
     "the three steps": "level3",
     "three steps": "level3",
@@ -1438,6 +1461,22 @@ def build_discovery_record(
         section.normalized_title or section.title,
         available_degrees=available_degrees,
     )
+    out_of_route_title_signal = infer_later_degree_from_title(
+        section.normalized_title or section.title,
+        available_degrees={"level1", "level2", "level3"},
+    )
+    if (
+        out_of_route_title_signal
+        and out_of_route_title_signal not in apply_allowed
+        and section.unit_kind == "topic"
+        and not section.is_noise_candidate
+        and decision in {"new_canonical_topic", "later_degree_candidate"}
+    ):
+        decision = "reject_or_noise"
+        candidate_degree = "unknown"
+        degree_confidence = "low"
+        confidence = "high"
+        reason_codes.extend(["TITLE_DEGREE_SIGNAL", "EXPLICIT_ROUTING_REQUIRED", "TITLE_DEGREE_OUT_OF_ROUTE"])
     # The title signal override applies to new/candidate decisions AND to
     # existing_match when the signal degree is strictly higher than the matched
     # degree.  This prevents a strong lower-degree catalog hit from silencing a
