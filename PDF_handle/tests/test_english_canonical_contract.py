@@ -40,6 +40,15 @@ LEVEL1_CATEGORIES = {
 
 
 class EnglishCanonicalContractTest(unittest.TestCase):
+    def test_degree_mapper_system_prompt_uses_english_canonical_contract(self) -> None:
+        prompt = (REPO_ROOT / "PDF_handle" / "prompts" / "degree_mapper_system.txt").read_text(encoding="utf-8")
+
+        self.assertIn("Produce English output", prompt)
+        self.assertIn('"section_summary"', prompt)
+        self.assertIn('"candidate_lesson"', prompt)
+        self.assertNotIn("Produce Hebrew output", prompt)
+        self.assertNotIn("section_summary_he", prompt)
+
     def test_mapping_payload_returns_english_canonical_keys(self) -> None:
         payload = coerce_mapping_payload(
             {
