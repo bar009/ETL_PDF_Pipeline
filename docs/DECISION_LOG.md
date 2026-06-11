@@ -1,5 +1,23 @@
 # Workspace Decision Log
 
+## 2026-06-11 (dry-run trap)
+
+### Step 6 fails loudly instead of previewing a broken merge silently
+
+Reason:
+- in the Color-Symbolism Gemini run, `apply.py --approve-level2 all` (without
+  `--merge-library`) merged 14 operations whose `knowledge_links` target staged
+  library chapters, failed its internal validation, wrote previews only, and
+  exited 0 — the operator believed the enriched content had landed
+
+Consequence:
+- a new early guard (`assert_selected_ops_library_links_mergeable`) blocks the
+  merge before it starts when selected operations link to staged-but-unselected
+  library chapters, and names the fix: pass `--merge-library`
+- dry-run mode now logs `mode=preview-only` plus an explicit "no site-root files
+  were written" note, and exits non-zero whenever Step 6 validation fails
+- `PDF_handle/tests/test_step6_dry_run_trap.py` pins both behaviors
+
 ## 2026-06-11 (pilot continuation)
 
 ### Step 6 enforces the review door for operations and companions

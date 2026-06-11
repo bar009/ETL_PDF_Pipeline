@@ -582,6 +582,47 @@ def retarget_library_knowledge_links(
     return degree_data, rewritten
 
 
+def assert_selected_ops_library_links_mergeable(
+    selected_ops_by_degree: dict[str, list[dict[str, Any]]],
+    *,
+    merged_library: dict[str, Any],
+    library_patch: dict[str, Any],
+    merge_library_selected: bool,
+) -> None:
+    """Fail early when selected operations link to staged library chapters
+    that are not part of this merge.
+
+    Without this guard the merge proceeds, Step 6 validation fails late with
+    one missing-reference error per link, and in dry-run mode the operator
+    only sees validation_ok=False after the fact. The actionable cause is a
+    missing --merge-library, so say exactly that before merging anything.
+    """
+    available_slugs = {entry["slug"] for entry in merged_library["entries"]}
+    staged_slugs = {
+        str(payload.get("slug") or "").strip()
+        for payload in library_patch.get("entries", [])
+    }
+    blocked: list[str] = []
+    for degree_id, operations in selected_ops_by_degree.items():
+        for operation in operations:
+            changes = operation.get("changes") or {}
+            for link in changes.get("knowledge_links") or []:
+                if str(link.get("degree") or "") != "library":
+                    continue
+                slug = str(link.get("slug") or "").strip()
+                if slug and slug not in available_slugs and slug in staged_slugs:
+                    label = str(operation.get("slug") or operation.get("marker_id") or "<unlabeled>")
+                    blocked.append(f"{degree_id}:{label} -> library:{slug}")
+    if blocked:
+        listed = "\n  ".join(blocked[:10])
+        more = f"\n  ... and {len(blocked) - 10} more" if len(blocked) > 10 else ""
+        raise SystemExit(
+            "Step 6 selected operations link to staged library chapters that are not part of this merge.\n"
+            f"{'Re-run with --merge-library so the link targets land in the same merge.' if not merge_library_selected else 'The staged library lane did not produce these slugs; regenerate Step 5 staging.'}\n"
+            f"  {listed}{more}"
+        )
+
+
 def merge_library_lane(
     live_library: dict[str, Any],
     staged_library: dict[str, Any],
@@ -875,6 +916,17 @@ def main() -> None:
     selected_level1_ops = [op for op in level1_patch.get("operations", []) if operation_matches_selector(op, level1_mode, level1_selector)]
     selected_level2_ops = [op for op in level2_patch.get("operations", []) if operation_matches_selector(op, level2_mode, level2_selector)]
     selected_level3_ops = [op for op in level3_patch.get("operations", []) if operation_matches_selector(op, level3_mode, level3_selector)]
+
+    assert_selected_ops_library_links_mergeable(
+        {
+            "level1": selected_level1_ops,
+            "level2": selected_level2_ops,
+            "level3": selected_level3_ops,
+        },
+        merged_library=merged_library,
+        library_patch=library_patch,
+        merge_library_selected=args.merge_library,
+    )
 
     # Operator selection is the explicit review+approval decision; record it as
     # state transitions and enforce the staging→runtime door before any merge.
@@ -1203,11 +1255,26 @@ def main() -> None:
         write_json(staging_dir / "step6_merge_report.json", merge_report)
 
     log(
-        f"[done] validation_ok={validation_report['ok']} library={library_report['merged_entry_count']} "
+        f"[done] validation_ok={validation_report['ok']} mode={'live-write' if args.apply_live else 'preview-only'} "
+        f"library={library_report['merged_entry_count']} "
         f"level1_ops={len(selected_level1_ops)} level2_ops={len(selected_level2_ops)} "
         f"level3_ops={len(selected_level3_ops)} companions={len(selected_companions)}",
         quiet=args.quiet,
     )
+    if not args.apply_live:
+        log(
+            f"[note] no site-root files were written; merged previews are in {staging_dir}. "
+            "Re-run with --apply-live to write the merge.",
+            quiet=args.quiet,
+        )
+    if not validation_report["ok"]:
+        # Without --apply-live the merge is a preview, but a preview that fails
+        # validation must not exit 0 — that is how a failed merge gets mistaken
+        # for a successful one.
+        raise SystemExit(
+            "Step 6 validation failed; the merged result must not ship. "
+            f"Check {staging_dir / 'step6_validation_report.json'}."
+        )
 
 
 if __name__ == "__main__":
