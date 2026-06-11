@@ -501,6 +501,24 @@ def build_discovery_gate_report(discovery_rows: list[dict[str, Any]]) -> dict[st
     rejected_rows = [row for row in discovery_rows if row.get("decision") == "reject_or_noise"]
     overall_rejection_rate = len(rejected_rows) / max(1, total_rows)
     overall_rejection_rate_fail = total_rows > 0 and overall_rejection_rate >= 0.60
+    source_genres = {
+        normalize_nullable_string(row.get("source_genre"))
+        for row in discovery_rows
+        if normalize_nullable_string(row.get("source_genre"))
+    }
+    enrichment_only_run = bool(source_genres) and source_genres == {"enrichment_source"}
+    rows_with_any_match_signal = [
+        row
+        for row in discovery_rows
+        if int(row.get("strong_match_count") or 0) > 0 or int(row.get("medium_match_count") or 0) > 0
+    ]
+    enrichment_match_signal_rate = len(rows_with_any_match_signal) / max(1, total_rows)
+    enrichment_match_signal_ok = (
+        enrichment_only_run
+        and total_rows > 0
+        and enrichment_match_signal_rate >= 0.30
+    )
+    effective_overall_rejection_rate_fail = overall_rejection_rate_fail and not enrichment_match_signal_ok
 
     duncan_rows = [row for row in discovery_rows if row.get("work_id") == "duncans-ritual-monitor-1866"]
     duncan_fragmentary_rows = [
@@ -573,7 +591,7 @@ def build_discovery_gate_report(discovery_rows: list[dict[str, Any]]) -> dict[st
                 invalid_degree_rows,
                 duncan_mm_degree_misroute_rows,
                 missing_explainability_rows,
-                overall_rejection_rate_fail,
+                effective_overall_rejection_rate_fail,
                 duncan_fragmentary_ratio_fail,
             ]
         ),
@@ -610,11 +628,20 @@ def build_discovery_gate_report(discovery_rows: list[dict[str, Any]]) -> dict[st
                 "examples": missing_explainability_rows[:12],
             },
             "overall_rejection_rate": {
-                "ok": not overall_rejection_rate_fail,
+                "ok": not effective_overall_rejection_rate_fail,
                 "rate": round(overall_rejection_rate, 4),
                 "threshold": 0.60,
                 "total_rows": total_rows,
                 "rejected_row_count": len(rejected_rows),
+                "waived_for_enrichment_source": enrichment_match_signal_ok,
+            },
+            "enrichment_match_signal": {
+                "applicable": enrichment_only_run,
+                "ok": (not enrichment_only_run) or enrichment_match_signal_ok,
+                "rate": round(enrichment_match_signal_rate, 4),
+                "threshold": 0.30,
+                "total_rows": total_rows,
+                "rows_with_any_match_signal": len(rows_with_any_match_signal),
             },
             "duncan_fragmentary_ratio": {
                 "ok": not duncan_fragmentary_ratio_fail,
@@ -1405,6 +1432,7 @@ def main() -> None:
                     {
                         "work_id": route["work_id"],
                         "work_title": route["work_title"],
+                        "source_genre": route.get("source_genre"),
                         "provider_fallback": "heuristic" if section_used_fallback else None,
                         **discovery,
                     }
