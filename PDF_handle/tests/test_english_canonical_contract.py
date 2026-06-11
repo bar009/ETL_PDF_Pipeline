@@ -20,7 +20,12 @@ from PDF_handle.prod.companion_contract import (  # noqa: E402
 )
 from PDF_handle.prod.core.io import read_json, write_json  # noqa: E402
 from PDF_handle.prod.steps.stage_mapping import coerce_mapping_payload  # noqa: E402
-from PDF_handle.prod.steps.stage_support import ExtractedSection, build_discovery_record  # noqa: E402
+from PDF_handle.prod.steps.stage_support import (  # noqa: E402
+    ExtractedSection,
+    build_discovery_record,
+    normalize_extracted_sections,
+    pick_normalized_section_title,
+)
 
 
 LEVEL1_CATEGORIES = {
@@ -174,6 +179,61 @@ class EnglishCanonicalContractTest(unittest.TestCase):
         self.assertEqual(record["decision"], "reject_or_noise")
         self.assertEqual(record["candidate_degree"], "unknown")
         self.assertIn("TITLE_DEGREE_OUT_OF_ROUTE", record["reason_codes"])
+
+    def test_page_running_header_is_skipped_for_semantic_title(self) -> None:
+        section = ExtractedSection(
+            section_id="section-0001",
+            title="Page 3",
+            marker_type="heading",
+            text=(
+                "## Page 3\n\n"
+                "Transactions of A. Douglas Smith, Jr. Lodge of Research #1949 Volume 4\n"
+                "© 2004 - A. Douglas Smith, Jr., Lodge of Research #1949 - All Rights Reserved\n"
+                "Color Symbolism And Freemasonry, by John Shroeder, PM, Presented August 29, 1998\n"
+                "Color Symbolism And Freemasonry\n\n"
+                "We all know that Masonry employs symbols to teach moral lessons."
+            ),
+            source_anchor="page-3",
+            source_order=3,
+        )
+
+        title, flags = pick_normalized_section_title(section)
+
+        self.assertEqual(title, "Color Symbolism And Freemasonry")
+        self.assertIn("PUBLICATION_METADATA_TITLE", flags)
+
+    def test_rich_page_body_is_not_blocked_as_fragmentary(self) -> None:
+        section = ExtractedSection(
+            section_id="section-0005",
+            title="Page 5",
+            marker_type="heading",
+            text=(
+                "## Page 5\n\n"
+                "Transactions of A. Douglas Smith, Jr. Lodge of Research #1949 Volume 4\n"
+                "Page 15\n"
+                + "Blue symbolism connects moral aspiration, fidelity, friendship, and instruction. " * 20
+            ),
+            source_anchor="page-5",
+            source_order=5,
+        )
+
+        normalized = normalize_extracted_sections([section])[0]
+        record = build_discovery_record(
+            section=normalized,
+            route_primary_degree="level2",
+            combined_result={
+                "new_topic_candidates": [{"title": "Blue as Symbol of Spiritual Aspiration", "degree": "level2"}],
+            },
+            resolution={"strong": [], "medium": [], "rejected": []},
+            allowed_degrees=["library", "level2"],
+            apply_allowed_degrees=["library", "level2"],
+        )
+
+        self.assertEqual(normalized.unit_kind, "topic")
+        self.assertIn("PAGE_RICH_CONTENT_FALLBACK", normalized.normalization_flags)
+        self.assertEqual(record["decision"], "new_canonical_topic")
+        self.assertEqual(record["normalized_title"], "Blue as Symbol of Spiritual Aspiration")
+        self.assertIn("PROVIDER_TOPIC_TITLE", record["reason_codes"])
 
 
 if __name__ == "__main__":
