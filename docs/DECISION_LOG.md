@@ -1,5 +1,32 @@
 # Workspace Decision Log
 
+## 2026-06-11 (stable structure)
+
+### Content gets a real taxonomy: provider-chosen categories, hubs, adopted orphans
+
+Reason:
+- every staged candidate landed in the first category of its degree
+  (`choose_candidate_category` first-key fallback), `parent_topic` was always
+  null, and nothing created hub entries — the site rendered flat, miscategorized
+  lists instead of category → hub → topics
+- a title-page section (author/date/lodge metadata under a clean heading)
+  passed Step 5 as a real topic
+
+Consequence:
+- `prod/templates/degree_categories.v1.json` is the versioned taxonomy
+  (9 categories per degree, operator-approved); the seeder takes
+  `--categories-template` in categories-only mode and refuses it in full mode
+- the Gemini mapping call now picks `suggested_category` from the degree's
+  category list; precedence provider → related-match → first-key, recorded as
+  `category_source` on every candidate for operator review
+- `prod/cli/build_degree_structure.py` ensures a hub per category and adopts
+  orphan topics under their category's hub; it is deterministic structure, so
+  it does NOT pass the staging review door — compensating controls: dry-run by
+  default, pre-write validation that refuses on any error, live-file backups,
+  JSON report; idempotent by construction
+- Step 5 classifies sparse publication-metadata bodies as `front_matter`
+  (`TITLE_PAGE_AUTHOR_METADATA`), killing title pages regardless of heading
+
 ## 2026-06-11 (trustworthy full run)
 
 ### The full pipeline path is proven end to end, manual and orchestrated

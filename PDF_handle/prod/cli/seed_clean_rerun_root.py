@@ -80,6 +80,16 @@ def build_parser() -> argparse.ArgumentParser:
         default="preserve",
         help="When set to en, scrub projected canonical metadata and categories to English labels.",
     )
+    parser.add_argument(
+        "--categories-template",
+        type=Path,
+        default=None,
+        help=(
+            "JSON file mapping degree -> categories dict (see "
+            "PDF_handle/prod/templates/degree_categories.v1.json). Replaces the seed's "
+            "category sets in categories-only mode; refused in full mode."
+        ),
+    )
     parser.add_argument("--include-overrides", action="store_true")
     parser.add_argument("--include-hebrew-bundle", action="store_true")
     parser.add_argument("--strict", action="store_true", help="Exit non-zero when preflight blocks launch.")
@@ -151,7 +161,13 @@ def build_projected_canonical_payloads(
     seed_root: Path,
     seed_mode: str,
     canonical_language: str = "preserve",
+    categories_template: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, dict[str, Any]]:
+    if categories_template is not None and seed_mode != "categories-only":
+        # In full mode the seed entries reference the seed's category ids;
+        # swapping the category set would make normalize_entry silently remap
+        # them to the first key — the exact bug class this template fixes.
+        raise ValueError("--categories-template requires --seed-mode categories-only")
     payloads: dict[str, dict[str, Any]] = {}
     for degree in CANONICAL_DATASETS:
         path = dataset_path(seed_root, degree)
@@ -162,13 +178,20 @@ def build_projected_canonical_payloads(
             payload = serialize_degree_data(normalized)
             payloads[degree] = apply_english_canonical_labels(degree, payload) if canonical_language == "en" else payload
             continue
+        if categories_template is not None and degree in categories_template:
+            categories = {
+                category_id: dict(category)
+                for category_id, category in categories_template[degree].items()
+            }
+        else:
+            categories = {category_id: dict(category) for category_id, category in normalized["categories"].items()}
         payload = {
             "meta": {
                 "degree": normalized["meta"]["degree"],
                 "title": normalized["meta"]["title"],
                 "updated_at": utc_timestamp(),
             },
-            "categories": {category_id: dict(category) for category_id, category in normalized["categories"].items()},
+            "categories": categories,
             "entries": [],
         }
         payloads[degree] = apply_english_canonical_labels(degree, payload) if canonical_language == "en" else payload
@@ -239,11 +262,18 @@ def main() -> None:
         else (args.report_root.resolve() / utc_timestamp().replace(":", "-"))
     )
 
+    categories_template: dict[str, dict[str, Any]] | None = None
+    if args.categories_template is not None:
+        if args.seed_mode != "categories-only":
+            raise SystemExit("--categories-template requires --seed-mode categories-only")
+        categories_template = read_json(args.categories_template.resolve())
+
     seed_summary, seed_slug_sets = summarize_root(seed_root)
     projected_payloads = build_projected_canonical_payloads(
         seed_root=seed_root,
         seed_mode=args.seed_mode,
         canonical_language=args.canonical_language,
+        categories_template=categories_template,
     )
     projected_datasets = normalize_projected_datasets(projected_payloads)
     projected_override_bundle = build_projected_override_bundle(
@@ -269,6 +299,7 @@ def main() -> None:
         "target_root": str(target_root),
         "seed_mode": args.seed_mode,
         "canonical_language": args.canonical_language,
+        "categories_template": str(args.categories_template) if args.categories_template else None,
         "seed_root_summary": seed_summary,
         "shell_seed_inventory": build_seed_inventory(shell_root, SAFE_SHELL_PATHS),
         "governance_seed_inventory": build_seed_inventory(governance_root, SAFE_GOVERNANCE_PATHS),

@@ -677,12 +677,26 @@ def purge_library_entries_for_work(
     return dataset, removed_slugs
 
 
-def choose_candidate_category(dataset: dict[str, Any], related_slugs: list[str]) -> str:
+def choose_candidate_category(
+    dataset: dict[str, Any],
+    related_slugs: list[str],
+    *,
+    provider_category: str | None = None,
+) -> tuple[str, str]:
+    """Pick the candidate's category and say where the choice came from.
+
+    Precedence: a provider suggestion that names a real category id of the
+    target degree, then inheritance from related matches, then the first
+    category key — the legacy fallback that used to swallow everything.
+    """
+    cleaned = str(provider_category or "").strip()
+    if cleaned and cleaned in dataset["categories"]:
+        return cleaned, "provider"
     for slug in related_slugs:
         entry = dataset["entryBySlug"].get(slug)
         if entry:
-            return entry["category"]
-    return next(iter(dataset["categories"].keys()))
+            return entry["category"], "related_match"
+    return next(iter(dataset["categories"].keys())), "first_category_fallback"
 
 
 def build_companion_candidate(
@@ -706,12 +720,17 @@ def build_companion_candidate(
     related_slugs = unique_strings(match["slug"] for match in medium_matches if match["degree"] == degree)
     suggested_title = clean_heading_text(discovery.get("normalized_title") or section_title)
     candidate_slug = slugify(f"{degree}-{route['work_id']}-{section_id}-{suggested_title}", prefix=f"{degree}-candidate")
+    category_id, category_source = choose_candidate_category(
+        dataset,
+        related_slugs,
+        provider_category=combined_result.get("suggested_category"),
+    )
     draft_seed = {
         "slug": candidate_slug,
         "title": suggested_title,
         "degree": degree,
         "applies_to_degrees": [degree],
-        "category": choose_candidate_category(dataset, related_slugs),
+        "category": category_id,
         "parent_topic": None,
         "aliases": [],
         "keywords": combined_result.get("keywords", [])[:12],
@@ -752,6 +771,8 @@ def build_companion_candidate(
         "suggested_title": suggested_title,
         "suggested_degree": degree,
         "suggested_category": draft_seed["category"],
+        "category_source": category_source,
+        "category_reason": combined_result.get("suggested_category_reason", ""),
         "related_existing_slugs": related_slugs[:12],
         "source_provenance": source_note,
         "confidence_reason": "No strong local match; staged for manual review as a companion candidate.",
@@ -1265,6 +1286,8 @@ def main() -> None:
                                 "symbolic_meaning": "",
                                 "candidate_lesson": "",
                                 "keywords": [],
+                                "suggested_category": None,
+                                "suggested_category_reason": "",
                                 "caution_notes": [],
                                 "tradition_notes": [],
                                 "target_entry_candidates": [],
@@ -1301,6 +1324,18 @@ def main() -> None:
                                 for match in lexical_matches[:20]
                             ],
                             unit_text=unit.text,
+                            category_catalog_items={
+                                degree: [
+                                    {
+                                        "id": category_id,
+                                        "title": str(category.get("title") or ""),
+                                        "description": str(category.get("description") or ""),
+                                    }
+                                    for category_id, category in base_datasets[degree]["categories"].items()
+                                ]
+                                for degree in discovery_allowed_degrees
+                                if degree in base_datasets and degree != "library"
+                            },
                         )
                         result = None
                         for attempt in range(1, args.max_retries + 1):
