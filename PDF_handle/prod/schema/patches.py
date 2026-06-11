@@ -176,20 +176,32 @@ def build_degree_patch_operation(
     chapter_slug: str,
     chapter_degree: str,
     source_notes: list[str],
-    section_summary_he: str,
-    practical_elements_he: list[str],
-    symbolic_meaning_he: str,
-    candidate_lesson_he: str,
-    tradition_notes_he: list[str],
-    caution_notes_he: list[str],
+    section_summary: str | None = None,
+    practical_elements: list[str] | None = None,
+    symbolic_meaning: str | None = None,
+    candidate_lesson: str | None = None,
+    tradition_notes: list[str] | None = None,
+    caution_notes: list[str] | None = None,
+    section_summary_he: str | None = None,
+    practical_elements_he: list[str] | None = None,
+    symbolic_meaning_he: str | None = None,
+    candidate_lesson_he: str | None = None,
+    tradition_notes_he: list[str] | None = None,
+    caution_notes_he: list[str] | None = None,
     related_degree_links: list[dict[str, str]] | None = None,
 ) -> dict[str, Any]:
+    summary_text = normalize_text(section_summary) or normalize_text(section_summary_he)
+    practical_items = unique_strings(practical_elements if practical_elements is not None else practical_elements_he or [])
+    symbolic_text = normalize_text(symbolic_meaning) or normalize_text(symbolic_meaning_he)
+    lesson_text = normalize_text(candidate_lesson) or normalize_text(candidate_lesson_he)
+    tradition_items = unique_strings(tradition_notes if tradition_notes is not None else tradition_notes_he or [])
+    caution_items = unique_strings(caution_notes if caution_notes is not None else caution_notes_he or [])
     marker_id = build_provenance_marker(work_id, section_id)
     full_summary_lines = [
-        f"### העשרה מתוך {work_title}",
-        f"קטע מקור: {section_title}",
+        f"### Enrichment from {work_title}",
+        f"Source section: {section_title}",
         "",
-        section_summary_he.strip(),
+        summary_text,
     ]
     full_summary_block = "\n".join(line for line in full_summary_lines if line is not None).strip()
     knowledge_links = [{"slug": chapter_slug, "degree": chapter_degree}]
@@ -204,12 +216,12 @@ def build_degree_patch_operation(
         # them forward (see prod/schema/review_states.py).
         "review_state": "suggested",
         "changes": {
-            "full_summary_block": full_summary_block if section_summary_he.strip() else "",
-            "practical_elements": practical_elements_he,
-            "symbolic_meaning": symbolic_meaning_he,
-            "candidate_lesson": candidate_lesson_he,
-            "tradition_notes": tradition_notes_he,
-            "caution_notes": caution_notes_he,
+            "full_summary_block": full_summary_block if summary_text else "",
+            "practical_elements": practical_items,
+            "symbolic_meaning": symbolic_text,
+            "candidate_lesson": lesson_text,
+            "tradition_notes": tradition_items,
+            "caution_notes": caution_items,
             "source_notes": source_notes,
             "knowledge_links": knowledge_links,
         },

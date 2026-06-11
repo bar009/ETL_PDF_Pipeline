@@ -3,12 +3,17 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from PDF_handle.prod.companion_contract import companion_candidate_degree, companion_candidate_slug, materialize_companion_payload
+from PDF_handle.prod.companion_contract import (
+    CompanionCanonicalLanguageError,
+    companion_candidate_degree,
+    companion_candidate_slug,
+    materialize_companion_payload,
+)
 from PDF_handle.prod.core.io import utc_timestamp
 from PDF_handle.prod.schema.data import infer_language_contract_fields, normalize_nullable_string, normalize_text
 
 
-PROTECTED_TEXT_FIELDS = ("title", "short_summary", "candidate_lesson", "symbolic_meaning")
+PROTECTED_TEXT_FIELDS = ("title", "short_summary", "full_summary", "candidate_lesson", "symbolic_meaning")
 READING_LAYER_FIELDS = ("basic", "symbolic", "advanced")
 HEBREW_RE = re.compile(r"[\u0590-\u05FF]")
 LATIN_RE = re.compile(r"[A-Za-z]")
@@ -154,6 +159,22 @@ def audit_companion_candidates(
                     for degree, dataset in datasets.items()
                 },
             )
+        except CompanionCanonicalLanguageError as exc:
+            append_finding(
+                findings,
+                severity="error",
+                kind="protected_field_cross_language",
+                scope="companion_candidate",
+                degree=companion_candidate_degree(candidate),
+                slug=companion_candidate_slug(candidate),
+                field=None,
+                message=str(exc),
+                details={
+                    "work_id": normalize_nullable_string(candidate.get("work_id")),
+                    "section_id": normalize_text(candidate.get("section_id")),
+                },
+            )
+            continue
         except Exception:
             draft_entry = {}
         metadata = infer_language_contract_fields(draft_entry)
@@ -178,6 +199,26 @@ def audit_companion_candidates(
                     "confidence_reason": normalize_text(candidate.get("confidence_reason")),
                 },
             )
+        if display_language == "en" and canonical_language == "en":
+            for field_name in PROTECTED_TEXT_FIELDS:
+                flags = text_script_flags(draft_entry.get(field_name))
+                if not flags["text"] or not flags["has_hebrew"]:
+                    continue
+                append_finding(
+                    findings,
+                    severity="error",
+                    kind="protected_field_cross_language",
+                    scope="companion_candidate",
+                    degree=companion_candidate_degree(candidate),
+                    slug=companion_candidate_slug(candidate) or normalize_text(draft_entry.get("slug")),
+                    field=field_name,
+                    message="Canonical English companion candidate carries Hebrew text in a protected field.",
+                    details={
+                        "work_id": normalize_nullable_string(candidate.get("work_id")),
+                        "section_id": normalize_text(candidate.get("section_id")),
+                        "preview": flags["text"][:160],
+                    },
+                )
 
 
 def audit_overrides(

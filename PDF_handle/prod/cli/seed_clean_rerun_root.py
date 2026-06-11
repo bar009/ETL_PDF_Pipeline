@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -34,6 +35,13 @@ CANONICAL_DATA_PATHS = (
     "data/level3.json",
 )
 CANONICAL_DATASETS = ("library", "level1", "level2", "level3")
+ENGLISH_DEGREE_TITLES = {
+    "library": "Library and Sources",
+    "level1": "Degree 1 - Entered Apprentice",
+    "level2": "Degree 2 - Fellow Craft",
+    "level3": "Degree 3 - Master Mason",
+}
+HEBREW_RE = re.compile(r"[\u0590-\u05FF]")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -65,6 +73,12 @@ def build_parser() -> argparse.ArgumentParser:
             "but clears entries so the clean root starts from an English-clean canonical baseline."
         ),
     )
+    parser.add_argument(
+        "--canonical-language",
+        choices=("preserve", "en"),
+        default="preserve",
+        help="When set to en, scrub projected canonical metadata and categories to English labels.",
+    )
     parser.add_argument("--include-overrides", action="store_true")
     parser.add_argument("--include-hebrew-bundle", action="store_true")
     parser.add_argument("--strict", action="store_true", help="Exit non-zero when preflight blocks launch.")
@@ -87,7 +101,46 @@ def dataset_path(root: Path, degree: str) -> Path:
     return root / "data" / f"{degree}.json"
 
 
-def build_projected_canonical_payloads(*, seed_root: Path, seed_mode: str) -> dict[str, dict[str, Any]]:
+def contains_hebrew_text(value: Any) -> bool:
+    if isinstance(value, dict):
+        return any(contains_hebrew_text(item) for item in value.values())
+    if isinstance(value, list):
+        return any(contains_hebrew_text(item) for item in value)
+    return bool(HEBREW_RE.search(str(value or "")))
+
+
+def humanize_id(value: str) -> str:
+    words = re.sub(r"[_-]+", " ", str(value or "")).strip()
+    return words.title() if words else "Uncategorized"
+
+
+def english_category_payload(category_id: str, category: dict[str, Any]) -> dict[str, Any]:
+    payload = dict(category)
+    if contains_hebrew_text(payload.get("title")):
+        payload["title"] = humanize_id(category_id)
+    if contains_hebrew_text(payload.get("description")):
+        payload["description"] = ""
+    payload["id"] = str(category_id)
+    return payload
+
+
+def apply_english_canonical_labels(degree: str, payload: dict[str, Any]) -> dict[str, Any]:
+    projected = dict(payload)
+    projected["meta"] = dict(projected.get("meta") or {})
+    projected["meta"]["title"] = ENGLISH_DEGREE_TITLES.get(degree, humanize_id(degree))
+    projected["categories"] = {
+        category_id: english_category_payload(category_id, category)
+        for category_id, category in (projected.get("categories") or {}).items()
+    }
+    return projected
+
+
+def build_projected_canonical_payloads(
+    *,
+    seed_root: Path,
+    seed_mode: str,
+    canonical_language: str = "preserve",
+) -> dict[str, dict[str, Any]]:
     payloads: dict[str, dict[str, Any]] = {}
     for degree in CANONICAL_DATASETS:
         path = dataset_path(seed_root, degree)
@@ -95,9 +148,10 @@ def build_projected_canonical_payloads(*, seed_root: Path, seed_mode: str) -> di
             continue
         normalized = normalize_degree_data(read_json(path), degree)
         if seed_mode == "full":
-            payloads[degree] = serialize_degree_data(normalized)
+            payload = serialize_degree_data(normalized)
+            payloads[degree] = apply_english_canonical_labels(degree, payload) if canonical_language == "en" else payload
             continue
-        payloads[degree] = {
+        payload = {
             "meta": {
                 "degree": normalized["meta"]["degree"],
                 "title": normalized["meta"]["title"],
@@ -106,7 +160,20 @@ def build_projected_canonical_payloads(*, seed_root: Path, seed_mode: str) -> di
             "categories": {category_id: dict(category) for category_id, category in normalized["categories"].items()},
             "entries": [],
         }
+        payloads[degree] = apply_english_canonical_labels(degree, payload) if canonical_language == "en" else payload
     return payloads
+
+
+def write_english_degrees_manifest(path: Path) -> None:
+    if not path.exists():
+        return
+    degrees = read_json(path)
+    if not isinstance(degrees, dict):
+        return
+    for degree_id, title in ENGLISH_DEGREE_TITLES.items():
+        if isinstance(degrees.get(degree_id), dict):
+            degrees[degree_id]["title"] = title
+    write_json(path, degrees)
 
 
 def normalize_projected_datasets(payloads: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -162,7 +229,11 @@ def main() -> None:
     )
 
     seed_summary, seed_slug_sets = summarize_root(seed_root)
-    projected_payloads = build_projected_canonical_payloads(seed_root=seed_root, seed_mode=args.seed_mode)
+    projected_payloads = build_projected_canonical_payloads(
+        seed_root=seed_root,
+        seed_mode=args.seed_mode,
+        canonical_language=args.canonical_language,
+    )
     projected_datasets = normalize_projected_datasets(projected_payloads)
     projected_override_bundle = build_projected_override_bundle(
         seed_root=seed_root,
@@ -186,6 +257,7 @@ def main() -> None:
         "seed_root": str(seed_root),
         "target_root": str(target_root),
         "seed_mode": args.seed_mode,
+        "canonical_language": args.canonical_language,
         "seed_root_summary": seed_summary,
         "shell_seed_inventory": build_seed_inventory(shell_root, SAFE_SHELL_PATHS),
         "governance_seed_inventory": build_seed_inventory(governance_root, SAFE_GOVERNANCE_PATHS),
@@ -203,7 +275,13 @@ def main() -> None:
         readiness_report["coverage_expected_pre_run_gap"] = args.seed_mode == "categories-only"
 
     seed_language_summary, seed_language_findings = build_language_summary_for_datasets(
-        datasets=normalize_projected_datasets(build_projected_canonical_payloads(seed_root=seed_root, seed_mode="full")),
+        datasets=normalize_projected_datasets(
+            build_projected_canonical_payloads(
+                seed_root=seed_root,
+                seed_mode="full",
+                canonical_language=args.canonical_language,
+            )
+        ),
         override_bundle=build_projected_override_bundle(
             seed_root=seed_root,
             target_root=seed_root,
@@ -256,6 +334,8 @@ def main() -> None:
         copy_path(shell_root, target_root, relative)
     for relative in SAFE_GOVERNANCE_PATHS:
         copy_path(governance_root, target_root, relative)
+    if args.canonical_language == "en":
+        write_english_degrees_manifest(target_root / "data" / "degrees.json")
     for degree, payload in projected_payloads.items():
         write_json(dataset_path(target_root, degree), payload)
 
@@ -274,6 +354,7 @@ def main() -> None:
         "seed_root": str(seed_root),
         "target_root": str(target_root),
         "seed_mode": args.seed_mode,
+        "canonical_language": args.canonical_language,
         "include_overrides": bool(args.include_overrides),
         "include_hebrew_bundle": bool(args.include_hebrew_bundle),
         "allow_dirty_seed": bool(args.allow_dirty_seed),

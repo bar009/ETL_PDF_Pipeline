@@ -64,12 +64,12 @@ def _op(*, work_id: str, section_id: str, work_title: str, section_summary: str,
         chapter_slug="some-chapter",
         chapter_degree="library",
         source_notes=[f"{work_title} | Section | /tmp/{work_title}.md | section 1"],
-        section_summary_he=section_summary,
-        practical_elements_he=[],
-        symbolic_meaning_he=symbolic,
-        candidate_lesson_he="",
-        tradition_notes_he=[],
-        caution_notes_he=[],
+        section_summary=section_summary,
+        practical_elements=[],
+        symbolic_meaning=symbolic,
+        candidate_lesson="",
+        tradition_notes=[],
+        caution_notes=[],
     )
 
 
