@@ -32,6 +32,9 @@ class GateCase(unittest.TestCase):
         level1_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
         return site_root
 
+    def _level1_only_root(self, mutate) -> Path:
+        return self._tampered_root(mutate)
+
     def assert_gate_fails(self, site_root: Path, needle: str) -> None:
         report = validate_runtime_site_root(site_root)
         self.assertFalse(report["ok"], "gate unexpectedly passed")
@@ -52,6 +55,12 @@ class TestGatePassesGoodData(unittest.TestCase):
         report = validate_runtime_site_root(RUNTIME_FIXTURE, require_complete=True)
         self.assertFalse(report["ok"])
         self.assertTrue(any("missing required degree file" in e for e in report["errors"]))
+
+    def test_structural_published_entries_do_not_warn_without_source_notes(self) -> None:
+        report = validate_runtime_site_root(RUNTIME_FIXTURE, strict=True)
+        self.assertFalse(
+            any("published without source_notes" in warning for warning in report["warnings"])
+        )
 
 
 class TestGateFailsBadData(GateCase):
@@ -87,11 +96,16 @@ class TestGateFailsBadData(GateCase):
             payload["entries"].append(entry)
         self.assert_gate_fails(self._tampered_root(mutate), "no source_notes and no work_id")
 
-    def test_strict_mode_fails_on_warnings(self) -> None:
-        # The fixture's published gate entry has no source_notes -> warning.
-        report = validate_runtime_site_root(RUNTIME_FIXTURE, strict=True)
+    def test_strict_mode_fails_on_published_content_without_source_notes(self) -> None:
+        def mutate(payload):
+            payload["entries"][1]["type"] = "topic"
+            payload["entries"][1]["status"] = "published"
+            payload["entries"][1]["source_notes"] = []
+            payload["entries"][1]["work_id"] = None
+
+        report = validate_runtime_site_root(self._level1_only_root(mutate), strict=True)
         self.assertFalse(report["ok"])
-        self.assertTrue(report["warnings"])
+        self.assertTrue(any("published without source_notes" in warning for warning in report["warnings"]))
 
 
 if __name__ == "__main__":

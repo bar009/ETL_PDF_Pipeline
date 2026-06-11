@@ -14,8 +14,8 @@ Checks, in order:
 3. cross-degree references — ``parent_topic``, ``related_topics``,
    ``parallel_entry``, ``knowledge_links``
 4. minimal provenance — ``book``/``chapter`` entries must carry ``source_notes``
-   or a ``work_id`` (error); published entries without ``source_notes`` are
-   reported as warnings
+   or a ``work_id`` (error); published non-structural entries without
+   ``source_notes`` are reported as warnings
 
 Exit code 0 = publishable. ``--require-complete`` errors when a standard degree
 file is missing; ``--strict`` turns warnings into failures.
@@ -49,6 +49,7 @@ from PDF_handle.prod.schema.data import (
 STANDARD_DEGREE_FILES = ("library", "level1", "level2", "level3")
 REQUIRED_WHEN_COMPLETE = ("library", "level1", "level2")
 PROVENANCE_REQUIRED_TYPES = {"book", "chapter"}
+PROVENANCE_WARNING_EXEMPT_TYPES = {"category", "hub"}
 
 
 def _check_raw_source_integrity(degree_id: str, raw: dict[str, Any]) -> list[str]:
@@ -94,7 +95,11 @@ def _check_provenance(degree_id: str, dataset: dict[str, Any]) -> tuple[list[str
             errors.append(
                 f"{degree_id}:{slug} is a {entry.get('type')} with no source_notes and no work_id"
             )
-        elif entry.get("status") == "published" and not has_notes:
+        elif (
+            entry.get("status") == "published"
+            and entry.get("type") not in PROVENANCE_WARNING_EXEMPT_TYPES
+            and not has_notes
+        ):
             warnings.append(f"{degree_id}:{slug} is published without source_notes")
     return errors, warnings
 
