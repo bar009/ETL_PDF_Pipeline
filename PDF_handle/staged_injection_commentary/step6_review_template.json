@@ -1,0 +1,131 @@
+{
+  "level1_available_operations": [],
+  "level2_available_operations": [
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0001",
+      "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0001",
+      "has_full_summary_block": true,
+      "practical_count": 3,
+      "tradition_count": 0,
+      "caution_count": 0
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0002",
+      "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0002",
+      "has_full_summary_block": true,
+      "practical_count": 3,
+      "tradition_count": 2,
+      "caution_count": 2
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0003",
+      "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0003",
+      "has_full_summary_block": true,
+      "practical_count": 1,
+      "tradition_count": 1,
+      "caution_count": 0
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0003",
+      "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0003",
+      "has_full_summary_block": true,
+      "practical_count": 1,
+      "tradition_count": 1,
+      "caution_count": 0
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0005",
+      "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0005",
+      "has_full_summary_block": true,
+      "practical_count": 3,
+      "tradition_count": 4,
+      "caution_count": 0
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0007",
+      "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0007",
+      "has_full_summary_block": true,
+      "practical_count": 4,
+      "tradition_count": 4,
+      "caution_count": 0
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0008",
+      "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0008",
+      "has_full_summary_block": true,
+      "practical_count": 3,
+      "tradition_count": 3,
+      "caution_count": 0
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0008",
+      "slug": "level2-hub-working-tools",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0008",
+      "has_full_summary_block": true,
+      "practical_count": 3,
+      "tradition_count": 3,
+      "caution_count": 0
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0011",
+      "slug": "level2-hub-pillars-and-architecture",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0011",
+      "has_full_summary_block": true,
+      "practical_count": 4,
+      "tradition_count": 2,
+      "caution_count": 1
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0012",
+      "slug": "level2-hub-pillars-and-architecture",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0012",
+      "has_full_summary_block": true,
+      "practical_count": 2,
+      "tradition_count": 2,
+      "caution_count": 0
+    },
+    {
+      "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0016",
+      "slug": "level2-hub-working-tools",
+      "degree": "level2",
+      "work_id": "commentary-on-the-second-degree",
+      "section_id": "section-0016",
+      "has_full_summary_block": true,
+      "practical_count": 2,
+      "tradition_count": 2,
+      "caution_count": 0
+    }
+  ],
+  "level3_available_operations": [],
+  "available_companion_candidates": [],
+  "override_review": {
+    "decisions": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-06-11T22:40:53+00:00",
+  "total_rows": 16,
+  "by_decision": {
+    "existing_match": 12,
+    "reject_or_noise": 4
+  },
+  "by_unit_kind": {
+    "fragmentary_topic": 4,
+    "officer_list": 1,
+    "topic": 11
+  },
+  "by_candidate_degree": {
+    "level2": 12,
+    "unknown": 4
+  }
+}

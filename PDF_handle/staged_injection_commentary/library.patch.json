@@ -1,0 +1,1158 @@
+{
+  "created_at": "2026-06-11T22:40:53+00:00",
+  "degree": "library",
+  "category_added": false,
+  "entries": [
+    {
+      "title": "Commentary on the Second Degree",
+      "slug": "commentary-on-the-second-degree-book",
+      "type": "book",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "etl-imports-category",
+      "aliases": [
+        "commentary_on_the_second_Degree"
+      ],
+      "keywords": [
+        "commentary-on-the-second-degree",
+        "degree-commentary",
+        "level2"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "etl-imports-category"
+        ],
+        "deeper": []
+      },
+      "short_summary": "Commentary on the Second Degree",
+      "full_summary": "Imported source work preserved from the PDF ETL lane: **Commentary on the Second Degree**.\n\nSections staged in this draft:\n- Commentary on the Second Degree\n- The Apprentice's Progress and Readiness for Passing\n- Divine Aid and the Square at the Entrance\n- Prayer and Dependence upon God\n- Passing the Junior Warden: The Gate of the Lodge\n- The Password of the Degree and Its Origins\n- The Winding Staircase: Origins in the Temple\n- Preparation for the Obligation: Dress and the Square\n- The Obligation and the Intertwined Square and Compasses\n- The Secrets: Regular Steps and the Hailing Sign\n- Halving the Word and the Position of the Pillars\n- The Two Pillars Conjoined\n- Investiture by the Senior Warden: The Warden's Ancient Right\n- The Liberal Arts and Sciences and the Craftsman's Study\n- The Charge in the South-East Corner: From Rough to Smooth Ashlar\n- The Working Tools and Their Moral Application",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Staged from consolidated markdown: C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": 1,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-book",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-book",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [],
+      "chapter_toc": [
+        "Commentary on the Second Degree",
+        "The Apprentice's Progress and Readiness for Passing",
+        "Divine Aid and the Square at the Entrance",
+        "Prayer and Dependence upon God",
+        "Passing the Junior Warden: The Gate of the Lodge",
+        "The Password of the Degree and Its Origins",
+        "The Winding Staircase: Origins in the Temple",
+        "Preparation for the Obligation: Dress and the Square",
+        "The Obligation and the Intertwined Square and Compasses",
+        "The Secrets: Regular Steps and the Hailing Sign",
+        "Halving the Word and the Position of the Pillars",
+        "The Two Pillars Conjoined",
+        "Investiture by the Senior Warden: The Warden's Ancient Right",
+        "The Liberal Arts and Sciences and the Craftsman's Study",
+        "The Charge in the South-East Corner: From Rough to Smooth Ashlar",
+        "The Working Tools and Their Moral Application"
+      ],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Commentary on the Second Degree",
+      "slug": "commentary-on-the-second-degree-section-0001-commentary-on-the-second-degree",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0002-the-apprentice-s-progress-and-readiness-for-passing"
+        ],
+        "deeper": []
+      },
+      "short_summary": "# Commentary on the Second Degree",
+      "full_summary": "# Commentary on the Second Degree\n\nProvincial Grand Lodge of East Lancashire. By VWBro Rev Neville Barker Cryer, PGChap. A commentary on the Fellowcraft ceremony, given as fifteen pauses during the ritual, each followed by an explanation of what has just taken place.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | Commentary on the Second Degree | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#commentary-on-the-second-degree | section 1"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "commentary-on-the-second-degree",
+      "source_heading": "Commentary on the Second Degree",
+      "source_order": 1,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0001-commentary-on-the-second-degree",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0001-commentary-on-the-second-degree",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+          "degree": "level2"
+        },
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Apprentice's Progress and Readiness for Passing",
+      "slug": "commentary-on-the-second-degree-section-0002-the-apprentice-s-progress-and-readiness-for-passing",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0001-commentary-on-the-second-degree"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0003-divine-aid-and-the-square-at-the-entrance"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Apprentice's Progress and Readiness for Passing",
+      "full_summary": "## The Apprentice's Progress and Readiness for Passing\n\nBefore an Apprentice could become a Fellow or Master of the Craft in operative times his progress was marked by his seven years of indentured service. He had several special tasks to complete and a standard he had to reach. Today we might well wonder what progress had indeed been made since this Apprentice was initiated. What has he learnt of the Craft and begun to do other than memorise some answers to a few questions? Does he even understand these? Have we become too accustomed to automatic advancement? In many European lodges a candidate for this degree has to sit down and write out something of what he has learnt thus far in Freemasonry.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Apprentice's Progress and Readiness for Passing | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-apprentice-s-progress-and-readiness-for-passing | section 2"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-apprentice-s-progress-and-readiness-for-passing",
+      "source_heading": "The Apprentice's Progress and Readiness for Passing",
+      "source_order": 2,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0002-the-apprentice-s-progress-and-readiness-for-passing",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0002-the-apprentice-s-progress-and-readiness-for-passing",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+          "degree": "level2"
+        },
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Divine Aid and the Square at the Entrance",
+      "slug": "commentary-on-the-second-degree-section-0003-divine-aid-and-the-square-at-the-entrance",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0002-the-apprentice-s-progress-and-readiness-for-passing"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0004-prayer-and-dependence-upon-god"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## Divine Aid and the Square at the Entrance",
+      "full_summary": "## Divine Aid and the Square at the Entrance\n\nNotice that to attain the privileges of the second degree we need God's help since by our own unaided effort we will fail. This is a spiritual lesson that is easily overlooked but which pervades all English Masonry. Whilst the one implement presented to the candidate's breast was meant to touch the conscience, here the Square reminds us of the need for the skill, both manual and mental, which a fully trained apprentice would be expected to be able to use. For us it will speak of the need to act 'on the square' with all mankind.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | Divine Aid and the Square at the Entrance | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#divine-aid-and-the-square-at-the-entrance | section 3"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "divine-aid-and-the-square-at-the-entrance",
+      "source_heading": "Divine Aid and the Square at the Entrance",
+      "source_order": 3,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0003-divine-aid-and-the-square-at-the-entrance",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0003-divine-aid-and-the-square-at-the-entrance",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+          "degree": "level2"
+        },
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Prayer and Dependence upon God",
+      "slug": "commentary-on-the-second-degree-section-0004-prayer-and-dependence-upon-god",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0003-divine-aid-and-the-square-at-the-entrance"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0005-passing-the-junior-warden-the-gate-of-the-lodge"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## Prayer and Dependence upon God",
+      "full_summary": "## Prayer and Dependence upon God\n\nOnce the candidate has given the necessary proof of being a Mason the first activity in which he shares is prayer. Note that the emphasis is on the dependence, not only of the candidate but of all the brethren, upon God's aid in our work. That, after all, was what was said was true when we first came into a lodge. Moreover, we are here reminded that the precepts we are to follow are not those of men but God's. The emphasis on divine power and purposes in all our labours reflects the old Guild Masons' banner that bore the words, 'In God is all our trust'.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | Prayer and Dependence upon God | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#prayer-and-dependence-upon-god | section 4"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "prayer-and-dependence-upon-god",
+      "source_heading": "Prayer and Dependence upon God",
+      "source_order": 4,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0004-prayer-and-dependence-upon-god",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0004-prayer-and-dependence-upon-god",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Passing the Junior Warden: The Gate of the Lodge",
+      "slug": "commentary-on-the-second-degree-section-0005-passing-the-junior-warden-the-gate-of-the-lodge",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0004-prayer-and-dependence-upon-god"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0006-the-password-of-the-degree-and-its-origins"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## Passing the Junior Warden: The Gate of the Lodge",
+      "full_summary": "## Passing the Junior Warden: The Gate of the Lodge\n\nIn the Guild Masonry of the 17th Century, as still in Irish working today, every individual Mason had to be questioned for passwords before a lodge could be opened in a new degree. This is reflected in what we have just seen take place. But there is more.\n\nOriginally, in Moderns lodges, each of the Wardens sat in the West beside a pillar near the lodge entrance, guarding the 'gate' of the lodge. When the first and second degree ceremonies were created out of the old Fellows degree one pillar was attached to each ceremony. When the Junior Warden gives the word of passing he is really saying, 'You are permitted to pass my part of the lodge gate'. Shortly the candidate will pass the second pillar and thus gain full access to a Lodge of Fellows, in operative times the only kind of lodge there was.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | Passing the Junior Warden: The Gate of the Lodge | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#passing-the-junior-warden-the-gate-of-the-lodge | section 5"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "passing-the-junior-warden-the-gate-of-the-lodge",
+      "source_heading": "Passing the Junior Warden: The Gate of the Lodge",
+      "source_order": 5,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0005-passing-the-junior-warden-the-gate-of-the-lodge",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0005-passing-the-junior-warden-the-gate-of-the-lodge",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+          "degree": "level2"
+        },
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+          "degree": "level2"
+        },
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Password of the Degree and Its Origins",
+      "slug": "commentary-on-the-second-degree-section-0006-the-password-of-the-degree-and-its-origins",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0005-passing-the-junior-warden-the-gate-of-the-lodge"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0007-the-winding-staircase-origins-in-the-temple"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Password of the Degree and Its Origins",
+      "full_summary": "## The Password of the Degree and Its Origins\n\nThe password of this degree is the one that is the best explained of the three that Craft Masons use. It may, however, be of interest to know that when we learn the origin of these two words, that are alike yet different, it makes even more sense of what we are told. The word that the Hebrews used meant, as it sounds, 'a flow of running water', whilst in Arabic the cognate word still means 'a grain of a cereal'. When these two words are used the failure of one group to aspirate is even better understood.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Password of the Degree and Its Origins | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-password-of-the-degree-and-its-origins | section 6"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-password-of-the-degree-and-its-origins",
+      "source_heading": "The Password of the Degree and Its Origins",
+      "source_order": 6,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0006-the-password-of-the-degree-and-its-origins",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0006-the-password-of-the-degree-and-its-origins",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Winding Staircase: Origins in the Temple",
+      "slug": "commentary-on-the-second-degree-section-0007-the-winding-staircase-origins-in-the-temple",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0006-the-password-of-the-degree-and-its-origins"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0008-preparation-for-the-obligation-dress-and-the-square"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Winding Staircase: Origins in the Temple",
+      "full_summary": "## The Winding Staircase: Origins in the Temple\n\nThe ascent of the winding staircase is a most distinctive feature of the English second degree. Its origin was as a means by which the priests could pass between the Holy Place and the three-tiered chambers that were attached to the Temple of Solomon on the North and South sides. Some Second Degree tracing boards correctly show the priests' access to this staircase through the south side wall half-way along the Holy Place. This meant that the priests then ascended from the North side of the next-door room and up the curved stairs to the East. That is why the steps we demonstrate move from North to East. The fifteen or more steps derive from the early Christian tale that Mary, the mother of Jesus, ascended a staircase of fifteen steps to enter the Temple court of the men and was welcomed by a High Priest at the top. One of the Guild Plays performed by some medieval masons portrayed just this event.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Winding Staircase: Origins in the Temple | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-winding-staircase-origins-in-the-temple | section 7"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-winding-staircase-origins-in-the-temple",
+      "source_heading": "The Winding Staircase: Origins in the Temple",
+      "source_order": 7,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0007-the-winding-staircase-origins-in-the-temple",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0007-the-winding-staircase-origins-in-the-temple",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Preparation for the Obligation: Dress and the Square",
+      "slug": "commentary-on-the-second-degree-section-0008-preparation-for-the-obligation-dress-and-the-square",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0007-the-winding-staircase-origins-in-the-temple"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0009-the-obligation-and-the-intertwined-square-and-compasses"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## Preparation for the Obligation: Dress and the Square",
+      "full_summary": "## Preparation for the Obligation: Dress and the Square\n\nWhen you remember that originally there was but one grade of Mason in a Lodge, that of Fellow or Master of the Craft, you will realise why in the present second degree we lay bare the other arm and foot from that which were referred to in the former degree. In ancient Masonry the candidate was attired as he now is in the third degree. If non-Masons seem puzzled about our dress they forget that working masons roll up their sleeves to work and once had pants that only came to the knee. Stockings were for special days if affordable.\n\nThe importance of the square is emphasised as the candidate has his left arm resting in the angle of that implement. In the signs of the degree we see that the same implement is suggested.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | Preparation for the Obligation: Dress and the Square | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#preparation-for-the-obligation-dress-and-the-square | section 8"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "preparation-for-the-obligation-dress-and-the-square",
+      "source_heading": "Preparation for the Obligation: Dress and the Square",
+      "source_order": 8,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0008-preparation-for-the-obligation-dress-and-the-square",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0008-preparation-for-the-obligation-dress-and-the-square",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+          "degree": "level2"
+        },
+        {
+          "slug": "level2-hub-working-tools",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Obligation and the Intertwined Square and Compasses",
+      "slug": "commentary-on-the-second-degree-section-0009-the-obligation-and-the-intertwined-square-and-compasses",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0008-preparation-for-the-obligation-dress-and-the-square"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0010-the-secrets-regular-steps-and-the-hailing-sign"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Obligation and the Intertwined Square and Compasses",
+      "full_summary": "## The Obligation and the Intertwined Square and Compasses\n\nThe obligation in this degree is similar to and yet shorter than that in the Entered Apprentice degree. This is because originally there was only one obligation for both grades. The same applies to the Charge.\n\nThe position of the square and compasses is not only a sign of progress but was originally the only way the two implements were displayed, that is, intertwined. Take a look at the symbols on the nameboards of Past Masters in older lodges and you will note that they show this sign and not that of a Master Mason. This is because the working lodges of operative masons were all made up of Fellows and from them the Wardens who ruled the lodges were chosen. That is why the boards bear what we call the Fellowcraft symbol.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Obligation and the Intertwined Square and Compasses | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-obligation-and-the-intertwined-square-and-compasses | section 9"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-obligation-and-the-intertwined-square-and-compasses",
+      "source_heading": "The Obligation and the Intertwined Square and Compasses",
+      "source_order": 9,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0009-the-obligation-and-the-intertwined-square-and-compasses",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0009-the-obligation-and-the-intertwined-square-and-compasses",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+          "degree": "level2"
+        },
+        {
+          "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Secrets: Regular Steps and the Hailing Sign",
+      "slug": "commentary-on-the-second-degree-section-0010-the-secrets-regular-steps-and-the-hailing-sign",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0009-the-obligation-and-the-intertwined-square-and-compasses"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0011-halving-the-word-and-the-position-of-the-pillars"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Secrets: Regular Steps and the Hailing Sign",
+      "full_summary": "## The Secrets: Regular Steps and the Hailing Sign\n\nAs we discovered in the Entered Apprentice degree, the secrets are only able to be conveyed when the recipient is standing with a regular step. This is exactly the same in form as in the first degree save that now we have to take two steps before we can be enlightened, thus representing progress in accepted Freemasonry.\n\nThe first part of the sign is surely clear but the second needs some explanation. Because we take it with one hand already in place on the left breast we do not appreciate that the Hailing Sign here, based on a couple of biblical passages, should really be given by lifting up both hands to the sky as a sign of supplication. Indeed there are some workings of the ritual in which the first part is made, then discharged, and both hands are lifted before the third part is given.\n\nThe biblical passage usually referred to is that in which Joshua prayed for the light of day to continue, but there was also another passage in which, while Joshua fought and had his hands full with the battle, Moses prayed for him on a hill nearby and as his arms were weak Aaron and Hur supported them in a raised position so that the Lord might hear his prayer.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Secrets: Regular Steps and the Hailing Sign | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-secrets-regular-steps-and-the-hailing-sign | section 10"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-secrets-regular-steps-and-the-hailing-sign",
+      "source_heading": "The Secrets: Regular Steps and the Hailing Sign",
+      "source_order": 10,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0010-the-secrets-regular-steps-and-the-hailing-sign",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0010-the-secrets-regular-steps-and-the-hailing-sign",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Halving the Word and the Position of the Pillars",
+      "slug": "commentary-on-the-second-degree-section-0011-halving-the-word-and-the-position-of-the-pillars",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0010-the-secrets-regular-steps-and-the-hailing-sign"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0012-the-two-pillars-conjoined"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## Halving the Word and the Position of the Pillars",
+      "full_summary": "## Halving the Word and the Position of the Pillars\n\nThe lettering or halving of a 'secret' word was a common practice in the 18th Century or before. It is worth remarking that in some Masonic rituals, especially in the USA, the letters are not given in the order used in England but haphazardly, which can puzzle the candidate, never mind a Cowan.\n\nThe place of the two pillars is often questioned. There should really be no difficulty as the pillars are described as if looking East. In Solomon's Temple that meant looking out of the building whilst in the lodge it means looking in. The status of the figure commemorated by the second pillar as Assistant High Priest is not found in the Volume of the Sacred Law; instead it is recorded in other books of ancient usage that are called the Pseudepigrapha.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | Halving the Word and the Position of the Pillars | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#halving-the-word-and-the-position-of-the-pillars | section 11"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "halving-the-word-and-the-position-of-the-pillars",
+      "source_heading": "Halving the Word and the Position of the Pillars",
+      "source_order": 11,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0011-halving-the-word-and-the-position-of-the-pillars",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0011-halving-the-word-and-the-position-of-the-pillars",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+          "degree": "level2"
+        },
+        {
+          "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+          "degree": "level2"
+        },
+        {
+          "slug": "level2-hub-pillars-and-architecture",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Two Pillars Conjoined",
+      "slug": "commentary-on-the-second-degree-section-0012-the-two-pillars-conjoined",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0011-halving-the-word-and-the-position-of-the-pillars"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0013-investiture-by-the-senior-warden-the-warden-s-ancient-right"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Two Pillars Conjoined",
+      "full_summary": "## The Two Pillars Conjoined\n\nThat the two pillars once belonged to one ceremony is made clear by the floor-cloths or early tracing boards which show the pillars together. We know, for example, that in the Grand Lodge of All England at York it was customary up to 1780 to make men Apprentices and Fellows on the same evening. A trace of this practice is still evident in the ritual, for the Senior Warden asks, 'And what when conjoined with that in the former degree?'. Clearly the two terms only really make sense when they come together. That is how they were first meant to be. The conjoint meaning is an embellished translation of 1 Kings, chapter 8, verse 13.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Two Pillars Conjoined | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-two-pillars-conjoined | section 12"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-two-pillars-conjoined",
+      "source_heading": "The Two Pillars Conjoined",
+      "source_order": 12,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0012-the-two-pillars-conjoined",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0012-the-two-pillars-conjoined",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+          "degree": "level2"
+        },
+        {
+          "slug": "level2-hub-pillars-and-architecture",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Investiture by the Senior Warden: The Warden's Ancient Right",
+      "slug": "commentary-on-the-second-degree-section-0013-investiture-by-the-senior-warden-the-warden-s-ancient-right",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0012-the-two-pillars-conjoined"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0014-the-liberal-arts-and-sciences-and-the-craftsman-s-study"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## Investiture by the Senior Warden: The Warden's Ancient Right",
+      "full_summary": "## Investiture by the Senior Warden: The Warden's Ancient Right\n\nHave you ever asked yourself why the Worshipful Master cannot open the Lodge without going through the Junior Warden or close the Lodge himself? Why does he here let the Senior Warden have the privilege of putting the apron on the new Fellowcraft? It is because we are here reverting to the tradition of operative masonry in which a Warden, not a Master Mason, ruled the stonemasons' lodge. In Guild Masonry, in imitation of the way a Guild was ruled, the new idea of having a Right Worshipful Master crept in but the ancient rights of the office of Warden were still preserved.\n\nIn earlier times the way to distinguish a Fellow from an Apprentice was to turn down the flap of the white apron and turn up one corner so that it could hold a square. Now we have rosettes which are just the decorated forms of what were old buttonholes.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | Investiture by the Senior Warden: The Warden's Ancient Right | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#investiture-by-the-senior-warden-the-warden-s-ancient-right | section 13"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "investiture-by-the-senior-warden-the-warden-s-ancient-right",
+      "source_heading": "Investiture by the Senior Warden: The Warden's Ancient Right",
+      "source_order": 13,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0013-investiture-by-the-senior-warden-the-warden-s-ancient-right",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0013-investiture-by-the-senior-warden-the-warden-s-ancient-right",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+          "degree": "level2"
+        },
+        {
+          "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Liberal Arts and Sciences and the Craftsman's Study",
+      "slug": "commentary-on-the-second-degree-section-0014-the-liberal-arts-and-sciences-and-the-craftsman-s-study",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0013-investiture-by-the-senior-warden-the-warden-s-ancient-right"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0015-the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Liberal Arts and Sciences and the Craftsman's Study",
+      "full_summary": "## The Liberal Arts and Sciences and the Craftsman's Study\n\nIf you wonder why a Craftsman is expected to make the Liberal Arts and Sciences his future study then you need to know that as it was from the Craftsmen that the exclusive group known as Master Masons were selected, so to attain that rank you had to be proficient in understanding those seven subjects. For example, you had to know about the stars so as to be able to lay out a site, or to know about musical harmony in order to erect buildings useful for speakers and choirs.\n\nThe connection of the Seven Liberal Arts and Sciences with the winding staircase is brought to our attention in the explanation of the Tracing Board. What is interesting is that here we see the natural link between what working stonemasons had to know and what naturally interested the early Free and Accepted Masons.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Liberal Arts and Sciences and the Craftsman's Study | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-liberal-arts-and-sciences-and-the-craftsman-s-study | section 14"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-liberal-arts-and-sciences-and-the-craftsman-s-study",
+      "source_heading": "The Liberal Arts and Sciences and the Craftsman's Study",
+      "source_order": 14,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0014-the-liberal-arts-and-sciences-and-the-craftsman-s-study",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0014-the-liberal-arts-and-sciences-and-the-craftsman-s-study",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "level2-hub-liberal-arts",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Charge in the South-East Corner: From Rough to Smooth Ashlar",
+      "slug": "commentary-on-the-second-degree-section-0015-the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0014-the-liberal-arts-and-sciences-and-the-craftsman-s-study"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book",
+          "commentary-on-the-second-degree-section-0016-the-working-tools-and-their-moral-application"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Charge in the South-East Corner: From Rough to Smooth Ashlar",
+      "full_summary": "## The Charge in the South-East Corner: From Rough to Smooth Ashlar\n\nThis charge, like the obligation, is quite short because it is a second part of what was once a single Apprentice and Fellow whole. The reason why the new Fellowcraft is placed in the south-east corner is to mark his progress from a rough ashlar, that was meant to be between his feet in the north-east, to the smooth ashlar that should be placed here, as it is in many lodges.\n\nThe invitation 'to extend your researches into the hidden mysteries of nature and science' echoes the study of the Seven Liberal Arts and Sciences with 'the wonderful works of the Almighty'. The symbolic connection of such labour with a true winding staircase is here very striking. If it is a stairway, as in a lighthouse or castle turret, then we cannot see what 'mystery' might be revealed round the next step.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Charge in the South-East Corner: From Rough to Smooth Ashlar | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar | section 15"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar",
+      "source_heading": "The Charge in the South-East Corner: From Rough to Smooth Ashlar",
+      "source_order": 15,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0015-the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0015-the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "level2-hub-liberal-arts",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "The Working Tools and Their Moral Application",
+      "slug": "commentary-on-the-second-degree-section-0016-the-working-tools-and-their-moral-application",
+      "type": "chapter",
+      "degree": "library",
+      "applies_to_degrees": [
+        "library",
+        "level2"
+      ],
+      "category": "etl_imports",
+      "parent_topic": "commentary-on-the-second-degree-book",
+      "aliases": [],
+      "keywords": [],
+      "related_topics": {
+        "prior": [
+          "commentary-on-the-second-degree-section-0015-the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar"
+        ],
+        "companion": [
+          "commentary-on-the-second-degree-book"
+        ],
+        "deeper": []
+      },
+      "short_summary": "## The Working Tools and Their Moral Application",
+      "full_summary": "## The Working Tools and Their Moral Application\n\nThe tools presented in this degree are those of a working stonemason and those which still adorn the seats of the Worshipful Master and his Wardens. It is because we are now Free & Accepted Masons that we do what no working mason would do: we 'apply these tools to our morals'. For a proper understanding of these tools in this sense we need to be aware that there is a longer explanation of them which teaches us important lessons, not least about our duty to God.\n\nHowever, we should note that even the shorter form of this presentation concludes with the words, 'we hope to ascend to those immortal mansions whence all goodness emanates'. That also reminds us of God's presence. As the seal of the United Grand Lodge declares, it is not just holiness that is required of us but 'Holiness to the Lord'.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Commentary on the Second Degree | The Working Tools and Their Moral Application | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md#the-working-tools-and-their-moral-application | section 16"
+      ],
+      "language": "en",
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_kind": "degree-commentary",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "source_anchor": "the-working-tools-and-their-moral-application",
+      "source_heading": "The Working Tools and Their Moral Application",
+      "source_order": 16,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0016-the-working-tools-and-their-moral-application",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "library:commentary-on-the-second-degree:commentary-on-the-second-degree-section-0016-the-working-tools-and-their-moral-application",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "source",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "level2-hub-working-tools",
+          "degree": "level2"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "created_at": "2026-06-11T22:41:47+00:00",
+  "staging_dir": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\staged_injection_commentary",
+  "site_root": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot",
+  "target_paths": {
+    "schema": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\content.schema.json",
+    "overrides": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\content.overrides.json",
+    "library": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\library.json",
+    "level1": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\level1.json",
+    "level2": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\level2.json",
+    "level3": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\level3.json"
+  },
+  "selected_work_ids": [
+    "commentary-on-the-second-degree"
+  ],
+  "apply_live": true,
+  "live_write_completed": true,
+  "live_write_completed_at": "2026-06-11T22:41:47+00:00",
+  "library": {
+    "selected": true,
+    "merged_entry_count": 18,
+    "merged_slugs": [
+      "etl-imports-category",
+      "commentary-on-the-second-degree-book",
+      "commentary-on-the-second-degree-section-0001-commentary-on-the-second-degree",
+      "commentary-on-the-second-degree-section-0002-the-apprentice-s-progress-and-readiness-for-passing",
+      "commentary-on-the-second-degree-section-0003-divine-aid-and-the-square-at-the-entrance",
+      "commentary-on-the-second-degree-section-0004-prayer-and-dependence-upon-god",
+      "commentary-on-the-second-degree-section-0005-passing-the-junior-warden-the-gate-of-the-lodge",
+      "commentary-on-the-second-degree-section-0006-the-password-of-the-degree-and-its-origins",
+      "commentary-on-the-second-degree-section-0007-the-winding-staircase-origins-in-the-temple",
+      "commentary-on-the-second-degree-section-0008-preparation-for-the-obligation-dress-and-the-square",
+      "commentary-on-the-second-degree-section-0009-the-obligation-and-the-intertwined-square-and-compasses",
+      "commentary-on-the-second-degree-section-0010-the-secrets-regular-steps-and-the-hailing-sign",
+      "commentary-on-the-second-degree-section-0011-halving-the-word-and-the-position-of-the-pillars",
+      "commentary-on-the-second-degree-section-0012-the-two-pillars-conjoined",
+      "commentary-on-the-second-degree-section-0013-investiture-by-the-senior-warden-the-warden-s-ancient-right",
+      "commentary-on-the-second-degree-section-0014-the-liberal-arts-and-sciences-and-the-craftsman-s-study",
+      "commentary-on-the-second-degree-section-0015-the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar",
+      "commentary-on-the-second-degree-section-0016-the-working-tools-and-their-moral-application"
+    ],
+    "reused_library_slug_count": 0,
+    "reused_library_slugs": {},
+    "redirected_library_slug_count": 0,
+    "redirected_library_slugs": {},
+    "removed_stale_entry_count": 0,
+    "removed_stale_slugs": [],
+    "category_id": "etl_imports"
+  },
+  "level1": {
+    "selected_count": 0,
+    "selected_operations": [],
+    "available_count": 0
+  },
+  "level2": {
+    "selected_count": 11,
+    "selected_operations": [
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0001",
+        "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0001",
+        "has_full_summary_block": true,
+        "practical_count": 3,
+        "tradition_count": 0,
+        "caution_count": 0
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0002",
+        "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0002",
+        "has_full_summary_block": true,
+        "practical_count": 3,
+        "tradition_count": 2,
+        "caution_count": 2
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0003",
+        "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0003",
+        "has_full_summary_block": true,
+        "practical_count": 1,
+        "tradition_count": 1,
+        "caution_count": 0
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0003",
+        "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0003",
+        "has_full_summary_block": true,
+        "practical_count": 1,
+        "tradition_count": 1,
+        "caution_count": 0
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0005",
+        "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0005",
+        "has_full_summary_block": true,
+        "practical_count": 3,
+        "tradition_count": 4,
+        "caution_count": 0
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0007",
+        "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0007",
+        "has_full_summary_block": true,
+        "practical_count": 4,
+        "tradition_count": 4,
+        "caution_count": 0
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0008",
+        "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0008",
+        "has_full_summary_block": true,
+        "practical_count": 3,
+        "tradition_count": 3,
+        "caution_count": 0
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0008",
+        "slug": "level2-hub-working-tools",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0008",
+        "has_full_summary_block": true,
+        "practical_count": 3,
+        "tradition_count": 3,
+        "caution_count": 0
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0011",
+        "slug": "level2-hub-pillars-and-architecture",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0011",
+        "has_full_summary_block": true,
+        "practical_count": 4,
+        "tradition_count": 2,
+        "caution_count": 1
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0012",
+        "slug": "level2-hub-pillars-and-architecture",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0012",
+        "has_full_summary_block": true,
+        "practical_count": 2,
+        "tradition_count": 2,
+        "caution_count": 0
+      },
+      {
+        "marker_id": "PDF_STAGE5:commentary-on-the-second-degree:section-0016",
+        "slug": "level2-hub-working-tools",
+        "degree": "level2",
+        "work_id": "commentary-on-the-second-degree",
+        "section_id": "section-0016",
+        "has_full_summary_block": true,
+        "practical_count": 2,
+        "tradition_count": 2,
+        "caution_count": 0
+      }
+    ],
+    "available_count": 11
+  },
+  "level3": {
+    "selected_count": 0,
+    "selected_operations": [],
+    "available_count": 0,
+    "enabled": true
+  },
+  "companions": {
+    "selected_count": 0,
+    "selected_candidates": [],
+    "available_count": 0,
+    "result": {
+      "selected": 0,
+      "added": [],
+      "skipped": []
+    }
+  },
+  "overrides": {
+    "bundle_count": 0,
+    "schema_ok": true,
+    "resolution_summary": {
+      "total": 0,
+      "active": 0,
+      "stale": 0,
+      "orphaned": 0,
+      "conflict": 0,
+      "field_conflict_count": 0
+    },
+    "field_conflict_count": 0,
+    "decision_applied_count": 0,
+    "decision_skipped_count": 0
+  },
+  "guarded_write_blocking": {
+    "mode": "disabled",
+    "site_root": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot",
+    "apply_live_requested": true,
+    "block_count": 0,
+    "blocked": false,
+    "blocked_kinds": [],
+    "risk_notes": [
+      "This narrow gate blocks only localized companion creation and protected-field cross-language overrides.",
+      "Patch operations remain in legacy behavior for now and are not blocked by this gate.",
+      "Override blocks are evaluated against the current selected site-root datasets before override application."
+    ]
+  },
+  "validation_ok": true
+}

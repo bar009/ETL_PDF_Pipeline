@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-06-11T22:29:49+00:00",
+  "provider": "heuristic",
+  "total_sections": 335,
+  "total_units_processed": 664,
+  "gemini_fallback_count": 0,
+  "fallback_section_count": 0,
+  "fallback_section_ids": []
+}
