@@ -36,6 +36,11 @@ Decisions that block items link to `DECISION_LOG.md`.
 
 ## Done (recent)
 
+- [x] ALL 8 SOURCES INGESTED — 872 entries; snapshot site-all-sources-ingested-2026-06-12 published; gates 23/23 (2026-06-12)
+- [x] Library of Freemasonry Vol 2 merged: 614 enrichment ops + 336 library chapters; all 5 OCR-garbage candidates rejected (2026-06-12)
+- [x] Unification pass: Chaplain trio merged into one entry, Second Circuits disambiguated by ceremony, 152 dangling links rewired (2026-06-12)
+- [x] remediate_display_paths.py — cleaned 1500 absolute-path leaks flagged by the new hygiene gate (2026-06-12)
+
 - [x] Basic Masonic Education Course merged as multi (level1+level3) with selective companion approval via JSON approval file; routing fixed in work_routing.json (2026-06-11)
 - [x] Pilot root at 122 entries across 4 sources; 0 orphans; gates 19/19 strict + language audit clean (2026-06-11)
 - [x] Sparse-metadata noise filter, taxonomy template, provider category assignment, structure builder CLI — all landed and proven on the pilot root (2026-06-11)
