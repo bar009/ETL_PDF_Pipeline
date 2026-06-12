@@ -12,6 +12,7 @@ Decisions that block items link to `DECISION_LOG.md`.
 ## Next
 
 - [ ] intake_new_source.py CLI — wrap preprocess Steps 1-4, scaffold a routing entry with EMPTY applies_to_degrees (blocks staging until the operator fills it), print markdown-shape diagnosis (2026-06-12)
+- [ ] Unification findings (2026-06-12 scan): merge 3x Chaplain entries in level1; check Second Circuit level1-vs-level3 overlap; check Allegory-definitions pair in level3 (2026-06-12)
 - [ ] Cross-source unification pass after the current batch — near-duplicate scan across degrees, merge stragglers, then publish_snapshot (see INGEST_PLAYBOOK.md step 7) (2026-06-12)
 - [ ] Recover 4 rejected Commentary sections (Prayer, Password origins, Obligation dress, Investiture) from library into level2 entries during quality review (2026-06-12)
 
