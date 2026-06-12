@@ -228,6 +228,29 @@ def build_degree_patch_operation(
     }
 
 
+_ABSOLUTE_PATH_PREFIX = re.compile(r"^(?:[A-Za-z]:[\\/]|\\\\|//|/)")
+_PATH_DISPLAY_ANCHORS = ("consolidated_books/", "pdf_handle/")
+
+
+def display_source_path(source_path: str) -> str:
+    """Provenance strings reach readers; an absolute local path must not.
+
+    Returns the path from a recognizable repo anchor onward when one exists,
+    otherwise the file name for absolute paths, otherwise the input unchanged.
+    """
+    text = normalize_text(source_path).replace("\\", "/")
+    if not text:
+        return ""
+    lowered = text.lower()
+    for anchor in _PATH_DISPLAY_ANCHORS:
+        index = lowered.find(anchor)
+        if index != -1:
+            return text[index:]
+    if _ABSOLUTE_PATH_PREFIX.match(text):
+        return text.rsplit("/", 1)[-1]
+    return text
+
+
 def build_source_note(
     *,
     work_title: str,
@@ -237,7 +260,8 @@ def build_source_note(
     source_order: int,
 ) -> str:
     anchor_fragment = f"#{source_anchor}" if source_anchor else ""
-    return f"{work_title} | {section_title} | {source_path}{anchor_fragment} | section {source_order}"
+    safe_path = display_source_path(source_path)
+    return f"{work_title} | {section_title} | {safe_path}{anchor_fragment} | section {source_order}"
 
 
 def build_cross_degree_link(slug: str, degree: str) -> dict[str, str]:

@@ -46,6 +46,7 @@ from PDF_handle.prod.schema import (
     build_cross_degree_link,
     build_degree_patch_operation,
     build_source_note,
+    display_source_path,
     normalize_degree_data,
     normalize_entry,
     normalize_nullable_string,
@@ -990,7 +991,9 @@ def main() -> None:
                 "Run once without --resume first."
             )
 
-        source_path = str(audited["markdown_path"])
+        # Display form only: this value flows into entry fields and source_notes
+        # that the site shows to readers — never the absolute local path.
+        source_path = display_source_path(str(audited["markdown_path"]))
         apply_allowed_degrees = [degree for degree in route.get("applies_to_degrees", []) if degree in base_datasets]
         discovery_allowed_degrees = list(apply_allowed_degrees)
         if "level3" in base_datasets and route.get("primary_degree") in {"level2", "multi"} and "level3" not in discovery_allowed_degrees:

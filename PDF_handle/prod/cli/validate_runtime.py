@@ -19,6 +19,10 @@ Checks, in order:
 5. work/library coverage — a degree entry that carries a ``work_id`` requires at
    least one library entry for the same work; a degree lane must never cite a
    work the library lane does not hold
+6. display-text hygiene — reader-facing fields must not contain absolute local
+   file paths, and provenance markers (``PDF_STAGE5``) may appear only inside
+   ``full_summary`` (their documented purge-bookkeeping home; renderers strip
+   HTML comments before display)
 
 Exit code 0 = publishable. ``--require-complete`` errors when a standard degree
 file is missing; ``--strict`` turns warnings into failures.
@@ -28,6 +32,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -53,6 +58,29 @@ STANDARD_DEGREE_FILES = ("library", "level1", "level2", "level3")
 REQUIRED_WHEN_COMPLETE = ("library", "level1", "level2")
 PROVENANCE_REQUIRED_TYPES = {"book", "chapter"}
 PROVENANCE_WARNING_EXEMPT_TYPES = {"category", "hub"}
+
+# Reader-facing fields: the site renders these (directly or as fallbacks).
+DISPLAY_STRING_FIELDS = (
+    "title",
+    "short_summary",
+    "full_summary",
+    "symbolic_meaning",
+    "candidate_lesson",
+    "work_title",
+    "source_heading",
+    "source_path",
+)
+DISPLAY_LIST_FIELDS = (
+    "practical_elements",
+    "tradition_notes",
+    "caution_notes",
+    "source_notes",
+    "aliases",
+)
+# Windows drive (C:\ or C:/), UNC (\\server), or POSIX home/Users prefixes.
+ABSOLUTE_PATH_PATTERN = re.compile(r"(?:[A-Za-z]:[\\/]|\\\\|/(?:home|Users)/)")
+PROVENANCE_MARKER_PATTERN = re.compile(r"<!--\s*/?\s*PDF_STAGE5:")
+MARKER_ALLOWED_FIELDS = {"full_summary"}
 
 
 def _check_raw_source_integrity(degree_id: str, raw: dict[str, Any]) -> list[str]:
@@ -104,6 +132,39 @@ def _check_provenance(degree_id: str, dataset: dict[str, Any]) -> tuple[list[str
             and not has_notes
         ):
             warnings.append(f"{degree_id}:{slug} is published without source_notes")
+    return errors, warnings
+
+
+def _check_display_text_hygiene(degree_id: str, dataset: dict[str, Any]) -> tuple[list[str], list[str]]:
+    # Machine identifiers must stay in dedicated metadata; once an absolute
+    # local path or a provenance marker reaches a reader-facing field, the
+    # site shows it to readers (observed leak, 2026-06-12).
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    def texts(entry: dict[str, Any]) -> list[tuple[str, str]]:
+        pairs: list[tuple[str, str]] = []
+        for field in DISPLAY_STRING_FIELDS:
+            value = entry.get(field)
+            if isinstance(value, str) and value:
+                pairs.append((field, value))
+        for field in DISPLAY_LIST_FIELDS:
+            value = entry.get(field)
+            if isinstance(value, list):
+                pairs.extend((field, item) for item in value if isinstance(item, str) and item)
+        return pairs
+
+    for entry in dataset["entries"]:
+        slug = entry["slug"]
+        for field, text in texts(entry):
+            if ABSOLUTE_PATH_PATTERN.search(text):
+                errors.append(
+                    f"{degree_id}:{slug} {field} contains an absolute local path: {text[:80]!r}"
+                )
+            if field not in MARKER_ALLOWED_FIELDS and PROVENANCE_MARKER_PATTERN.search(text):
+                errors.append(
+                    f"{degree_id}:{slug} {field} contains a provenance marker outside full_summary"
+                )
     return errors, warnings
 
 
@@ -205,6 +266,9 @@ def validate_runtime_site_root(
 
         prov_errors, prov_warnings = _check_provenance(degree_id, dataset)
         record(f"{degree_id}_provenance", prov_errors, prov_warnings)
+
+        hygiene_errors, hygiene_warnings = _check_display_text_hygiene(degree_id, dataset)
+        record(f"{degree_id}_display_text_hygiene", hygiene_errors, hygiene_warnings)
 
     if datasets:
         refs = validate_degree_references(datasets)
