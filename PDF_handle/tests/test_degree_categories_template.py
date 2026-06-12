@@ -29,6 +29,9 @@ CANONICAL_LEVEL1_IDS = {
     "obligation_and_law",
     "inner_work",
     "glossary_and_review",
+    # Added 2026-06-12 (operator decision): procedural/officer content gets
+    # its own category in every degree instead of living only in the library.
+    "lodge_procedure",
 }
 
 
@@ -53,14 +56,16 @@ class TestTemplateFile(unittest.TestCase):
                     self.assertTrue(str(category.get("symbol") or "").strip())
                     self.assertIsNone(category.get("parent_category"))
 
-    def test_level1_preserves_the_canonical_nine(self) -> None:
+    def test_level1_preserves_the_canonical_set(self) -> None:
         template = _load_template()
         self.assertEqual(set(template["level1"].keys()), CANONICAL_LEVEL1_IDS)
 
-    def test_level2_and_level3_have_nine_categories(self) -> None:
+    def test_level2_and_level3_have_ten_categories(self) -> None:
         template = _load_template()
-        self.assertEqual(len(template["level2"]), 9)
-        self.assertEqual(len(template["level3"]), 9)
+        self.assertEqual(len(template["level2"]), 10)
+        self.assertEqual(len(template["level3"]), 10)
+        for degree in ("level2", "level3"):
+            self.assertIn("lodge_procedure", template[degree])
 
 
 class TestSeederIntegration(unittest.TestCase):
