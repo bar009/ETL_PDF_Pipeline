@@ -10,7 +10,6 @@ Decisions that block items link to `DECISION_LOG.md`.
 
 ## Next
 
-- [ ] intake_new_source.py CLI — wrap preprocess Steps 1-4, scaffold a routing entry with EMPTY applies_to_degrees (blocks staging until the operator fills it), print markdown-shape diagnosis (2026-06-12)
 - [ ] Unification findings (2026-06-12 scan): merge 3x Chaplain entries in level1; check Second Circuit level1-vs-level3 overlap; check Allegory-definitions pair in level3 (2026-06-12)
 - [ ] Cross-source unification pass after the current batch — near-duplicate scan across degrees, merge stragglers, then publish_snapshot (see INGEST_PLAYBOOK.md step 7) (2026-06-12)
 - [ ] Recover 4 rejected Commentary sections (Prayer, Password origins, Obligation dress, Investiture) from library into level2 entries during quality review (2026-06-12)
@@ -38,6 +37,8 @@ Decisions that block items link to `DECISION_LOG.md`.
 - [x] ~~Remove the quotes around `GEMINI_API_KEY` in `.env`~~ — done by operator (2026-06-11)
 
 ## Done (recent)
+
+- [x] intake_new_source.py CLI — one command for a new PDF: preprocess wrap, blocking routing scaffold, markdown-shape diagnosis; 8 tests (2026-06-12)
 
 - [x] Blue Lodge merged: 32 companions incl. new lodge_procedure category, 167 enrichment ops (2026-06-12)
 - [x] Duncan's Ritual merged: 7 companions, 357 enrichment ops, Royal Arch kept library-only (2026-06-12)

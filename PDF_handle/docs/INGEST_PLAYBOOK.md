@@ -12,13 +12,14 @@ PDF → [1 intake] → [2 ⛔ routing] → [3 prep] → [4 stage] → [5 ⛔ rev
 Run preprocess Steps 1–4 (extract, chunk, AI transform, consolidate):
 
 ```
-python PDF_handle/TOOLS/run_preprocess_01_04.py   # or the prod intake CLI once built
+python PDF_handle/prod/cli/intake_new_source.py --pdf "C:/path/New Book.pdf"
 ```
 
-Output: `PDF_handle/consolidated_books/<Book>.md` + `<Book>_meta.json`.
-
-> Planned: `intake_new_source.py` will wrap this plus steps 2's scaffold and a
-> markdown-shape diagnosis (see BACKLOG). Until it exists, run the steps manually.
+One command: copies the PDF in, runs preprocess Steps 1-4, scaffolds a routing
+entry with EMPTY applies_to_degrees (exit code 2 + BLOCKED banner until the
+operator fills it), and prints which SOURCE_PREP_RUNBOOK case the markdown
+matches. If the consolidated markdown already exists, add `--skip-preprocess
+--book "<stem>"`.
 
 ## 2. ⛔ Routing registration (human decision)
 
