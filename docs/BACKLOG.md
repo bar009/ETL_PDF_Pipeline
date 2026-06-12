@@ -6,8 +6,7 @@ Decisions that block items link to `DECISION_LOG.md`.
 
 ## Now
 
-- [ ] Blue Lodge Ritual Reference Guide source prep + run — expect heavy procedural filtering (2026-06-11)
-- [ ] Content quality review of 122 entries in the browser before further growth (2026-06-11)
+- [ ] Content quality review of 538 entries in the browser (2026-06-11)
 
 ## Next
 
@@ -16,8 +15,7 @@ Decisions that block items link to `DECISION_LOG.md`.
 - [ ] Cross-source unification pass after the current batch — near-duplicate scan across degrees, merge stragglers, then publish_snapshot (see INGEST_PLAYBOOK.md step 7) (2026-06-12)
 - [ ] Recover 4 rejected Commentary sections (Prayer, Password origins, Obligation dress, Investiture) from library into level2 entries during quality review (2026-06-12)
 
-- [ ] Duncan's Ritual source prep — reuse `prod/cli/duncan_section_map_apply.py`, then manual cleanup; giant book, own work item (2026-06-11)
-- [ ] Library of Freemasonry Vol 2 source prep — chapter-by-chapter restructure; giant book, own work item (2026-06-11)
+- [ ] Library of Freemasonry Vol 2 — Gemini stage running; review + merge when done (2026-06-12)
 - [ ] Fragmentary-title false positive: long headings with colons (e.g. "The Letter G and the Five-Pointed Star") get skipped as fragmentary_topic; loosen the detector (2026-06-11)
 
 ## Later / Icebox
@@ -40,6 +38,11 @@ Decisions that block items link to `DECISION_LOG.md`.
 - [x] ~~Remove the quotes around `GEMINI_API_KEY` in `.env`~~ — done by operator (2026-06-11)
 
 ## Done (recent)
+
+- [x] Blue Lodge merged: 32 companions incl. new lodge_procedure category, 167 enrichment ops (2026-06-12)
+- [x] Duncan's Ritual merged: 7 companions, 357 enrichment ops, Royal Arch kept library-only (2026-06-12)
+- [x] Commentary on the Second Degree merged: 11 level2 enrichment ops (2026-06-12)
+- [x] Agent skills (etl-source-ingest, source-markdown-prep) + INGEST_PLAYBOOK + SOURCE_PREP_RUNBOOK (2026-06-12)
 
 - [x] Basic Masonic Education Course merged as multi (level1+level3) with selective companion approval via JSON approval file; routing fixed in work_routing.json (2026-06-11)
 - [x] Pilot root at 122 entries across 4 sources; 0 orphans; gates 19/19 strict + language audit clean (2026-06-11)
