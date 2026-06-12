@@ -1,0 +1,1756 @@
+{
+  "created_at": "2026-06-11T22:40:53+00:00",
+  "works": [
+    {
+      "work_id": "commentary-on-the-second-degree",
+      "work_title": "Commentary on the Second Degree",
+      "source_book_name": "commentary_on_the_second_Degree",
+      "source_path": "C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\commentary_on_the_second_Degree.md",
+      "book_slug": "commentary-on-the-second-degree-book",
+      "section_count": 16,
+      "source_section_count": 16,
+      "chapter_count": 16,
+      "partial": false,
+      "stop_reason": null,
+      "sections": [
+        {
+          "section_id": "section-0001",
+          "title": "Commentary on the Second Degree",
+          "normalized_title": "Commentary on the Second Degree",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 267,
+          "source_anchor": "commentary-on-the-second-degree",
+          "source_order": 1,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0001-unit-0001",
+              "char_length": 267
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0001-commentary-on-the-second-degree",
+          "preservation": {
+            "source_char_count": 267,
+            "stored_char_count": 267,
+            "normalized_equal": true,
+            "source_token_count": 42,
+            "stored_token_count": 42
+          },
+          "discovery": {
+            "section_id": "section-0001",
+            "source_title": "Commentary on the Second Degree",
+            "normalized_title": "Commentary on the Second Degree",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "HEADING_MATCH",
+              "MULTI_TERM_OVERLAP",
+              "PROVIDER_TARGET_HINT"
+            ],
+            "strong_match_count": 2,
+            "medium_match_count": 1,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "title": "The Ceremony of Passing"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+                "title": "Closing and Summary"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0002-who-was-hiram-abiff",
+                "title": "Who Was Hiram Abiff?"
+              }
+            ],
+            "new_topic_hints": [
+              "Ritual Commentary Method: Fifteen Pauses"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0002",
+          "title": "The Apprentice's Progress and Readiness for Passing",
+          "normalized_title": "The Apprentice's Progress and Readiness for Passing",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 705,
+          "source_anchor": "the-apprentice-s-progress-and-readiness-for-passing",
+          "source_order": 2,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0002-unit-0001",
+              "char_length": 705
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0002-the-apprentice-s-progress-and-readiness-for-passing",
+          "preservation": {
+            "source_char_count": 705,
+            "stored_char_count": 705,
+            "normalized_equal": true,
+            "source_token_count": 123,
+            "stored_token_count": 123
+          },
+          "discovery": {
+            "section_id": "section-0002",
+            "source_title": "The Apprentice's Progress and Readiness for Passing",
+            "normalized_title": "The Apprentice's Progress and Readiness for Passing",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "HEADING_MATCH"
+            ],
+            "strong_match_count": 2,
+            "medium_match_count": 4,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+                "title": "Jung's Psychology and the Three Craft Degrees"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "title": "The Ceremony of Passing"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0005-the-wages-of-a-master-mason",
+                "title": "The Wages of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0011-the-setting-maul",
+                "title": "The Setting Maul"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0015-the-rights-of-a-master-mason",
+                "title": "The Rights of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0101-ritual-for-a-lodge-of-sorrow",
+                "title": "Ritual for a Lodge of Sorrow"
+              }
+            ],
+            "new_topic_hints": [
+              "Apprentice Readiness for Fellow Craft Degree",
+              "Operative vs. Speculative Apprentice Advancement",
+              "European Lodge Requirements for Advancement"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0003",
+          "title": "Divine Aid and the Square at the Entrance",
+          "normalized_title": "Divine Aid and the Square at the Entrance",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 579,
+          "source_anchor": "divine-aid-and-the-square-at-the-entrance",
+          "source_order": 3,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0003-unit-0001",
+              "char_length": 579
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0003-divine-aid-and-the-square-at-the-entrance",
+          "preservation": {
+            "source_char_count": 579,
+            "stored_char_count": 579,
+            "normalized_equal": true,
+            "source_token_count": 107,
+            "stored_token_count": 107
+          },
+          "discovery": {
+            "section_id": "section-0003",
+            "source_title": "Divine Aid and the Square at the Entrance",
+            "normalized_title": "Divine Aid and the Square at the Entrance",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "MULTI_TERM_OVERLAP",
+              "PROVIDER_TARGET_HINT"
+            ],
+            "strong_match_count": 2,
+            "medium_match_count": 3,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "title": "The Ceremony of Passing"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+                "title": "Perambulation: The Soul's Forward Movement"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+                "title": "Jung's Psychology and the Three Craft Degrees"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+                "title": "Closing and Summary"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0002-significance-of-the-master-mason-degree",
+                "title": "Significance of the Master Mason Degree"
+              }
+            ],
+            "new_topic_hints": [
+              "Divine Aid in the Second Degree",
+              "The Square at the Entrance of the Second Degree"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "degree": "level2"
+              },
+              {
+                "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0004",
+          "title": "Prayer and Dependence upon God",
+          "normalized_title": "Prayer and Dependence upon God",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 595,
+          "source_anchor": "prayer-and-dependence-upon-god",
+          "source_order": 4,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0004-unit-0001",
+              "char_length": 595
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0004-prayer-and-dependence-upon-god",
+          "preservation": {
+            "source_char_count": 595,
+            "stored_char_count": 595,
+            "normalized_equal": true,
+            "source_token_count": 114,
+            "stored_token_count": 114
+          },
+          "discovery": {
+            "section_id": "section-0004",
+            "source_title": "Prayer and Dependence upon God",
+            "normalized_title": "Prayer and Dependence upon God",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "reject_or_noise",
+            "candidate_degree": "unknown",
+            "degree_confidence": "low",
+            "confidence": "medium",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "WEAK_EXISTING_OVERLAP",
+              "NEW_TOPIC_HINT",
+              "PRIMARY_DEGREE_FALLBACK",
+              "ENRICHMENT_SOURCE",
+              "ENRICHMENT_ONLY_ROUTE"
+            ],
+            "strong_match_count": 0,
+            "medium_match_count": 1,
+            "rejected_match_count": 0,
+            "top_strong_matches": [],
+            "top_medium_matches": [
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0005-the-wages-of-a-master-mason",
+                "title": "The Wages of a Master Mason"
+              }
+            ],
+            "new_topic_hints": [
+              "Guild Masons' Banner and Motto"
+            ]
+          },
+          "strong_matches": [],
+          "medium_matches": [],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0005",
+          "title": "Passing the Junior Warden: The Gate of the Lodge",
+          "normalized_title": "Passing the Junior Warden: The Gate of the Lodge",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 857,
+          "source_anchor": "passing-the-junior-warden-the-gate-of-the-lodge",
+          "source_order": 5,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0005-unit-0001",
+              "char_length": 857
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0005-passing-the-junior-warden-the-gate-of-the-lodge",
+          "preservation": {
+            "source_char_count": 857,
+            "stored_char_count": 857,
+            "normalized_equal": true,
+            "source_token_count": 156,
+            "stored_token_count": 156
+          },
+          "discovery": {
+            "section_id": "section-0005",
+            "source_title": "Passing the Junior Warden: The Gate of the Lodge",
+            "normalized_title": "Passing the Junior Warden: The Gate of the Lodge",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "HEADING_MATCH",
+              "MULTI_TERM_OVERLAP"
+            ],
+            "strong_match_count": 4,
+            "medium_match_count": 5,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "title": "The Ceremony of Passing"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+                "title": "Closing and Summary"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0110-second-circuit",
+                "title": "Second Circuit"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+                "title": "Perambulation: The Soul's Forward Movement"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+                "title": "Jung's Psychology and the Three Craft Degrees"
+              },
+              {
+                "degree": "level2",
+                "slug": "level2-hub-working-tools",
+                "title": "Working Tools"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0005-the-wages-of-a-master-mason",
+                "title": "The Wages of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0011-the-setting-maul",
+                "title": "The Setting Maul"
+              },
+              {
+                "degree": "level3",
+                "slug": "level3-hub-working-tools",
+                "title": "Working Tools"
+              }
+            ],
+            "new_topic_hints": [
+              "Historical Evolution of Warden's Position and Pillars",
+              "Lodge Gate in Operative Masonry"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+              "degree": "level2"
+            },
+            {
+              "slug": "level2-hub-working-tools",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [
+            {
+              "degree": "level3",
+              "slug": "blue-lodge-ritual-reference-guide-2021-section-0110-second-circuit",
+              "reason": "Suggested degree is outside the allowed routing lane."
+            }
+          ],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0006",
+          "title": "The Password of the Degree and Its Origins",
+          "normalized_title": "The Password of the Degree and Its Origins",
+          "marker_type": "heading",
+          "unit_kind": "fragmentary_topic",
+          "normalization_flags": [
+            "SENTENCE_FRAGMENT"
+          ],
+          "is_noise_candidate": false,
+          "text_char_length": 556,
+          "source_anchor": "the-password-of-the-degree-and-its-origins",
+          "source_order": 6,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0006-unit-0001",
+              "char_length": 556
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0006-the-password-of-the-degree-and-its-origins",
+          "preservation": {
+            "source_char_count": 556,
+            "stored_char_count": 556,
+            "normalized_equal": true,
+            "source_token_count": 106,
+            "stored_token_count": 106
+          },
+          "discovery": {
+            "section_id": "section-0006",
+            "source_title": "The Password of the Degree and Its Origins",
+            "normalized_title": "The Password of the Degree and Its Origins",
+            "unit_kind": "fragmentary_topic",
+            "is_noise_candidate": false,
+            "decision": "reject_or_noise",
+            "candidate_degree": "unknown",
+            "degree_confidence": "low",
+            "confidence": "low",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "SENTENCE_FRAGMENT",
+              "NO_MATCH_FOUND"
+            ],
+            "strong_match_count": 0,
+            "medium_match_count": 0,
+            "rejected_match_count": 0,
+            "top_strong_matches": [],
+            "top_medium_matches": [],
+            "new_topic_hints": []
+          },
+          "strong_matches": [],
+          "medium_matches": [],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0007",
+          "title": "The Winding Staircase: Origins in the Temple",
+          "normalized_title": "The Winding Staircase: Origins in the Temple",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 959,
+          "source_anchor": "the-winding-staircase-origins-in-the-temple",
+          "source_order": 7,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0007-unit-0001",
+              "char_length": 959
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0007-the-winding-staircase-origins-in-the-temple",
+          "preservation": {
+            "source_char_count": 959,
+            "stored_char_count": 959,
+            "normalized_equal": true,
+            "source_token_count": 170,
+            "stored_token_count": 170
+          },
+          "discovery": {
+            "section_id": "section-0007",
+            "source_title": "The Winding Staircase: Origins in the Temple",
+            "normalized_title": "The Winding Staircase: Origins in the Temple",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "HEADING_MATCH",
+              "PROVIDER_TARGET_HINT"
+            ],
+            "strong_match_count": 1,
+            "medium_match_count": 7,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+                "title": "Flight of Winding Stairs"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+                "title": "Blue: The Color of the Symbolic Lodge"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "title": "The Ceremony of Passing"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+                "title": "Closing and Summary"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0002-who-was-hiram-abiff",
+                "title": "Who Was Hiram Abiff?"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0003-hiram-in-scripture",
+                "title": "Hiram in Scripture"
+              }
+            ],
+            "new_topic_hints": [
+              "Mary's Ascent to the Temple",
+              "Guild Plays and Masonic Ritual Origins"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0008",
+          "title": "Preparation for the Obligation: Dress and the Square",
+          "normalized_title": "Preparation for the Obligation: Dress and the Square",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 782,
+          "source_anchor": "preparation-for-the-obligation-dress-and-the-square",
+          "source_order": 8,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0008-unit-0001",
+              "char_length": 782
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0008-preparation-for-the-obligation-dress-and-the-square",
+          "preservation": {
+            "source_char_count": 782,
+            "stored_char_count": 782,
+            "normalized_equal": true,
+            "source_token_count": 143,
+            "stored_token_count": 143
+          },
+          "discovery": {
+            "section_id": "section-0008",
+            "source_title": "Preparation for the Obligation: Dress and the Square",
+            "normalized_title": "Preparation for the Obligation: Dress and the Square",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "reject_or_noise",
+            "candidate_degree": "unknown",
+            "degree_confidence": "low",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "DISCOVERY_ONLY_DEGREE",
+              "LATER_DEGREE_SIGNAL",
+              "HEADING_MATCH",
+              "ENRICHMENT_SOURCE",
+              "ENRICHMENT_ONLY_ROUTE"
+            ],
+            "strong_match_count": 3,
+            "medium_match_count": 4,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level3",
+                "slug": "level3-hub-obligation-and-law",
+                "title": "Obligation And Law"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "title": "The Ceremony of Passing"
+              },
+              {
+                "degree": "level2",
+                "slug": "level2-hub-working-tools",
+                "title": "Working Tools"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+                "title": "Conclusion: Synchronicity, Jung, and Masonic Heritage"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+                "title": "Closing and Summary"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0001-allegories-of-hiram-abiff",
+                "title": "Allegories of Hiram Abiff"
+              },
+              {
+                "degree": "level3",
+                "slug": "level3-hub-working-tools",
+                "title": "Working Tools"
+              }
+            ],
+            "new_topic_hints": [
+              "Historical Evolution of Masonic Degrees",
+              "Symbolism of Masonic Attire"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+              "degree": "level2"
+            },
+            {
+              "slug": "level2-hub-working-tools",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "degree": "level2"
+              },
+              {
+                "slug": "level2-hub-working-tools",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0009",
+          "title": "The Obligation and the Intertwined Square and Compasses",
+          "normalized_title": "The Obligation and the Intertwined Square and Compasses",
+          "marker_type": "heading",
+          "unit_kind": "officer_list",
+          "normalization_flags": [
+            "OFFICER_LIST"
+          ],
+          "is_noise_candidate": true,
+          "text_char_length": 791,
+          "source_anchor": "the-obligation-and-the-intertwined-square-and-compasses",
+          "source_order": 9,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0009-unit-0001",
+              "char_length": 791
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0009-the-obligation-and-the-intertwined-square-and-compasses",
+          "preservation": {
+            "source_char_count": 791,
+            "stored_char_count": 791,
+            "normalized_equal": true,
+            "source_token_count": 141,
+            "stored_token_count": 141
+          },
+          "discovery": {
+            "section_id": "section-0009",
+            "source_title": "The Obligation and the Intertwined Square and Compasses",
+            "normalized_title": "The Obligation and the Intertwined Square and Compasses",
+            "unit_kind": "officer_list",
+            "is_noise_candidate": true,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "OFFICER_LIST",
+              "MULTI_TERM_OVERLAP"
+            ],
+            "strong_match_count": 9,
+            "medium_match_count": 8,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+                "title": "Jung's Psychology and the Three Craft Degrees"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0005-the-wages-of-a-master-mason",
+                "title": "The Wages of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0015-the-rights-of-a-master-mason",
+                "title": "The Rights of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0016-the-responsibilities-of-a-master-mason",
+                "title": "The Responsibilities of a Master Mason"
+              },
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+                "title": "Blue: The Color of the Symbolic Lodge"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+                "title": "Introduction: Color as a Masonic Teaching Tool"
+              },
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+                "title": "Conclusion: Synchronicity, Jung, and Masonic Heritage"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+                "title": "Perambulation: The Soul's Forward Movement"
+              },
+              {
+                "degree": "level2",
+                "slug": "level2-hub-working-tools",
+                "title": "Working Tools"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0001-allegories-of-hiram-abiff",
+                "title": "Allegories of Hiram Abiff"
+              }
+            ],
+            "new_topic_hints": []
+          },
+          "strong_matches": [
+            {
+              "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+              "degree": "level2"
+            },
+            {
+              "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+              "degree": "level2"
+            },
+            {
+              "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+              "degree": "level2"
+            },
+            {
+              "slug": "level2-hub-working-tools",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [],
+            "withheld_for_review": true
+          }
+        },
+        {
+          "section_id": "section-0010",
+          "title": "The Secrets: Regular Steps and the Hailing Sign",
+          "normalized_title": "The Secrets: Regular Steps and the Hailing Sign",
+          "marker_type": "heading",
+          "unit_kind": "fragmentary_topic",
+          "normalization_flags": [
+            "SENTENCE_FRAGMENT"
+          ],
+          "is_noise_candidate": false,
+          "text_char_length": 1219,
+          "source_anchor": "the-secrets-regular-steps-and-the-hailing-sign",
+          "source_order": 10,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0010-unit-0001",
+              "char_length": 1219
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0010-the-secrets-regular-steps-and-the-hailing-sign",
+          "preservation": {
+            "source_char_count": 1219,
+            "stored_char_count": 1219,
+            "normalized_equal": true,
+            "source_token_count": 224,
+            "stored_token_count": 224
+          },
+          "discovery": {
+            "section_id": "section-0010",
+            "source_title": "The Secrets: Regular Steps and the Hailing Sign",
+            "normalized_title": "The Secrets: Regular Steps and the Hailing Sign",
+            "unit_kind": "fragmentary_topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "SENTENCE_FRAGMENT",
+              "MULTI_TERM_OVERLAP"
+            ],
+            "strong_match_count": 2,
+            "medium_match_count": 3,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+                "title": "Jung's Psychology and the Three Craft Degrees"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0004-the-hiramic-legend-in-masonic-history",
+                "title": "The Hiramic Legend in Masonic History"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+                "title": "Closing and Summary"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0015-the-rights-of-a-master-mason",
+                "title": "The Rights of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0089-the-hour-glass",
+                "title": "The Hour Glass"
+              }
+            ],
+            "new_topic_hints": []
+          },
+          "strong_matches": [
+            {
+              "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [],
+            "withheld_for_review": true
+          }
+        },
+        {
+          "section_id": "section-0011",
+          "title": "Halving the Word and the Position of the Pillars",
+          "normalized_title": "Halving the Word and the Position of the Pillars",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 806,
+          "source_anchor": "halving-the-word-and-the-position-of-the-pillars",
+          "source_order": 11,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0011-unit-0001",
+              "char_length": 806
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0011-halving-the-word-and-the-position-of-the-pillars",
+          "preservation": {
+            "source_char_count": 806,
+            "stored_char_count": 806,
+            "normalized_equal": true,
+            "source_token_count": 144,
+            "stored_token_count": 144
+          },
+          "discovery": {
+            "section_id": "section-0011",
+            "source_title": "Halving the Word and the Position of the Pillars",
+            "normalized_title": "Halving the Word and the Position of the Pillars",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "HEADING_MATCH",
+              "MULTI_TERM_OVERLAP"
+            ],
+            "strong_match_count": 4,
+            "medium_match_count": 11,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+                "title": "Blue: The Color of the Symbolic Lodge"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0002-who-was-hiram-abiff",
+                "title": "Who Was Hiram Abiff?"
+              },
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+                "title": "Conclusion: Synchronicity, Jung, and Masonic Heritage"
+              },
+              {
+                "degree": "level2",
+                "slug": "level2-hub-pillars-and-architecture",
+                "title": "Pillars And Architecture"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+                "title": "Introduction: Color as a Masonic Teaching Tool"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0001-allegories-of-hiram-abiff",
+                "title": "Allegories of Hiram Abiff"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0003-hiram-in-scripture",
+                "title": "Hiram in Scripture"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0004-the-hiramic-legend-in-masonic-history",
+                "title": "The Hiramic Legend in Masonic History"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0009-the-rosicrucian-temple-legend",
+                "title": "The Rosicrucian Temple Legend"
+              }
+            ],
+            "new_topic_hints": [
+              "Halving the Word Ritual Practice",
+              "Assistant High Priest in Pseudepigrapha"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+              "degree": "level2"
+            },
+            {
+              "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+              "degree": "level2"
+            },
+            {
+              "slug": "level2-hub-pillars-and-architecture",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "level2-hub-pillars-and-architecture",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0012",
+          "title": "The Two Pillars Conjoined",
+          "normalized_title": "The Two Pillars Conjoined",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 664,
+          "source_anchor": "the-two-pillars-conjoined",
+          "source_order": 12,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0012-unit-0001",
+              "char_length": 664
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0012-the-two-pillars-conjoined",
+          "preservation": {
+            "source_char_count": 664,
+            "stored_char_count": 664,
+            "normalized_equal": true,
+            "source_token_count": 119,
+            "stored_token_count": 119
+          },
+          "discovery": {
+            "section_id": "section-0012",
+            "source_title": "The Two Pillars Conjoined",
+            "normalized_title": "The Two Pillars Conjoined",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "HEADING_MATCH"
+            ],
+            "strong_match_count": 2,
+            "medium_match_count": 4,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+                "title": "Blue: The Color of the Symbolic Lodge"
+              },
+              {
+                "degree": "level2",
+                "slug": "level2-hub-pillars-and-architecture",
+                "title": "Pillars And Architecture"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+                "title": "The Ceremony of Passing"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0003-hiram-in-scripture",
+                "title": "Hiram in Scripture"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0015-the-rights-of-a-master-mason",
+                "title": "The Rights of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0110-second-circuit",
+                "title": "Second Circuit"
+              }
+            ],
+            "new_topic_hints": [
+              "Historical Conjoining of Apprentice and Fellow Degrees"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+              "degree": "level2"
+            },
+            {
+              "slug": "level2-hub-pillars-and-architecture",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "level2-hub-pillars-and-architecture",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        },
+        {
+          "section_id": "section-0013",
+          "title": "Investiture by the Senior Warden: The Warden's Ancient Right",
+          "normalized_title": "Investiture by the Senior Warden: The Warden's Ancient Right",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 898,
+          "source_anchor": "investiture-by-the-senior-warden-the-warden-s-ancient-right",
+          "source_order": 13,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0013-unit-0001",
+              "char_length": 898
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0013-investiture-by-the-senior-warden-the-warden-s-ancient-right",
+          "preservation": {
+            "source_char_count": 898,
+            "stored_char_count": 898,
+            "normalized_equal": true,
+            "source_token_count": 162,
+            "stored_token_count": 162
+          },
+          "discovery": {
+            "section_id": "section-0013",
+            "source_title": "Investiture by the Senior Warden: The Warden's Ancient Right",
+            "normalized_title": "Investiture by the Senior Warden: The Warden's Ancient Right",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "reject_or_noise",
+            "candidate_degree": "unknown",
+            "degree_confidence": "low",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "DISCOVERY_ONLY_DEGREE",
+              "LATER_DEGREE_SIGNAL",
+              "MULTI_TERM_OVERLAP",
+              "ENRICHMENT_SOURCE",
+              "ENRICHMENT_ONLY_ROUTE"
+            ],
+            "strong_match_count": 7,
+            "medium_match_count": 5,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0005-the-wages-of-a-master-mason",
+                "title": "The Wages of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0015-the-rights-of-a-master-mason",
+                "title": "The Rights of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0016-the-responsibilities-of-a-master-mason",
+                "title": "The Responsibilities of a Master Mason"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0110-second-circuit",
+                "title": "Second Circuit"
+              },
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+                "title": "Jung's Psychology and the Three Craft Degrees"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+                "title": "Closing and Summary"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0002-who-was-hiram-abiff",
+                "title": "Who Was Hiram Abiff?"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0002-significance-of-the-master-mason-degree",
+                "title": "Significance of the Master Mason Degree"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0011-the-setting-maul",
+                "title": "The Setting Maul"
+              },
+              {
+                "degree": "level3",
+                "slug": "basic-masonic-education-course-section-0026-masonic-glossary-master-mason",
+                "title": "Masonic Glossary — Master Mason"
+              }
+            ],
+            "new_topic_hints": [
+              "The Warden's Ancient Right in Operative Masonry",
+              "Evolution of the Fellowcraft Apron"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+              "degree": "level2"
+            },
+            {
+              "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [],
+            "withheld_for_review": true
+          }
+        },
+        {
+          "section_id": "section-0014",
+          "title": "The Liberal Arts and Sciences and the Craftsman's Study",
+          "normalized_title": "The Liberal Arts and Sciences and the Craftsman's Study",
+          "marker_type": "heading",
+          "unit_kind": "fragmentary_topic",
+          "normalization_flags": [
+            "SENTENCE_FRAGMENT"
+          ],
+          "is_noise_candidate": false,
+          "text_char_length": 855,
+          "source_anchor": "the-liberal-arts-and-sciences-and-the-craftsman-s-study",
+          "source_order": 14,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0014-unit-0001",
+              "char_length": 855
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0014-the-liberal-arts-and-sciences-and-the-craftsman-s-study",
+          "preservation": {
+            "source_char_count": 855,
+            "stored_char_count": 855,
+            "normalized_equal": true,
+            "source_token_count": 153,
+            "stored_token_count": 153
+          },
+          "discovery": {
+            "section_id": "section-0014",
+            "source_title": "The Liberal Arts and Sciences and the Craftsman's Study",
+            "normalized_title": "The Liberal Arts and Sciences and the Craftsman's Study",
+            "unit_kind": "fragmentary_topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "SENTENCE_FRAGMENT",
+              "HEADING_MATCH",
+              "MULTI_TERM_OVERLAP"
+            ],
+            "strong_match_count": 2,
+            "medium_match_count": 4,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "level2-hub-liberal-arts",
+                "title": "Liberal Arts"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0087-the-forty-seventh",
+                "title": "The Forty-seventh"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+                "title": "Flight of Winding Stairs"
+              },
+              {
+                "degree": "level2",
+                "slug": "level2-hub-working-tools",
+                "title": "Working Tools"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0157-charge-to-the-grand-orator",
+                "title": "Charge to the Grand Orator"
+              },
+              {
+                "degree": "level3",
+                "slug": "level3-hub-working-tools",
+                "title": "Working Tools"
+              }
+            ],
+            "new_topic_hints": []
+          },
+          "strong_matches": [
+            {
+              "slug": "level2-hub-liberal-arts",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+              "degree": "level2"
+            },
+            {
+              "slug": "level2-hub-working-tools",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [],
+            "withheld_for_review": true
+          }
+        },
+        {
+          "section_id": "section-0015",
+          "title": "The Charge in the South-East Corner: From Rough to Smooth Ashlar",
+          "normalized_title": "The Charge in the South-East Corner: From Rough to Smooth Ashlar",
+          "marker_type": "heading",
+          "unit_kind": "fragmentary_topic",
+          "normalization_flags": [
+            "SENTENCE_FRAGMENT"
+          ],
+          "is_noise_candidate": false,
+          "text_char_length": 861,
+          "source_anchor": "the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar",
+          "source_order": 15,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0015-unit-0001",
+              "char_length": 861
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0015-the-charge-in-the-south-east-corner-from-rough-to-smooth-ashlar",
+          "preservation": {
+            "source_char_count": 861,
+            "stored_char_count": 861,
+            "normalized_equal": true,
+            "source_token_count": 153,
+            "stored_token_count": 153
+          },
+          "discovery": {
+            "section_id": "section-0015",
+            "source_title": "The Charge in the South-East Corner: From Rough to Smooth Ashlar",
+            "normalized_title": "The Charge in the South-East Corner: From Rough to Smooth Ashlar",
+            "unit_kind": "fragmentary_topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "SENTENCE_FRAGMENT",
+              "MULTI_TERM_OVERLAP"
+            ],
+            "strong_match_count": 2,
+            "medium_match_count": 6,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "level2-hub-liberal-arts",
+                "title": "Liberal Arts"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0087-the-forty-seventh",
+                "title": "The Forty-seventh"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+                "title": "Flight of Winding Stairs"
+              },
+              {
+                "degree": "level2",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0061-astronomy",
+                "title": "Astronomy"
+              },
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+                "title": "Jung's Psychology and the Three Craft Degrees"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0001-allegories-of-hiram-abiff",
+                "title": "Allegories of Hiram Abiff"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0002-who-was-hiram-abiff",
+                "title": "Who Was Hiram Abiff?"
+              }
+            ],
+            "new_topic_hints": []
+          },
+          "strong_matches": [
+            {
+              "slug": "level2-hub-liberal-arts",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+              "degree": "level2"
+            },
+            {
+              "slug": "blue-lodge-ritual-reference-guide-2021-section-0061-astronomy",
+              "degree": "level2"
+            },
+            {
+              "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [],
+            "withheld_for_review": true
+          }
+        },
+        {
+          "section_id": "section-0016",
+          "title": "The Working Tools and Their Moral Application",
+          "normalized_title": "The Working Tools and Their Moral Application",
+          "marker_type": "heading",
+          "unit_kind": "topic",
+          "normalization_flags": [],
+          "is_noise_candidate": false,
+          "text_char_length": 854,
+          "source_anchor": "the-working-tools-and-their-moral-application",
+          "source_order": 16,
+          "chapter_toc": [],
+          "mapping_units": [
+            {
+              "unit_id": "section-0016-unit-0001",
+              "char_length": 854
+            }
+          ],
+          "chapter_slug": "commentary-on-the-second-degree-section-0016-the-working-tools-and-their-moral-application",
+          "preservation": {
+            "source_char_count": 854,
+            "stored_char_count": 854,
+            "normalized_equal": true,
+            "source_token_count": 153,
+            "stored_token_count": 153
+          },
+          "discovery": {
+            "section_id": "section-0016",
+            "source_title": "The Working Tools and Their Moral Application",
+            "normalized_title": "The Working Tools and Their Moral Application",
+            "unit_kind": "topic",
+            "is_noise_candidate": false,
+            "decision": "existing_match",
+            "candidate_degree": "level2",
+            "degree_confidence": "high",
+            "confidence": "high",
+            "encyclopedia_lane": null,
+            "reason_codes": [
+              "HEADING_MATCH",
+              "MULTI_TERM_OVERLAP",
+              "PROVIDER_TARGET_HINT"
+            ],
+            "strong_match_count": 2,
+            "medium_match_count": 4,
+            "rejected_match_count": 0,
+            "top_strong_matches": [
+              {
+                "degree": "level2",
+                "slug": "level2-hub-working-tools",
+                "title": "Working Tools"
+              },
+              {
+                "degree": "level3",
+                "slug": "level3-hub-working-tools",
+                "title": "Working Tools"
+              }
+            ],
+            "top_medium_matches": [
+              {
+                "degree": "level2",
+                "slug": "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+                "title": "Introduction: Color as a Masonic Teaching Tool"
+              },
+              {
+                "degree": "level2",
+                "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+                "title": "Perambulation: The Soul's Forward Movement"
+              },
+              {
+                "degree": "level3",
+                "slug": "allegories-of-hiram-abiff-section-0011-exoteric-and-esoteric-lessons",
+                "title": "Exoteric and Esoteric Lessons"
+              },
+              {
+                "degree": "level3",
+                "slug": "blue-lodge-ritual-reference-guide-2021-section-0157-charge-to-the-grand-orator",
+                "title": "Charge to the Grand Orator"
+              }
+            ],
+            "new_topic_hints": [
+              "Moral Application of Working Tools",
+              "Holiness to the Lord"
+            ]
+          },
+          "strong_matches": [
+            {
+              "slug": "level2-hub-working-tools",
+              "degree": "level2"
+            }
+          ],
+          "medium_matches": [
+            {
+              "slug": "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+              "degree": "level2"
+            },
+            {
+              "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+              "degree": "level2"
+            }
+          ],
+          "rejected_matches": [],
+          "content_routing": {
+            "applied_targets": [
+              {
+                "slug": "level2-hub-working-tools",
+                "degree": "level2"
+              }
+            ],
+            "withheld_for_review": false
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "work_id": "library-of-freemasonry-volume-2",
+    "work_title": "Library of Freemasonry, Volume 2",
+    "section_id": "section-0054",
+    "section_title": "Earlybritishfreemasonry.55",
+    "candidate_slug": "level1-library-of-freemasonry-volume-2-section-0054-earlybritishfreemasonry-55",
+    "review_state": "suggested",
+    "suggested_title": "Earlybritishfreemasonry.55",
+    "suggested_degree": "level1",
+    "suggested_category": "gate",
+    "category_source": "first_category_fallback",
+    "category_reason": "",
+    "related_existing_slugs": [],
+    "source_provenance": "Library of Freemasonry, Volume 2 | Earlybritishfreemasonry.55 | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\libraryoffreemas02goul.md#earlybritishfreemasonry-55 | section 54",
+    "confidence_reason": "No strong local match; staged for manual review as a companion candidate.",
+    "decision": "new_canonical_topic",
+    "candidate_degree": "level1",
+    "degree_confidence": "low",
+    "reason_codes": [
+      "NEW_TOPIC_HINT",
+      "PRIMARY_DEGREE_FALLBACK"
+    ],
+    "unit_kind": "topic",
+    "normalized_title": "Earlybritishfreemasonry.55",
+    "draft_seed": {
+      "slug": "level1-library-of-freemasonry-volume-2-section-0054-earlybritishfreemasonry-55",
+      "title": "Earlybritishfreemasonry.55",
+      "degree": "level1",
+      "applies_to_degrees": [
+        "level1"
+      ],
+      "category": "gate",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Earlybritishfreemasonry.55"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "Draft entry from Library of Freemasonry, Volume 2.",
+      "full_summary": "",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Library of Freemasonry, Volume 2 | Earlybritishfreemasonry.55 | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\libraryoffreemas02goul.md#earlybritishfreemasonry-55 | section 54"
+      ],
+      "work_id": "library-of-freemasonry-volume-2",
+      "work_title": "Library of Freemasonry, Volume 2",
+      "source_kind": "reference-compendium",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Earlybritishfreemasonry.55",
+      "source_order": null,
+      "parallel_entry": null,
+      "knowledge_links": [],
+      "source_library_slug": "library-of-freemasonry-volume-2-section-0054-earlybritishfreemasonry-55",
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    }
+  }
+]

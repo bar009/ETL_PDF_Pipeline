@@ -1,0 +1,2029 @@
+{
+  "meta": {
+    "degree": "level2",
+    "title": "Degree 2 - Fellow Craft",
+    "updated_at": "2026-06-11T18:16:07+00:00"
+  },
+  "categories": {
+    "gate": {
+      "id": "gate",
+      "title": "Gate",
+      "symbol": "🔑",
+      "description": "Entry point and orientation for the Fellow Craft degree.",
+      "parent_category": null
+    },
+    "ritual_flow": {
+      "id": "ritual_flow",
+      "title": "Ritual Flow",
+      "symbol": "🚪",
+      "description": "The course of the passing ceremony.",
+      "parent_category": null
+    },
+    "middle_chamber": {
+      "id": "middle_chamber",
+      "title": "Middle Chamber",
+      "symbol": "🌀",
+      "description": "The winding stairs and the middle chamber lecture.",
+      "parent_category": null
+    },
+    "liberal_arts": {
+      "id": "liberal_arts",
+      "title": "Liberal Arts",
+      "symbol": "🎓",
+      "description": "The seven liberal arts and sciences.",
+      "parent_category": null
+    },
+    "working_tools": {
+      "id": "working_tools",
+      "title": "Working Tools",
+      "symbol": "🛠",
+      "description": "The plumb, level, and square of the Fellow Craft.",
+      "parent_category": null
+    },
+    "pillars_and_architecture": {
+      "id": "pillars_and_architecture",
+      "title": "Pillars And Architecture",
+      "symbol": "🏛",
+      "description": "The two pillars, orders of architecture, and the builder craft.",
+      "parent_category": null
+    },
+    "wages_and_emblems": {
+      "id": "wages_and_emblems",
+      "title": "Wages And Emblems",
+      "symbol": "🌾",
+      "description": "Corn, wine, and oil; the letter G; jewels and emblems of the degree.",
+      "parent_category": null
+    },
+    "philosophy": {
+      "id": "philosophy",
+      "title": "Philosophy",
+      "symbol": "🕯",
+      "description": "Knowledge, education, symbolism studies, and self-improvement.",
+      "parent_category": null
+    },
+    "glossary_and_review": {
+      "id": "glossary_and_review",
+      "title": "Glossary And Review",
+      "symbol": "📘",
+      "description": "Terms, summaries, and review material.",
+      "parent_category": null
+    },
+    "lodge_procedure": {
+      "id": "lodge_procedure",
+      "title": "Lodge Procedure and Officers",
+      "symbol": "📋",
+      "description": "Ceremonial procedure, officer duties, installations, charges, and the operational order of the lodge.",
+      "parent_category": null
+    }
+  },
+  "entries": [
+    {
+      "title": "Introduction: Color as a Masonic Teaching Tool",
+      "slug": "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "philosophy",
+      "parent_topic": "level2-hub-philosophy",
+      "aliases": [],
+      "keywords": [
+        "Masonry",
+        "symbols",
+        "moral lessons",
+        "allegory",
+        "lectures",
+        "teaching tool",
+        "deeper meaning"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section introduces the fundamental Masonic principle that morality is taught through a system of allegory and symbols, with lectures providing explanations. It suggests that the explicit explanations in lectures may only represent a superficial understanding, implying a deeper meaning to be discovered within the symbols.",
+      "full_summary": "This section introduces the fundamental Masonic principle that morality is taught through a system of allegory and symbols, with lectures providing explanations. It suggests that the explicit explanations in lectures may only represent a superficial understanding, implying a deeper meaning to be discovered within the symbols.\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0074 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Third Section\n\nThis section describes the Third Section of a degree, focusing on hieroglyphical emblems, moral lessons, and extensive details regarding the construction of King Solomon's Temple. It covers the temple's foundation, location on Mount Moriah, construction duration, the absence of tool sounds during building, and the vast workforce involved, including Grand Masters, Masters, Fellow Crafts, and Entered Apprentices. The section also elaborates on the two celebrated pillars placed at the temple's entrance, explaining their symbolic significance as a memorial to the Israelites' deliverance from Egyptian bondage, referencing the miraculous pillars of fire and cloud.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0074 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0149 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Charge to the Grand Chaplain\n\nThe charge to the Grand Chaplain outlines the sacred duties of the office, including leading devotional exercises at Grand Communications and performing functions at public ceremonies. It emphasizes that while Masonry is not a religion, it serves as 'religion’s handmaid,' promoting universal tolerance. The Grand Chaplain is expected to communicate doctrines of morality and virtue to the brethren, and is entrusted with the Holy Bible, the Great Light in Masonry.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0149 -->",
+      "practical_elements": [
+        "The temple was founded in the fourth year of Solomon's reign, on the second day of the month Zif.",
+        "It was located on Mount Moriah, near where Abraham was to offer Isaac and where David appeased the destroying angel.",
+        "Construction took over seven years, during which it reportedly did not rain in the daytime.",
+        "No sound of axe, hammer, or iron tool was heard during construction.",
+        "The temple was supported by 1453 pillars and 2906 pilasters, all of Parian marble.",
+        "The workforce included 3 Grand Masters, 3300 Masters/Overseers, 80000 Fellow Crafts, and 70000 Entered Apprentices.",
+        "Two celebrated pillars were placed in front of the temple's porch, one on the left and one on the right.",
+        "Investiture with the jewel of office.",
+        "Lead devotional exercises of Grand Communications.",
+        "Perform sacred functions of holy calling at public ceremonies.",
+        "Communicate doctrines of morality and virtue to brethren in the Grand Lodge.",
+        "Care for the Holy Bible, the Great Light in Masonry."
+      ],
+      "symbolic_meaning": "Masonry is described as a system of morality veiled in allegory and illustrated by symbols, indicating that symbols are the primary vehicle for conveying moral lessons.\n\nThe section illustrates hieroglyphical emblems and inculcates moral lessons. The two celebrated pillars at the temple entrance symbolize the happy deliverance of the Israelites from Egyptian bondage and commemorate the miraculous pillars of fire and cloud, which provided light and darkness respectively during the Exodus. Their placement ensured the event was continually before the eyes of those going to and from divine worship.\n\nThe office of Grand Chaplain symbolizes the spiritual and moral foundation of Masonry. The Holy Bible, entrusted to the Chaplain, represents the Great Light and source of divine guidance. Masonry's role as 'religion's handmaid' signifies its supportive function in moral and spiritual development, distinct from being a religion itself, and underscores its spirit of universal tolerance.",
+      "candidate_lesson": "Candidates are taught that Masonic symbols and allegories are used to impart moral lessons. There is an implicit lesson that the full depth of these symbols may extend beyond the explicit explanations provided in lectures, encouraging further contemplation.\n\nThe section emphasizes the importance of peace and good fellowship among workmen, as exemplified by King Solomon's wise organization of the temple builders, which prevented envy, discord, or confusion. It also highlights the significance of divine guidance and deliverance, as symbolized by the temple's pillars, reminding candidates of historical and spiritual liberation.\n\nThe Grand Chaplain's charge teaches that Masonry, while not a religion, is deeply rooted in moral and virtuous principles, acting as a supportive framework for spiritual growth. It emphasizes the importance of universal tolerance, the communication of ethical doctrines, and the reverence for the Holy Bible as a source of light and guidance. It also highlights the steadfastness and perseverance expected in discharging duties.",
+      "tradition_notes": [
+        "A frequently used definition of Masonry is that it is 'a beautiful system of morality veiled in allegory and illustrated by symbols'.",
+        "There is a traditional belief among some Masons that the explanations of symbols given in lectures are only the 'tip of the iceberg', suggesting a deeper, unstated body of knowledge.",
+        "Josephus is cited as an informant regarding the temple's construction duration and the absence of rain.",
+        "Sacred history is referenced for the detail that no tool sounds were heard during the temple's building.",
+        "The placement of the two pillars is presented as a tradition to memorialize the deliverance from Egyptian bondage and the pillars of fire and cloud.",
+        "The investiture of a Grand Officer with a jewel of office.",
+        "The specific duties assigned to the Grand Chaplain, including leading devotional exercises.",
+        "The philosophical stance of Masonry as 'religion's handmaid,' promoting universal tolerance.",
+        "The Holy Bible being recognized and entrusted as the Great Light in Masonry."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Color Symbolism | Introduction: Color as a Masonic Teaching Tool | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Color-Symbolism.md#introduction-color-as-a-masonic-teaching-tool | section 2",
+        "Blue Lodge Ritual Reference Guide | Third Section | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#third-section | section 74",
+        "Blue Lodge Ritual Reference Guide | Charge to the Grand Chaplain | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#charge-to-the-grand-chaplain | section 149"
+      ],
+      "language": "en",
+      "work_id": "color-symbolism",
+      "work_title": "Color Symbolism",
+      "source_kind": "symbolism-study",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Introduction: Color as a Masonic Teaching Tool",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:color-symbolism:color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:color-symbolism:color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0074-third-section",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0149-charge-to-the-grand-chaplain",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Blue: The Color of the Symbolic Lodge",
+      "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "philosophy",
+      "parent_topic": "level2-hub-philosophy",
+      "aliases": [],
+      "keywords": [
+        "Blue",
+        "Symbolic Lodge",
+        "Blue Lodge",
+        "truth",
+        "fidelity",
+        "friendship",
+        "benevolence",
+        "heavens",
+        "King Solomon's Temple",
+        "pomegranates",
+        "pillars",
+        "compasses"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section explores the color blue as the distinctive color of the Symbolic Lodge, discussing its various symbolic meanings and potential origins. It highlights blue as representing truth, fidelity, friendship, and benevolence, often linked to the heavens. The text addresses the historical debate regarding the term \"Blue Lodge\" versus \"Symbolic Lodge\" and references biblical and cultural associations of the color, including views from prominent Masonic authors like A. E. Waite, Leon Zeldis, Chetwode Crawley, and Albert Mackey.",
+      "full_summary": "This section explores the color blue as the distinctive color of the Symbolic Lodge, discussing its various symbolic meanings and potential origins. It highlights blue as representing truth, fidelity, friendship, and benevolence, often linked to the heavens. The text addresses the historical debate regarding the term \"Blue Lodge\" versus \"Symbolic Lodge\" and references biblical and cultural associations of the color, including views from prominent Masonic authors like A. E. Waite, Leon Zeldis, Chetwode Crawley, and Albert Mackey.\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0029 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: The Ornaments of a Lodge\n\nThis section defines the three Ornaments of a Lodge: the Mosaic Pavement, the Indented Tessel, and the Blazing Star. It describes their physical representation and their symbolic meanings within Freemasonry.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0029 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0054 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Second Section\n\nThis section introduces the Fellow Craft candidate to the concepts of Operative and Speculative Masonry, defining each and emphasizing the moral and religious aspects of Speculative Masonry, including the contemplation of creation and homage to Deity. It also details the historical practice of ancient brethren working in both forms and consecrating the seventh day for rest and contemplation. The section concludes with a biblical description of the two pillars of brass, their dimensions, and features like chapiters, network, and pomegranates, as they would appear on the passage to the Middle Chamber.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0054 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0066 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Brother A. B.\n\nThis section congratulates a Brother on being passed to the Second Degree, emphasizing that Freemasonry values internal qualifications over external ones. It highlights the institution's resilience, having survived the destruction of Solomon's magnificent Temple. The text explains that Masonic mysteries are transmitted through attentive listening and faithful preservation, using architectural tools and symbolic emblems to impart wise truths across generations. It concludes by reminding all Masons, from the youngest Entered Apprentice to the Worshipful Master, to humbly bow before the sacred name of Deity.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0066 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0069 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: First Section\n\nThis section introduces the core tenets of the Institution, stating that they are contained within the points of the compasses. These tenets are identified as Friendship, Morality, and Brotherly Love.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0069 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0133 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: The Secretary\n\nThe Installing Officer instructs the newly elected Lodge Secretary on their duties, which include observing and recording lodge proceedings, managing lodge funds by receiving money and paying it to the Treasurer, and performing these duties with fidelity to earn the respect of the brethren.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0133 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0150 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Charge to the Grand Treasurer\n\nThe charge to the Grand Treasurer outlines the duties of the office, which include receiving and recording all moneys from the Grand Secretary and disbursing them under the order of the Grand Master and consent of the Grand Lodge. The charge emphasizes that the election to this office signifies the brethren's high opinion of the officer's fidelity and discretion, and their expectation that regard for the Fraternity will ensure faithful duty.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0150 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0175 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Proclamation\n\nThis section describes a formal proclamation made by the Grand Master to an assembly of brethren and friends during a ceremony, likely a cornerstone laying. The proclamation affirms the Masons' adherence to the laws of their country, their fear of God as the Great Architect, their commitment to benefiting brethren, and practicing universal benevolence. Following this, the Grand Master delivers the Square, Level, Plumb, and the building plan to the Architect, entrusting them with the superintendence and direction of the work, expressing confidence in their skill to ensure the building rises in order, harmony, and beauty, fulfilling its purpose to the credit and honor of all involved.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0175 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0224 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Pronunciation Key\n\nThis section provides a pronunciation key for various words, many of which are common in Masonic ritual and discourse. It includes rules for indicating accented syllables and short vowel sounds, followed by an alphabetical list of words with their phonetic pronunciations.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0224 -->",
+      "practical_elements": [
+        "Blue is the official color adopted by the Mother Grand Lodge for the Symbolic Lodge, changing from white.",
+        "According to Mackey, blue, except for white, is the only color that should be used for decorations in a Master's lodge.",
+        "The Mosaic Pavement is a representation of the ground floor of King Solomon’s Temple.",
+        "The Indented Tessel is the beautiful border that surrounds the Mosaic Pavement.",
+        "The Blazing Star is located in the center of the Indented Tessel.",
+        "Explanation of objects on the passage to the middle chamber.",
+        "Description of the two pillars of brass: eighteen cubits high, twelve cubits circumference, five cubit high chapiters, hollow, with network and pomegranates.",
+        "Ancient brethren wrought six days and rested on the seventh.",
+        "The attentive ear receives the sound from the instructive tongue.",
+        "Mysteries of Freemasonry are safely lodged in the repository of faithful breasts.",
+        "All Masons, from Entered Apprentice to Worshipful Master, should humbly bow with reverence to Deity.",
+        "The candidate is positioned or instructed in a manner indicated by asterisks, which serves to teach a specific lesson.",
+        "The most excellent tenets of the Institution are symbolically contained within the points of the compasses.",
+        "Observe the proceedings of the Lodge.",
+        "Make a fair record of things proper to be written.",
+        "Receive all moneys due the Lodge.",
+        "Pay moneys over to the Treasurer.",
+        "Take the Treasurer's receipt for moneys paid.",
+        "Discharge the duties of the office with fidelity.",
+        "Investiture with the jewel of office",
+        "Receive all moneys from the Grand Secretary",
+        "Make due entries of all moneys received",
+        "Pay out moneys by order of the Grand Master and consent of the Grand Lodge",
+        "A formal proclamation is made to an assembly of brethren and friends.",
+        "The Grand Master delivers the Square, Level, Plumb, and the plan of the building to the Architect.",
+        "The Grand Master gives a specific charge to the Architect regarding the superintendence and direction of the building work.",
+        "CAPITAL letters indicate accented syllables",
+        "a - short a as in the word bat",
+        "i - short i as in the word ill or is",
+        "e - short e as in the word ethic",
+        "(e) - barely audible short e",
+        "u - short u as in the word but"
+      ],
+      "symbolic_meaning": "Blue is generally regarded as the color of truth and fidelity, which are basic teachings of Freemasonry. It characterizes friendship, considered one of the jewels of a Mason. The blue arch of the heavens symbolizes that the virtues of friendship and benevolence should be as expansive as the heavens. Mackey states blue is a symbol of universal friendship and benevolence, reminding Masons that these virtues should be as extensive as the vault of heaven. Culturally, blue symbolized perfection to the Hebrews, truth to the Druids, wisdom to the Hindus, a sacred color to the Babylonians and Egyptians, divinity to the Chinese, and immortality to medieval Christians.\n\nThe Mosaic Pavement symbolizes human life, which is characterized by a mixture of good and evil. The Indented Tessel, the border surrounding the pavement, symbolizes the numerous blessings and comforts that surround individuals. The Blazing Star, positioned in the center, hieroglyphically represents Divine Providence, upon which Masons rely to obtain these blessings.\n\nOperative Masonry refers to the proper application of architectural rules for structure, figure, strength, beauty, proportion, and correspondence. Speculative Masonry teaches to subdue passions, act upon the square, maintain a good report, secrecy, and charity. It is interwoven with religion, obliging Masons to pay rational homage to Deity, contemplate the glorious works of creation, and adore the divine Creator. The seventh day of rest is consecrated for contemplation of creation and adoration of the Creator.\n\nThe survival of Freemasonry despite the destruction of Solomon's Temple symbolizes the enduring nature and resilience of the institution, suggesting that its true essence is not in physical structures but in its principles and the hearts of its members. Architectural tools and symbolic emblems are used to represent and imprint wise and serious truths, serving as a visual and conceptual language for moral and philosophical instruction.\n\nThe compasses symbolize the containment and embodiment of the fundamental tenets of Freemasonry: Friendship, Morality, and Brotherly Love. These tenets are presented as foundational principles of the Craft.\n\nThe emphasis on 'fidelity' in discharging duties symbolizes the integrity and trustworthiness expected of a Masonic officer.\n\nThe office of Grand Treasurer represents an important trust within the Fraternity, signifying the high regard the brethren have for the officer's fidelity and discretion. The jewel of office symbolizes this trust and the responsibilities associated with it.\n\nThe proclamation symbolizes the public declaration of Masonic principles, including loyalty to country, reverence for the Great Architect, and the practice of benevolence. The handing over of the working tools (Square, Level, Plumb) to the Architect by the Grand Master symbolizes the trust placed in skilled leadership and the importance of proper design, execution, and moral rectitude in all undertakings, particularly in the construction of a symbolic or literal temple. It signifies the transition from planning to execution, guided by Masonic virtues.",
+      "candidate_lesson": "A Freemason should strive to embody the virtues of truth, fidelity, friendship, and benevolence, making these qualities as expansive and encompassing as the blue arch of the heavens.\n\nCandidates learn that human life is a blend of good and evil, and that blessings and comfort are attained through faithful reliance on Divine Providence, as visually represented by the ornaments of the lodge.\n\nThe candidate learns the distinction between Operative and Speculative Masonry, understanding that modern Freemasonry is primarily Speculative, focusing on moral and spiritual development. They are taught the importance of self-governance, ethical conduct (acting upon the square, good report, secrecy, charity), and a deep reverence for the Creator and His creation, including the practice of setting aside time for rest and contemplation.\n\nThe candidate is taught that true worth in Freemasonry comes from internal character and moral qualifications, not outward appearances or worldly status. They learn the importance of diligently receiving and faithfully preserving Masonic knowledge and mysteries. The lesson also instills a profound sense of reverence and humility towards the Deity, a principle that unites all Masons regardless of their degree or station.\n\nThe candidate is taught the three primary tenets of the Institution: Friendship, Morality, and Brotherly Love, which are presented as essential principles to guide their conduct and understanding.\n\nA candidate learns the importance of diligence, integrity, and faithful execution of responsibilities, particularly in positions of trust within the Lodge, which earns the esteem and applause of fellow Masons.\n\nThe importance of financial integrity, accountability, and trust within the Masonic Fraternity. It teaches that officers are chosen based on their proven fidelity and discretion, and their commitment to the organization's well-being.\n\nThe candidate learns about the public-facing virtues of Freemasonry, including loyalty, piety, and universal benevolence. They also learn the importance of skill, capacity, and diligent conduct in leadership roles, as exemplified by the Architect entrusted with the building project. The emphasis on order, harmony, beauty, and strength in construction serves as an allegory for the moral and spiritual building of character.",
+      "tradition_notes": [
+        "The origin of the name \"Blue Lodge\" is unknown.",
+        "The Mother Grand Lodge adopted blue as the official color of the Symbolic Lodge, having initially proclaimed white.",
+        "One theory for the selection of blue is its connection to the legend of King Solomon's Temple, referencing the Divine command for Jews to wear a \"riband of blue\" (Numbers 15:38).",
+        "Biblical references also include the \"robe of the ephod all blue\" and \"pomegranates of blue and purple and scarlet stuff\" on its skirts (Exodus 28:31, 33).",
+        "Other theories for blue's adoption include its association with the blue vault of heaven, the blue steel points of the compasses, and its status as the official color of the Order of the Garter, adopted to add dignity to the Fraternity.",
+        "The Mosaic Pavement represents the ground floor of King Solomon's Temple.",
+        "Freemasonry is considered under two denominations: Operative and Speculative.",
+        "Ancient brethren wrought in both Operative and Speculative Masonry.",
+        "Modern Masons work in Speculative Masonry only.",
+        "Ancient brethren consecrated the seventh day as a day of rest, following God's creation pattern.",
+        "The text references the historical and legendary destruction of Solomon's Temple, a significant event in Masonic tradition, and the subsequent survival of Freemasonry.",
+        "It describes the traditional method of transmitting Masonic mysteries verbally ('attentive ear receives the sound from the instructive tongue') and through memory ('safely lodged in the repository of faithful breasts').",
+        "The formal instruction and investment with the badge of office for an elected Lodge officer is a traditional part of Masonic installation ceremonies.",
+        "The investiture with a jewel of office is a traditional practice for Masonic officers.",
+        "The selection of officers emphasizes qualities such as fidelity and discretion.",
+        "This text describes a traditional Masonic ceremony, likely a cornerstone laying, which involves a public proclamation and the symbolic presentation of working tools to the master builder or architect.",
+        "The mention of 'concealed from the eyes of men' suggests the esoteric nature of some Masonic knowledge, even within a public ceremony."
+      ],
+      "caution_notes": [
+        "A. E. Waite suggests there is no recognized scheme or science of colors in Masonry, and explanations often serve as pegs for homiletic lectures with little connection to the origins of their use.",
+        "The proper term for the lodge is \"Symbolic Lodge\" rather than \"Blue Lodge\", despite blue's prominence as a color and symbol."
+      ],
+      "source_notes": [
+        "Color Symbolism | Blue: The Color of the Symbolic Lodge | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Color-Symbolism.md#blue-the-color-of-the-symbolic-lodge | section 3",
+        "Blue Lodge Ritual Reference Guide | The Ornaments of a Lodge | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-ornaments-of-a-lodge | section 29",
+        "Blue Lodge Ritual Reference Guide | Second Section | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#second-section | section 54",
+        "Blue Lodge Ritual Reference Guide | Brother A. B. | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#brother-a-b | section 66",
+        "Blue Lodge Ritual Reference Guide | First Section | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#first-section | section 69",
+        "Blue Lodge Ritual Reference Guide | The Secretary | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-secretary | section 133",
+        "Blue Lodge Ritual Reference Guide | Charge to the Grand Treasurer | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#charge-to-the-grand-treasurer | section 150",
+        "Blue Lodge Ritual Reference Guide | Proclamation | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#proclamation | section 175",
+        "Blue Lodge Ritual Reference Guide | Pronunciation Key | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#pronunciation-key | section 224"
+      ],
+      "language": "en",
+      "work_id": "color-symbolism",
+      "work_title": "Color Symbolism",
+      "source_kind": "symbolism-study",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Blue: The Color of the Symbolic Lodge",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:color-symbolism:color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:color-symbolism:color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0029-the-ornaments-of-a-lodge",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0054-second-section",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0066-brother-a-b",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0069-first-section",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0133-the-secretary",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0150-charge-to-the-grand-treasurer",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0175-proclamation",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0224-pronunciation-key",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Jung's Psychology and the Three Craft Degrees",
+      "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "philosophy",
+      "parent_topic": "level2-hub-philosophy",
+      "aliases": [],
+      "keywords": [
+        "Carl Jung",
+        "Jungian psychology",
+        "consciousness",
+        "unconscious",
+        "shadow mind",
+        "individuation",
+        "synchronicity",
+        "Entered Apprentice",
+        "Fellow Craft",
+        "Master Mason",
+        "individual consciousness",
+        "personal unconscious"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section explores Carl Jung's psychological theories, including the development of consciousness, the concept of the 'shadow mind', and synchronicity, and applies them to Masonic symbolism. Worshipful Brother Kirk MacNulty's interpretation maps the Entered Apprentice degree to individual consciousness, the Fellow Craft to the personal unconscious, and the Master Mason to the collective unconscious. The text also details Jung's color symbolism, associating blue with spirituality, red with emotion, and purple/violet with mysticism and the integration of personality.",
+      "full_summary": "This section explores Carl Jung's psychological theories, including the development of consciousness, the concept of the 'shadow mind', and synchronicity, and applies them to Masonic symbolism. Worshipful Brother Kirk MacNulty's interpretation maps the Entered Apprentice degree to individual consciousness, the Fellow Craft to the personal unconscious, and the Master Mason to the collective unconscious. The text also details Jung's color symbolism, associating blue with spirituality, red with emotion, and purple/violet with mysticism and the integration of personality.\n\n<!-- PDF_STAGE5:deeper-meaning-of-fc-degree:section-0002 -->\n### Enrichment from The Deeper Meaning of the FC Degree\nSource section: Introduction: Three Degrees, Three Levels\n\nThe three degrees of Craft Masonry are presented as progressive stages of evolution: the Entered Apprentice for physical mastery, the Fellow Craft for mental mastery and intellectual development, and the Master Mason for understanding eternal life and spiritual principles. Each degree can be interpreted on three levels: physical (ritual), mental (moral and intellectual), and spiritual (esoteric). The spiritual level, often associated with Theosophic teachings or the Secret Doctrine, emphasizes the unity of the GAOTU, the immortality of the soul, and the pursuit of spiritual enlightenment. The lodge and its officers are symbolically understood at the spiritual level to represent aspects of the candidate's own self.\n<!-- /PDF_STAGE5:deeper-meaning-of-fc-degree:section-0002 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0066 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Brother A. B.\n\nThis section congratulates a Brother on being passed to the Second Degree, emphasizing that Freemasonry values internal qualifications over external ones. It highlights the institution's resilience, having survived the destruction of Solomon's magnificent Temple. The text explains that Masonic mysteries are transmitted through attentive listening and faithful preservation, using architectural tools and symbolic emblems to impart wise truths across generations. It concludes by reminding all Masons, from the youngest Entered Apprentice to the Worshipful Master, to humbly bow before the sacred name of Deity.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0066 -->",
+      "practical_elements": [
+        "The attentive ear receives the sound from the instructive tongue.",
+        "Mysteries of Freemasonry are safely lodged in the repository of faithful breasts.",
+        "All Masons, from Entered Apprentice to Worshipful Master, should humbly bow with reverence to Deity."
+      ],
+      "symbolic_meaning": "The Entered Apprentice degree symbolizes the physical or material being, representing Jung's 'individual consciousness'. The Fellow Craft degree symbolizes the soul or psyche, representing Jung's 'personal unconscious'. The Master Mason degree symbolizes the spiritual being, representing Jung's 'collective unconscious' and a step closer to the Divine. In color symbolism, blue represents spirituality, red represents emotion, and the combination of red and blue (purple/violet) symbolizes mysticism and the integration of the personality.\n\nThe three degrees symbolize three stages of evolution: birth (EA), life (FC), and death (MM). The lodge and the temple, at the spiritual level, symbolize the candidate himself. The officers represent various aspects of the candidate's self.\n\nThe survival of Freemasonry despite the destruction of Solomon's Temple symbolizes the enduring nature and resilience of the institution, suggesting that its true essence is not in physical structures but in its principles and the hearts of its members. Architectural tools and symbolic emblems are used to represent and imprint wise and serious truths, serving as a visual and conceptual language for moral and philosophical instruction.",
+      "candidate_lesson": "The progression through the three Craft degrees can be understood as a journey of psychological development, moving from individual consciousness to the personal unconscious and ultimately to the collective unconscious, leading to enlightenment or individuation through the integration of the conscious and 'shadow' mind.\n\nThe Entered Apprentice degree teaches mastery of the physical sense-being. The Fellow Craft degree teaches mastery of the mind and raising the intellect. The Master Mason degree teaches understanding the eternal nature of life and spiritual principles. The ultimate lesson is the need to seek spiritual enlightenment for the soul to ascend.\n\nThe candidate is taught that true worth in Freemasonry comes from internal character and moral qualifications, not outward appearances or worldly status. They learn the importance of diligently receiving and faithfully preserving Masonic knowledge and mysteries. The lesson also instills a profound sense of reverence and humility towards the Deity, a principle that unites all Masons regardless of their degree or station.",
+      "tradition_notes": [
+        "The application of Jungian concepts to the three Craft degrees by Kirk MacNulty is a specific interpretation.",
+        "Jung's concept of synchronicity is noted to be influenced by Eastern philosophy.",
+        "The spiritual aspect of the degrees is linked to 'Theosophic teachings' and 'the Secret Doctrine', which are distilled into three points: the unity of the GAOTU, the immortality of the soul, and the need to seek spiritual enlightenment for the soul to ascend.",
+        "The text references the historical and legendary destruction of Solomon's Temple, a significant event in Masonic tradition, and the subsequent survival of Freemasonry.",
+        "It describes the traditional method of transmitting Masonic mysteries verbally ('attentive ear receives the sound from the instructive tongue') and through memory ('safely lodged in the repository of faithful breasts')."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Color Symbolism | Jung's Psychology and the Three Craft Degrees | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Color-Symbolism.md#jung-s-psychology-and-the-three-craft-degrees | section 4",
+        "The Deeper Meaning of the FC Degree | Introduction: Three Degrees, Three Levels | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Deeper meaning of FC Degree.md#introduction-three-degrees-three-levels | section 2",
+        "Blue Lodge Ritual Reference Guide | Brother A. B. | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#brother-a-b | section 66"
+      ],
+      "language": "en",
+      "work_id": "color-symbolism",
+      "work_title": "Color Symbolism",
+      "source_kind": "symbolism-study",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Jung's Psychology and the Three Craft Degrees",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:color-symbolism:color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:color-symbolism:color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+          "degree": "library"
+        },
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0002-introduction-three-degrees-three-levels",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0066-brother-a-b",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Conclusion: Synchronicity, Jung, and Masonic Heritage",
+      "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "philosophy",
+      "parent_topic": "level2-hub-philosophy",
+      "aliases": [],
+      "keywords": [
+        "Synchronicity",
+        "Carl Jung",
+        "Masonic Heritage",
+        "Symbolism",
+        "Ancient Folk Legends",
+        "Human Mind",
+        "Know Thyself",
+        "Joseph Campbell",
+        "The Power of Myth",
+        "The Masks of God",
+        "Masonic Symbols",
+        "Dollar Bill"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section concludes by highlighting the importance of studying symbols, drawing parallels between Carl Jung's work on ancient folk legends and the understanding of Masonic symbolism. It suggests that studying Jung's writings and explanations of Masonic symbols can lead to a deeper understanding of Masonic heritage, the Craft, and oneself, aligning with the ancient mystery goal of 'Know thyself.' The text also commends the writings of Joseph Campbell, particularly *The Power of Myth* and *The Masks of God*, for their relevance to symbolism, including Masonic symbols found on the dollar bill.",
+      "full_summary": "This section concludes by highlighting the importance of studying symbols, drawing parallels between Carl Jung's work on ancient folk legends and the understanding of Masonic symbolism. It suggests that studying Jung's writings and explanations of Masonic symbols can lead to a deeper understanding of Masonic heritage, the Craft, and oneself, aligning with the ancient mystery goal of 'Know thyself.' The text also commends the writings of Joseph Campbell, particularly *The Power of Myth* and *The Masks of God*, for their relevance to symbolism, including Masonic symbols found on the dollar bill.\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0023 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Third Section\n\nThe Third Section of the ritual elucidates the fundamental nature and principles of Freemasonry, asserting its status as the most ancient and moral science known to humanity. It emphasizes that every figure, character, and emblem within a Lodge possesses a profound moral meaning, serving to strongly instill the practice of virtue in its members.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0023 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0054 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Second Section\n\nThis section introduces the Fellow Craft candidate to the concepts of Operative and Speculative Masonry, defining each and emphasizing the moral and religious aspects of Speculative Masonry, including the contemplation of creation and homage to Deity. It also details the historical practice of ancient brethren working in both forms and consecrating the seventh day for rest and contemplation. The section concludes with a biblical description of the two pillars of brass, their dimensions, and features like chapiters, network, and pomegranates, as they would appear on the passage to the Middle Chamber.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0054 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0224 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Pronunciation Key\n\nThis section provides a pronunciation key for various words, many of which are common in Masonic ritual and discourse. It includes rules for indicating accented syllables and short vowel sounds, followed by an alphabetical list of words with their phonetic pronunciations.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0224 -->",
+      "practical_elements": [
+        "Learning to read the symbols of ancient folk legends",
+        "Finding parallels in distant cultures and distant ages",
+        "Study of Carl Jung's writings",
+        "Study of explanations of Masonic symbols",
+        "Study of Joseph Campbell's writings, including *The Power of Myth* and *The Masks of God*",
+        "Explanation of objects on the passage to the middle chamber.",
+        "Description of the two pillars of brass: eighteen cubits high, twelve cubits circumference, five cubit high chapiters, hollow, with network and pomegranates.",
+        "Ancient brethren wrought six days and rested on the seventh.",
+        "CAPITAL letters indicate accented syllables",
+        "a - short a as in the word bat",
+        "i - short i as in the word ill or is",
+        "e - short e as in the word ethic",
+        "(e) - barely audible short e",
+        "u - short u as in the word but"
+      ],
+      "symbolic_meaning": "The text emphasizes that understanding symbols, whether from ancient folk legends or Masonic traditions, is a path to self-knowledge and a deeper comprehension of one's heritage and the Craft. It implicitly suggests that symbols are keys to unlocking deeper truths about the human mind and existence.\n\nEvery figure, character, and emblem depicted in a Lodge carries a moral meaning.\n\nOperative Masonry refers to the proper application of architectural rules for structure, figure, strength, beauty, proportion, and correspondence. Speculative Masonry teaches to subdue passions, act upon the square, maintain a good report, secrecy, and charity. It is interwoven with religion, obliging Masons to pay rational homage to Deity, contemplate the glorious works of creation, and adore the divine Creator. The seventh day of rest is consecrated for contemplation of creation and adoration of the Creator.",
+      "candidate_lesson": "Modern Masons can achieve a better understanding of their Masonic heritage, the Craft, and themselves by studying symbolism, aligning with the ancient mysteries' goal: 'First know thyself.' This self-knowledge is facilitated by engaging with the symbolic language of the Craft and broader mythological contexts.\n\nFreemasonry is an ancient and moral science. All symbols and elements within the Lodge are designed to teach and inculcate the practice of virtue.\n\nThe candidate learns the distinction between Operative and Speculative Masonry, understanding that modern Freemasonry is primarily Speculative, focusing on moral and spiritual development. They are taught the importance of self-governance, ethical conduct (acting upon the square, good report, secrecy, charity), and a deep reverence for the Creator and His creation, including the practice of setting aside time for rest and contemplation.",
+      "tradition_notes": [
+        "The goal of ancient mysteries is 'First know thyself.'",
+        "Masonic symbols are part of a heritage that can be better understood through study.",
+        "Masonic symbols are used by founding fathers, as seen on the dollar bill (pyramid, all-seeing eye).",
+        "The Third Section is traditionally associated with explaining the core tenets and moral philosophy of Freemasonry.",
+        "Freemasonry is considered under two denominations: Operative and Speculative.",
+        "Ancient brethren wrought in both Operative and Speculative Masonry.",
+        "Modern Masons work in Speculative Masonry only.",
+        "Ancient brethren consecrated the seventh day as a day of rest, following God's creation pattern."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Color Symbolism | Conclusion: Synchronicity, Jung, and Masonic Heritage | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Color-Symbolism.md#conclusion-synchronicity-jung-and-masonic-heritage | section 8",
+        "Blue Lodge Ritual Reference Guide | Third Section | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#third-section | section 23",
+        "Blue Lodge Ritual Reference Guide | Second Section | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#second-section | section 54",
+        "Blue Lodge Ritual Reference Guide | Pronunciation Key | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#pronunciation-key | section 224"
+      ],
+      "language": "en",
+      "work_id": "color-symbolism",
+      "work_title": "Color Symbolism",
+      "source_kind": "symbolism-study",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Conclusion: Synchronicity, Jung, and Masonic Heritage",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:color-symbolism:color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:color-symbolism:color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0023-third-section",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0054-second-section",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0224-pronunciation-key",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Gate",
+      "slug": "level2-hub-gate",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "gate",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Gate"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "Entry point and orientation for the Fellow Craft degree.",
+      "full_summary": "",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-gate",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-gate",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "Ritual Flow",
+      "slug": "level2-hub-ritual-flow",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "ritual_flow",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Ritual Flow"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+          "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement"
+        ],
+        "deeper": []
+      },
+      "short_summary": "The course of the passing ceremony.",
+      "full_summary": "",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-ritual-flow",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-ritual-flow",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "Middle Chamber",
+      "slug": "level2-hub-middle-chamber",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "middle_chamber",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Middle Chamber"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs"
+        ],
+        "deeper": []
+      },
+      "short_summary": "The winding stairs and the middle chamber lecture.",
+      "full_summary": "<!-- PDF_STAGE5:deeper-meaning-of-fc-degree:section-0007 -->\n### Enrichment from The Deeper Meaning of the FC Degree\nSource section: The Winding Staircase: Ascent of the Mind\n\nThis section details the Fellow Craft candidate's journey up the winding staircase, symbolizing the ascent of the mind from the physical sense-world to an inner, supra-sensual realm. The ritualistic perambulations on the level floor cease, replaced by a spiral ascent of five steps towards the East, representing the engagement of man's five higher, psychic and spiritual principles, while leaving behind the two lower, physical principles (senses and carnal reason). This process is crucial for self-knowledge, enabling the candidate to distinguish between transient and enduring aspects of existence and to train the mind to function independently of the senses.\n<!-- /PDF_STAGE5:deeper-meaning-of-fc-degree:section-0007 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0054 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Second Section\n\nThis section introduces the Fellow Craft candidate to the concepts of Operative and Speculative Masonry, defining each and emphasizing the moral and religious aspects of Speculative Masonry, including the contemplation of creation and homage to Deity. It also details the historical practice of ancient brethren working in both forms and consecrating the seventh day for rest and contemplation. The section concludes with a biblical description of the two pillars of brass, their dimensions, and features like chapiters, network, and pomegranates, as they would appear on the passage to the Middle Chamber.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0054 -->",
+      "practical_elements": [
+        "The Senior Warden (Mind/Soul) informs the Worshipful Master (Divine Spirit) that the candidate is ready to be passed.",
+        "The Soul instructs the Senior Deacon (intelligence) to guide the candidate.",
+        "The candidate's perambulations on the level floor, 'squaring' each of its four sides, cease.",
+        "The candidate is directed to mount spirally by a certain number of winding steps.",
+        "The ascent is made towards the East by a journey of five steps.",
+        "Explanation of objects on the passage to the middle chamber.",
+        "Description of the two pillars of brass: eighteen cubits high, twelve cubits circumference, five cubit high chapiters, hollow, with network and pomegranates.",
+        "Ancient brethren wrought six days and rested on the seventh."
+      ],
+      "symbolic_meaning": "The winding staircase symbolizes the ascent of the mind or soul from the physical sense-world to a supra-sensual, inner invisible world. The change from level, forward motion to circular, upward, and inward motion signifies leaving the material realm and rising towards the spiritual center. The summit of the stairway, the Middle Chamber, represents the candidate approaching their inner core. The ascent towards the East signifies moving towards the source of Light. The five steps represent the five higher, psychic and spiritual principles of man, which are engaged as the two lower, physical principles (senses and carnal reason) are transcended. The five-pointed star is a geometrical symbol of these five higher principles.\n\nOperative Masonry refers to the proper application of architectural rules for structure, figure, strength, beauty, proportion, and correspondence. Speculative Masonry teaches to subdue passions, act upon the square, maintain a good report, secrecy, and charity. It is interwoven with religion, obliging Masons to pay rational homage to Deity, contemplate the glorious works of creation, and adore the divine Creator. The seventh day of rest is consecrated for contemplation of creation and adoration of the Creator.",
+      "candidate_lesson": "The candidate is taught to leave the level of the sense-world and rise to the supra-sensual, mentally leaving the outer world behind to enter an inner invisible world. This journey, termed 'the ascent of the mind to the Source of Light,' requires devotion to learning new secrets and mysteries. A key lesson is to dissociate the five higher principles from the two lower ones, discriminating between what belongs to the sense-world and the supra-sensual world, and distinguishing between transient and enduring things. The Second Degree aims to train the mind and higher principles to function consciously apart from the senses.\n\nThe candidate learns the distinction between Operative and Speculative Masonry, understanding that modern Freemasonry is primarily Speculative, focusing on moral and spiritual development. They are taught the importance of self-governance, ethical conduct (acting upon the square, good report, secrecy, charity), and a deep reverence for the Creator and His creation, including the practice of setting aside time for rest and contemplation.",
+      "tradition_notes": [
+        "Man's nature is traditionally resolvable into a series or spectrum of seven distinct principles, corresponding with the seven officers forming a Lodge.",
+        "Freemasonry is considered under two denominations: Operative and Speculative.",
+        "Ancient brethren wrought in both Operative and Speculative Masonry.",
+        "Modern Masons work in Speculative Masonry only.",
+        "Ancient brethren consecrated the seventh day as a day of rest, following God's creation pattern."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure",
+        "The Deeper Meaning of the FC Degree | The Winding Staircase: Ascent of the Mind | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Deeper meaning of FC Degree.md#the-winding-staircase-ascent-of-the-mind | section 7",
+        "Blue Lodge Ritual Reference Guide | Second Section | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#second-section | section 54"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-middle-chamber",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-middle-chamber",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0007-the-winding-staircase-ascent-of-the-mind",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0054-second-section",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "Liberal Arts",
+      "slug": "level2-hub-liberal-arts",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "liberal_arts",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Liberal Arts"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "blue-lodge-ritual-reference-guide-2021-section-0056-the-globes",
+          "blue-lodge-ritual-reference-guide-2021-section-0061-astronomy"
+        ],
+        "deeper": []
+      },
+      "short_summary": "The seven liberal arts and sciences.",
+      "full_summary": "<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0060 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: The Liberal Arts and Sciences\n\nThis section introduces the Seven Liberal Arts and Sciences: Grammar, Rhetoric, Logic, Arithmetic, Geometry, Music, and Astronomy. It emphasizes Geometry as the most revered science among Masons, highlighting its foundational role in architecture, military strategy, geography, and astronomy. Geometry is presented as the basis for construction, measurement, and understanding the world and celestial cycles.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0060 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0067 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Charge at Passing to the Degree of Fellow Craft\n\nThis charge congratulates the candidate on being passed to the Fellow Craft Degree, emphasizing that Freemasonry values internal qualifications over external ones. It reiterates the importance of adhering to Masonic duties and laws, and instructs the Fellow Craft to judge brethren with candor, admonish with friendship, and reprehend with justice. The charge strongly recommends the study of the liberal arts, particularly geometry, which is presented as the basis of the Masonic art, possessing a divine and moral nature that reveals truths of morality. It concludes by expecting the candidate to continue practicing commendable virtues.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0067 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0122 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Musical Selection\n\nThis section details the 'Musical Selection' portion of a Masonic gathering, which includes a Chaplain's prayer invoking divine blessing for the proceedings and for those about to assume leadership roles. Following the prayer, the Marshal delivers an address explaining the significance of observing the Festival of St. John the Evangelist. The Marshal emphasizes that Freemasonry's purpose extends beyond social enjoyment, focusing on duty, reconsecration through solemn promises, and the propagation of core principles. The discourse highlights Freemasonry's historical influence, its role in promoting liberty, equality, fraternity, law, and order, and its teachings on the Fatherhood of God, the Brotherhood of Man, and the importance of loving God and neighbor. It also stresses the Craft's commitment to elevating humanity, stimulating patriotism, encouraging liberal arts and sciences, promoting education, and upholding the dignity of labor, while remaining aloof from specific creeds.\n\nThe text explains the purpose of the Craft and announces the upcoming induction of chosen brethren into their respective offices to preside over the Lodge for the next twelve months.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0122 -->",
+      "practical_elements": [
+        "The ritualistic instruction to 'Take * * * the number * * * to the SEVEN LIBERAL ARTS AND SCIENCES' implies a specific point in the degree where these are introduced.",
+        "Support Masonic laws and regulations.",
+        "Be ready to assist in executing Masonic laws.",
+        "Do not palliate or aggravate the offenses of brethren.",
+        "Judge brethren's trespasses with candor.",
+        "Admonish brethren with friendship.",
+        "Reprehend brethren with justice.",
+        "Study the liberal arts, especially geometry.",
+        "Conform to the principles of the Institution.",
+        "Persevere in the practice of every commendable virtue.",
+        "Marshal introduces the invocation of Deity before important undertakings.",
+        "Chaplain leads a prayer.",
+        "All present respond with 'So mote it be' after the prayer.",
+        "Marshal delivers an address on the Festival of St. John the Evangelist and Masonic principles.",
+        "Observation of the Festival of St. John the Evangelist for social enjoyment, cementing brotherly love, and consecration to duty.",
+        "Induction of brethren into their respective offices",
+        "Presiding in the Lodge for twelve months"
+      ],
+      "symbolic_meaning": "The Seven Liberal Arts and Sciences represent a comprehensive system of knowledge and intellectual development. Geometry, in particular, symbolizes the order, precision, and foundational principles necessary for creation and understanding the universe, reflecting the architect's ability to plan and execute designs.\n\nFreemasonry primarily regards the internal, not the external, qualifications of a man. Geometry is established as the basis of the Masonic art, possessing a divine and moral nature. It is seen as a science that not only proves the wonderful properties of nature but also demonstrates the more important truths of morality.\n\nThe invocation of Deity symbolizes the spiritual foundation of all Masonic endeavors and the reliance on divine guidance. The Festival of St. John the Evangelist, while a social occasion, is consecrated to duty, representing the ongoing commitment to Masonic principles and the renewal of vows by those taking on leadership. The Marshal's address outlines the symbolic and practical influence of Freemasonry, emphasizing its role as a moral and educational force in society, promoting universal brotherhood and adherence to divine and moral law.\n\nThe induction of officers signifies the continuity of leadership, the structured operation of the Lodge, and the fulfillment of the Craft's purposes through chosen individuals.",
+      "candidate_lesson": "The candidate is taught the importance of intellectual pursuit and the foundational nature of the Liberal Arts and Sciences, with a special emphasis on Geometry. This lesson encourages the candidate to understand how these disciplines contribute to order, structure, and a deeper comprehension of both the physical world and abstract concepts, serving as a basis for further Masonic learning and personal development.\n\nThe Fellow Craft candidate is taught that true worth lies in internal character and that increasing knowledge leads to improved social interaction. They are reminded of their duties to uphold Masonic laws and to interact with brethren with fairness, kindness, and justice. A key lesson is the importance of intellectual and moral self-improvement through the study of the liberal arts, with a particular focus on geometry as a foundation for both natural and moral understanding. The candidate is expected to maintain virtuous conduct, consistent with the principles of the Institution.\n\nCandidates are taught the importance of invoking divine blessing in all undertakings. They learn that Freemasonry is a society founded on ancient traditions and profound principles, not merely social enjoyment. Key lessons include the Fatherhood of God, the Brotherhood of Man, the importance of loving God and one's neighbor, and the cultivation of virtues such as liberty, equality, fraternity, and adherence to law and order. The Craft encourages intellectual growth through liberal arts and sciences, promotes education, and instills a sense of duty towards God, fellow men, and country, aiming to make individuals better citizens.\n\nThe passage, addressed to 'good friends,' explains the fundamental purpose of the Masonic Craft and highlights the organized process of establishing leadership within the Lodge for a defined period, emphasizing order and continuity.",
+      "tradition_notes": [
+        "Geometry is traditionally held in high reverence by Masons, considered the 'foundation of architecture and the root of mathematics'.",
+        "Freemasonry regards the internal, not the external, qualifications of a man.",
+        "The study of the liberal arts, particularly geometry, is earnestly recommended as a valuable branch of education.",
+        "Geometry is established as the basis of the Masonic art and is considered to be of a divine and moral nature.",
+        "Freemasonry has a tradition of invoking a blessing of Deity before any great or important undertaking.",
+        "The Festival of St. John the Evangelist is a traditional observance in Freemasonry, consecrated to duty and promoting social enjoyment and brotherly love.",
+        "Freemasonry's origins are described as ancient, with its beginnings not recorded on written pages of history.",
+        "The practice of inducting officers to preside over a Lodge for a specific term (e.g., twelve months) is a traditional aspect of Masonic governance and ensures the continuous operation and leadership of the Lodge."
+      ],
+      "caution_notes": [
+        "You are not to palliate or aggravate the offenses of your brethren."
+      ],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure",
+        "Blue Lodge Ritual Reference Guide | The Liberal Arts and Sciences | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-liberal-arts-and-sciences | section 60",
+        "Blue Lodge Ritual Reference Guide | Charge at Passing to the Degree of Fellow Craft | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#charge-at-passing-to-the-degree-of-fellow-craft | section 67",
+        "Blue Lodge Ritual Reference Guide | Musical Selection | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#musical-selection | section 122"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-liberal-arts",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-liberal-arts",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0060-the-liberal-arts-and-sciences",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0067-charge-at-passing-to-the-degree-of-fellow-craft",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0122-musical-selection",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "Working Tools",
+      "slug": "level2-hub-working-tools",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "working_tools",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Working Tools"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "The plumb, level, and square of the Fellow Craft.",
+      "full_summary": "<!-- PDF_STAGE5:deeper-meaning-of-fc-degree:section-0005 -->\n### Enrichment from The Deeper Meaning of the FC Degree\nSource section: Opening the Lodge in the Second Degree\n\nThe opening of the Lodge in the Second Degree signifies a profound transition from the concrete, body-dominant focus of the First Degree to a more abstract realm of mind and soul. This progression, termed 'going up,' requires a corresponding mental uplift from all present. The ritual emphasizes this shift through specific elements like the position of the square and compasses, and the distinctive knocks. The Square, with its horizontal and vertical arms, serves as a metaphor for the ideal relationship between passive bodily energies and active, aspiring mental and soulful faculties. All Masons present must demonstrate this right relationship through a ceremonial gesture for the Lodge to be truly 'opened on the Square.' The unique pattern of two joined knocks in the Fellowcraft Degree further symbolizes the union of soul and body, indicating a stage where mind and soul dominate the body, though pure spiritual faculties are not yet in full control.\n<!-- /PDF_STAGE5:deeper-meaning-of-fc-degree:section-0005 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0031 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: The Jewels of a Lodge\n\nThis section defines the six Jewels of a Lodge, categorized as three movable and three immovable. The immovable jewels are the Square, Level, and Plumb, symbolizing morality, equality, and rectitude of conduct, respectively. The movable jewels are the Rough Ashlar, Perfect Ashlar, and Trestle-Board. The Rough Ashlar represents humanity's rude and imperfect natural state, while the Perfect Ashlar signifies the state of perfection achievable through virtuous education, personal effort, and divine blessing. The Trestle-Board serves as a reminder for Masons to align their spiritual building with the divine designs laid down by the Supreme Architect of the Universe.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0031 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0049 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: The Working Tools\n\nThis section defines the working tools of a Fellow Craft: the Plumb, Square, and Level. It first describes their practical uses for operative masons in construction, then elaborates on their more profound symbolic meanings for Free and Accepted Masons, emphasizing moral conduct, virtue, and the contemplation of mortality.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0049 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0053 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: The Working Tools\n\nThis section introduces the working tools of a Fellow Craft: the Plumb, Square, and Level. It contrasts their practical use by operative masons for construction tasks like raising perpendiculars, squaring work, and laying horizontals, with their symbolic application for Free and Accepted Masons. Symbolically, the Plumb teaches upright conduct, the Square guides virtuous actions, and the Level reminds us of life's journey towards death.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0053 -->",
+      "practical_elements": [
+        "Changing the working tools for the Second Degree.",
+        "Changing the page position of the VOSL (Volume of the Sacred Law).",
+        "The Lodge is declared to be 'opened on the Square'.",
+        "A ceremonial gesture is required from every Mason present to 'prove himself' a Mason of this Degree, demonstrating the right relationship of outward and inward energies.",
+        "The specific pattern of knocks in the Fellowcraft Degree features two joined knocks, distinct from the evenly spaced knocks of the First Degree.",
+        "The position of the square and compasses emphasizes the degree's focus.",
+        "The Rough Ashlar is a stone taken from the quarry in its natural state.",
+        "The Perfect Ashlar is a stone prepared by workmen, adjusted by the working tools of the fellow-craft.",
+        "The Trestle-Board is used by the master workman to draw designs.",
+        "The Plumb is used by operative masons to raise perpendiculars.",
+        "The Square is used by operative masons to square their work.",
+        "The Level is used by operative masons to lay horizontals."
+      ],
+      "symbolic_meaning": "The term 'going up' to the Second Degree symbolizes an uplift of mind to a higher, more abstract level, moving beyond concrete things of time and space to the realm of mind and soul. The Square's two arms, horizontal and vertical, metaphorically represent the right relationship between passive bodily energies (horizontal) and active, aspiring higher faculties of mind and soul (vertical). The joined knocks in the Fellowcraft Degree indicate that the soul and body are now working in union, signifying the dominance of mind/soul over the body, though purely spiritual faculties have not yet gained control.\n\nThe Square symbolizes morality. The Level symbolizes equality. The Plumb symbolizes rectitude of conduct. The Rough Ashlar symbolizes our rude and imperfect state by nature. The Perfect Ashlar symbolizes the state of perfection we hope to achieve through virtuous education, our own endeavors, and the blessing of God. The Trestle-Board symbolizes the rules and designs laid down by the Supreme Architect of the Universe in the great books of nature and revelation, which serve as a guide for both operative and speculative Masons to erect their spiritual building.\n\nFor Free and Accepted Masons, the Plumb symbolizes walking uprightly before God and man. The Square represents squaring one's actions by the square of virtue. The Level signifies that all Masons are traveling upon the level of time towards the afterlife, 'that undiscovered country from whose bourne no traveler returns'.\n\nFor Free and Accepted Masons, the Plumb admonishes us to walk uprightly in our stations before God and man. The Square teaches us to square our actions by the square of virtue. The Level reminds us that we are traveling upon the level of time to that undiscovered country from whose bourne no traveler returns, symbolizing the journey towards death.",
+      "candidate_lesson": "The candidate, and all Masons present, are called to achieve a corresponding uplift of mind, transitioning from a focus on concrete matters to the more abstract world of mind and soul. They must learn to allow bodily energies to be passive while their higher faculties of mind and soul become active and aspire upwards, demonstrating this proper relationship through a ceremonial gesture. The lesson emphasizes the union and dominance of mind and soul over the body.\n\nCandidates are taught the importance of moral conduct, equality, and rectitude in their lives. They learn that they begin in an imperfect state, like the Rough Ashlar, but can strive for perfection through education, personal effort, and divine guidance, becoming like the Perfect Ashlar. The Trestle-Board instructs them to build their spiritual lives according to divine principles and designs.\n\nCandidates are taught to apply the principles of the working tools to their moral and spiritual lives: to maintain integrity and uprightness (Plumb), to act virtuously (Square), and to reflect on the transient nature of life and the inevitability of death (Level).\n\nCandidates are taught to apply the working tools to their moral and spiritual lives: to conduct themselves with integrity and uprightness, to ensure their actions are virtuous, and to contemplate the transient nature of life and the inevitability of death.",
+      "tradition_notes": [
+        "The traditional phrase 'going up' to the Second Degree is used to describe the progression.",
+        "The specific pattern of knocks for the Fellowcraft Degree, with two joined, is a traditional element.",
+        "The declaration that the Lodge is 'opened on the Square' is a traditional part of the ceremony.",
+        "The Jewels of a Lodge are traditionally classified into six: three movable and three immovable.",
+        "The Square, Level, and Plumb are identified as immovable jewels.",
+        "The Rough Ashlar, Perfect Ashlar, and Trestle-Board are identified as movable jewels."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure",
+        "The Deeper Meaning of the FC Degree | Opening the Lodge in the Second Degree | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Deeper meaning of FC Degree.md#opening-the-lodge-in-the-second-degree | section 5",
+        "Blue Lodge Ritual Reference Guide | The Jewels of a Lodge | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-jewels-of-a-lodge | section 31",
+        "Blue Lodge Ritual Reference Guide | The Working Tools | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-working-tools | section 49",
+        "Blue Lodge Ritual Reference Guide | The Working Tools | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-working-tools | section 53"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-working-tools",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-working-tools",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0005-opening-the-lodge-in-the-second-degree",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0031-the-jewels-of-a-lodge",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0049-the-working-tools",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0053-the-working-tools",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "Pillars And Architecture",
+      "slug": "level2-hub-pillars-and-architecture",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "pillars_and_architecture",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Pillars And Architecture"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "The two pillars, orders of architecture, and the builder craft.",
+      "full_summary": "<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0054 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Second Section\n\nThis section introduces the Fellow Craft candidate to the concepts of Operative and Speculative Masonry, defining each and emphasizing the moral and religious aspects of Speculative Masonry, including the contemplation of creation and homage to Deity. It also details the historical practice of ancient brethren working in both forms and consecrating the seventh day for rest and contemplation. The section concludes with a biblical description of the two pillars of brass, their dimensions, and features like chapiters, network, and pomegranates, as they would appear on the passage to the Middle Chamber.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0054 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0074 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Third Section\n\nThis section describes the Third Section of a degree, focusing on hieroglyphical emblems, moral lessons, and extensive details regarding the construction of King Solomon's Temple. It covers the temple's foundation, location on Mount Moriah, construction duration, the absence of tool sounds during building, and the vast workforce involved, including Grand Masters, Masters, Fellow Crafts, and Entered Apprentices. The section also elaborates on the two celebrated pillars placed at the temple's entrance, explaining their symbolic significance as a memorial to the Israelites' deliverance from Egyptian bondage, referencing the miraculous pillars of fire and cloud.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0074 -->",
+      "practical_elements": [
+        "Explanation of objects on the passage to the middle chamber.",
+        "Description of the two pillars of brass: eighteen cubits high, twelve cubits circumference, five cubit high chapiters, hollow, with network and pomegranates.",
+        "Ancient brethren wrought six days and rested on the seventh.",
+        "The temple was founded in the fourth year of Solomon's reign, on the second day of the month Zif.",
+        "It was located on Mount Moriah, near where Abraham was to offer Isaac and where David appeased the destroying angel.",
+        "Construction took over seven years, during which it reportedly did not rain in the daytime.",
+        "No sound of axe, hammer, or iron tool was heard during construction.",
+        "The temple was supported by 1453 pillars and 2906 pilasters, all of Parian marble.",
+        "The workforce included 3 Grand Masters, 3300 Masters/Overseers, 80000 Fellow Crafts, and 70000 Entered Apprentices.",
+        "Two celebrated pillars were placed in front of the temple's porch, one on the left and one on the right."
+      ],
+      "symbolic_meaning": "Operative Masonry refers to the proper application of architectural rules for structure, figure, strength, beauty, proportion, and correspondence. Speculative Masonry teaches to subdue passions, act upon the square, maintain a good report, secrecy, and charity. It is interwoven with religion, obliging Masons to pay rational homage to Deity, contemplate the glorious works of creation, and adore the divine Creator. The seventh day of rest is consecrated for contemplation of creation and adoration of the Creator.\n\nThe section illustrates hieroglyphical emblems and inculcates moral lessons. The two celebrated pillars at the temple entrance symbolize the happy deliverance of the Israelites from Egyptian bondage and commemorate the miraculous pillars of fire and cloud, which provided light and darkness respectively during the Exodus. Their placement ensured the event was continually before the eyes of those going to and from divine worship.",
+      "candidate_lesson": "The candidate learns the distinction between Operative and Speculative Masonry, understanding that modern Freemasonry is primarily Speculative, focusing on moral and spiritual development. They are taught the importance of self-governance, ethical conduct (acting upon the square, good report, secrecy, charity), and a deep reverence for the Creator and His creation, including the practice of setting aside time for rest and contemplation.\n\nThe section emphasizes the importance of peace and good fellowship among workmen, as exemplified by King Solomon's wise organization of the temple builders, which prevented envy, discord, or confusion. It also highlights the significance of divine guidance and deliverance, as symbolized by the temple's pillars, reminding candidates of historical and spiritual liberation.",
+      "tradition_notes": [
+        "Freemasonry is considered under two denominations: Operative and Speculative.",
+        "Ancient brethren wrought in both Operative and Speculative Masonry.",
+        "Modern Masons work in Speculative Masonry only.",
+        "Ancient brethren consecrated the seventh day as a day of rest, following God's creation pattern.",
+        "Josephus is cited as an informant regarding the temple's construction duration and the absence of rain.",
+        "Sacred history is referenced for the detail that no tool sounds were heard during the temple's building.",
+        "The placement of the two pillars is presented as a tradition to memorialize the deliverance from Egyptian bondage and the pillars of fire and cloud."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure",
+        "Blue Lodge Ritual Reference Guide | Second Section | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#second-section | section 54",
+        "Blue Lodge Ritual Reference Guide | Third Section | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#third-section | section 74"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-pillars-and-architecture",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-pillars-and-architecture",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0054-second-section",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0074-third-section",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "Wages And Emblems",
+      "slug": "level2-hub-wages-and-emblems",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "wages_and_emblems",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Wages And Emblems"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "blue-lodge-ritual-reference-guide-2021-section-0055-peace-unity-and-plenty",
+          "blue-lodge-ritual-reference-guide-2021-section-0062-a-symbol-of-plenty"
+        ],
+        "deeper": []
+      },
+      "short_summary": "Corn, wine, and oil; the letter G; jewels and emblems of the degree.",
+      "full_summary": "<!-- PDF_STAGE5:deeper-meaning-of-fc-degree:section-0009 -->\n### Enrichment from The Deeper Meaning of the FC Degree\nSource section: The Secrets and the Ear of Corn\n\nThis section discusses the distinct nature of the secrets for each Masonic degree, contrasting the First Degree's focus on practical intelligence with the Second Degree's emphasis on the 'heart' or soul, representing intuition and affection. It introduces a Hebrew word signifying 'sprouting forth' as emblematic of the Fellow Craft candidate's spiritual growth. The ear of corn is presented as a central symbol for the candidate's soul growth and enlightenment, drawing parallels with ancient Egyptian and Eleusinian mysteries where corn symbolized immortality and revelation. The text also notes the use of corn in Masonic Lodge consecrations, tracing boards, and Grand Lodge officer regalia, emphasizing its personal symbolic application for meditation and transformation.\n<!-- /PDF_STAGE5:deeper-meaning-of-fc-degree:section-0009 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0066 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Brother A. B.\n\nThis section congratulates a Brother on being passed to the Second Degree, emphasizing that Freemasonry values internal qualifications over external ones. It highlights the institution's resilience, having survived the destruction of Solomon's magnificent Temple. The text explains that Masonic mysteries are transmitted through attentive listening and faithful preservation, using architectural tools and symbolic emblems to impart wise truths across generations. It concludes by reminding all Masons, from the youngest Entered Apprentice to the Worshipful Master, to humbly bow before the sacred name of Deity.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0066 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0077 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: The Pot of Incense\n\nThe Pot of Incense is presented as an emblem symbolizing a pure heart and continuous gratitude towards the Deity for all blessings. The text also clarifies that a 'carpet' in this context refers to a cloth displaying the emblems of the degrees.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0077 -->",
+      "practical_elements": [
+        "Grains of corn are scattered to the four quarters of space at the consecration of every Masonic Lodge.",
+        "The Second Degree tracing board displays growing corn.",
+        "The 'full corn in the ear' is exhibited in gold embroidery on the full dress collars of Grand Lodge officers.",
+        "The attentive ear receives the sound from the instructive tongue.",
+        "Mysteries of Freemasonry are safely lodged in the repository of faithful breasts.",
+        "All Masons, from Entered Apprentice to Worshipful Master, should humbly bow with reverence to Deity.",
+        "The Pot of Incense is an emblem that glows with fervent heat.",
+        "A 'carpet' refers to a piece of cloth on which the emblems of the degrees are painted."
+      ],
+      "symbolic_meaning": "The secrets of the First Degree relate to practical intelligence and active duties, while those of the Second Degree pertain to the 'heart' or soul, representing intuition and affection. The Hebrew word for this degree, signifying 'sprouting forth,' symbolizes the candidate's new life and spiritual germination. The ear of corn is a powerful symbol of the candidate's soul growth, nourished by the 'Living Water of Enlightenment,' indicating a spiritual transformation. In ancient rituals, corn symbolized eternity and immortality (Egyptian Rituals) and profound revelation (Eleusinian Mysteries). Within Masonry, the 'full corn in the ear' signifies the ripening of what was sown as bare grain into prolific fruit, representing the culmination of spiritual development.\n\nThe survival of Freemasonry despite the destruction of Solomon's Temple symbolizes the enduring nature and resilience of the institution, suggesting that its true essence is not in physical structures but in its principles and the hearts of its members. Architectural tools and symbolic emblems are used to represent and imprint wise and serious truths, serving as a visual and conceptual language for moral and philosophical instruction.\n\nThe Pot of Incense symbolizes a pure heart, which is considered an acceptable sacrifice to Deity. Its fervent glow represents the continuous gratitude our hearts should feel towards the great and beneficent Author of our existence for the blessings and comforts we enjoy.",
+      "candidate_lesson": "The candidate learns that the secrets of each degree are distinct, with the Second Degree focusing on the development of the 'heart' or soul. Through the symbolism of the 'sprouting forth' and the ear of corn, the candidate is taught that new life and spiritual growth have germinated within them as a result of their work and trials. They are encouraged to use the symbol of the ear of corn for personal meditation, allowing the idea to transform them until it ceases to be merely a symbol and becomes an internalized truth of their spiritual ripening.\n\nThe candidate is taught that true worth in Freemasonry comes from internal character and moral qualifications, not outward appearances or worldly status. They learn the importance of diligently receiving and faithfully preserving Masonic knowledge and mysteries. The lesson also instills a profound sense of reverence and humility towards the Deity, a principle that unites all Masons regardless of their degree or station.\n\nCandidates should strive to cultivate a pure heart, which is an acceptable offering to the Divine, and maintain a constant sense of gratitude for the blessings bestowed upon them by the Creator.",
+      "tradition_notes": [
+        "The Ritual states that 'The secrets of each Degree are to be kept separate and distinct from those in the former.'",
+        "In Egyptian Rituals, the Candidate declared 'I am a germ of eternity!' while holding an ear of corn fertilized by the sacred water of the Nile, and grains of corn were buried with the deceased as emblems of immortality.",
+        "In the Eleusinian Mysteries, an ear of corn was presented to the Candidate during one of the most advanced and secret initiation rites, revealing the 'mysteries of Ceres' associated with it.",
+        "The text references the historical and legendary destruction of Solomon's Temple, a significant event in Masonic tradition, and the subsequent survival of Freemasonry.",
+        "It describes the traditional method of transmitting Masonic mysteries verbally ('attentive ear receives the sound from the instructive tongue') and through memory ('safely lodged in the repository of faithful breasts').",
+        "The term 'carpet' in this context refers to a piece of cloth on which the emblems of the degrees are painted."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure",
+        "The Deeper Meaning of the FC Degree | The Secrets and the Ear of Corn | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Deeper meaning of FC Degree.md#the-secrets-and-the-ear-of-corn | section 9",
+        "Blue Lodge Ritual Reference Guide | Brother A. B. | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#brother-a-b | section 66",
+        "Blue Lodge Ritual Reference Guide | The Pot of Incense | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-pot-of-incense | section 77"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-wages-and-emblems",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-wages-and-emblems",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0009-the-secrets-and-the-ear-of-corn",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0066-brother-a-b",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0077-the-pot-of-incense",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "Philosophy",
+      "slug": "level2-hub-philosophy",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "philosophy",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Philosophy"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "blue-lodge-ritual-reference-guide-2021-section-0059-the-five-senses",
+          "color-symbolism-section-0002-introduction-color-as-a-masonic-teaching-tool",
+          "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge",
+          "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees",
+          "color-symbolism-section-0008-conclusion-synchronicity-jung-and-masonic-heritage",
+          "deeper-meaning-of-fc-degree-section-0013-closing-and-summary"
+        ],
+        "deeper": []
+      },
+      "short_summary": "Knowledge, education, symbolism studies, and self-improvement.",
+      "full_summary": "",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-philosophy",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-philosophy",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "Glossary And Review",
+      "slug": "level2-hub-glossary-and-review",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "glossary_and_review",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Glossary And Review"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "Terms, summaries, and review material.",
+      "full_summary": "",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-glossary-and-review",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-glossary-and-review",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    },
+    {
+      "title": "The Ceremony of Passing",
+      "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "ritual_flow",
+      "parent_topic": "level2-hub-ritual-flow",
+      "aliases": [],
+      "keywords": [
+        "Second Degree",
+        "Ceremony of Passing",
+        "intellectuality",
+        "intellectual light",
+        "mental illumination",
+        "transitional phase",
+        "personal experience",
+        "enlightenment",
+        "spiritual development",
+        "mastership",
+        "evolution",
+        "physical nature"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "color-symbolism-section-0004-jung-s-psychology-and-the-three-craft-degrees"
+        ],
+        "deeper": []
+      },
+      "short_summary": "The Second Degree, known as the Ceremony of Passing, primarily targets the candidate's intellect, aiming for mental illumination and a purified understanding. It is a transitional phase of personal experience, contrasting with other degrees by emphasizing implied meaning over drama, and guiding the aspirant through an intermediate region of mind or soul on their journey from physical senses to ultimate spirit.",
+      "full_summary": "The Second Degree, known as the Ceremony of Passing, primarily targets the candidate's intellect, aiming for mental illumination and a purified understanding. It is a transitional phase of personal experience, contrasting with other degrees by emphasizing implied meaning over drama, and guiding the aspirant through an intermediate region of mind or soul on their journey from physical senses to ultimate spirit.\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0066 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Brother A. B.\n\nThis section congratulates a Brother on being passed to the Second Degree, emphasizing that Freemasonry values internal qualifications over external ones. It highlights the institution's resilience, having survived the destruction of Solomon's magnificent Temple. The text explains that Masonic mysteries are transmitted through attentive listening and faithful preservation, using architectural tools and symbolic emblems to impart wise truths across generations. It concludes by reminding all Masons, from the youngest Entered Apprentice to the Worshipful Master, to humbly bow before the sacred name of Deity.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0066 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0067 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Charge at Passing to the Degree of Fellow Craft\n\nThis charge congratulates the candidate on being passed to the Fellow Craft Degree, emphasizing that Freemasonry values internal qualifications over external ones. It reiterates the importance of adhering to Masonic duties and laws, and instructs the Fellow Craft to judge brethren with candor, admonish with friendship, and reprehend with justice. The charge strongly recommends the study of the liberal arts, particularly geometry, which is presented as the basis of the Masonic art, possessing a divine and moral nature that reveals truths of morality. It concludes by expecting the candidate to continue practicing commendable virtues.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0067 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0175 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Proclamation\n\nThis section describes a formal proclamation made by the Grand Master to an assembly of brethren and friends during a ceremony, likely a cornerstone laying. The proclamation affirms the Masons' adherence to the laws of their country, their fear of God as the Great Architect, their commitment to benefiting brethren, and practicing universal benevolence. Following this, the Grand Master delivers the Square, Level, Plumb, and the building plan to the Architect, entrusting them with the superintendence and direction of the work, expressing confidence in their skill to ensure the building rises in order, harmony, and beauty, fulfilling its purpose to the credit and honor of all involved.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0175 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0177 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Proclamation\n\nThis section details a public proclamation made by a Masonic authority, typically the Grand Master, during a ceremony such as the laying of a foundation stone. The proclamation asserts that Masons are lawful, fear God as the Great Architect, practice universal benevolence, and possess lawful and honorable secrets. It highlights the enduring and respected nature of the Fraternity and concludes by declaring the foundation stone to be properly laid according to ancient Masonic customs, verified by the square, level, and plumb.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0177 -->",
+      "practical_elements": [
+        "The ceremony is designed to impress by what is implied rather than by drama.",
+        "The experience is of a mental or psychological nature, left somewhat to silence and imagination.",
+        "The attentive ear receives the sound from the instructive tongue.",
+        "Mysteries of Freemasonry are safely lodged in the repository of faithful breasts.",
+        "All Masons, from Entered Apprentice to Worshipful Master, should humbly bow with reverence to Deity.",
+        "Support Masonic laws and regulations.",
+        "Be ready to assist in executing Masonic laws.",
+        "Do not palliate or aggravate the offenses of brethren.",
+        "Judge brethren's trespasses with candor.",
+        "Admonish brethren with friendship.",
+        "Reprehend brethren with justice.",
+        "Study the liberal arts, especially geometry.",
+        "Conform to the principles of the Institution.",
+        "Persevere in the practice of every commendable virtue.",
+        "A formal proclamation is made to an assembly of brethren and friends.",
+        "The Grand Master delivers the Square, Level, Plumb, and the plan of the building to the Architect.",
+        "The Grand Master gives a specific charge to the Architect regarding the superintendence and direction of the building work.",
+        "Brethren and friends assemble to behold the ceremony.",
+        "A proclamation is made by the Grand Master or his authority.",
+        "A foundation stone is laid for a building.",
+        "The foundation stone is verified as square, level, and plumb, true and trusty.",
+        "A benediction is pronounced by the Grand Chaplain.",
+        "The program may be interspersed with music or arranged by the Grand Lodge."
+      ],
+      "symbolic_meaning": "The ceremony symbolizes an upward step in the candidate's evolution, an exploration of a higher level of being, and a transition from the physical to the spiritual realm through an intermediate region of mind or soul. It represents the striving for intellectual light and mental illumination.\n\nThe survival of Freemasonry despite the destruction of Solomon's Temple symbolizes the enduring nature and resilience of the institution, suggesting that its true essence is not in physical structures but in its principles and the hearts of its members. Architectural tools and symbolic emblems are used to represent and imprint wise and serious truths, serving as a visual and conceptual language for moral and philosophical instruction.\n\nFreemasonry primarily regards the internal, not the external, qualifications of a man. Geometry is established as the basis of the Masonic art, possessing a divine and moral nature. It is seen as a science that not only proves the wonderful properties of nature but also demonstrates the more important truths of morality.\n\nThe proclamation symbolizes the public declaration of Masonic principles, including loyalty to country, reverence for the Great Architect, and the practice of benevolence. The handing over of the working tools (Square, Level, Plumb) to the Architect by the Grand Master symbolizes the trust placed in skilled leadership and the importance of proper design, execution, and moral rectitude in all undertakings, particularly in the construction of a symbolic or literal temple. It signifies the transition from planning to execution, guided by Masonic virtues.\n\nThe proclamation emphasizes that Masonic secrets are lawful, honorable, and inviolable, entrusted to Masons. The longevity and esteemed membership of the Fraternity symbolize its inherent goodness and honor. The verification of the foundation stone as 'square, level and plumb, true and trusty' symbolizes the integrity, precision, and adherence to foundational principles within Masonry, both in physical construction and moral conduct. God is referred to as the 'Great Architect of all things'.",
+      "candidate_lesson": "The candidate is expected to attain intellectual light and mental illumination, understand and control a higher level of their own being (mind/soul), and pass through a transitional phase of personal experience towards spiritual development and mastership.\n\nThe candidate is taught that true worth in Freemasonry comes from internal character and moral qualifications, not outward appearances or worldly status. They learn the importance of diligently receiving and faithfully preserving Masonic knowledge and mysteries. The lesson also instills a profound sense of reverence and humility towards the Deity, a principle that unites all Masons regardless of their degree or station.\n\nThe Fellow Craft candidate is taught that true worth lies in internal character and that increasing knowledge leads to improved social interaction. They are reminded of their duties to uphold Masonic laws and to interact with brethren with fairness, kindness, and justice. A key lesson is the importance of intellectual and moral self-improvement through the study of the liberal arts, with a particular focus on geometry as a foundation for both natural and moral understanding. The candidate is expected to maintain virtuous conduct, consistent with the principles of the Institution.\n\nThe candidate learns about the public-facing virtues of Freemasonry, including loyalty, piety, and universal benevolence. They also learn the importance of skill, capacity, and diligent conduct in leadership roles, as exemplified by the Architect entrusted with the building project. The emphasis on order, harmony, beauty, and strength in construction serves as an allegory for the moral and spiritual building of character.\n\nCandidates learn that Freemasonry is a lawful and honorable institution, whose members are devoted to God and country, and committed to universal benevolence. They are taught that the Craft possesses ancient, unrevealed secrets that are held in trust. The ceremony of laying a foundation stone demonstrates the importance of precision, integrity, and adherence to ancient customs in all Masonic endeavors.",
+      "tradition_notes": [
+        "The Second Degree ceremony is designed to stand in contrast with the other two degrees, impressing by implication rather than drama.",
+        "The process is mental or psychological, difficult to dramatize, and thus relies on silence and imagination.",
+        "The text references the historical and legendary destruction of Solomon's Temple, a significant event in Masonic tradition, and the subsequent survival of Freemasonry.",
+        "It describes the traditional method of transmitting Masonic mysteries verbally ('attentive ear receives the sound from the instructive tongue') and through memory ('safely lodged in the repository of faithful breasts').",
+        "Freemasonry regards the internal, not the external, qualifications of a man.",
+        "The study of the liberal arts, particularly geometry, is earnestly recommended as a valuable branch of education.",
+        "Geometry is established as the basis of the Masonic art and is considered to be of a divine and moral nature.",
+        "This text describes a traditional Masonic ceremony, likely a cornerstone laying, which involves a public proclamation and the symbolic presentation of working tools to the master builder or architect.",
+        "The mention of 'concealed from the eyes of men' suggests the esoteric nature of some Masonic knowledge, even within a public ceremony.",
+        "Masons are true to the laws of their country.",
+        "Masons profess to fear God, the Great Architect of all things.",
+        "Masons practice universal benevolence to all mankind.",
+        "The Craft has existed for many centuries, indicating its enduring nature and honorable calling.",
+        "Ceremonies are conducted in accordance with the ancient customs of Freemasonry."
+      ],
+      "caution_notes": [
+        "Mind and Soul, for the purposes of this lecture, should not be confused with Spirit, which is a higher level of our being.",
+        "You are not to palliate or aggravate the offenses of your brethren.",
+        "Masonic secrets are concealed from the eyes of men, may not be revealed, and which no man has discovered."
+      ],
+      "source_notes": [
+        "The Deeper Meaning of the FC Degree | The Ceremony of Passing | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Deeper meaning of FC Degree.md#the-ceremony-of-passing | section 3",
+        "Blue Lodge Ritual Reference Guide | Brother A. B. | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#brother-a-b | section 66",
+        "Blue Lodge Ritual Reference Guide | Charge at Passing to the Degree of Fellow Craft | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#charge-at-passing-to-the-degree-of-fellow-craft | section 67",
+        "Blue Lodge Ritual Reference Guide | Proclamation | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#proclamation | section 175",
+        "Blue Lodge Ritual Reference Guide | Proclamation | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#proclamation | section 177"
+      ],
+      "language": "en",
+      "work_id": "deeper-meaning-of-fc-degree",
+      "work_title": "The Deeper Meaning of the FC Degree",
+      "source_kind": "interpretive-lecture",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "The Ceremony of Passing",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:deeper-meaning-of-fc-degree:deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:deeper-meaning-of-fc-degree:deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0003-the-ceremony-of-passing",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0066-brother-a-b",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0067-charge-at-passing-to-the-degree-of-fellow-craft",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0175-proclamation",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0177-proclamation",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Perambulation: The Soul's Forward Movement",
+      "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "ritual_flow",
+      "parent_topic": "level2-hub-ritual-flow",
+      "aliases": [],
+      "keywords": [
+        "Perambulation",
+        "Fellow Craft",
+        "Enlightenment",
+        "Spiritual growth",
+        "Soul's forward movement",
+        "Deacon",
+        "Conscience",
+        "Inner guide",
+        "Salutes",
+        "Master",
+        "Spiritual powers",
+        "Wardens"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "In the Fellow Craft degree, the perambulations around the Lodge symbolize the human soul's continuous search for enlightenment and spiritual growth, representing a forward movement towards a spiritual goal. The Deacon guiding the candidate symbolizes an unerring enlightened conscience or inner guide. Salutes to the Master signify recognition of higher spiritual powers within oneself, and examinations by the Wardens (representing the psyche and intellect) symbolize the testing of one's qualifications for spiritual advancement.",
+      "full_summary": "In the Fellow Craft degree, the perambulations around the Lodge symbolize the human soul's continuous search for enlightenment and spiritual growth, representing a forward movement towards a spiritual goal. The Deacon guiding the candidate symbolizes an unerring enlightened conscience or inner guide. Salutes to the Master signify recognition of higher spiritual powers within oneself, and examinations by the Wardens (representing the psyche and intellect) symbolize the testing of one's qualifications for spiritual advancement.\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0142 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Brothers Senior and Junior Wardens\n\nThis section addresses the Senior and Junior Wardens, emphasizing their deep understanding of Masonic principles and their expected exemplary conduct. They are tasked with assisting the Master, diffusing light, and imparting knowledge to those under their care. The text highlights their crucial role in succession, ensuring the Craft's continuous instruction, and anticipates their future conduct will earn the applause of their brethren and a good conscience.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0142 -->",
+      "practical_elements": [
+        "Perambulations around the Lodge",
+        "Guidance by the Deacon",
+        "Salutes to the Master",
+        "Examinations by the Wardens",
+        "Wardens are to assist the Master in his trust.",
+        "Wardens are to diffuse light and impart knowledge to those under their care.",
+        "Wardens succeed to higher duties in the Master's absence.",
+        "The Installing Officer delivers this charge to the Wardens with the Lodge members standing."
+      ],
+      "symbolic_meaning": "The perambulations in the Fellow Craft degree symbolize the soul's continued forward movement towards spiritual enlightenment and growth. The Deacon represents the candidate's unerring enlightened conscience or inner guide. Salutes to the Master signify the recognition of higher spiritual powers residing within the candidate. The examinations conducted by the Wardens, representing the psyche and intellect, symbolize the testing of one's qualifications for spiritual advancement, a process every soul undergoes on its upward path.\n\nThe Wardens' role as examples of good order and regularity symbolizes the importance of leadership by virtue and adherence to Masonic laws. Their duty to diffuse light and impart knowledge represents the continuous flow of wisdom and instruction within the Craft, ensuring its perpetuation and the enlightenment of its members.",
+      "candidate_lesson": "The candidate should view the mystical journeys around the Lodge as a representation of their soul's ongoing progress towards a desired spiritual goal. They are taught to recognize their inner guide (symbolized by the Deacon), acknowledge their inherent spiritual powers (through salutes to the Master), and understand that their qualifications for spiritual advancement will be tested (by the Wardens, representing psyche and intellect).\n\nThe candidate learns that leadership within Masonry requires a profound understanding of its principles, exemplary conduct, and a commitment to teaching and guiding others. It underscores the importance of self-improvement, learning from others' strengths and weaknesses, and being prepared to assume greater responsibilities for the benefit of the fraternity.",
+      "tradition_notes": [
+        "The address to the Senior and Junior Wardens is a traditional part of an installation ceremony, delivered by the Installing Officer."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "The Deeper Meaning of the FC Degree | Perambulation: The Soul's Forward Movement | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Deeper meaning of FC Degree.md#perambulation-the-soul-s-forward-movement | section 6",
+        "Blue Lodge Ritual Reference Guide | Brothers Senior and Junior Wardens | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#brothers-senior-and-junior-wardens | section 142"
+      ],
+      "language": "en",
+      "work_id": "deeper-meaning-of-fc-degree",
+      "work_title": "The Deeper Meaning of the FC Degree",
+      "source_kind": "interpretive-lecture",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Perambulation: The Soul's Forward Movement",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:deeper-meaning-of-fc-degree:deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:deeper-meaning-of-fc-degree:deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0006-perambulation-the-soul-s-forward-movement",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0142-brothers-senior-and-junior-wardens",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Closing and Summary",
+      "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "philosophy",
+      "parent_topic": "level2-hub-philosophy",
+      "aliases": [],
+      "keywords": [
+        "Closing",
+        "Junior Warden",
+        "Body",
+        "senses",
+        "All Seeing Eye",
+        "Judgment Book",
+        "destiny",
+        "First Degree",
+        "Second Degree",
+        "sense-nature",
+        "virtue",
+        "mind"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section summarizes the Fellow Craft degree, noting the Junior Warden's significant role in the closing, which is appropriate given the degree's focus on the body and senses. It highlights the concept of the \"All Seeing Eye\" residing within oneself, serving as an internal \"Judgment Book\" where individuals record their own history and determine their destiny. The summary also outlines the progressive lessons from the First Degree, which emphasizes subjugating sense-nature and acquiring virtue, to the Second Degree, which focuses on educating, disciplining, and controlling the mind to perceive truths that transcend it.",
+      "full_summary": "This section summarizes the Fellow Craft degree, noting the Junior Warden's significant role in the closing, which is appropriate given the degree's focus on the body and senses. It highlights the concept of the \"All Seeing Eye\" residing within oneself, serving as an internal \"Judgment Book\" where individuals record their own history and determine their destiny. The summary also outlines the progressive lessons from the First Degree, which emphasizes subjugating sense-nature and acquiring virtue, to the Second Degree, which focuses on educating, disciplining, and controlling the mind to perceive truths that transcend it.\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0012 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Closing Prayer\n\nThis section presents the traditional closing prayer used in a Masonic lodge. The prayer addresses the 'Supreme Grand Master, Ruler of Heaven and Earth,' asking for divine influence on the hearts and minds of the Masons as they depart. The purpose is to ensure they practice the moral duties learned within the Lodge in their daily lives and reverently study and obey the laws given in the Holy Word.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0012 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0013 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Benediction at Closing\n\nThis section presents a benediction recited at the closing of a Masonic lodge, invoking divine blessing upon all regular Masons. It expresses a wish for brotherly love to prevail and for moral and social virtues to unite the members.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0013 -->\n\n<!-- PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0113 -->\n### Enrichment from Blue Lodge Ritual Reference Guide\nSource section: Second Circuit\n\nThis section describes a 'Second Circuit' within a ritual, featuring a sequence of scriptural passages recited by various lodge officers: the Master, Senior Warden, Junior Warden, Senior Deacon, Junior Deacon, and Chaplain. The verses collectively emphasize themes of divine trust, protection, and guardianship.\n<!-- /PDF_STAGE5:blue-lodge-ritual-reference-guide-2021:section-0113 -->",
+      "practical_elements": [
+        "The Junior Warden plays the most important part in the closing of the Fellow Craft degree.",
+        "The act of offering a closing prayer at the conclusion of a lodge meeting.",
+        "Recitation of a benediction at the closing of a lodge meeting",
+        "Recitation of specific scriptural verses by the Master: 'If thou but trust in the Lord, there shall no evil happen unto thee, neither shall any plague come nigh thy dwelling.'",
+        "Recitation of specific scriptural verses by the Senior Warden: 'For he shall give His angels charge concerning thee; to keep thee in all thy ways.'",
+        "Recitation of specific scriptural verses by the Junior Warden: 'They shall bear thee in their hands, that thou hurt not thy foot against a stone.'",
+        "Recitation of specific scriptural verses by the Senior Deacon: 'Behold He that keepeth Israel, shall neither slumber nor sleep.'",
+        "Recitation of specific scriptural verses by the Junior Deacon: 'The Lord himself is thy keeper; the Lord himself is thy defense upon thy right hand.'",
+        "Recitation of specific scriptural verses by the Chaplain: 'The Lord shall preserve thee from all evil; yea, it is even He that shall keep thy soul.'",
+        "The sequence of recitations is referred to as a 'Second Circuit'."
+      ],
+      "symbolic_meaning": "The Junior Warden represents the Body, aligning with the Fellow Craft degree's focus on the body and its senses. The \"All Seeing Eye\" is symbolically located at the center of oneself, representing an internal \"Judgment Book\" where one's history is inscribed and destiny determined by individual actions.\n\nThe closing prayer symbolizes the transition from the sacred space and fellowship of the Lodge back into the profane world, emphasizing the continuity of Masonic principles and moral obligations in daily life. It also represents a reliance on a higher power for guidance and strength to uphold these principles.\n\nThe benediction symbolizes the invocation of divine favor upon the fraternity, emphasizing the importance of unity, brotherly love, and the foundational role of moral and social virtues in binding Masons together.\n\nThe recited verses symbolize the unwavering divine protection and care bestowed upon those who place their trust in the Lord. They convey a message of spiritual security, emphasizing the constant vigilance and guardianship of a higher power over the faithful.",
+      "candidate_lesson": "The candidate learns that the journey of self-improvement progresses from subjugating sense-nature and acquiring virtue in the First Degree to educating, disciplining, and controlling the mind in the Second Degree. This mental preparation is essential for perceiving truths that transcend the mind. The candidate must rise above base physical nature, prepare their mind and intellect for further enlightenment, and seek that enlightenment from the center of their own being.\n\nMasons are taught that the moral and ethical lessons learned within the Lodge are not confined to its walls but must be actively practiced in their everyday conduct. They are encouraged to live by divine laws as revealed in the Holy Word and to seek divine guidance in their endeavors.\n\nThe candidate learns that divine blessing is sought for all Masons, and that brotherly love, along with moral and social virtues, are essential principles that should prevail and unite the members of the fraternity.\n\nThe candidate is taught the profound importance of faith and trust in the divine, assuring them of spiritual protection and guidance throughout their life's journey. It reinforces the belief that a higher power watches over and defends them from harm.",
+      "tradition_notes": [
+        "This prayer is a traditional component of the closing ritual in Masonic lodges, invoking a divine being for guidance and reinforcement of Masonic teachings.",
+        "This benediction is a traditional part of the closing ritual in a Masonic lodge."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "The Deeper Meaning of the FC Degree | Closing and Summary | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\Deeper meaning of FC Degree.md#closing-and-summary | section 13",
+        "Blue Lodge Ritual Reference Guide | Closing Prayer | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#closing-prayer | section 12",
+        "Blue Lodge Ritual Reference Guide | Benediction at Closing | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#benediction-at-closing | section 13",
+        "Blue Lodge Ritual Reference Guide | Second Circuit | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#second-circuit | section 113"
+      ],
+      "language": "en",
+      "work_id": "deeper-meaning-of-fc-degree",
+      "work_title": "The Deeper Meaning of the FC Degree",
+      "source_kind": "interpretive-lecture",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Closing and Summary",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:deeper-meaning-of-fc-degree:deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:deeper-meaning-of-fc-degree:deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "deeper-meaning-of-fc-degree-section-0013-closing-and-summary",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0012-closing-prayer",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0013-benediction-at-closing",
+          "degree": "library"
+        },
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0113-second-circuit",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "interpretive",
+      "status": "draft"
+    },
+    {
+      "title": "Peace, Unity, and Plenty",
+      "slug": "blue-lodge-ritual-reference-guide-2021-section-0055-peace-unity-and-plenty",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "wages_and_emblems",
+      "parent_topic": "level2-hub-wages-and-emblems",
+      "aliases": [],
+      "keywords": [
+        "Peace",
+        "Unity",
+        "Plenty"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section introduces the concepts of Peace, Unity, and Plenty.",
+      "full_summary": "This section introduces the concepts of Peace, Unity, and Plenty.",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Blue Lodge Ritual Reference Guide | Peace, Unity, and Plenty | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#peace-unity-and-plenty | section 55"
+      ],
+      "language": "en",
+      "work_id": "blue-lodge-ritual-reference-guide-2021",
+      "work_title": "Blue Lodge Ritual Reference Guide",
+      "source_kind": "ritual-reference",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Peace, Unity, and Plenty",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0055-peace-unity-and-plenty",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0055-peace-unity-and-plenty",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0055-peace-unity-and-plenty",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "variant",
+      "status": "draft"
+    },
+    {
+      "title": "The Globes",
+      "slug": "blue-lodge-ritual-reference-guide-2021-section-0056-the-globes",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "liberal_arts",
+      "parent_topic": "level2-hub-liberal-arts",
+      "aliases": [],
+      "keywords": [
+        "Globes",
+        "spherical bodies",
+        "earth",
+        "heavens",
+        "planetary revolutions",
+        "geography",
+        "astronomy"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [
+          "color-symbolism-section-0003-blue-the-color-of-the-symbolic-lodge"
+        ],
+        "deeper": []
+      },
+      "short_summary": "The Globes are described as two artificial spherical bodies. Their convex surfaces represent the Earth's geography (countries, seas) and celestial phenomena (the heavens, planetary revolutions, and other particulars).",
+      "full_summary": "The Globes are described as two artificial spherical bodies. Their convex surfaces represent the Earth's geography (countries, seas) and celestial phenomena (the heavens, planetary revolutions, and other particulars).",
+      "practical_elements": [
+        "Two artificial spherical bodies",
+        "Convex surface represents countries, seas, various parts of the earth",
+        "Convex surface represents the face of the heavens, planetary revolutions, and other particulars"
+      ],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Blue Lodge Ritual Reference Guide | The Globes | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-globes | section 56"
+      ],
+      "language": "en",
+      "work_id": "blue-lodge-ritual-reference-guide-2021",
+      "work_title": "Blue Lodge Ritual Reference Guide",
+      "source_kind": "ritual-reference",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "The Globes",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0056-the-globes",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0056-the-globes",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0056-the-globes",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "variant",
+      "status": "draft"
+    },
+    {
+      "title": "Flight of Winding Stairs",
+      "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "middle_chamber",
+      "parent_topic": "level2-hub-middle-chamber",
+      "aliases": [],
+      "keywords": [
+        "Flight of Winding Stairs",
+        "three steps",
+        "five steps",
+        "seven steps",
+        "Fellow Craft",
+        "Middle Chamber"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section introduces the Flight of Winding Stairs, detailing its composition of three, five, and seven steps, and includes ritualistic prompts related to these numerical sequences.",
+      "full_summary": "This section introduces the Flight of Winding Stairs, detailing its composition of three, five, and seven steps, and includes ritualistic prompts related to these numerical sequences.",
+      "practical_elements": [
+        "The Flight of Winding Stairs consists of three, five, and seven steps.",
+        "Ritualistic prompts indicated by \"Take * * * The number * * *\" are associated with these steps."
+      ],
+      "symbolic_meaning": "The Flight of Winding Stairs symbolizes the progressive journey of knowledge and the ascent of the Fellow Craft Mason through various stages of learning. The numbers three, five, and seven represent different levels of understanding, moral virtues, and the liberal arts and sciences.",
+      "candidate_lesson": "The candidate is taught about the importance of continuous learning, intellectual growth, and the structured progression towards deeper Masonic knowledge, as represented by the distinct numerical steps of the winding stairs.",
+      "tradition_notes": [
+        "The specific composition of the Winding Stairs with three, five, and seven steps is a traditional and integral part of the Fellow Craft degree ritual."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Blue Lodge Ritual Reference Guide | Flight of Winding Stairs | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#flight-of-winding-stairs | section 57"
+      ],
+      "language": "en",
+      "work_id": "blue-lodge-ritual-reference-guide-2021",
+      "work_title": "Blue Lodge Ritual Reference Guide",
+      "source_kind": "ritual-reference",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Flight of Winding Stairs",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0057-flight-of-winding-stairs",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "variant",
+      "status": "draft"
+    },
+    {
+      "title": "The Five Senses",
+      "slug": "blue-lodge-ritual-reference-guide-2021-section-0059-the-five-senses",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "philosophy",
+      "parent_topic": "level2-hub-philosophy",
+      "aliases": [],
+      "keywords": [
+        "five senses",
+        "hearing",
+        "seeing",
+        "feeling",
+        "smelling",
+        "tasting",
+        "human nature",
+        "revered senses"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section introduces the five human senses: Hearing, Seeing, Feeling, Smelling, and Tasting, noting their connection to a specific Masonic number. It emphasizes that the first three senses (Hearing, Seeing, and Feeling) are particularly revered by Masons, implying distinct Masonic applications for each, though the specific details are redacted.",
+      "full_summary": "This section introduces the five human senses: Hearing, Seeing, Feeling, Smelling, and Tasting, noting their connection to a specific Masonic number. It emphasizes that the first three senses (Hearing, Seeing, and Feeling) are particularly revered by Masons, implying distinct Masonic applications for each, though the specific details are redacted.",
+      "practical_elements": [],
+      "symbolic_meaning": "The five senses represent the faculties through which humans perceive and interact with the world. The special reverence given to Hearing, Seeing, and Feeling in Masonry suggests their critical role in the reception of instruction, observation of ritual, and recognition of brethren, forming the foundation of Masonic communication and understanding.",
+      "candidate_lesson": "The candidate is taught to appreciate the importance of their sensory faculties, particularly hearing, seeing, and feeling, as essential tools for learning, understanding, and participating in the Masonic fraternity. These senses are fundamental to receiving and internalizing the lessons and traditions of Freemasonry.",
+      "tradition_notes": [
+        "Masonic tradition places particular reverence on the senses of Hearing, Seeing, and Feeling among the five human senses."
+      ],
+      "caution_notes": [],
+      "source_notes": [
+        "Blue Lodge Ritual Reference Guide | The Five Senses | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#the-five-senses | section 59"
+      ],
+      "language": "en",
+      "work_id": "blue-lodge-ritual-reference-guide-2021",
+      "work_title": "Blue Lodge Ritual Reference Guide",
+      "source_kind": "ritual-reference",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "The Five Senses",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0059-the-five-senses",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0059-the-five-senses",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0059-the-five-senses",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "variant",
+      "status": "draft"
+    },
+    {
+      "title": "Astronomy",
+      "slug": "blue-lodge-ritual-reference-guide-2021-section-0061-astronomy",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "liberal_arts",
+      "parent_topic": "level2-hub-liberal-arts",
+      "aliases": [],
+      "keywords": [
+        "Astronomy",
+        "divine art",
+        "wisdom",
+        "strength",
+        "beauty",
+        "Almighty Creator",
+        "celestial hemisphere",
+        "heavenly bodies",
+        "motions",
+        "distances",
+        "magnitudes",
+        "periods"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "Astronomy is presented as a divine art that allows one to perceive the wisdom, strength, and beauty of the Almighty Creator through the celestial hemisphere. It enables the observation and calculation of heavenly bodies' motions, distances, magnitudes, periods, and eclipses, and teaches the use of globes, the system of the world, and natural law. Through its study, one can discern divine wisdom and goodness, tracing the Creator through His works.",
+      "full_summary": "Astronomy is presented as a divine art that allows one to perceive the wisdom, strength, and beauty of the Almighty Creator through the celestial hemisphere. It enables the observation and calculation of heavenly bodies' motions, distances, magnitudes, periods, and eclipses, and teaches the use of globes, the system of the world, and natural law. Through its study, one can discern divine wisdom and goodness, tracing the Creator through His works.",
+      "practical_elements": [
+        "Observe the motions of heavenly bodies",
+        "Measure the distances of heavenly bodies",
+        "Comprehend the magnitudes of heavenly bodies",
+        "Calculate the periods and eclipses of heavenly bodies",
+        "Learn the use of the globes",
+        "Understand the system of the world",
+        "Learn the preliminary law of nature"
+      ],
+      "symbolic_meaning": "Astronomy is a divine art that allows Masons to read the wisdom, strength, and beauty of the Almighty Creator in the celestial hemisphere, perceiving unparalleled instances of divine wisdom and goodness throughout creation.",
+      "candidate_lesson": "Through the study of astronomy, a candidate learns to perceive the wisdom and goodness of the Almighty Creator and to trace His glorious presence through the wondrous works of creation.",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Blue Lodge Ritual Reference Guide | Astronomy | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#astronomy | section 61"
+      ],
+      "language": "en",
+      "work_id": "blue-lodge-ritual-reference-guide-2021",
+      "work_title": "Blue Lodge Ritual Reference Guide",
+      "source_kind": "ritual-reference",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "Astronomy",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0061-astronomy",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0061-astronomy",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0061-astronomy",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "variant",
+      "status": "draft"
+    },
+    {
+      "title": "A Symbol of Plenty",
+      "slug": "blue-lodge-ritual-reference-guide-2021-section-0062-a-symbol-of-plenty",
+      "type": "topic",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "wages_and_emblems",
+      "parent_topic": "level2-hub-wages-and-emblems",
+      "aliases": [],
+      "keywords": [
+        "Symbol of Plenty",
+        "denotation",
+        "representation",
+        "origin"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "This section introduces a symbol of plenty, posing questions about its denotation, representation, and origin, indicating that an explanation of its meaning is forthcoming.",
+      "full_summary": "This section introduces a symbol of plenty, posing questions about its denotation, representation, and origin, indicating that an explanation of its meaning is forthcoming.",
+      "practical_elements": [],
+      "symbolic_meaning": "The text indicates that the symbolic meaning of 'A Symbol of Plenty' is about to be explained, stating 'It now becomes my duty to explain to you the * * * It alludes to'. The specific meaning is redacted.",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Blue Lodge Ritual Reference Guide | A Symbol of Plenty | C:\\Users\\bar16\\OneDrive\\Documents\\code-clean-start\\PDF_handle\\consolidated_books\\1st_Edition_Blue_Lodge_Ritual_Reference_Guide_Digital_Edition.md#a-symbol-of-plenty | section 62"
+      ],
+      "language": "en",
+      "work_id": "blue-lodge-ritual-reference-guide-2021",
+      "work_title": "Blue Lodge Ritual Reference Guide",
+      "source_kind": "ritual-reference",
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": "A Symbol of Plenty",
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": "source",
+      "canonical_entry_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0062-a-symbol-of-plenty",
+      "source_language": "en",
+      "canonical_language": "en",
+      "display_language": "en",
+      "localization_group_id": "level2:blue-lodge-ritual-reference-guide-2021:blue-lodge-ritual-reference-guide-2021-section-0062-a-symbol-of-plenty",
+      "available_locales": [
+        "en"
+      ],
+      "translation_status": "translated",
+      "language_integrity_status": "legacy",
+      "knowledge_links": [
+        {
+          "slug": "blue-lodge-ritual-reference-guide-2021-section-0062-a-symbol-of-plenty",
+          "degree": "library"
+        }
+      ],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "guarded",
+      "tradition_scope": "variant",
+      "status": "draft"
+    },
+    {
+      "title": "Lodge Procedure and Officers",
+      "slug": "level2-hub-lodge-procedure",
+      "type": "hub",
+      "degree": "level2",
+      "applies_to_degrees": [
+        "level2"
+      ],
+      "category": "lodge_procedure",
+      "parent_topic": null,
+      "aliases": [],
+      "keywords": [
+        "Lodge Procedure and Officers"
+      ],
+      "related_topics": {
+        "prior": [],
+        "companion": [],
+        "deeper": []
+      },
+      "short_summary": "Ceremonial procedure, officer duties, installations, charges, and the operational order of the lodge.",
+      "full_summary": "",
+      "practical_elements": [],
+      "symbolic_meaning": "",
+      "candidate_lesson": "",
+      "tradition_notes": [],
+      "caution_notes": [],
+      "source_notes": [
+        "Structural hub generated by build_degree_structure"
+      ],
+      "language": null,
+      "work_id": null,
+      "work_title": "",
+      "source_kind": null,
+      "source_path": null,
+      "source_anchor": null,
+      "source_heading": null,
+      "source_order": null,
+      "parallel_entry": null,
+      "translation_mode": null,
+      "canonical_entry_id": "level2:level2-hub-lodge-procedure",
+      "source_language": null,
+      "canonical_language": null,
+      "display_language": null,
+      "localization_group_id": "level2:level2-hub-lodge-procedure",
+      "available_locales": [],
+      "translation_status": "source",
+      "language_integrity_status": "incomplete",
+      "knowledge_links": [],
+      "chapter_toc": [],
+      "visibility_level": "internal",
+      "sensitivity_level": "standard",
+      "tradition_scope": "variant",
+      "status": "published"
+    }
+  ]
+}

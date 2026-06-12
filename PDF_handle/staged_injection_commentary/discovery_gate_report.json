@@ -1,0 +1,60 @@
+{
+  "created_at": "2026-06-11T22:40:53+00:00",
+  "ok": true,
+  "gates": {
+    "topic_validity": {
+      "ok": true,
+      "invalid_row_count": 0,
+      "examples": []
+    },
+    "canonical_promotion_validity": {
+      "ok": true,
+      "invalid_row_count": 0,
+      "examples": []
+    },
+    "decision_validity": {
+      "ok": true,
+      "invalid_row_count": 0,
+      "examples": []
+    },
+    "degree_validity": {
+      "ok": true,
+      "invalid_row_count": 0,
+      "examples": []
+    },
+    "duncan_mm_section_map_degree": {
+      "ok": true,
+      "invalid_row_count": 0,
+      "blocker_code": "DUNCAN_MM_SECTION_MAP_DEGREE_MISROUTE",
+      "examples": []
+    },
+    "explainability": {
+      "ok": true,
+      "invalid_row_count": 0,
+      "examples": []
+    },
+    "overall_rejection_rate": {
+      "ok": true,
+      "rate": 0.25,
+      "threshold": 0.6,
+      "total_rows": 16,
+      "rejected_row_count": 4,
+      "waived_for_enrichment_source": true
+    },
+    "enrichment_match_signal": {
+      "applicable": true,
+      "ok": true,
+      "rate": 0.9375,
+      "threshold": 0.3,
+      "total_rows": 16,
+      "rows_with_any_match_signal": 15
+    },
+    "duncan_fragmentary_ratio": {
+      "ok": true,
+      "ratio": 0.0,
+      "threshold": 0.2,
+      "duncan_total_rows": 0,
+      "duncan_fragmentary_rows": 0
+    }
+  }
+}

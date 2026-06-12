@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-06-11T22:29:49+00:00",
+  "works": [
+    {
+      "work_id": "library-of-freemasonry-volume-2",
+      "section_count": 335,
+      "source_section_count": 335,
+      "chapter_count": 335,
+      "mapping_unit_count": 664,
+      "strong_match_count": 2267,
+      "medium_match_count": 1385,
+      "preservation_ok": true,
+      "partial": false,
+      "stop_reason": null
+    }
+  ]
+}

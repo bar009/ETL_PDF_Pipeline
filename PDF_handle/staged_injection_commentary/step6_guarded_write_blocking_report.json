@@ -1,0 +1,13 @@
+{
+  "mode": "disabled",
+  "site_root": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot",
+  "apply_live_requested": true,
+  "block_count": 0,
+  "blocked": false,
+  "blocked_kinds": [],
+  "risk_notes": [
+    "This narrow gate blocks only localized companion creation and protected-field cross-language overrides.",
+    "Patch operations remain in legacy behavior for now and are not blocked by this gate.",
+    "Override blocks are evaluated against the current selected site-root datasets before override application."
+  ]
+}

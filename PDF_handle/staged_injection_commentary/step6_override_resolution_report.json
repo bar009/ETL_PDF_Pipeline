@@ -1,0 +1,12 @@
+{
+  "summary": {
+    "total": 0,
+    "active": 0,
+    "stale": 0,
+    "orphaned": 0,
+    "conflict": 0,
+    "field_conflict_count": 0
+  },
+  "resolutions": [],
+  "field_conflicts": []
+}

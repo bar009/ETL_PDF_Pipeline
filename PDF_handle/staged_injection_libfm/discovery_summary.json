@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-06-11T22:29:49+00:00",
+  "total_rows": 335,
+  "by_decision": {
+    "existing_match": 164,
+    "later_degree_candidate": 96,
+    "new_canonical_topic": 1,
+    "reject_or_noise": 74
+  },
+  "by_unit_kind": {
+    "fragmentary_topic": 92,
+    "front_matter": 16,
+    "officer_list": 5,
+    "page_fragment": 11,
+    "toc": 1,
+    "topic": 210
+  },
+  "by_candidate_degree": {
+    "level1": 143,
+    "level2": 22,
+    "level3": 96,
+    "unknown": 74
+  }
+}

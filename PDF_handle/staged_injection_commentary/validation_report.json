@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-06-11T22:40:53+00:00",
+  "schema_path": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\content.schema.json",
+  "degrees": {
+    "library": {
+      "ok": true,
+      "validator": "custom",
+      "errors": [],
+      "warnings": [],
+      "schema_path": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\content.schema.json",
+      "schema_mode": "custom-fallback"
+    },
+    "level1": {
+      "ok": true,
+      "validator": "custom",
+      "errors": [],
+      "warnings": [],
+      "schema_path": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\content.schema.json",
+      "schema_mode": "custom-fallback"
+    },
+    "level2": {
+      "ok": true,
+      "validator": "custom",
+      "errors": [],
+      "warnings": [],
+      "schema_path": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\content.schema.json",
+      "schema_mode": "custom-fallback"
+    },
+    "level3": {
+      "ok": true,
+      "validator": "custom",
+      "errors": [],
+      "warnings": [],
+      "schema_path": "C:\\Users\\bar16\\OneDrive\\Documents\\etl-run-sandbox\\work-english-degree-pilot\\data\\content.schema.json",
+      "schema_mode": "custom-fallback"
+    }
+  },
+  "references": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "ok": true
+}
