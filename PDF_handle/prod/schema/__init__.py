@@ -22,6 +22,7 @@ from PDF_handle.prod.schema.patches import (
     build_cross_degree_link,
     build_degree_patch_operation,
     build_source_note,
+    display_source_path,
 )
 from PDF_handle.prod.schema.overrides import (
     OVERRIDE_SCHEMA_VERSION,
