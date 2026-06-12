@@ -946,6 +946,12 @@ def build_entry_catalog(*datasets: dict[str, Any]) -> dict[str, Any]:
         degree_id = dataset["meta"]["degree"]
         by_degree.setdefault(degree_id, {})
         for entry in dataset["entries"]:
+            # Hubs are category gateways, not knowledge entries. Matching them
+            # turns every category-adjacent section into hub enrichment - the
+            # Philosophy hub accumulated 38K of appended blocks this way
+            # (2026-06-12 review) before being split back out by hand.
+            if entry.get("type") == "hub":
+                continue
             terms = set()
             raw_terms = [
                 entry["title"],
@@ -1143,13 +1149,32 @@ def combine_mapping_results(results: list[dict[str, Any]]) -> dict[str, Any]:
     return combined
 
 
+# Craft routing stops at the third degree. Sections about appendant/York-rite
+# degrees (Duncan's chapters 4-7) belong to the library lane only - the LLM
+# kept naming Master Mason entries as enrichment targets for Royal Arch
+# content, which leaked fourth-plus-degree material into level1-3 entries
+# (2026-06-12 review).
+APPENDANT_DEGREE_TITLE_RE = re.compile(
+    r"mark master|past master|most excellent master|royal arch"
+    r"|(?:fourth|fifth|sixth|seventh) degree",
+    re.IGNORECASE,
+)
+
+
+def is_appendant_degree_title(section_title: str) -> bool:
+    return bool(APPENDANT_DEGREE_TITLE_RE.search(section_title or ""))
+
+
 def resolve_target_matches(
     combined_result: dict[str, Any],
     lexical_matches: list[dict[str, Any]],
     catalog: dict[str, Any],
     *,
     allowed_degrees: Iterable[str],
+    section_title: str = "",
 ) -> dict[str, list[dict[str, Any]]]:
+    if is_appendant_degree_title(section_title):
+        return {"strong": [], "medium": [], "rejected": []}
     allowed = set(allowed_degrees)
     match_by_key: dict[tuple[str, str], dict[str, Any]] = {}
     rejected: list[dict[str, Any]] = []

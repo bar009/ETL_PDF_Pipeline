@@ -52,7 +52,18 @@ STOPWORDS = {
     "mason", "masons", "lodge", "freemasonry", "part", "vol", "page",
 }
 
-GARBAGE_TITLE_RE = re.compile(r"[�]|^\W*$|^\d|^[ivxlc]+\.|earlybritish", re.IGNORECASE)
+GARBAGE_TITLE_RE = re.compile(
+    "[�^]|^\\W*$|^\\d|^[ivxlc]+\\.|earl[vy]\\s*british|britishfreemas|britishpreemas"
+    "|england[\\s.—-]*\\d|\\bvol\\.?\\s*ii\\b|[\\s.]\\d+$|originai",
+    re.IGNORECASE,
+)
+
+# Appendant/York-rite degree content must never become a level1-3 child.
+HIGHER_DEGREE_RE = re.compile(
+    r"mark master|past master|most excellent master|royal arch"
+    r"|(?:fourth|fifth|sixth|seventh) degree",
+    re.IGNORECASE,
+)
 
 
 def tokens(text: str) -> set[str]:
@@ -130,7 +141,7 @@ def plan_degree(dataset: dict, *, degree: str, mega_chars: int) -> dict:
         for b in blocks:
             score, owner = claims[b["key"]]
             title = clean_title(b["section_title"])
-            is_garbage = bool(GARBAGE_TITLE_RE.search(title)) or len(title) < 4
+            is_garbage = bool(GARBAGE_TITLE_RE.search(title)) or bool(HIGHER_DEGREE_RE.search(title)) or len(title) < 4
             if owner == e["slug"] and score >= 1 and not is_garbage:
                 slug = child_slug(e["slug"], b["key"])
                 if slug not in existing_slugs:
