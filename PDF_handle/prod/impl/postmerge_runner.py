@@ -45,6 +45,7 @@ DEFAULT_ROUTING_CONFIG = PDF_HANDLE_ROOT / "work_routing.json"
 
 STEP_05_SCRIPT = PDF_HANDLE_ROOT / "prod" / "steps" / "stage.py"
 STEP_06_SCRIPT = PDF_HANDLE_ROOT / "prod" / "steps" / "apply.py"
+STEP_DECOMPOSE_SCRIPT = PDF_HANDLE_ROOT / "prod" / "steps" / "decompose.py"
 STEP_07_SCRIPT = PDF_HANDLE_ROOT / "prod" / "steps" / "qa.py"
 
 # Outputs of prod/steps/stage.py (Step 5) that --force-step5 must wipe to give a clean rerun.
@@ -111,6 +112,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--force-step5", action="store_true")
     parser.add_argument("--force-step6", action="store_true")
     parser.add_argument("--force-step7", action="store_true")
+    parser.add_argument(
+        "--decompose-threshold",
+        type=int,
+        default=40,
+        help="Split any entry whose practical_elements exceed this into sub-topic hubs (Step 6.5).",
+    )
+    parser.add_argument("--skip-decompose", action="store_true", help="Skip the Step 6.5 decompose pass.")
+    parser.add_argument("--force-decompose", action="store_true", help="Run Step 6.5 even when no live changes occurred.")
     parser.add_argument(
         "--skip-exploration-review",
         action="store_true",
@@ -524,6 +533,28 @@ def step6_command(
     return command
 
 
+def decompose_command(
+    *, site_root: Path, threshold: int, provider: str, model: str, report_dir: Path, quiet: bool
+) -> list[str]:
+    command = [
+        sys.executable,
+        str(STEP_DECOMPOSE_SCRIPT),
+        "--site-root",
+        str(site_root),
+        "--threshold",
+        str(threshold),
+        "--provider",
+        provider,
+        "--model",
+        model,
+        "--report-dir",
+        str(report_dir),
+    ]
+    if quiet:
+        command.append("--quiet")
+    return command
+
+
 def step7_command(*, site_root: Path, report_dir: Path, quiet: bool) -> list[str]:
     command = [
         sys.executable,
@@ -838,6 +869,36 @@ def main() -> None:
                 log(f"[work:{work_id}] Step 6 skipped", quiet=args.quiet)
 
             work_record["status"] = "completed"
+
+        # Step 6.5: decompose over-merged entries into sub-topic hubs. Runs once on
+        # the whole site root after all per-work applies, when live data changed (or
+        # forced). Idempotent: a no-op when nothing exceeds the threshold.
+        if not args.skip_decompose and args.provider == "gemini" and (live_changes or args.force_decompose):
+            log(f"[step6.5] decompose (threshold={args.decompose_threshold})", quiet=args.quiet)
+            decompose_report_dir = ensure_dir(run_root / "decompose")
+            run_subprocess(
+                decompose_command(
+                    site_root=site_paths["site_root"],
+                    threshold=args.decompose_threshold,
+                    provider=args.provider,
+                    model=args.model,
+                    report_dir=decompose_report_dir,
+                    quiet=args.quiet,
+                ),
+                quiet=args.quiet,
+            )
+            decompose_manifest_path = decompose_report_dir / "decompose_run_manifest.json"
+            decompose_manifest = read_json(decompose_manifest_path) if decompose_manifest_path.exists() else {}
+            run_manifest["decompose"] = {
+                "action": "run",
+                "threshold": args.decompose_threshold,
+                "per_degree": decompose_manifest.get("per_degree", {}),
+                "report_dir": str(decompose_report_dir),
+            }
+            if any(stats.get("hubs_created") for stats in decompose_manifest.get("per_degree", {}).values()):
+                live_changes = True
+        else:
+            run_manifest["decompose"] = {"action": "skip"}
 
         if args.force_step7:
             step7_state = {"action": "run", "reason": "force-step7 requested"}
