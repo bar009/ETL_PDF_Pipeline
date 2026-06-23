@@ -476,3 +476,21 @@ Reason:
 
 Consequence:
 - future path moves should be aligned with that layout before large refactors happen
+
+### Add Step 6.5 `decompose` to split over-merged entries into sub-topic hubs
+
+Reason:
+- `combine_mapping_results` (stage) flattens a section's units' `practical_elements` into one
+  list and `apply_degree_patch` extends the existing entry across runs, so entries accumulate
+  dozens–hundreds of items and read as an undivided wall (see prototype evidence)
+- the prototype proved an AI-classify → slice → hub pattern fixes this; porting it into the
+  pipeline makes future ingests produce divided content at the source
+
+Consequence:
+- new `prod/steps/decompose.py` runs after Step 6 apply and before Step 7 QA on the work site
+  root: any entry with `practical_elements` > threshold (default 40) becomes a `type:hub` whose
+  contents are AI-clustered sub-topic children (+ a "Concepts and Symbolism" child for prose);
+  iterates until none exceed; idempotent; output normalized via `normalize_degree_data` so QA validates it
+- wired into `postmerge_runner` (default on for the gemini provider; `--skip-decompose` /
+  `--force-decompose` / `--decompose-threshold`); `e2e_runner` inherits it via postmerge
+- the work root is human-reviewed before promotion to live, so auto-decomposition there is safe
