@@ -149,6 +149,44 @@
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "interpretive",
       "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "Five Points of Fellowship",
+      "work_id": "five-points-of-fellowship",
+      "staging_dir": "five-points-fellowship",
+      "work_title": "Five Points of Fellowship",
+      "primary_degree": "level3",
+      "source_kind": "approved-oration",
+      "source_genre": "enrichment_source",
+      "language": "en",
+      "applies_to_degrees": [
+        "library",
+        "level3"
+      ],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "variant",
+      "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "Ward Masonic Handbook Series",
+      "work_id": "ward-masonic-handbook-series",
+      "staging_dir": "ward-handbooks",
+      "work_title": "The Masonic Handbook Series (J. S. M. Ward)",
+      "primary_degree": "multi",
+      "source_kind": "ritual-commentary",
+      "source_genre": "enrichment_source",
+      "language": "en",
+      "applies_to_degrees": [
+        "library",
+        "level1",
+        "level2",
+        "level3"
+      ],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "interpretive",
+      "library_category": "etl_imports"
     }
   ]
 }

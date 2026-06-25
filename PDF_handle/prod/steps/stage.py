@@ -1423,12 +1423,14 @@ def main() -> None:
                     lexical_matches,
                     catalog,
                     allowed_degrees=discovery_allowed_degrees,
+                    section_title=section_title_for_routing,
                 )
                 resolution = resolve_target_matches(
                     combined,
                     lexical_matches,
                     catalog,
                     allowed_degrees=apply_allowed_degrees,
+                    section_title=section_title_for_routing,
                 )
                 discovery = build_discovery_record(
                     section=section,

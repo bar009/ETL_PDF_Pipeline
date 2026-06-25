@@ -6,18 +6,20 @@ Decisions that block items link to `DECISION_LOG.md`.
 
 ## Now
 
-- [ ] Blue Lodge Ritual Reference Guide source prep + run — expect heavy procedural filtering (2026-06-11)
-- [ ] Content quality review of 122 entries in the browser before further growth (2026-06-11)
+- [ ] Content quality review of 538 entries in the browser (2026-06-11)
 
 ## Next
 
+- [ ] Unification findings (2026-06-12 scan): merge 3x Chaplain entries in level1; check Second Circuit level1-vs-level3 overlap; check Allegory-definitions pair in level3 (2026-06-12)
+- [ ] Cross-source unification pass after the current batch — near-duplicate scan across degrees, merge stragglers, then publish_snapshot (see INGEST_PLAYBOOK.md step 7) (2026-06-12)
 - [ ] Recover 4 rejected Commentary sections (Prayer, Password origins, Obligation dress, Investiture) from library into level2 entries during quality review (2026-06-12)
 
-- [ ] Duncan's Ritual source prep — reuse `prod/cli/duncan_section_map_apply.py`, then manual cleanup; giant book, own work item (2026-06-11)
-- [ ] Library of Freemasonry Vol 2 source prep — chapter-by-chapter restructure; giant book, own work item (2026-06-11)
+- [ ] Library of Freemasonry Vol 2 — Gemini stage running; review + merge when done (2026-06-12)
 - [ ] Fragmentary-title false positive: long headings with colons (e.g. "The Letter G and the Five-Pointed Star") get skipped as fragmentary_topic; loosen the detector (2026-06-11)
 
 ## Later / Icebox
+
+- [ ] Royal Arch / appendant degrees lane — Duncan's Mark Master through Royal Arch chapters live in the library; decide whether they become a level4+/appendant knowledge lane (2026-06-12)
 
 - [ ] Hebrew lane: `parallel_entry` translation pairs; start from `prod/cli/hebrew_localization_bundle.py` — wait until the English canon is 50+ entries the operator is happy with (2026-06-11)
 - [ ] Frontend v2 (React/Next prototypes) consuming published snapshots through the adapter contract (2026-06-11)
@@ -40,6 +42,12 @@ Decisions that block items link to `DECISION_LOG.md`.
 - [x] Library of Freemasonry Vol 2 merged: 614 enrichment ops + 336 library chapters; all 5 OCR-garbage candidates rejected (2026-06-12)
 - [x] Unification pass: Chaplain trio merged into one entry, Second Circuits disambiguated by ceremony, 152 dangling links rewired (2026-06-12)
 - [x] remediate_display_paths.py — cleaned 1500 absolute-path leaks flagged by the new hygiene gate (2026-06-12)
+- [x] intake_new_source.py CLI — one command for a new PDF: preprocess wrap, blocking routing scaffold, markdown-shape diagnosis; 8 tests (2026-06-12)
+
+- [x] Blue Lodge merged: 32 companions incl. new lodge_procedure category, 167 enrichment ops (2026-06-12)
+- [x] Duncan's Ritual merged: 7 companions, 357 enrichment ops, Royal Arch kept library-only (2026-06-12)
+- [x] Commentary on the Second Degree merged: 11 level2 enrichment ops (2026-06-12)
+- [x] Agent skills (etl-source-ingest, source-markdown-prep) + INGEST_PLAYBOOK + SOURCE_PREP_RUNBOOK (2026-06-12)
 
 - [x] Basic Masonic Education Course merged as multi (level1+level3) with selective companion approval via JSON approval file; routing fixed in work_routing.json (2026-06-11)
 - [x] Pilot root at 122 entries across 4 sources; 0 orphans; gates 19/19 strict + language audit clean (2026-06-11)
