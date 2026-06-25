@@ -187,6 +187,26 @@
       "default_sensitivity_level": "guarded",
       "default_tradition_scope": "interpretive",
       "library_category": "etl_imports"
+    },
+    {
+      "source_book_name": "Carlile Manual Three First Degrees",
+      "work_id": "carlile-manual-three-first-degrees",
+      "staging_dir": "carlile",
+      "work_title": "A Manual of the Three First Degrees of Freemasonry (Carlile, 1860)",
+      "primary_degree": "multi",
+      "source_kind": "ritual-exposure",
+      "source_genre": "enrichment_source",
+      "language": "en",
+      "applies_to_degrees": [
+        "library",
+        "level1",
+        "level2",
+        "level3"
+      ],
+      "default_visibility_level": "internal",
+      "default_sensitivity_level": "guarded",
+      "default_tradition_scope": "variant",
+      "library_category": "etl_imports"
     }
   ]
 }
